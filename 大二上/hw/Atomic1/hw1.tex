@@ -1,0 +1,141 @@
+\documentclass[UTF8,9pt]{ctexart}
+\usepackage{../../template/homeworkTEMP/hw}
+\setcounter{secnumdepth}{0}
+\title{原子物理}  
+\begin{document} 
+    \maketitle 
+    \section{Q1}
+        定态薛定谔方程为：
+        $$-\f{\hbar^2}{2m}\f{\d ^2 \Psi}{\d x^2}=E\Psi$$
+        或改写为：
+        $$\f{\d ^2 \Psi}{\d x^2}=-\left(\f{2\pi}{\lambda}\right)\Psi$$
+        \subsection{原子轨道}
+        在原子轨道中，设轨道周长为$2\pi R$，以$\theta=0$为原点，薛定谔方程的解为：
+        $$\Psi(\theta)=A\sin(\f{2\pi}{\lambda}R\theta+\varphi)$$
+        不妨设$\Psi(0)=0$，则此时$\varphi=0$，由于波函数具有连续性，
+        $$\Psi(2\pi)=A\sin\f{4\pi^2R}{\lambda}=0$$
+        $$\implies \f{4\pi R}{\lambda}=k \qquad k=1,2,3...$$
+        又由于波函数的导函数具有连续性，
+        $$\Psi'(2\pi)=\Psi'(0)$$
+        $$\implies \cos\f{0R}{\lambda}=\cos\f{4\pi^2R}{\lambda}$$
+        $$\implies \f{4\pi^2R}{\lambda}=2k\pi \qquad k=1,2,3...$$
+        即$k\lambda=2\pi R=C$，周长为波长整数倍。
+
+        \subsection{一维无限深势阱}
+        设$x\in [0,x_0]$处$V=0$，其余地方$V=\infty$，考虑到粒子不能穿透阱壁，则由于波函数的连续性要求，在任意$t$,
+        $$\Psi(0)=\Psi(x_0)=0$$
+        当波函数为正弦驻波函数，其解为$\Psi(x)=A\sin(\f{2\pi}{\lambda}x+\varphi)$，由于$\Psi(0)=0$，$\varphi=0$，\\ 
+        $\Psi(x_0)=0$要求$\sin(\f{2\pi}{\lambda}x_0)=0$。
+        即：
+        $$\f{2\pi}{\lambda}x_0=k\pi \qquad k=1,2,3...$$
+        $$\implies x_0=\f{k\lambda}{2} \qquad k=1,2,3...$$
+    \section{Q2}
+        \subsection{困难一}
+            根据经典电动力学，做加速运动的电子会辐射出电磁波，致使能量不断损失，而玻尔模型对跃迁的过程描写含糊，无法解释为什么处于定态中的电子不发出电磁辐射。
+            \\
+            \\
+            在量子力学解释中，电子也是一种波，玻尔的“定态”此时被认为是电子的波函数在边界条件下形成的“驻波”,此时电子的波函数的模不随时间变化，即电子分布的概率密度与时间无关，可以看做是“静止”的，因此不会辐射出电磁波。同时，跃迁也不再是电子的“瞬间移动”，而是其波函数极大值向外扩张。由于在跃迁的目的处波函数本就不为零，也就不需要假设“电子事先就知道它要往那里跳（卢瑟福）”。
+        \subsection{困难二}
+            玻尔模型无法揭示氢原子光谱的强度和精细结构，也无法解释稍微复杂一些的氦原子的光谱，以及更复杂原子的光谱。
+            \\
+            \\
+            在玻尔模型中，同层s,p,d电子的能量是相等的，而在量子力学的解释中，原子在磁场中空间取向量子化，这导致s,p,d三种轨道之间的能量不同，又由于电子有自旋，使p,d轨道内部也发生能级分裂，这些效应导致了原子光谱具有碱金属双线等精细结构。量子力学也可以给出电子在不同轨道的分布情况，从而解释不同光谱的强度大小关系。
+    \section{Q3}
+        当粒子在势垒内部时，由于坐标算符和动量算符不对易，导致势能算符和动能算符不对易（势能是坐标的函数，动能是动量的函数）。这意味着瞬时值$E\neq T+V$，或者说由于$T, V$不能同时有确定值，二者之和是没有意义的。\\
+        无论电子在零势垒或高势垒被测量，都是位置的本征态，若此时测量动能，由于不确定性原理，电子的动能必然不能有确定值，测到的是动能的平均值，是一个范围。
+    \section{Q3.4}
+        \subsection{1}
+            由题意可知：
+            $$P(x)=\Psi^*(x)\Psi(x) \qquad \int_{-\infty}^{+\infty} P(x)\d x=1$$
+            $$\implies \int_{0}^{+\infty}A^2x^2e^{-2\lambda x}dx=\f{A^2}{4 \lambda^3}=1$$
+            $$\implies A^2=4\lambda^3$$
+            $$\implies P(x)=\left\{\begin{matrix}
+                4\lambda^3 x^2e^{-2\lambda x},& x\geq 0\\
+                0, &x < 0
+            \end{matrix}\right.$$
+        \subsection{2}
+            $$\bar{x}=\int_0^{+\infty} xP(x)\d x = \int_0^{+\infty} 4\lambda^3 x^3e^{-2\lambda x}\d x$$
+            $$\implies \bar{x}=\f{3}{2\lambda}$$
+            $$\overline{x^2}=\int_0^{+\infty} x^2P(x)\d x = \int_0^{+\infty} 4\lambda^3 x^4e^{-2\lambda x}\d x$$
+            $$\implies \overline{x^2}=\f{3}{\lambda^2}$$
+        \subsection{3}
+        $$\bar{p}
+        =-\int_0^{+\infty} \Psi\hbar \dd{}x{} \Psi\d x 
+        =- A^2\hbar\int_0^{+\infty} x(-\lambda x+1)e^{-2\lambda x}\d x
+        =-\frac{A^2\hbar}{2} x^2 e^{-2 \lambda x}\bigg|_{x=0}$$
+        $$\implies \bar{p}=0$$
+        $$\overline{p^2}=-\int_0^{+\infty} \Psi\hbar^2 \dd{}x{2} \Psi\d x
+        =-A^2\hbar^2\int_0^{+\infty} x(\lambda^2x-2\lambda)e^{-2\lambda x} d x
+        =-A^2\hbar^2\frac{e^{-2 \lambda x} \left(-2 \lambda^2 x^2+2 \lambda x+1\right)}{4 \lambda}\bigg|_{x=0}^{x=+\infty}$$
+        $$\implies \overline{p^2}=\f{A^2\hbar^2}{4\lambda}$$
+    \section{Q3.5}
+        \subsection{1}
+            定态薛定谔方程为：
+            $$-\f{\hbar^2}{2m}\f{\d ^2 \Psi}{\d x^2}=E\Psi \quad x \in [0,a]$$
+            $$\Psi=0 \qquad\qquad x<0,x>a$$
+            
+        \sub{2}
+            可以解得：
+            $$\ba
+                \Psi=A\sin(kx+\phi), &x \in [0,a]  ,\qquad (k^2 = \f{2mE}{\hbar^2}) \\
+                \Psi=0,  &x<0,x>a
+            \ea$$
+            由$\Psi(0)=\Psi(a)=0 \implies \phi=0,\sin(ka)=0$\\
+            归一化：
+            $$\int_0^a\abs{\Psi}^2\d x=1 \implies A^2=\f{2}{a} $$
+            $$\implies \Psi=\sqrt{\f{2}{a}}\sin kx=\sqrt{\f{2}{a}}\sin \f{n\pi}{a}x$$
+            \sub{3}
+            代入$k^2 = \f{2mE}{\hbar^2}$，$ka=n\pi ( n=1,2,3...)$
+            $$E=\f{k^2\hbar^2}{2m}=\f{n^2\pi^2\hbar^2}{2ma^2} ( n=1,2,3...)$$
+            
+            $$\implies \hat{H}\Psi=\f{\hbar^2}{2m}\sqrt{\f{2}{a}}k^2\sin kx= E\sqrt{\f{2}{a}}\sin kx$$
+
+            \sub{4}
+            $$\ba
+            \hat{H}&=-\f{\hbar^2}{2m}\dd{}{x}{2}\\
+            \implies \bar{T}&=-\f{\hbar^2}{2m}\f{\int_0^a\Psi\dd{}{x}{2}\Psi \d x}{\int_0^a\abs{\Psi}^2\d x}\\ 
+            &=-\f{\hbar^2}{2m}\int_0^a\Psi\dd{}{x}{2}\Psi \d x\\
+            &=-\f{\hbar^2}{2m}k^2\int_0^a\f{2}{a}\sin^2 kx\ \d x\\
+            &=-\f{\hbar^2}{2m}k^2\\
+            &=\f{n^2\pi^2\hbar^2}{2ma^2} ( n=1,2,3...)
+            \ea$$
+
+            
+    \section{Q3.6}
+        \subsection{A}
+            $$\begin{array}{rll}
+                P&=mv=5\times 10^{-4} kg\cdot m /s\\
+                V_0&=Uq=5\times 10^{-3} J
+            \end{array}$$
+
+            根据一维定态薛定谔方程：
+            $$-\f{\hbar^2}{2m}\f{\d ^2 \Psi}{\d x^2}+V_0\Psi=E\Psi$$
+            在$V=0$处：
+            $$\Psi=A_1\sin(k_1x+\varphi)$$
+            在$V=V_0$处，方程变为
+            $$\Psi=A_2e^{-k_2x}+B_2e^{k_2x}$$
+            根据波函数及其导函数连续的条件和归一化条件可以得到贯穿的概率为：
+            $$P=e^{-\f{2}{h}\sqrt{2m(V_0-E)}D} \simeq e^{-2.13\times10^{29}}$$
+            小球贯穿概率极其低，可以认为不可能发生，不可能在实际实验中观察到小球贯穿。
+        \subsection{B}
+        $$\lambda=\f{h}{P}=1.3252\times 10^{-30}m$$
+        考虑衍射的第n级暗纹：
+        $$d\sin\theta=n\lambda$$
+        $$\implies \sin\theta=\f{n\lambda}{d}=1.3252\times 10^{-30}n$$
+        小球衍射极其微弱，用非常精确的量角工具（$\Delta\theta<0.0001rad$）也无法测出，可以认为其在宏观无衍射现象。
+    \section{Q3.7}
+        考虑带有$Ze$电荷的原子核，其外有一个基态电子，则该电子的能量为：
+        $$E=-\ff{2}m\left(\alpha c\f{Z}{n}\right)^2$$
+        若该电子从无穷远跃迁至基态，放出的光子能量最高：
+        $$E_{emit}=\ff{2}m\left(\alpha cZ\right)^2=13.6\left(\f{Z}{n}\right)^2 \ eV$$
+        一般$\f{Z}{n}<5$，$E<25\times 13.6=340\, eV$，即原子产生的最大的光子能量也不到$0.5\,keV$。
+    \section{Q3.8}
+        设此时电子波长$\lambda=0.1nm$,为其衍射极限
+        $$P=\f{h}{\lambda}=6.626\times10^{-24}\,kg\cdot m s^{-1}$$
+        $$v=P/m_e=4.67\times 10^6 \,m s^{-1}$$
+        此时$v/c \approx 1/100$，不考虑相对论效应。
+        $$E=\ff{2}mv^2=3.09475\times10^{-17}=193\, eV$$
+
+
+
+\end{document} 

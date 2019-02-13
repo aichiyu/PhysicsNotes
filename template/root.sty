@@ -1,0 +1,73 @@
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{root}[2014/08/24 Example LaTeX package]
+\RequirePackage{amsfonts}
+\RequirePackage{geometry}
+\RequirePackage[OT1]{fontenc}                                             %change font
+\RequirePackage{mathtools}                                                %align needed
+\RequirePackage{balance}                                                  %blance when there two columns
+\RequirePackage{txfonts}                                                  %面积分体积分
+\RequirePackage{bm}                                                       %bold font
+\RequirePackage{mathrsfs}                                                 %change greek font style
+\RequirePackage{enumerate}                                                %Sort by number
+\RequirePackage{supertabular}                                             %allow long table in 2 pages
+\RequirePackage{soul}                                                     %highlight using \hl
+\RequirePackage{fontspec}                                                 %expand font type
+\RequirePackage{graphicx}                                                 %to input pictures
+\RequirePackage[colorlinks,linkcolor=red,anchorcolor=blue,citecolor=green]{hyperref}                                                %cite
+\RequirePackage{verbatim}                                 %comment
+
+%begin{newcommands}
+    \renewcommand\d{\mathrm{d}}                                            %d
+    \newcommand\sch{Schrödinger}                                           %Schrödinger
+    \newcommand{\dd}[3][]{\frac{\mathrm{d}^{#1} #2}{\mathrm{d} #3^{#1}}}   %d/d^n
+    \newcommand{\dt}[2][]{\frac{\mathrm{d}^{#1} #2}{\mathrm{d} t^{#1}}}    %d/dt^n
+    \newcommand{\pp}[3][]{\frac{\partial^{#1} #2}{\partial #3^{#1}}}       %∂/∂^n
+    \newcommand{\pt}[2][]{\frac{\partial^{#1} #2}{\partial t^{#1}}}        %∂/∂t^n 
+    \newcommand{\f}[2]{\frac{#1}{#2}}                                      %A/B
+    \newcommand{\ff}[1]{\frac{1}{#1}}                                      %1/A
+    \newcommand\rank{\mathrm{rank}}                                        %rank
+    \newcommand\tr{\mathrm{tr}}                                            %tr
+    \newcommand\e[1]{\times 10^{#1}}                                       %×10^
+    \renewcommand\Re{\mathrm{Re}}                                          %Re
+    \renewcommand\Im{\mathrm{Im}}                                          %Im
+    \renewcommand\ln{\mathrm{ln}}                                          %ln
+    \renewcommand\phi{\varphi}                                             %phi
+    \newcommand\Ln{\mathrm{Ln}}                                            %Ln
+    \renewcommand\arg{\mathrm{arg}}                                        %arg
+    \newcommand\bra[1]{\left(#1\right)}                                    %(A)
+    \newcommand\ip{\implies}                                               %→
+    \newcommand\tm{\times}                                                 %×
+    \renewcommand\l{\lambda}                                               %λ
+    \renewcommand\a{\alpha}                                                %α
+    \renewcommand\o{\omega}                                                %ω
+    \newcommand\D{\Delta}                                                  %Δ
+    \newcommand\de{\delta}                                                 %δ
+    \renewcommand\t{\theta}                                                %θ
+    \renewcommand\epsilon{\varepsilon}                                     %ε
+    \newcommand\abs[1]{\left| #1 \right|}                                  %|A|
+    \renewcommand\exp{\mathrm{exp}}                                        %exp
+    \newcommand\se{\section}                                               %section
+    \newcommand\sub{\subsection}                                           %subsection
+    \newcommand\sumi{\sum_{i=1}^n}                                         %∑ 
+    \AtBeginDocument{\renewcommand{\bar}{\overline}}                       %bar
+    \AtBeginDocument{\renewcommand{\hat}{\widehat}}                        %hat
+    \newcommand\inti{\int_{0}^{infty}}                                     %∮
+    \renewcommand{\arraystretch}{1.2}                                      %change array stretch
+    \newcommand{\ar}[2][rl]{\begin{array}{#1}                              %begin an array
+            #2
+        \end{array}}                                                 
+    \newcommand\bkt[1]{\left< #1 \right>}                                  %<x>
+    \newcommand\putfig[2]{                                                 %put a figure
+        \begin{center}    
+            \includegraphics[scale=#1]{#2}
+        \end{center}}
+%end{newcommands} 
+
+%resize the parentheses
+\def\lparen{(} 
+\def\rparen{)} 
+\catcode`(=\active 
+\catcode`)=\active
+\def({\ifmmode \left\lparen \else\lparen\fi} 
+\def){\ifmmode \right\rparen \else\rparen\fi}
+\date{\today}

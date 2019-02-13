@@ -1,0 +1,326 @@
+\documentclass[UTF8,9pt]{ctexart}
+\usepackage{../template/Notes/notes}
+\renewcommand\arraystretch{1}
+\title{Linear Algebra}
+\begin{document} 
+\maketitle
+\section{Words}
+\begin{center}
+	\begin{supertabular}{rl}
+		subtract&减\\
+		parenthesis/\,parentheses&括号\\
+		reverse&反向\\
+		pivot&主元\\  
+		span&张成\\ 
+		basis&基\\  
+		dimension&维数\\
+		entry&项\\  
+		components&分量\\ 
+		elimination&消元\\
+		principal diagonal&主对角线\\
+		inverse/\,invertible&逆\\
+		the Identity&单位矩阵\\
+		singular&奇异的，无逆矩阵\\
+		determinant&行列式\\
+		augmented matrix&增广矩阵\\
+		reduced row echelon&简化阶梯形矩阵\\
+		transpose&转置\\
+		colinear&共线\\
+		dependent&线性相关\\
+		orthogonal&正交\\
+		symmetric&对称\\
+		equivalent&等价\\
+		construct&求出解\\
+		the nullspace&零空间，齐次解构成的空间\\
+		factorization-&\\
+		of a matrix&矩阵分解\\
+		permutation&置换\\
+		the origin&原点\\
+		pivot column&主列\\
+		sovlable&有解\\
+		full rank&满秩\\
+		Algebra cofactor&代数余子式\\
+		general solution&通解\\
+		particular solution&特解\\
+		orthogonal basis&正交基\\
+		orthonormal basis&标准正交基\\
+
+		&\\
+
+		forall&$\forall$\\
+		there exists&$\exists$\\
+		perpendicular&$\perp$\\
+		&\\
+		I&Identity,单位矩阵\\
+		F&free,自由变量解矩阵\\
+		L&lower triangular,下三角矩阵\\
+		D&diagonal,对角矩阵\\
+		U/R&upper triangular，上三角矩阵\\
+		E&elimination,消元矩阵\\
+		P&permutation,置换矩阵\\
+		P&projection,投影矩阵\\
+		R&rectangualr,长方阵\\
+		Q&orthogonal,正交矩阵\\
+		N&nullspace, 零空间矩阵,\\
+		&(Ax=0的通解)$\begin{bmatrix}
+				-F \\
+				I
+			\end{bmatrix}$\\
+		R&reff form,简化阶梯形矩阵 $\begin{bmatrix}
+				I & F \\
+				0 & 0
+			\end{bmatrix}$\\
+	\end{supertabular}
+\end{center}
+\section{Matrix}
+\begin{itemize}
+	\item 矩阵的逆：\\
+		\begin{enumerate}
+			\item 用可逆矩阵与任意A相乘，不改变A的秩。\\
+			\item $(A^T)^{-1}=(A^{-1})^T$\\
+			\item 上三角阵的逆仍为上三角阵。\\
+			\item 任何方阵可以表示为上三角阵和下三角阵的乘积。\\
+		\end{enumerate}
+		$$\begin{array}{rcl}
+			\begin{bmatrix}
+				a & b \\
+				c & d
+			\end{bmatrix}^{-1}
+			& = &
+			\dfrac{1}{|A|}\begin{bmatrix}
+				d  & -b \\
+				-c & a
+			\end{bmatrix} \\
+			\begin{bmatrix}
+				a & b & c \\
+				d & e & f \\
+				g & h & i
+			\end{bmatrix}^{-1}
+			& = &
+			\dfrac{1}{|A|}\begin{bmatrix}
+				ei-hf & -(bi-hc) & bf-ce \\
+				fg-id & -(cg-ia) & cd-af \\
+				dh-ge & -(ah-gb) & ae-bd
+			\end{bmatrix} \\
+			\begin{bmatrix}
+				1 & 0 \\
+				c & 1
+			\end{bmatrix}^{-1}
+			& = &
+			\begin{bmatrix}
+				1  & 0 \\
+				-c & 1
+			\end{bmatrix}               \\
+			\begin{bmatrix}
+				1 & 0 & 0 \\
+				d & 1 & 0 \\
+				g & h & 1
+			\end{bmatrix}^{-1}
+			& = &
+			\begin{bmatrix}
+				1    & 0  & 0 \\
+				-d   & 1  & 0 \\
+				dh-g & -h & 1
+			\end{bmatrix}              \\
+			\begin{bmatrix}
+				A_1 & A_3 \\
+				0   & A_2
+			\end{bmatrix}^{-1}
+			& = &
+			\begin{bmatrix}
+				A_1^{-1} & -A_1^{-1}A_3A_2^{-1} \\
+				0        & A_2^{-1}
+			\end{bmatrix}
+		\end{array}$$
+	\item 对于正交矩阵（例如置换矩阵P）:
+		$$P^{-1}=\f{P^T}{|P|}$$
+	\item Schwavz inequality:
+		$$|u\cdot v| \leq ||u||\cdot ||v||$$
+	\item $x_{complete}=x_{particular}+cx_{special}$
+		,解空间由零空间$cx_{special}$平移$x_{particular}$后得到。   \\
+	\item 对线性无关的方程组/矩阵$A_{j\times r}=\bm{a}_{j1},\cdots,\bm{a}_{jr}$：
+		\begin{align*}
+			& \dim \langle \bm{a}_{j1},\cdots,\bm{a}_{jr} \rangle \\
+			= & \rank(A_{j\times r})                              \\
+			= & \text{最大非零子式阶数}R(A_{j\times r})
+		\end{align*}
+	\item 想求零空间（x的解），只需要把A变为由I和自由列组成的最简行阶梯形式，然后特解会由I和-F构成。
+	\item $AB$可由$A,B$线性表出，且                              \\
+		$\rank(AB) \leq \min \{\rank(A),\rank(B)\}$             
+	\item Sylvester秩不等式：设$A_{s\times n},\ B_{n\times m}$,则
+		$$\rank(AB) \geq \rank(A) + \rank(B) -n$$
+	
+	\item 分块矩阵\\
+		\begin{enumerate}[(i)]
+			\item 初等行变换 - 左乘P:
+				$\left(\begin{smallmatrix}
+					A_1 & A_2\\
+					A_3 & A_4
+				\end{smallmatrix}\right)
+				\Longrightarrow
+				\left(\begin{smallmatrix}
+					A_1      &      A_2\\
+					PA_1+A_3 & PA_2+A_4
+				\end{smallmatrix}\right)$\\
+			\item 初等列变换 - 右乘P:
+				$\left(\begin{smallmatrix}
+					A_1  &  A_2\\
+					A_3  &  A_4
+				\end{smallmatrix}\right)
+				\Longrightarrow
+				\left(\begin{smallmatrix}
+					A_1 & A_1P+A_2\\
+					A_3 & A_3P+A_4
+				\end{smallmatrix}\right)$
+		\end{enumerate}
+	\item 对矩阵$A,B,C$，有：
+		$$\rank\begin{pmatrix}
+				A & C \\
+				0 & B
+		\end{pmatrix}
+		\geq
+		\rank\begin{pmatrix}
+			A & 0 \\
+			0 & B
+		\end{pmatrix}
+		=\rank(A)+\rank(B)$$
+\end{itemize}
+\section{Determinant} 
+\begin{itemize}
+	\item $| A | = a _ { 11 } C _ { 11 } + a _ { 12 } C _ { 12 } + \ldots + a _ { 1 n } C _ { 1 n }$ 
+	\item 逆矩阵公式
+		$$A ^ { - 1 } = \frac { 1 } { | A | } C ^ { T }$$
+	\item 范德蒙行列式：
+		$$\left|\begin{matrix}
+			1         & 1         & \cdots & 1         \\
+			a_1       & a_2       & \cdots & a_n       \\
+			a_1^2     & a_2^2     & \cdots & a_n^2     \\
+			\vdots    & \vdots    & \ddots & \vdots    \\
+			a_1^{n-1} & a_2^{n-1} & \cdots & a_n^{n-1}
+		\end{matrix}\right|=\prod_{1\leq j < i \leq n}{(a_i-a_j)}$$
+	\item $|AB|=|A|\cdot|B|=|BA|$
+	\item Binet-Cauchy公式：设$A=(a_{ij})_{s\times n},B=(b_{ij})_{n\times s}$。\\
+		\begin{enumerate}
+			\item $s>n$,那么$|AB|=0$\\
+			\item $s \leq n$，那么
+				$$|AB|=\sum_{1 \leq v_1<\cdots<v_s\leq n}A
+				\left(\begin{smallmatrix}
+					1   &   2 & \cdots &  s\\
+					v_1 & v_2 & \cdots & v_s
+				\end{smallmatrix}\right)
+				\cdot B
+				\left(\begin{smallmatrix}
+					v_1 & v_2 & \cdots & v_s\\
+					1   &   2 & \cdots &   s
+				\end{smallmatrix}\right)$$
+		\end{enumerate}
+	\item Cramer's rule\\
+		求解$Ax=b$时，用$b$代替$A$的第$i$列得到$B_i$，则
+		$$x_i=\f{|B_i|}{|A|}$$
+\end{itemize}
+\section{Vector Space $K^n$}
+\begin{itemize}
+	\item 替换定理：\\
+		如果$\bm{a}_1,\cdots,\bm{a}_s$线性无关，$\bm{c}=b_1\bm{a}_1+\cdots+b_s\bm{a}_s$，使用$\bm{c}$替换$\bm{a}_i$，那么$\bm{a}_1,\cdots,\bm{a}_{i-1},\bm{c},\bm{a}_{i+1},\cdots,\bm{a}_s$也线性无关。\\
+		$\bm{a}_1,\cdots,\bm{a}_s$线性无关$\iff \rank\{\bm{a}_1,\cdots,\bm{a}_s\}=s$\\
+	\item 设n元齐次线性方程组解空间为W，则：
+		$$\dim\ W=n-\rank(A)$$
+	\item 若n元非齐次方程式有解，称其解集为U，其导出组的解集为W，则：
+		$$U=\{\bm{\gamma}_0+\bm{\eta}|\bm{\eta}\in W\}=\bm{\gamma}_0+\bm{\eta}$$
+		$\bm{\gamma}_0$称为$\textbf{特解}$,$\bm{\gamma}_0+\bm{\eta}$称为一个W型的$\textbf{线性流形}$
+	\item 子空间维数公式
+		$$\dim V_1+\dim V_2= \dim(V_1+V_2)+\dim(V_1 \cap V_2)$$
+	\item 矩阵的秩在乘以一个非奇异矩阵时是不变的($\dim N(A)=0 \ip \rank(AB)=\rank (B)$)，乘以奇异矩阵可以改变秩，下面的公式准确地显示了发生了多少变化：\\
+		If $A$ is $m \times n$ and $B$ is $n \times p$, then
+		$$\rank(AB) = \operatorname { rank } (B) -\dim N (A) \cap R (B) $$
+		求$N (A) \cap R (B)$的方法：
+		$$\begin{array} { rl } 
+			& \text { Find a basis } \left\{ x _ { 1 } , x _ { 2 } , \ldots , x _ { r } \right\} \text { for } R ( B) \\
+			&  \text { Set } X _ { n \times r } = \left( x _ { 1 } \left| x _ { 2 } \right| \cdots | x _ { r } \right)  \\
+			&\text { Find a basis } \left\{ v _ { 1 } , v _ { 2 } , \ldots , v _ { s } \right\} \text { for } N (AX) \\ 
+			&\mathcal { B }= \left\{ X v _ { 1 } , X v _ { 2 } , \ldots , X v _ { s } \right\} \text { is a basis for } N (A) \cap R (B)
+		\end{array}$$
+		当$\dim N (A) \cap R (B)$不易求出，仍有以下推论：
+		$$\operatorname { rank } ( \mathbf { A B } ) \leq \min \{ \operatorname { rank } ( \mathbf { A } ) , \operatorname { rank } ( \mathbf { B } ) \}$$
+		$$\operatorname { rank } ( \mathbf { A } ) + \operatorname { rank } ( \mathbf { B } ) - n \leq r a n k ( \mathbf { A B } )$$
+\end{itemize}
+\section{正交矩阵}
+\begin{itemize}
+	\item 矢量$q_1,q_2, \cdots,q_n$标准正交(orthonormal)如果
+	$$q^T_iq_j=\delta_{i,j}$$
+	\item 行空间与零空间正交，列空间与左零空间正交
+		\putfig{0.7}{2.png}
+	\item 对于标准正交矩阵$A$，设$A$的行向量为$\bm{\gamma}_n$,列向量为$\bm{\alpha}_n$,有：\\
+		\begin{enumerate}[(i)]
+			\item $AA^T=I$
+			\item $A^{-1}=A^T$
+			\item $\| Qx \| ^2 = \|x\| ^2$
+			\item $|A|= \pm1$
+			\item $\bm{\gamma}_i\bm{\gamma}_j^T = \delta_{i,j}$
+			\item $\bm{\alpha}_i\bm{\alpha}_j^T = \delta_{i,j}$
+			\item $A,B$均正交,则$AB$正交
+		\end{enumerate}
+	\item 投影矩阵：
+		$$P=A(A^TA)^{-1}A^T$$
+	\item 施密特正交化过程：设线性无关组$\bm{a}_s$, 令
+		$$\ar[rcl]{
+			\bm{b}_1 &= & \bm{a}_1                                                                   \\
+			\bm{b}_2  &= & \bm{a}_2-\frac{\bm{a}_2\bm{b}_1}{\bm{b}_1\bm{b}_1}\bm{b}_1                 \\
+					& \vdots &                                                                    \\
+			\bm{b}_s & = & \bm{a}_s-\sum_{j=1}^{s-1}\frac{\bm{a}_s\bm{b}_j}{\bm{b}_j\bm{b}_j}\bm{b}_j
+		}$$
+		则可得到正交组$\bm{b}_s$
+	\item 马尔科夫矩阵\\
+		1 每个元素非负\\
+		2 每列元素和为1\\
+		3 特征值的模均小于1
+	\item $A$的$QR$分解\\
+	Every matrix $A_{m×n}$ with linearly independent columns can be uniquely factored as $A = QR$\\
+	$R = Q^TA$ is upper triangular because later $q_i$'s are orthogonal to earlier $a$'s. The lengths of $A, B$ and $C$ are on the diagonals of $R$.\\
+	可用QR分解解决最小二乘问题
+	$$\mathbf { R } \mathbf { x } = \mathbf { Q } ^ { T } \mathbf { b }$$
+	该方法不需要求$A^TA$，但当需要求解$A^TA$时，只需利用$\mathbf { A } ^ { T } \mathbf { A } = \mathbf { R } ^ { T } \mathbf { R }$计算即可(Cholesky factorization)。
+\end{itemize}
+\section{最小二乘法}
+\begin{itemize}
+	\item example 1\\
+		拟合$n$个点$(a_n,b_n)$到直线$y=k\hat{x}+b$上：\\
+		设$\hat{x}=(k,b)^T$\\
+		则 $$A=\begin{pmatrix}
+			a_1&1\\
+			\vdots&\vdots\\
+			a_n&1
+		\end{pmatrix}=([a_n],[1])$$
+		$$b=(b_1,\cdots,b_n)^T$$
+		此时有
+		$$A^TA\hat{x}=A^Tb$$
+		b在A的列向量的投影：
+		$$p=A\hat{x}$$
+	\item example 2\\
+		将矢量$b$投影到$\{a_1,a_2,a_3\}$张成的空间中，设投影得到的向量为$c$，求$c$：\\
+		也即，我们考虑存在一个$c=\widehat {x}_{ 1 } \mathbf { a } _ { 1 } +\widehat { x } _ {2} \mathbf { a } _ {2} +\widehat { x _ { n } } \mathbf { a } _ { \mathbf { 3 } }$最接近$\bm{b}$，此时$c$即为$b$的投影.\\
+		设$A=\left( a_1,a_2,a_3 \right), c=Ax=\widehat {x}_{ 1 } \mathbf { a } _ { 1 } +\widehat { x } _ {2} \mathbf { a } _ {2} +\widehat { x _ { n } } \mathbf { a } _ { \mathbf { 3 } }$，此时$\hat{x}$为$c$在基$\{a_1,a_2,a_3\}$下的坐标，那么$a_1, a_2,a_3$的线性组合可以被写作$A\hat{x}$。\\
+		则
+		$$Ax=c=Pb=A(A^TA)^{-1}A^Tb$$ 
+		$$A^TAx=A^Tb$$
+		注意到，我们所需的$A$矩阵即为以投影空间为列空间的矩阵，所需的$b$则为需要投影的向量，$c$即为目标向量。\\
+		从$P$的计算式可以知道：$P$为对称矩阵。
+	\item Proof: $x \in N(A) \iff x \in N(A^TA)$\\
+		1. Suppose $\mathbf{x}\in N(A).\text{Then}\mathbf{x}\in N\left(A^{T}A\right).\text{ This is because }A\mathbf{x}=0\Rightarrow A^{T}A\mathbf{x}=0$\\
+		2. Conversely, let $x\in N\left(A^{T}A\right).$ Then $A^{T}Ax=0 \ip x^{T}A^{T}Ax=0 \ip \|Ax\|^{2}=0.$ since the length of $Ax$ is zero, we have $Ax=0$. Therefore $x\in N(A)$.
+	\item 特别地，当$A=Q$\\
+		$$p= A \left( A ^TA \right) ^ { - 1 } A ^Tb \ip p = Q Q ^Tb$$
+	\item 一般地，当拟合函数非线性时，例如，以$t$为横坐标，$b$为纵坐标，
+		$$p ( t ) = \alpha _ { 0 } + \alpha _ { 1 } t + \alpha _ { 2 } t ^ { 2 } + \cdots + \alpha _ { n - 1 } t ^ { n - 1 }$$
+		在平面上有$m$个点：
+		$$\mathcal { D } = \left\{ \left( t _ { 1 } , b _ { 1 } \right) , \quad \left( t _ { 2 } , b _ { 2 } \right) , \ldots , \left( t _ { m } , b _ { m } \right) \right\}$$
+		\putfig{0.5}{1.png}
+		则取
+		$$\mathbf { A } = \left( \begin{array} { c c c c c } { 1 } & { t _ { 1 } } & { t _ { 1 } ^ { 2 } } & { \cdots } & { t _ { 1 } ^ { n - 1 } } \\ { 1 } & { t _ { 2 } } & { t _ { 2 } ^ { 2 } } & { \cdots } & { t _ { 2 } ^ { n - 1 } } \\ { \vdots } & { \vdots } & { \vdots } & { \ldots } & { \vdots } \\ { 1 } & { t _ { m } } & { t _ { m } ^ { 2 } } & { \cdots } & { t _ { m } ^ { n - 1 } } \end{array} \right) , \quad \mathbf { x } = \left( \begin{array} { c c } { \alpha _ { 0 } } \\ { \alpha _ { 1 } } \\ { \vdots } \\ { \alpha _ { n - 1 } } \end{array} \right) , \quad \text { and } \quad \mathbf { b } = \left( \begin{array} { c c } { b _ { 1 } } \\ { b _ { 2 } } \\ { \vdots } \\ { b _ { m } } \end{array} \right)$$
+\end{itemize}
+\section{Norms}
+\begin{itemize}
+	\item P-Norms
+	$$\| x \| _ { p } = \left( \sum _ { i = 1 } ^ { n } \left| x _ { i } \right| ^ { p } \right) ^ { 1 / p }\qquad (p>1)$$
+\end{itemize}
+\end{document}

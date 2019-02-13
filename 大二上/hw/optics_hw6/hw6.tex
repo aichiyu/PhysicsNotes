@@ -1,0 +1,108 @@
+\documentclass[UTF8,9pt]{ctexart}
+\usepackage{../../template/homeworkTEMP/hw} 
+\setcounter{secnumdepth}{0}
+    \title{The 5th Homework of Optics}  
+\begin{document}
+\maketitle
+\section{4-5}
+a. $\frac{I_0}{I}=(\sqrt{2})^2=2$\\
+b. $\frac{I_0}{I}=(\sqrt{2})^2=2$\\
+c. $\frac{I_0}{I}=(1/2)^2=1/4$\\
+d. $\frac{I_0}{I}=(2-2/2)^2=1$\\
+e. $\frac{I_0}{I}=(\sqrt{2^2+1})^2=5$\\
+f. $\frac{I_0}{I}=(2 \times \f{3}{4}-2 + 3/4)^2=1/16$ 
+\se{4-7}
+$$I=(50 \times 2-1)^2=99^2$$
+\se{4-9}
+$$\rho_1^2=f\l \ip \rho=\f{2\sqrt{5}}{5} mm \approx 0.57mm$$
+$$I/I_0=1000=(2k/2)^2 \ip k \approx 32$$
+$$\rho_k=\sqrt{32 \times 800 \times 400\e{-6}}=3.2mm$$
+有效半径为$3.2mm$
+\se{4-10}
+$$\rho_1^2=f\l \ip 900 \times 30 = 632.8f' \ip f'=43cm$$\
+\se{4-11}
+\sub{(1)}
+    考虑$\t$影响：
+    $$U=C\int_{-a/2}^{a/2}e^{ik\D r}\d x=C\f{e^{-ikx\sin\t}}{-ik\sin\t}\bigg|^{x=a/2}_{x=-a/2}$$
+    代入$k\l=2\pi$,
+    $$U=2C\f{\sin\a}{\a},\quad \a=\f{\pi a (\sin\t-\sin\t_0)}{\l}$$
+    $$\ip I =U^2=I_0(\f{\sin\a}{\a})^2,\quad \a=\f{\pi a(\sin\t-\sin\t_0)}{\l}$$
+\sub{(2)}
+    零级中心即$\a=0$，即各光线无光程差，根据费马原理，此点即几何光学像点。
+\sub{(3)}
+    根据(1)中式子，暗斑出现在$\sin\a=0,a \neq 0$处，即$\a=k\pi(k\neq0)$。\\
+    一级暗斑即零级半角宽，$\f{\pi a (\sin\t-\sin\t_0)}{\l}=\pi$
+    $$\ip \sin(\D\t+\t_0)-\sin\t_0=\l/a \ip \cos\t_0 \cdot \D\t \approx \l/a$$
+    $$\D\t=\f{\l}{\cos\t_0 a}$$
+\sub{(4)}
+    在衍射处发生折射，$n=\f{\sin\t}{\sin\t'}$，使用$\t'$代替上式所有$\t$即可，此时：\\
+    (1)    
+    $$\ip I =U^2=I_0(\f{\sin\a}{\a})^2,\quad \a=\f{\pi a(\sin(\t/n)-\sin(\t_0/n))}{\l}$$
+    (3)
+    $$\D\t=\f{\l}{\cos(\t_0/n) a}$$
+\se{4-12}
+\sub{(1)}
+    反射
+    $$\D\t=\l/D=0.6/10000*180/Pi*60*60=12.4''$$
+    折射
+    $$\D\t=\l/nD=0.6/10000*180/Pi*60*60=8.2''$$
+\sub{(2)}
+    反射
+    $$\D\t=\l/D=0.6/10000*180/Pi*60*60/\cos75=47.4''$$
+    折射
+    $$\D\t=\l/nD=0.6/10000*180/Pi*60*60/\cos75=10.7''$$
+\sub{(2)}
+    反射
+    $$\D\t=\l/D=0.6/10000*180/Pi*60/\cos89=66'40''$$
+    折射
+    $$\D\t=\l/nD=0.6/10000*180/Pi*60/\cos89=11'1''$$
+\se{4-17}
+\sub{(1)}
+    取$\l=550nm$
+    $$\de y=0.61\l/N.A.=0.25\mu m $$
+\sub{(2)}
+    $$V=\f{0.075}{0.25/1000}=290$$
+\sub{(3)}
+    $$V=-\f{s_0\D}{f_Of_E}\ip \D=290*1.91*50/250=111mm$$
+\se{4-19}
+$$\D\t=1.22\l/D=6.7\e{-7} \ip \D s=s\D\t=255m$$
+\se{4-23}
+$$U=C\int_{-a/2}^{a/2}\d x \int_{-b/2}^{b/2} e^{ik\D r}\d y$$
+$$=C\int_{-a/2}^{a/2} e^{-ik\D x} \d x \int_{-b/2}^{b/2} e^{-ik\D y}\d y$$
+$$=abC\f{e^{-ikx\sin\t}}{-ik\sin\t}\bigg|^{x=a/2}_{x=-a/2}\f{e^{-iky\sin\t}}{-ik\sin\t}\bigg|^{y=b/2}_{y=-b/2}$$
+令
+$$\a'=\f{ka}{2}(\sin\t-\sin\t_0)$$
+$$\beta'=\f{kb}{2}(\sin\t-\sin\t_0)$$
+$$\ip I=U^2=I_0(\f{\sin\a'}{\a'})^2(\f{\sin\beta'}{\beta'})^2$$
+\se{4-25}
+$$U=[U(0)+U(-d)+U(-3d)]\f{\sin\a}{\a}$$
+$$U(-d)=U(0)\f{\sin\a}{\a}, \a=\f{\pi a \sin\t}{\l}=\f{\pi a d/f}{\l}$$
+$$U=U_0\f{\sin\a}{\a}\sqrt{(1+\cos\beta+\cos3\beta)^2+(\sin\beta+\sin3\beta)^2}$$
+$$I=U^2=I_0(\f{\sin\a}{\a})^2[3+2(\cos2\beta+\cos4\beta+\cos6\beta)]$$
+\se{4-27}
+\sub{(1)}
+$$\ip I=U^2=I_0(\f{\sin\a}{\a})^2(\f{\sin\beta}{\beta})^2$$
+\sub{(2)}
+$$\ip I=U^2=I_0(\f{\sin\a}{\a})^2(\f{\sin\beta}{\beta})^2$$
+\sub{(3)}
+$$\ip I=U^2=4I_0\cos^22\a(\f{\sin\a}{\a})^2(\f{\sin\beta}{\beta})^2$$
+\se{4-32}
+\sub{(1)}
+    $$k_{max}=d/\l=2$$
+    $$\de \l=\l/kN=0.05nm$$
+\sub{(2)}
+    $$1/D_\t=1/\f{k}{d\cos\t_k}=0.244nm/(')$$
+\sub{(3)}
+    $$\t_b \approx12^{\circ}39'$$
+    与闪耀方向与光栅法线角度相同。
+\se{4-34}
+$$\begin{array}{c|c|c|c}
+        &\text{光栅}&\text{棱镜}&\text{F-P腔}\\
+    \hline
+    \text{角分辨}&3\e{4}&3\e{3}&6\e{5}\\
+    \hline
+    \text{角色散}&2.2'/nm&0.31'/nm&39'/nm\\
+    \hline
+    \text{自由光谱}&\text{一级}850nm-1700nm&--&\l=550nm:0.003nm
+\end{array}$$
+\end{document}

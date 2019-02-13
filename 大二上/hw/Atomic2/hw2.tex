@@ -1,0 +1,140 @@
+\documentclass[UTF8,9pt]{ctexart}
+\usepackage{../../template/homeworkTEMP/hw}
+\setcounter{secnumdepth}{0}
+\title{原子物理}   
+\begin{document} 
+    \maketitle 
+    \section{Q1}   
+        设$\mu,B $间夹角为$\t$，则所受力矩为：
+        $$M=\mu\times B=\mu B\sin\theta=\dt{P}$$
+        设角动量为$P$，角速度为$\o$：
+        $$\dt{P}=\o\tm P=\o P\sin\t$$ 
+        $$\implies \mu B=\o P$$ 
+        $$\ip \nu=\f{\o}{2\pi}=\f{\mu B}{2\pi P}$$
+        代入定义：$\mu_B=\dfrac{e\hbar}{2m_e}$，$\mu=\f{P}{\hbar}g\mu_B$，磁矩进动频率$\nu$为：\\
+        $$ \nu=\f{\mu B}{2\pi P}=\f{geB}{4\pi m_e}$$
+        \\
+        当$m$不同，若保持$g,B$不变，由$\nu=\f{geB}{4\pi m_e}$可知轨道频率不会随之改变。\\
+        \\
+        频率不相同，电子有两种进动，一种是绕$B$的轨道进动，一种是绕角动量$P$的自旋进动。在$L-S$耦合时，上面计算的$\nu=\f{geB}{4\pi m}$是电子绕$B$的轨道进动频率$\nu=\f{\mu B}{2\pi P}$，而电子的自旋进动频率为$\pm \ff{2}\mu_B$，与其不同。
+    \se{Q2}
+        假定电子是一个半径为$r_e$ 的带电小球，且其电荷均匀地分布在球体上。那么根据$W _ { e } = \frac { 1 } { 2 } \varepsilon E ^ { 2 }$，这样一个带电小球的电磁能量为： 
+        $$W _ {in} = \int _ { V _ { 1 } } W _ { e } \mathrm { d } \nu= \int _ { 0 } ^ { r_e } \frac { 1 } { 2 } \varepsilon _ { 0 }\left( \frac { re } { 4 \pi \varepsilon _ { 0 }  r_e ^ { 3 } } \right) ^ { 2 } \cdot 4 \pi r ^ { 2 } \mathrm { d } r= \frac { e ^ { 2 } } { 40 \pi \varepsilon _ { 0 }r_e }$$
+
+        $$W_{out}= \int _ { r_e } ^ { \infty } \frac { 1 } { 2 } \varepsilon _ { 0 } \left( \frac { e } { 4 \pi \varepsilon _ { 0 } r ^ { 2 } } \right) ^ { 2 } \cdot 4 \pi r ^ { 2 } \mathrm { d } r = \frac { e ^ { 2 } } { 8 \pi \varepsilon _ { 0 } r_e }$$
+        $$W=W_{in}+W_{out}=\frac { 3e ^ { 2 } } { 20 \pi \varepsilon _ { 0 } r_e }$$
+        借用质能关系，$W= m c^2$ ，电子的半径为： $$r_e = \frac{3e^2}{20\pi \varepsilon_0 m c^2} $$
+        球体的转动惯量：
+        $$I=\f{2mr_e^2}{5}$$
+        则其表面距转轴$r_e$处速度为：
+        $$v=\o r_e=\f{L}{I}r_e=\f{5\sqrt{3}h}{4\pi\cdot 2mr_e^2}r_e=\frac{25 \sqrt{3} c^2 \varepsilon_0 h}{6e^2}=1.48\e{11}m/s>>c$$
+        因此电子的自旋不能由经典的转动解释。
+    \se{Q3}
+        做圆周运动的电子会受到磁场给的洛伦兹力： 
+        $$F_L=-ev\tm B$$
+        设$r,B$夹角为$\t$，则电子所受瞬时力矩为：
+        $$M=r\tm F_L=-er\tm(v\tm B)=-e[(rB)v-(rv)B]=e(rB)\bm{v}=-eBr\bm{v}\cos\t$$
+        由于$\t$随时间改变，需要求一个周期内的平均力矩：
+        $$\bar{M}=\f{\int_0^TM\d \t}{2\pi}$$
+        根据维里定理：
+        $$\bar{M}=\f{M}{2}=-\ff{2}eBr\bm{v}\cos\t \qquad\qquad\qquad(1)$$
+        做圆周运动的电子会产生一个环形电流：
+        $$i=-\f{v}{2\pi r}e$$
+        定义电子磁矩：
+        $$\mu=i\bm{A}=i\cdot\pi r^2\bm{e}_A=-\f{evr}{2}\bm{e}_A$$
+        而
+        $$\mu\tm B=-\f{evr}{2}B\cos\t\label{eq2}\qquad\qquad\qquad\qquad(2)$$
+        上式(1),(2)右侧相等，因此$$\bar{M}=\mu\tm B$$
+    \se{Q4}
+        该态$J=1/2,L=2,S=3/2,m_j=\pm1/2$
+        根据g因子的计算式：
+        $$g=\f{3}{2}+\ff{2}\f{s(s+1)-l(l+1)}{j(j+1)}=0$$
+        因此$\mu_{J,z}=0$，又由于$J$自身不为0，电子总角动量$\mu$不为零。从矢量图的角度出发，说明$\mu$与$J$的方向垂直。也即这个状态的电子只有一个快进动，对外效果被平均掉抵消了，表现为没有有效磁矩。
+    \se{Q5}
+    \subsection{对于${}^2D_{3/2}$}
+        $l=2,j=3/2,s=1/2,m_j=\pm3/2,\pm1/2$,
+        \subsubsection{${}^2D_{3/2}$弱磁场}
+            $g=\frac{0.5 (0.5 1.5-2\ 3)}{1.5 2.5}+\frac{3}{2}=4/5 \ip \mu_{j,z}=-m_jg\mu_B=\pm\f{6}{5}\mu_B,\pm\f{2}{5}\mu_B$\\
+            能级能量差为：$U=-\mu B=\pm\dfrac{6}{5}\dfrac{e\hbar}{2m_e} B,\pm\dfrac{2}{5}\dfrac{e\hbar}{2m_e}B$\\
+            其能级图为：$$\begin{matrix}
+                \rule{50pt}{1pt}&  \dfrac{6}{5} &\dfrac{e\hbar}{2m_e} B\\
+                \rule{50pt}{1pt}& \dfrac{2}{5} &\dfrac{e\hbar}{2m_e} B\\
+                \rule{50pt}{1pt}&- \dfrac{2}{5} &\dfrac{e\hbar}{2m_e} B\\
+                \rule{50pt}{1pt}& -\dfrac{6}{5} &\dfrac{e\hbar}{2m_e} B
+            \end{matrix}$$
+        \subsubsection{${}^2D_{3/2}$强磁场}
+            $$U = - \boldsymbol { \mu } \cdot \boldsymbol { B } = \frac { e } { 2 m _ { \mathrm { e } } } \left( g _ { s } \boldsymbol { S } + g _ { l } \boldsymbol { L } \right) \cdot \boldsymbol { B }= \frac { e B } { 2 m _ { e } } \left( 2 S _ { z } + L _ { z } \right) = \frac { e \hbar B } { 2 m _ { e } } \left( 2 m _ { s } + m _ { L } \right)$$
+            $$\ip U = \frac { e B } { 2 m _ { e } } \left( 2 S _ { z } + L _ { z } \right) = \frac { e \hbar B } { 2 m _ { e } } \left( 2 m _s + m _ { L } \right)$$
+            要求$\Delta m _ { s } = 0 ; \Delta m _ { \mathrm { L } } = 0 , \pm 1$
+            $$\ip U=\pm\frac { e \hbar B } { 2 m _ { e } },0$$
+            其能级图为：$$\begin{matrix}
+                \rule{50pt}{1pt}& 1 & \dfrac{e\hbar}{2m_e} B\\
+                \rule{50pt}{1pt}& 0 & \dfrac{e\hbar}{2m_e} B\\
+                \rule{50pt}{1pt}& -1 & \dfrac{e\hbar}{2m_e} B
+            \end{matrix}$$
+    \subsection{对于${}^2P_{3/2}$}
+        $l=1,j=3/2,s=1/2,m_j=\pm3/2,\pm1/2$,
+        \subsubsection{${}^2P_{3/2}$弱磁场}
+            $g=3/2-1/6=4/3 \ip mg=\pm2,\pm2/3$\\
+            能级能量差为：$U=-\mu B=\pm2\dfrac{e\hbar}{2m_e} B,\pm2/3\dfrac{e\hbar}{2m_e}B$\\
+            其能级图为：$$\begin{matrix}
+                \rule{50pt}{1pt}& 2&\dfrac{e\hbar}{2m_e} B\\
+                \rule{50pt}{1pt}&2/3&\dfrac{e\hbar}{2m_e} B\\
+                \rule{50pt}{1pt}&-2/3&\dfrac{e\hbar}{2m_e} B\\
+                \rule{50pt}{1pt}&-2&\dfrac{e\hbar}{2m_e} B
+            \end{matrix}$$
+            \subsubsection{${}^2P_{3/2}$强磁场}
+            $$U = \frac { e B } { 2 m _ { e } } \left( 2 S _ { z } + L _ { z } \right) = \frac { e \hbar B } { 2 m _ { e } } \left( 2 m _s + m _ { L } \right)$$
+            要求$ \Delta  m _ { s } = 0 ; \Delta m _ { \mathrm { L } } = 0 , \pm 1$
+            $$\ip U=\pm\frac { e \hbar B } { 2 m _ { e } },0$$
+            其能级图为：$$\begin{matrix}
+                \rule{50pt}{1pt}& 1 & \dfrac{e\hbar}{2m_e} B\\
+                \rule{50pt}{1pt}& 0 & \dfrac{e\hbar}{2m_e} B\\
+                \rule{50pt}{1pt}& -1 & \dfrac{e\hbar}{2m_e} B
+            \end{matrix}$$
+            \se{Q6}
+                \subsection{强磁场}
+                此时近似为正常塞曼效应：\\
+                光子能量$$E=E_0+U_1-U_2$$
+                $U_1$为${}^2D_{3/2}$劈裂能级，共3种：
+                $$U_1=\pm\frac { e \hbar B } { 2 m _ { e } },0$$
+                $U_2$为${}^2P_{3/2}$劈裂能级，共3种：
+                $$U_2=\pm\frac { e \hbar B } { 2 m _ { e } },0$$
+                则由于选择规则，一共有三条线，位置分别为：
+                $$\nu=E/2\pi\hbar=\nu_0+\left\{\begin{matrix}
+                    \frac { e B } { 4\pi m _ { e } }\\
+                    0\\
+                    -\frac { e B } { 4\pi m _ { e } }
+                \end{matrix}\right.$$
+
+                \subsection{弱磁场}
+                此时为反常塞曼效应\\
+                光子能量$$E=E_0+U_1-U_2$$
+                $U_1$为${}^2D_{3/2}$劈裂能级，共4种：
+                $$U_1=\pm\dfrac{6}{5}\dfrac{e\hbar}{2m_e} B,\pm\dfrac{2}{5}\dfrac{e\hbar}{2m_e}B$$
+                $U_2$为${}^2P_{3/2}$劈裂能级，共4种：
+                $$U=\pm2\dfrac{e\hbar}{2m_e} B,\ \pm2/3\dfrac{e\hbar}{2m_e}B$$
+                则一共有16条线，位置分别为：
+                $$\nu=E/2\pi\hbar=\nu_0+\left\{\ar{
+                    16/5 & \dfrac{e}{4\pi m_e} B\\
+                    12/5 & \dfrac{e}{4\pi m_e} B\\
+                    28/15 & \dfrac{e}{4\pi m_e} B\\
+                    8/5 & \dfrac{e}{4\pi m_e} B\\
+                    16/15 & \dfrac{e}{4\pi m_e} B\\
+                    4/5 & \dfrac{e}{4\pi m_e} B\\
+                    8/15 & \dfrac{e}{4\pi m_e} B\\
+                    4/15 & \dfrac{e}{4\pi m_e} B\\
+                    -16/5 & \dfrac{e}{4\pi m_e} B\\
+                    -12/5 & \dfrac{e}{4\pi m_e} B\\
+                    -28/15 & \dfrac{e}{4\pi m_e} B\\
+                    -8/5 & \dfrac{e}{4\pi m_e} B\\
+                    -16/15 & \dfrac{e}{4\pi m_e} B\\
+                    -4/5 & \dfrac{e}{4\pi m_e} B\\
+                    -8/15 & \dfrac{e}{4\pi m_e} B\\
+                    -4/15 & \dfrac{e}{4\pi m_e} B\\
+                }\right.$$
+
+
+        
+
+\end{document}

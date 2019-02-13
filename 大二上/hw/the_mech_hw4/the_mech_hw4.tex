@@ -1,0 +1,78 @@
+\documentclass[UTF8,9pt]{ctexart}
+\usepackage{../../template/homeworkTEMP/hw}
+\setcounter{secnumdepth}{0}
+    \title{The 4th Homework of Theoretical Mechanics} 
+\begin{document} 
+\maketitle
+\section{Q1}
+    \sub{(i)}
+        绕点O定轴旋转的刚体受惯性力为：
+        $$ma=-m\dot{\o}\times r+m\o^2r$$
+        由达朗贝尔原理：
+        $$(F-ma)\delta r=(F+m\dot{\o}\times r-m\o^2r)\delta r=0$$
+        左乘$r$外积：
+        $$\ip (r\times F+m r\times(\dot{\o}\times r)-mr \times(\o^2r))\delta r=0$$
+        $$\ip r\times F-m\dot\o r^2=0$$
+        $$\ip M=I\dot\o$$
+    \sub{(ii)}
+        绕点O定点旋转的刚体受惯性力为：
+        $$ma=-m\dot{\o}\times r+m\o^2r-2m\o\times v$$
+        由达朗贝尔原理：
+        $$(F-ma)\delta r=(F+m\dot{\o}\times r-m\o^2r+2m\o\times v)\delta r=0$$
+        左乘$r$外积：
+        $$\ip (r\times F+m r\times(\dot{\o}\times r)-mr \times(\o^2r)+2mr\times(\o\times v))\delta r=0$$
+        $$\ip r\times F-m\bm{\dot\o} r^2-2m(r\cdot \dot r)\bm{\o}=0$$
+        $$\ip r\times F =\dt{(mr^2\o)} =\dt{L}$$
+
+\section{Q2}
+    取$F$作用点，约束方程为：
+    $$f=x^2+y^2-l_1^2=0$$
+    $$\ip F_x+\l\pp{f}{x}=0$$
+    $$ m_2g+\l\pp{f}{y}=0$$
+    $$\ip \l=\f{\sqrt{F^2+m_2^2g^2}}{2l_1}$$
+    $$x=-\f{F}{2\l},\ y=-\f{m_2g}{2\l}$$
+    $$R=\l\nabla f=(-F,-m_2g)$$
+\se{Q3}
+    \sub{(1)}
+        圆柱体质心：
+        $$x^2+y^2=(R-r)^2$$
+    \sub{(2)}
+        自由度为1, 广义坐标：$\t$
+    \sub{(3)}
+        $$T=\ff{2}m(\dot{\t}(R-r))^2+\ff{2}I(R\dot{\t}/r)^2$$
+        $$I=\ff{2}mr^2$$
+        $$V=-mg(R-r)\cos\t$$
+        $$\ip L=T-V=\ff{2}m(\dot{\t}(R-r))^2+\ff{4}m(R\dot{\t})^2+mg(R-r)\cos\t$$
+        $$\pp{L}{\t}=-mg(R-r)\sin\t$$
+        $$\pp{L}{\dot{\t}}=m\dot\t(R-r)^2+\ff{2}mR^2\dot\t$$
+        $$\dt{}\pp{L}{\dot{\t}}=m\ddot\t(R-r)^2+\ff{2}mR^2\ddot\t$$
+        $$\ip \ddot\t(R-r)^2+\ff{2}R^2\ddot\t=-g(R-r)\cos\t$$
+    \sub{(4)}
+        展开$V=-mg(R-r)\cos\t \approx -mg(R-r)(1-\f{\t^2}{2})$
+        $$\pp{L}{\t}=-mg(R-r)\t$$
+        $$\dt{}\pp{L}{\dot{\t}}=m\ddot\t(R-r)^2+\ff{2}mR^2\ddot\t$$
+        $$\ip\left( (R-r)^2+\ff{2}mR^2 \right)\ddot\t=-mg(R-r)\t $$
+        设$\o^2=\f{mg(R-r)}{(R-r)^2+\ff{2}mR^2}$，则有
+        $$\t=A\sin(\o t+\phi)$$
+        其中$A,\phi$取决于初速度和初始位置。
+\se{Q4}
+    由几何关系$\angle AOB=\pi/2$
+    $$I_{1}=\f{m_1r^2}{2}+\f{m_1r^2}{6}=\f{2}{3}m_1r^2$$
+    $$I_{2}=m_2r^2$$
+    $$T=\ff{2}I_{1}\o^2+\ff{2}I_{2}\o^2+\ff{2}(m_1+m_2)\o^2r^2$$
+    $$V=-m_1g\f{r}{\sqrt{2}}\cos\t$$
+    $$\ip L=\f{5}{6}m_1\o^2r^2+m_2\o^2r^2+m_1g\f{r}{\sqrt{2}}\cos\t$$
+    $$\pp{L}{\t}=-m_1g\f{r}{\sqrt{2}}\sin\t$$
+    $$\dt{}\pp{L}{\o}=\dt{}(\f{5}{3}m_1\o r^2+2m_2\o r^2)=\f{5}{3}m_1\ddot\t r^2+2m_2\ddot\t r^2$$
+    $$\ip -m_1g\f{\sin\t}{\sqrt{2}}=\f{5}{3}m_1\ddot\t r+2m_2\ddot\t r$$
+\se{Q5}
+    AB质心速度
+    $$v_{c2}=(\dot\t_1l\cos\t_1+\ff{2}\dot\t_2l\cos\t_2)^2+(\dot\t_1l\sin\t_1+\dot\t_2l\sin\t_2)^2$$
+    $$T=\ff{6}ml^2\dot\t_1^2+\ff{24}ml^2\dot\t_2^2+\ff{2}mv_{c2}^2$$
+    碰撞瞬间$\t_1=\t_2=0$:
+    $$T=\ff{6}ml^2\dot\t_1^2+\ff{24}ml^2\dot\t_2^2+\ff{2}m(\dot\t_1l+\ff{2}\dot\t_2l)^2$$
+    $$\pp{T}{\dot\t_1}=\f{4}{3}ml^2\dot\t_1+\ff{2}m\dot\t_2l^2=I_1=I\pp{x}{\t_1}=Il\cos\t_1 \approx Il$$
+    $$\pp{T}{\dot\t_2}=\f{1}{2}ml^2\dot\t_1+\ff{3}m\dot\t_2l^2=I_2=I\pp{x}{\t_2}=Il\cos\t_2 \approx Il$$
+    $$\ip \dot\t_1=-\f{6I}{7ml},\ \ \dot\t_2=\f{30I}{7ml}$$
+
+\end{document}

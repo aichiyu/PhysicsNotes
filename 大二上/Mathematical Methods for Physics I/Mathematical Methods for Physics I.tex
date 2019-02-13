@@ -1,0 +1,60 @@
+\documentclass[UTF8,9pt]{ctexart}
+\usepackage{../template/Notes/notes}
+\title{Mathematical Methods for Physics I}
+\begin{document}
+    \maketitle
+
+ 
+    \section{复数}
+    
+     
+    \begin{itemize}
+        \item De Moivre公式： 
+            $(\cos\theta+i\sin\theta)^n=\cos n\theta+i \sin n\theta$
+        \item $(z_1+z_2)^n=\sum C_n^k z_1^k z_2^{n-k}$ 
+        \item $\sqrt[n]{z}=\sqrt[n]{|z|} e^{i\frac{\rm{arg}\,z+2k\pi}{n}}$
+        \item $z_1 \perp z_2 \Leftrightarrow \Re(z_1\bar{z}_2)=0$
+        \item $$\mathrm{arg}z=\left\{\  
+            \begin{array}{lr}  
+                \arctan\dfrac{y}{x},&x>0, y>0, or \ y \leq 0,\\
+                \pi+\arctan\dfrac{y}{x},&x<0, y \geq 0,\\
+                -\pi+\arctan\dfrac{y}{x},&x<0, y <0,
+            \end{array}\right.$$
+        \item $f(z)$和$\overline{f(z)}$都解析时，$f(z)$必然为常数。
+        \item $f(z)$解析时，$\overline{f(\bar{z})}$也解析。
+        \item $z_1 \perp z_2$的充要条件为：$\Re(z_1z_2)=0$
+        \item 幂函数$z^{\frac{p}{q}}$是q值函数
+        \item 幂函数$z^{a}$当a是无理数或复数时是无穷多值函数。
+    \end{itemize}
+\section{解析函数}
+    C-R方程极坐标形式：
+    $$\begin{array}{lr}
+        \pp{u}{r}=&\frac{1}{r}\pp{v}{\theta}\\ 
+        \pp{v}{r}=&-\frac{1}{r}\pp{u}{\theta}
+    \end{array}$$
+\section{初等解析函数}
+    \begin{itemize}
+        \item 指数函数 $\exp(z) \equiv e^z$\\
+            $T=2k\pi i$
+        \item 对数函数 $\Ln z \equiv \ln|z|+i\arg z+2k\pi i$\\
+            对数函数主支：$\ln z \equiv \ln|z|+ i \arg z$\\
+            NOTICE:\\
+            $(e^x)^y \neq e^{xy}$\\
+            $z\ln a \neq \ln a^z$
+        \item 幂函数 $f=z^a$
+            $$f=z^a\left\{ \begin{array}{llr}
+                a = n                      & n   \in \mathbb{N} & \text{单值函数}\\
+                a = \frac{1}{n}            & n   \in \mathbb{N} & \text{n值函数}\\
+                a = \frac{n}{m}            & m,n \in \mathbb{N} & \text{n值函数}\\
+                a = \mathbb{C}/\mathbb{Q}  &                    & \infty \text{值函数}\\
+            \end{array}\right.$$
+        \item 三角函数 $sin(z), cos(z)$\\
+            $$\begin{array}{rl}
+                \sin(z) \equiv& \dfrac{e^{iz}-e^{-iz}}{2}\\
+                \cos(z) \equiv& \dfrac{e^{iz}+e^{-iz}}{2}\\
+                sh(z) \equiv& \dfrac{e^{z}-e^{-z}}{2}\\
+                ch(z) \equiv& \dfrac{e^{z}+e^{-z}}{2}\\
+            \end{array}$$
+            
+    \end{itemize}
+\end{document}

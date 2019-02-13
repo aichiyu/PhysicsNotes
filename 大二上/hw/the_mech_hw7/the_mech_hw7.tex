@@ -1,0 +1,44 @@
+\documentclass[UTF8,9pt]{ctexart}
+\usepackage{../../template/homeworkTEMP/hw}
+\setcounter{secnumdepth}{0}
+    \title{The 7th Homework of Theoretical Mechanics} 
+\begin{document} 
+\maketitle
+\section{Q1}
+$$L=\ff{2}mv_r^2+\ff{2}mr^2\dot\t^2-V(r)$$
+$$\dt{}\pp{L}{v_r}=ma_r,\quad \pp{L}{r}=mr\dot\t^2-\pp{V}{r}$$
+$$\dt{}\pp{L}{\dot\t}=mr(r\ddot\t+2\dot r\dot\t),\quad \pp{L}{\t}=0$$
+$$\ip ma_r=mr\dot\t^2-\pp{V}{r},\quad r\ddot\t+2\dot r\dot\t=0$$
+当满足平方反比，$\pp{V}{r}=-\f{k}{r^2}$.
+\se{Q2}
+$$[f,H]=\pp{f}{q_2}\pp{H}{p_2}-\pp{f}{p_1}\pp{H}{q_1}=2q_2p_1-2p_1q_2=0$$
+$$[g,H]=\pp{g}{q_1}\pp{H}{p_1}-\pp{g}{p_2}\pp{H}{q_2}=2q_1p_2-2p_2q_1=0$$
+\se{Q3}
+$$L=\ff{2}ma^2\dot\t^2+ma^2\dot\t\o\sin\t+\ff{2}m\o^2a^2\sin^2\t-mga\cos\t$$
+$$p=\pp{L}{\dot\t}=ma^2(\dot\t+\o\sin\t) \ip \dot\t=\f{p}{ma^2}-\o\sin\t$$
+$$L=\ff{2}ma^2(\f{p}{ma^2}-\o\sin\t)^2+ma^2\o\sin\t(\f{p}{ma^2}-\o\sin\t)+\ff{2}m\o^2a^2\sin^2\t-mga\cos\t$$
+$$H=p\dot q-L=\f{p^2}{2ma^2}-p\o\sin\t+mga\cos\t$$
+$$\ar{
+    \dot \t=\pp{H}{p}=&\f{p}{ma^2}-\o\sin\t\\
+    \dot p=-\pp{H}{\t}=&p\o\cos\t+mga\sin\t
+}$$
+$$\ip \ddot\t=g\sin\t/a+\o^2\sin\t\cos\t$$
+\se{Q4}
+$$H=\ff{2}mv_r^2+\ff{2}mr^2\dot\t^2-\f{k}{r}$$
+$$p_r=\pp{H}{v_r}=mv_r,\quad p_\t=mr^2\dot\t$$
+$$H=\f{p_r^2}{2m}+\f{p_\t^2}{2mr^2}-\f{k}{r}$$
+$$\left\{\ar{
+    v_r=&\f{p_r}{m}=v_r\\
+    \dot p_r=&mr\dot\t^2-\f{k}{r^2}=ma_r\\
+    \dot\t=&\f{p_\t}{mr^2}\\
+    \dot p_\t=&0
+}\right.$$
+$$\ip ma_r=mr\dot\t^2-\f{k}{r^2},\quad r\ddot\t+2\dot r\dot\t=0$$
+\se{Q5}
+$$p=\pp{U}{q}=mgQ \ip Q=p/mg$$
+$$P=-\pp{U}{Q}=mg(\ff{2}gQ^2+q)=\ff{2}mg^2\f{p^2}{m^2g^2}+mgq=\f{p^2}{2m}+mgq=H$$
+$$\ip \left\{\ar{
+    \dot Q=&1 \ip a=g\\
+    \dot P=&0 \ip \ff{2}m\dot q^2+mgq=h
+}\right.$$
+\end{document}

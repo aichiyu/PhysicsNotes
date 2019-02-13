@@ -1,0 +1,67 @@
+\documentclass[UTF8,9pt]{ctexart}
+\usepackage{../../template/homeworkTEMP/hw}
+\setcounter{secnumdepth}{0}
+    \title{The 4th Homework of Theoretical Mechanics} 
+\begin{document} 
+\maketitle
+\section{Q1}
+\sub{a}
+设$M$坐标$(x,0)$
+$$L= \ff{2}M\dot x^2 + \ff{2}m(b^2\dot\t^2+2b\dot\t\dot x+\dot x^2)- \f{mgb\t^2}{2}$$
+\sub{b}
+取坐标$b\t,x$
+$$\ar[ccc]{
+    a_{11}=m&a_{12}=m&a_{22}=M+m\\
+    b_{11}=mg/b&b_{12}=0&b_{22}=0\\
+}$$
+$$\ip \a=\f{M+m}{m},\quad \beta=0$$ 
+$$\ip q_1=b\t+\f{M+m}{m}x,\quad q_2=b\t$$
+\sub{c}
+$$x=(q_1-q_2)\f{m}{m+M}$$
+将简正坐标代入$L$：
+$$L=\f{m^2}{2(M+m)}\dot q_1^2+(\f{m}{2}-\f{m^2}{2(M+m)})\dot q_2^2-\f{mg}{2b}q_2^2$$
+代入拉格朗日方程
+$$\dot q_1=const$$
+$$q_2=A\sin(\sqrt{\f{b}{g}-\f{bm}{(M+m)g}}t+\phi),\quad A,\phi=any\ constant$$
+\section{Q2}
+$$L = \frac { 1 } { 2 } m e ^ { \alpha t } ( \dot { x }^2 -\omega ^ { 2 } x ^ { 2 } )$$
+\sub{1}
+代入拉格朗日方程
+$$0=\dt{}\pp{L}{\dot x}-\pp{L}{x}=m\ddot x e^{\a t}+m\dot x\a e^{\a t}+\o^2me^{\a t}x$$
+$$\ip \ddot x=-\o^2 x-\a \dot x$$
+\sub{2}
+$$p=\pp{L}{\dot x}=me^{\a t}\dot x$$
+$$H=p\dot x-L=\f{p^2}{me^{\a t}}-\f{p}{2}+\ff{2}me^{\a t}\o^2 x^2$$
+$$\ip \dot x=\f{p}{me^{\a t}},\dot p=-me^{\a t}\o^2x$$
+$$\ip \ddot x=\f{m\dot pe^{\a t}-m\a pe^{\a t}}{m^2e^{2\a t}}=-\o^2 x-\a \dot x$$
+\se{Q3}
+$$H=\ff{2}M(R\dot \t)^2+\ff{4}MR^2\dot\t^2+\ff{2}m((R\dot\t-R\dot\t\cos\t)^2+(R\dot\t\sin\t)^2)-mgR\cos\t$$
+$$=\ff{2}M(R\dot \t)^2+\ff{4}MR^2\dot\t^2+   mR^2\dot\t^2(1-\cos\t)-mgR\cos\t$$
+$$\pp{H}{\dot \t}=p=(\f{3}{2}M+2(1-\cos\t)m)R^2\dot\t$$
+$$\ip H=\f{p^2}{(3M+4m(1-\cos\t))R^2}-mgR\cos\t$$
+$$\dot\t=\pp{H}{p}=\f{2p}{(3M+4m(1-\cos\t))R^2}$$
+$$\dot p=-\pp{H}{\t}=\f{4mp^4R^2\sin\t}{(3M+4m(1-\cos\t))^2R^4}-mgR\sin\t$$
+\se{Q4}
+\sub{1}
+沿$OC$方向建x轴，小环受向外的离心力$m\o^2r$和垂直于圆圈的科里奥利力，科氏力被支持力抵消。
+$$a_\t=R\ddot\t=-\o^2r\sin\t$$
+\sub{2}
+$$L=\ff{2}mR^2\dot\t^2+ 2mR^2\dot\t\o\cos(\t/2)+2m\o^2R^2\cos^2(\t/2)$$
+$$\pp{L}{\dot\t}=mR^2\dot\t+ 2mR^2\o\cos(\t/2)$$
+$$\ip \dt{}\pp{L}{\dot\t}=mR^2\ddot\t- mR^2\o\sin(\t/2)\dot\t$$
+$$\pp{L}{\t}=-mR^2\dot\t\o\sin(\t/2)-2m\o^2R^2\cos(\t/2)\sin(\t/2)=-mR^2\dot\t\o\sin(\t/2)-m\o^2R^2\sin\t$$
+$$\ip \ddot\t=-\o^2\sin\t$$
+\sub{3}
+$$p=\pp{L}{\dot\t}=mR^2\dot\t+ 2mR^2\o\cos(\t/2)$$
+$$\ip H=p\dot\t-L=p(\f{p}{mR^2}-2\o\cos(\t/2))-\f{p^2}{2mR^2}$$
+$$\dot\t=\pp{H}{p}=\f{p}{mR^2}-\o\cos(\t/2)$$
+$$\dot p=-\pp{H}{\t}=-p\o\sin(\t/2)$$
+\se{Q5}
+受到离心力和科氏力，
+$$L=\ff{2}mv'^2+mv'(\o_0\times r')+\ff{2}m(\o_0\times r')^2-V$$
+$$p=\pp{L}{v'}=mv'+m(\o_0\times r') $$
+$$\ip L=\ff{2}m(\f{p}{m}-(\o_0\times r'))^2+m(\f{p}{m}-(\o_0\times r'))(\o_0\times r')+\ff{2}m(\o_0\times r')^2-V=\f{p^2}{2m}-V$$
+$$\ip H=pv'-L=\f{p^2}{2m}-p(\o_0\times r')+V$$
+$$\dot p=-\pp{H}{r'}=p\o_0-\pp{V}{r'}$$
+$$v'=\pp{H}{p}=p/m-\o_0\times r'$$
+\end{document}

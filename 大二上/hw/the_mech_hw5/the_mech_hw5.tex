@@ -1,0 +1,65 @@
+\documentclass[UTF8,9pt]{ctexart}
+\usepackage{../../template/homeworkTEMP/hw}
+\setcounter{secnumdepth}{0}
+    \title{The 4th Homework of Theoretical Mechanics} 
+\begin{document} 
+\maketitle
+\section{Q1}
+取广义坐标：C点坐标$x,y$, 圆盘位置及角度$\t,\phi$，以$C$为动系，
+$$L=\ff{2}m(b\dot\t)^2+\ff{4}m(r\dot\phi)^2+\ff{4}M(R\dot\t)^2-(M+m)\bm{r_{OC}}\dt{\bm{v_C}}$$
+$$=\ff{2}m(b\dot\t)^2+\ff{4}m(r\dot\phi)^2+\ff{4}M(R\dot\t)^2-(M+m)(x\ddot{x}+y\ddot{y})$$
+由能量守恒：
+$$E=\ff{2}M\sqrt{x^2+y^2}+\ff{4}MR^2\dot{\t}^2+\ff{2}m\sqrt{(x+b\cos\t)^2+(y+b\sin\t)^2}+\ff{4}mr^2\dot\phi^2=const$$
+由角动量守恒:
+$$J=\ff{2}MR^2\dot\t+\ff{2}mr^2\dot\phi+mb^2\dot\t=const$$
+由动量守恒：
+$$P_x=(M+m)\dot{x}+mb\t\cos\phi=const$$
+$$P_y=(M+m)\dot{y}+mb\t\sin\phi=const$$
+\se{Q2}
+$$T=\ff{2}m(l\dot\t)^2+\ff{4}mr^2\left(\f{r+l}{r}\dot\t\right)^2+\ff{2}ml^2\dot\t^2$$
+$$=\left(\ff{4}r^2+\ff{2}rl+\f{5}{4}l^2\right)m\dot\t^2$$
+$$V=\ff{2}k\left({l\sin\t}\right)^2 \approx \ff{2}kl^2\t^2$$
+$$L=\left(\ff{4}r^2+\ff{2}rl+\f{5}{4}l^2\right)m\dot\t^2 - \ff{2}kl^2\t^2$$
+$$\ip \pp{L}{\t}=-kl^2\t = \dt{}\pp{L}{\dot\t}=\left(\ff{2}r^2+rl+\f{5}{2}l^2\right)m\ddot\t$$
+设$$\o^2=\f{m(\ff{2}r^2+rl+\f{5}{2}l^2)}{kl^2}$$
+则运动为：
+$$\t=A\sin(\o t+\phi)$$
+其中$A,\phi$由初始条件决定，周期$$T=\f{2\pi}{\o}=2\pi\sqrt{\f{kl^2}{m(\ff{2}r^2+rl+\f{5}{2}l^2)}}$$
+\se{Q3}
+在$\t_1=\t_2=0$附近：
+$$L=MR^2\dot\t_1^2+\ff{2}mR^2(\dot\t_1^2+2\dot\t_1\dot\t_2+\dot\t_2^2)+\ff{2}MgR\t_1^2+\ff{2}mgR\t_1^2+\ff{2}mgR\t_2^2$$
+式中：
+$$\ar[lll]{
+    a_{11}=\f{(2M+m)R^2}{2} & a_{12}=\f{mR^2}{2} & a_{22}=\ff{2}mR^2\\
+    b_{11}=\ff{2}(M+m)gR & b_{12}=0 & b_{22}=\ff{2}mgR
+}$$
+求解久期方程：
+$$\left(\f{M+m}{2}gR-\f{2M+m}{2}R^2\o^2\right) \left(\ff{2}mgR-\ff{2}mR^2\o^2\right) =\left( -\f{mR^2}{2}\o^2 \right)^2$$
+$$\ip \o_1^2=\f{g}{2R},\qquad \o_2^2=\f{m+M}{M}\f{g}{R}$$
+
+\se{Q4}
+设杆角速度为$\o,A(x_A,y_A),B(x_B,y_B),C(x_C,y_C)$，其中$\o=\dot\t$为常数，有$x_C=x_B-\ff{2}l\cos\o t$
+%$$\bm{v}_A=\bm{v}_c+\bm{\o\times r_{CA}}$$
+%$$\bm{v}_B=\bm{v}_c+\bm{\o\times r_{CB}}$$
+%$$\ip$$
+%$$\dot x_A=\dot x_C+\o(y_C-y_A)=\dt{}(x_B-l\cos\o t)=\dot x_C+\ff{2}\o l\sin\o t$$
+%$$\dot y_A=\dot y_C+\o(x_A-x_C)=\dt{}(y_B-l\sin\o t)=\dot y_C-\ff{2}\o l\cos\o t$$
+%$$\dot x_B=\dot x_C+\o(y_C-y_B)=\dot x_C-\ff{2}\o l\sin\o t$$
+%$$\dot y_B=\dot y_C+\o(x_B-x_C)=\dot y_C+\ff{2}\o l\cos\o t$$
+$$\f{\dot y_C}{\dot x_C}=\tan\o t=\f{\dot y_A+\dot y_B}{\dot x_A+\dot x_B}$$
+
+代入$\dot x_B=\dot x_A-l\sin\o t$，$\dot y_B=\dot y_A+l\cos\o t$
+$$\ip \f{2\dot y_A+l\cos\o t}{2\dot x_A-l\sin\o t}=\tan\o t$$
+回代：
+$$\ip \f{2\dot y_B-l\cos\o t}{2\dot x_B+l\cos\o t}=\tan\o t$$
+\se{Q5}
+设质点距$y$轴水平距离为$r$，抛物线为$y=ar^2$
+$$T=\ff{2}mv^2$$
+$$v^2=v_r^2+v_y^2$$
+$$v_r=r\o,\ v_y=\dt{}(ar^2)=2arv_r$$
+$$\ip T=\ff{2}mr^2\o^2(1+4a^2r^2)$$
+$$V=mgy$$
+$$E=T+V=\ff{2}m\o^2(r^2+4a^2r^4)+mgy=const$$
+$$\dt{E}=0 \ip \o^2+8a^2r^2\o^2+2ga=0$$
+$$\ip r=-\f{2ga+\o^2}{8a^2\o^2}$$
+\end{document}

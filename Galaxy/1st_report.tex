@@ -1,0 +1,131 @@
+\documentclass[UTF8,9pt]{ctexart}
+\usepackage{../template/Notes/notes}
+\usepackage[colorlinks,linkcolor=red]{hyperref}
+\title{$1^{st}$ Report}
+\begin{document} 
+\maketitle 
+\se{Chapter 3: The orbit of the stars}
+\sub*{3.1 motion under gravity}
+Definition:
+$$\ar{
+    \Phi(x)=&-\sum_{x \neq x_a}\f{Gm_a}{|x-x_a|}\\
+    F(x)=&-\nabla\Phi(x)\\
+    \nabla^2\Phi(x)=&4\pi G\rho(x)\\
+    \mathcal{E}=\mathcal{KE}+\mathcal{PE }=&\ff{2}mv^2+m\Phi
+}$$
+for a point mass:  
+$$\f{v^2}{r}=\f{GM(<r)}{r^2}$$
+it implies that \emph{angular speed} $\o=v/r=const$, if $\rho=const$\\
+\putfig{0.3 }{4.jpg}
+for a spherical galaxy:
+$$\Phi(r)=-\left[\f{GM(<r)}{r}+4\pi G\int_r^\infty\rho(r')r'\d r'\right]$$
+a star can escape iff $\mathcal{E}>0$, which means $v^2>v_e^2=-2\Phi$, here $v_e$ is \emph{escape speed}.\\
+\emph{virial theorem}:\\
+ $2\left<\mathcal{KE}\right>+\left<\mathcal{PE}\right>+\sum\left<F_{ext}x\right>=0$ for a long time average, with $F_{ext}$ from another galaxy.\\
+cluster's core radius $r_c$ is where the measured surface brightness $I(x)$ fallen to half its central value.\\
+and: $\mathcal{PE}=-GM^2/(2\eta r_c)$ for $\eta \approx 1$, combine with \emph{virial theorem}, we have:
+$$M=6\eta\sigma_r^2r_c/G,\quad \sigma^2_r=\left<v_r^2\right>$$
+If we write $L_{tot}=4\pi r_c^2I(0)/3$, and take $\sigma_r(0)$, then
+$$\f{M}{L} \approx \f{9}{2\pi}\f{\sigma_r^2(0)}{GI(0)r_c}$$
+\sub*{3.2 two-body relaxation}
+\putfig{0.5}{2.png}
+$$\Phi(x)=\text{smooth potential+steep potential near star}$$
+\subsubsection*{Strong encounter:}
+we say a \emph{Strong encounter} happened if change of potential energy $\geq$ kinetic energy:
+\begin{center}
+    $\f{Gm^2}{r} \geq \f{mv^2}{2}$, which means $r \leq r_s=\f{2Gm}{v^2}$\\
+\end{center}
+we call $r_s$ the \emph{strong-encounter radius}.
+time between strong encounter is $10^{15} $ years for sun, thus it's only important in the dense cores.
+\subsubsection*{Weak encounter:}
+\putfig{0.5}{1.png}
+$$F_{\perp}=\f{GmMb}{(b^2+v^2t^2)^{3/2}}=M\dt{v_\perp}$$
+$$\D v_\perp=\ff{M}\int_{-\infty}^\infty F_\perp (t)\d t=\f{2Gm}{bv}$$
+Weak encounter happened for $b \gg \frac{2G(m+M)}{v^2}$, \\
+after time t, define $\Lambda=\f{b_{max}}{b_{min}}$:
+$$\left<\D v_\perp^2\right>=\int_{b_{min}}^{b_{max}}nvt(\f{2Gm}{bv})^22\pi b\ \d b=\f{8\pi G^2m^2nt}{v}\ln\Lambda$$
+If $\left<\D v_\perp^2\right>=v^2$, $t=t_{relax}$, it's initial path has been lost. Relaxation time is much shorter than strong encounter time, $\approx 10^{15}$ year for sun, so pulls of individual stars can be ignored for star like sun.\\
+In an cluster of $N$ stars with mass $m$ moving at $v$, separation between stars=$R/2$.
+$$\ff{2}Nmv^2 \approx \f{G(Nm)^2}{2R},\quad so\ \Lambda=\f{R}{r_s}=\f{N}{2}$$
+\subsubsection*{Two-body relaxation:}
+Stars exchange $\mathcal{KE} \& \mathcal{PE}$ so it is a \emph{Maxwellian distribution}.
+$$f_M(\mathcal{E}) \propto  \exp(\f{-\mathcal{E}}{k_BT})=\exp\left\{-\left[m\Phi(x)+\f{mv^2}{2}\right]\bigg/(k_BT)\right\}$$
+and:
+$$\ff{2}m\left<v^2\right>=\f{3}{2}k_BT$$
+If $v>v_e(\mathcal{E}>0)$, it will vaporate: 
+$$\left<\ff{2}mv_e^2\right>=-\f{2}{N}\mathcal{PE}=\f{4}{N}\mathcal{KE}$$
+those $v>v_e$ are about 1/136. Because every star has the same $T$. $M\uparrow, v\downarrow$, so massy stars goes into core, tend to lose energy, and light stars diffuse outer halo. \\
+$\mathcal{E}$ satisfies:
+$$\dt{\mathcal{E}}=-\f{3}{2}Nk_B<0$$
+larger $\mathcal{E}$ has smaller $T$.
+\sub*{3.3 Epicycles}
+Consider smooth part now.\\
+For axisymmetric galaxy, $\pp{\Phi}{\phi}=0,\quad L_z=R^2\dot{\phi}=const$, 
+\subsubsection*{R direction:}
+from $a_r=\ddot{r}-r\dot{\phi}^2$, we have:
+$$\ddot{R}=R\dot{\phi}^2-\pp{\Phi}{R}=-\pp{\Phi_{\text{eff}}}{R}=-R_g\Omega^2,\quad  \Phi_{\text{eff}}=\Phi(R,z)+\f{L_z^2}{2R^2}$$
+\putfig{0.5}{3.png}
+Here $\Phi_{\text{eff}}$ prevent a star coming closer to $R=0$.
+\subsubsection*{z direction:}
+$$\ddot{z}=-\pp{\Phi_{\text{eff}}}{z}=-\Phi'(0)-z\Phi''(0)$$
+For $\Phi'(0)=0$, it has solution: $$z=Z\cos(\nu t+\t)$$
+\subsubsection*{disturbance:}
+With some disturbance, the motion follows an elliptical \emph{epicycle} around its \emph{guiding center}, which moves with $\Omega$ in $R_g$. Set $R=R_g+x$, similarly, because $$
+\ar[rll]{
+    \ddot{R}&=-R_g\Omega^2&=-\pp{\Phi}{R}(R_g,z=0)\\
+    =\ddot x&&=-\Phi'(R_g)-x\Phi''(R_g)
+}$$
+For $\Phi'(R)=0$, $\Phi''(R_g)=\dd{R_g\Omega^2}{R}$, it has solution: 
+$$x=X\cos(\kappa t+\psi)$$
+$$\kappa^2=\Phi''(R_g)=\dd{R\Omega^2}{R}+\f{3L_z^2}{R^4}=-4B\Omega$$
+Here $B$ is Oort constant. When $B<0,\ \kappa^2>0$, it's stable. Near a static black hole of mass $M$, the last stable circular orbit is at $R=6GM/c^2$. \\
+In field of a point mass,$\kappa=\Omega$, and within a sphere of uniform density,$\kappa=2\Omega$, real galaxy is between those two so $\Omega<\kappa<2\Omega$.\\
+The equation below gives its relative speed $v_y$:
+$$v_y=R_0\left[\dot\phi-\Omega(R_0)\right]-\f{\kappa^2 x}{2\Omega}$$
+Take an average:
+$$\left<v_t^2\right>=(\f{\kappa^2}{2\Omega})^2\left<x^2\right>=\f{\kappa^2}{4\Omega^2}\left<v_x^2\right>$$
+ Since $\kappa<2\Omega$, $\left<v_y^2\right><\left<v_x^2\right>$. 
+\sub*{3.4 Collisionless Boltzmann equation}
+Assume all stars have the same mass $m$. The \emph{distribution equation} $f(x,v,t)$ gives probability of $(x,v)$.
+$$\pp{f}{t}+v\nabla f-\nabla\Phi\cdot\pp{f}{v}=0$$
+By setting $\left<v^2\right>+\left<v\right>^2+\sigma^2$
+$$\pt{\left<v\right>}+\left<v\right>\pp{\left<v\right>}{x}=-\pp{\Phi}{x}-\ff{n}\pp{}{x}(n\sigma^2)$$
+If $\Phi, f, n$ are time-steady, this equation becomes
+$$0=-\pp{\Phi}{x}-\ff{n}\pp{}{x}(n\sigma^2)$$
+and if $\rho, \Phi$ is not depend on $\phi$.
+$$4\pi G\rho=\nabla^2\phi=\dd{}{z}\left[-\ff{n(z)}\dd{}{z}(n(z)\sigma_z^2)\right]+\ff{R}\dd{v^2}{R}$$
+\subsubsection*{Integrals of motion:}
+$$\dt{f}=\pt{f}+v\pp{f}{x}+\pp{v}{t}\pp{f}{v}=0$$
+For example, $f=E_z$, we could take
+$$f(E_z)=\f{n_0}{\sqrt{2\pi\sigma^2}}\,\exp(-E_z/\sigma^2) \text{ for } E_z<0$$
+$$n(z)=n_0\,\exp(-\Phi(R_0,z)/\sigma^2)$$
+\se{Gaia 2DR}
+\sub*{3.1-3.4}
+文章以银心为原点的坐标系，按方位角$\phi$和高度$z$分区，以太阳为图像中心，银河顺时针旋转。
+\subsubsection*{$V_R$}
+Fig.10, Fig.C.1.显示$V_R<0$的区域有一个半圆的形状
+Fig.12.U形分布，在$R=9kpc,\ V_R<0$，说明这里大多数星体在向内运动，当$R=1-2kpc$，大多数星体向外运动。在$\phi<0$的地方不仅是U形分布，而像是有一个震荡。以前的研究显示Gaia DR2的$V_R$在kpc尺度上震荡是很明显的。在$\phi<0,\ R=9kpc,\ |z|\leq0.6-0.8kpc$处$V_R$为负。
+\subsubsection*{$V_\phi$}
+Fig.13.显示$V_\phi$随着$R$从$4-13.2kpc$增加而快速增大至$230kms^{-1}$，随后保持平稳。在$Z=0周围$$V_\phi$最快到达最大值。在$R=12kpc$处大多数曲线都集中在一个较小的区域。同时从Fig.10.也可以看出$V_\phi$随着$z,R$增大而减小l，这个现象可以用对Z不对称的漂移来解释，也可能是因为厚盘和薄盘的新旧恒星比例不同。除了大尺度的变化以外，还伴随约1kpc为周期的小尺度的震荡。\\
+\subsubsection*{$V_Z$}
+Fig.14.显示$R$越大$V_Z$越大，但不同的曲线之间差别很大。\\
+Fig.15.显示$V_Z$的规律不关于$\phi$对称，在$\phi<15, Z$大的位置和$\phi>15, Z$小的位置$V_Z$取到较大负值，$\phi>15, Z$大的位置$V_Z$取到较大正值。\\
+\\
+Fig.20.显示在两个悬臂处$V_\phi$负的最多，悬臂之间速度$V_\phi$为最大正值。\\
+Fig.22.显示在太阳附近有运动学子结构。有3个位置(V=-38,-50,-70km/s)恒星密度有极小值。
+\se{A dynamically young and perturbed Milky Way disk}
+结论：$Z-V_Z$空间具有snail shells and ridges（蜗牛壳和脊）结构，银河在3-9亿年前发生了扰动，phase-mixing仍在进行中。这个结论基于toy model，仍然缺乏自洽性。\\
+螺旋分布的密度随螺旋的前沿而增加。且用颜色表示$V_Z,\ V_R$时螺旋形状都保持存在，说明几种方向的速度存在某种强烈的相关性。\\
+建模：垂直方向势能为非简谐振动。$\nu=\nu(A,R)$。恒星运动的$Z,\ V_Z$为轨道相位$\phi$的简谐振动:$Z=A\cos\phi(t)$. $\phi$是沿着$Z-V_Z$投影的顺时针方向的一个椭圆形。\\
+随着时间推移，螺旋形会缠绕地越来越紧密，最终应该会会紧密到无法分辨螺旋形以至于变成一种平滑的形状，银河系还没有到达这种状态，因此相位混合还正在进行中。\\
+这个模型中这个螺旋形还可以决定:\\
+    1. 决定竖直频率的势能的形状。\\
+    2. 相混合开始时间（3-9亿年前）。\\
+    3. 使圆盘进入非平衡状态的扰动类型（初始条件）。\\
+杆和旋臂可以通过共振轨道结构产生对角线脊，在稳定和不稳定轨道的相空间中形成区域，从而产生大密度和间隙。相位混合的玩具模型(图3b)和包含一根棒状物的星系势的圆盘模拟(图3c)都显示出几个对角脊。将这种分离与我们的玩具模型进行比较(参见Method)表明，如果这些脊是由单个微扰引起的相位混合引起的，那么它发生的时间应该比引起垂直混合的微扰早？。这与利用局部速度平面上拱门间距(7)得出的时间一致，也与一组在垂直方向上似乎不是完全相位混合的共动恒星的存在(18)一致，这表明另一个扰动大约发生在2 Gyr之前。
+\se{The echo of the bar buckling: phase-space spirals in Gaia DR2}
+内部过程、外部潮汐和局域星系盘摄动是导致太阳邻域观测到的相空间混合过程的主要物理因素，但我们尚不清楚是哪一个因素导致了观测到的相空间偏离平衡态。本文说明相空间螺旋是由恒星棒的屈曲所驱动的垂直振动自然发展而来。相空间的包裹导致在整个圆盘上形成各种形态的图案，这取决于棒状物的方向、到星系中心的距离以及棒状物屈曲后的时间。\\
+在$0.5-1\ Gyr$之间，bar变得不稳定且弯曲,形成了一个方形的结构$(Fig.1.)$，方形结构会扰动外围的结构。在杆体生长的早期线性阶段$(<0.5\ Gyr)$，模型在所有半径下都是稳定的。然而，一旦圆盘开始弯曲，棒的强度下降，圆盘的中心出现弯曲波，bar周围形成钟状结构，然后传播到更远的星系边缘。弯曲的bar可以持续很长一段时间——在太阳半径处持续超过10个旋转周期——并且它可以在$(Z,V_Z)$相空间可被观测到。在这个机制的作用下，通过圆盘传播的弯曲波抑制了相空间中的混合过程。\\
+令人惊讶的是，在方形结构结束后，在太阳附近区域$(T > 1.5\ Gyr)$后期仍然可以看到相空间螺旋。其原因是，在我们的模型中，即使在初始源(杆的屈曲)消失后，杆驱动的弯曲波也不会消散，而类似于织构的扰动会在圆盘中持续数十个旋转周期(最多4 Gyr)。弯曲波(见图2)不是运动学的，因为它们在动态时间尺度上不耗散。
+
+\end{document}

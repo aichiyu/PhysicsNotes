@@ -1,0 +1,58 @@
+\documentclass[UTF8,9pt]{ctexart}
+\usepackage{../template/Notes/notes}
+\title{ElectroDynamics}
+\begin{document}
+\maketitle
+\se{方程}
+真空麦克斯韦方程 
+$$\ar[rclrcll]{
+    \nabla\cdot\bm{E}&=&\f{\rho}{\epsilon_0}&\qquad \oiint_S\bm{E}\d \bm{s}&=&\f{Q}{\epsilon_0}&\text{高斯定律}\\
+    \nabla\cdot\bm{B}&=&0&\qquad \oiint_S\bm{B}\d \bm{s}&=&0&\text{高斯磁定律}\\
+    \nabla\times\bm{E}&=&-\pt{\bm{B}}&\qquad \oint_L\bm{E}\d \bm{l}&=&-\dt{\Phi_B}&\text{法拉第电磁感应定律}\\
+    \nabla\times\bm{B}&=&\mu_0\bm{J}+\mu_0\epsilon_0 \pt{\bm{E}}&\qquad \oint_L\bm{B}\d \bm{l}&=&\mu_0I+\mu_0\epsilon_0\dt{\Phi_E}\quad &\text{安培定律}
+}$$
+物质内麦克斯韦方程
+$$\ar[rclrcll]{
+    \nabla\cdot\bm{D}&=&\rho_f&\qquad \oiint_S\bm{D}\d \bm{s}&=&Q_f&\text{高斯定律}\\
+    \nabla\cdot\bm{B}&=&0&\qquad \oiint_S\bm{B}\d \bm{s}&=&0&\text{高斯磁定律}\\
+    \nabla\times\bm{E}&=&-\pt{\bm{B}}&\qquad\quad\qquad \oint_L\bm{E}\d \bm{l}&=&-\dt{\Phi_B}&\text{法拉第电磁感应定律}\\
+    \nabla\times\bm{H}&=&\bm{J}_f+\pt{\bm{D}}&\qquad \oint_L\bm{H}\d \bm{l}&=&I_f+\dt{\Phi_D}\quad\qquad &\text{安培定律}
+}$$
+边界条件（当无电流和自由电荷）
+$$\ar[rcl|rcl]{
+    H_{1\parallel}&=&H_{2\parallel}&E_{1\parallel}&=&E_{2\parallel}\\
+    B_{1\perp}&=&B_{2\perp}&D_{1\perp}&=&D_{2\perp}
+}$$
+洛伦兹力：$$\ar{
+    \bm{F}=&q\bm{E}+q\bm{v}\times\bm{B}\\
+    \bm{f}=&\rho\bm{E}+\bm{J}\times\bm{B}
+}$$
+电磁场：
+$$\bm{S}=\bm{E}\times\bm{H}$$
+$$w=\ff{2}(\bm{E\cdot D}+\bm{H\cdot B})$$
+电流：
+$$\nabla\cdot J=-\pt{\rho}$$
+$$J=\sigma E$$
+毕奥——萨伐尔定律  $B=\frac{\mu_0}{4\pi}\int\frac{I\d l\times \bm{e}_r}{r^2}$，若$I$为直线，$B=\f{\mu_0Il}{4\pi r^2}$\\
+电磁波：
+$$\ar[rcl|rcl]{
+    \bm{\nabla}\times \bm{B}-\ff{c^2}\pt{\bm{E}}&=&0\quad&\quad \bm{\nabla^2 E}-\ff{c^2}\pt[2]{\bm{E}}=\square \bm{E}&=&0\\
+    \bm{\nabla}\times \bm{E}+\pt{\bm{B}}&=&0&\bm{\nabla^2 B}-\ff{c^2}\pt[2]{\bm{B}}=\square \bm{B}&=&0
+}$$
+磁矢势：\\
+库仑规范：
+$$\ar[rcl]{
+    \bm{\nabla}\cdot \bm{A}&=&0\\
+    \nabla^2 \phi&=&-\f{\phi}{\epsilon_0}\\
+    \bm{\square A}&=&-\mu_0\bm{J}+\ff{c^2}\nabla\pt{\phi}
+}$$
+洛伦兹规范：
+$$\ar[rcl]{
+    \bm{\nabla}\cdot\bm{A}+\ff{c^2}\pt{\phi}&=&0\\
+    \square \phi&=&-\f{\rho}{\epsilon_0}\\
+    \bm{\square A}&=&-\mu_0\bm{J}
+}$$
+\se{数学}
+$$\nabla^2\psi=\ff{r^2\sin\t}\left[\sin\t\pp{}{r}(r^2\pp{\psi}{r})+\pp{}{\t}(\sin\t\pp{\psi}{\t})+\ff{\sin\t}\pp[2]{\psi}{\phi}\right]$$
+$$\nabla\cdot(F\times G)=(\nabla\times F)\cdot G-F\cdot(\nabla\times G)$$
+\end{document}

@@ -1,0 +1,18 @@
+\documentclass[UTF8,9pt]{ctexart}
+\usepackage{tikz}
+\usetikzlibrary{positioning}
+\tikzset{>=stealth}
+\begin{document}
+\begin{tikzpicture}[node distance = 1.5cm]
+    $$
+    \begin{matrix}
+        &  & G &  & \\ 
+        & \node (test){T}; &  & P & \\ 
+       F &  &  &  &H \\ 
+        & V &  & \node (testDesc) [above right = of test] {Yes, you are!}; & \\ 
+        &  & U &  & 
+       \end{matrix}
+    $$
+    \draw [->,thick] (testDesc) to [in = 60, out = -120] (test);
+\end{tikzpicture}
+\end{document}
