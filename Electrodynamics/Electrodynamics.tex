@@ -8,15 +8,15 @@
 $$\ar[rclrcll]{
     \nabla\cdot\bm{E}&=&\f{\rho}{\epsilon_0}&\qquad \oiint_S\bm{E}\d \bm{s}&=&\f{Q}{\epsilon_0}&\text{高斯定律}\\
     \nabla\cdot\bm{B}&=&0&\qquad \oiint_S\bm{B}\d \bm{s}&=&0&\text{高斯磁定律}\\
-    \nabla\times\bm{E}&=&-\pt{\bm{B}}&\qquad \oint_L\bm{E}\d \bm{l}&=&-\dt{\Phi_B}&\text{法拉第电磁感应定律}\\
-    \nabla\times\bm{B}&=&\mu_0\bm{J}+\mu_0\epsilon_0 \pt{\bm{E}}&\qquad \oint_L\bm{B}\d \bm{l}&=&\mu_0I+\mu_0\epsilon_0\dt{\Phi_E}\quad &\text{安培定律}
+    \nabla\times\bm{E}&=&-\pt{\bm{B}}&\qquad \oint_L\bm{E}\d \bm{l}&=&-\dt{\varphi_B}&\text{法拉第电磁感应定律}\\
+    \nabla\times\bm{B}&=&\mu_0\bm{J}+\mu_0\epsilon_0 \pt{\bm{E}}&\qquad \oint_L\bm{B}\d \bm{l}&=&\mu_0I+\mu_0\epsilon_0\dt{\varphi_E}\quad &\text{安培定律}
 }$$
 物质内麦克斯韦方程
 $$\ar[rclrcll]{
     \nabla\cdot\bm{D}&=&\rho_f&\qquad \oiint_S\bm{D}\d \bm{s}&=&Q_f&\text{高斯定律}\\
     \nabla\cdot\bm{B}&=&0&\qquad \oiint_S\bm{B}\d \bm{s}&=&0&\text{高斯磁定律}\\
-    \nabla\times\bm{E}&=&-\pt{\bm{B}}&\qquad\quad\qquad \oint_L\bm{E}\d \bm{l}&=&-\dt{\Phi_B}&\text{法拉第电磁感应定律}\\
-    \nabla\times\bm{H}&=&\bm{J}_f+\pt{\bm{D}}&\qquad \oint_L\bm{H}\d \bm{l}&=&I_f+\dt{\Phi_D}\quad\qquad &\text{安培定律}
+    \nabla\times\bm{E}&=&-\pt{\bm{B}}&\qquad\quad\qquad \oint_L\bm{E}\d \bm{l}&=&-\dt{\varphi_B}&\text{法拉第电磁感应定律}\\
+    \nabla\times\bm{H}&=&\bm{J}_f+\pt{\bm{D}}&\qquad \oint_L\bm{H}\d \bm{l}&=&I_f+\dt{\varphi_D}\quad\qquad &\text{安培定律}
 }$$
 边界条件（当无电流和自由电荷）
 $$\ar[rcl|rcl]{
@@ -43,16 +43,33 @@ $$\ar[rcl|rcl]{
 库仑规范：
 $$\ar[rcl]{
     \bm{\nabla}\cdot \bm{A}&=&0\\
-    \nabla^2 \phi&=&-\f{\phi}{\epsilon_0}\\
-    \bm{\square A}&=&-\mu_0\bm{J}+\ff{c^2}\nabla\pt{\phi}
+    \nabla^2 \varphi&=&-\f{\varphi}{\epsilon_0}\\
+    \bm{\square A}&=&-\mu_0\bm{J}+\ff{c^2}\nabla\pt{\varphi}
 }$$
 洛伦兹规范：
 $$\ar[rcl]{
-    \bm{\nabla}\cdot\bm{A}+\ff{c^2}\pt{\phi}&=&0\\
-    \square \phi&=&-\f{\rho}{\epsilon_0}\\
+    \bm{\nabla}\cdot\bm{A}+\ff{c^2}\pt{\varphi}&=&0\\
+    \square \varphi&=&-\f{\rho}{\epsilon_0}\\
     \bm{\square A}&=&-\mu_0\bm{J}
 }$$
 \se{数学}
-$$\nabla^2\psi=\ff{r^2\sin\t}\left[\sin\t\pp{}{r}(r^2\pp{\psi}{r})+\pp{}{\t}(\sin\t\pp{\psi}{\t})+\ff{\sin\t}\pp[2]{\psi}{\phi}\right]$$
+\sub{Cylindrical coordinates $(\rho,\phi,z)$}
+$$\nabla \varphi = \hat e_1 \frac { \partial \varphi } { \partial \rho } + \hat e_2 \frac { 1 } { \rho } \frac { \partial \varphi } { \partial \phi } + \hat { e } _ { 3 } \frac { \partial \varphi } { \partial z }$$
+$$\nabla \cdot \vec { A } = \frac { 1 } { \rho } \frac { \partial ( \rho A _ { 1 } ) } { \partial \rho } + \frac { 1 } { \rho } \frac { \partial A _ { 2 } } { \partial \phi } + \frac { \partial A _ { 3 } } { \partial z }$$
+$$ { \nabla \times \vec { A } } =\hat e_1 (\ff{\rho} \frac { \partial A_3} { \partial \phi } - \frac { \partial A _ { 2 } } { \partial z } ) + \hat { e } _ { 2 } ( \frac { \partial A _ { 1 } } { \partial z } - \frac { \partial A _ { 3 } } { \partial \rho } ) + \hat { e } _ { 3 } \frac { 1 } { \rho } ( \frac { \partial ( \rho A _ { 2 } ) } { \partial \rho } - \frac { \partial A _ { 1 } } { \partial \phi } )$$
+$$\nabla ^ { 2 } \varphi = \frac { 1 } { \rho } \frac { \partial } { \partial \rho } ( \rho \frac { \partial \varphi } { \partial \rho } ) + \frac { 1 } { \rho ^ { 2 } } \frac { \partial ^ { 2 } \varphi } { \partial \phi ^ { 2 } } + \frac { \partial ^ { 2 } \varphi } { \partial z ^ { 2 } }$$
+\sub{Spherical coordinates $(r,\t,\varphi)$ }
+$$\nabla \varphi = \hat { e } _ { 1 } \frac { \partial \varphi } { \partial r } + \hat { e } _ { 2 } \frac { 1 } { r } \frac { \partial \varphi } { \partial \theta } + \hat { e } _ { 3 } \frac { 1 } { r \sin \theta } \frac { \partial \varphi } { \partial \phi }q$$
+$$\nabla \cdot \vec { A } = \ff{r^2} \pp{r^2A_1}{r} + \frac { 1 } { r \sin \theta } \frac { \partial } { \partial \theta } ( \sin \theta A _ { 2 } ) + \frac { 1 } { r \sin \theta } \frac { \partial A _ { 3 } } { \partial \phi }$$
+
+$$\nabla \times \vec { A }  = \
+hat { e } _ { 1 } \frac { 1 } { r \sin \theta } \left[ \frac { \partial } { \partial \theta } ( \sin \theta A _ { 3 } ) - \frac { \partial A _ { 2 } } { \partial \phi } \right]  
++ \hat { e } _ { 2 } \left[ \frac { 1 } { r \sin \theta } \frac { \partial A _ { 1 } } { \partial \phi } - \frac { 1 } { r } \frac { \partial } { \partial r } ( r A _ { 3 } ) \right] 
++ \hat { e } _ { 3 } \frac { 1 } { r } \left[ \frac { \partial } { \partial r } ( r A _ { 2 } ) - \frac { \partial A _ { 1 } } { \partial \theta } \right] $$
+$$\nabla^2\varphi=\ff{r^2\sin\t}\left[\sin\t\pp{}{r}(r^2\pp{\varphi}{r})+\pp{}{\t}(\sin\t\pp{\varphi}{\t})+\ff{\sin\t}\pp[2]{\varphi}{\phi}\right]$$
+\sub{Vector Trans}
 $$\nabla\cdot(F\times G)=(\nabla\times F)\cdot G-F\cdot(\nabla\times G)$$
+$$\vec{A}\times(\vec{B}\times\vec{C})=(\vec{A}\cdot\vec{C})\vec{B}-(\vec{A}\cdot\vec{B})\vec{C}$$
+$$( \vec { A } \times \vec { B } ) \times ( \vec { C } \times \vec { D } ) = [ \vec { A } \cdot ( \vec { B } \times \vec { D } ) ] \vec { c } - [ \vec { A } \cdot ( \vec { B } \times \vec { C } ) ] \vec { D }$$
+$$\vec { A } \times ( \vec { B } \times \vec { C } ) + \vec { B } \times ( \vec { C } \times \vec { A } ) + \vec { C } \times ( \vec { A } \times \vec { B } ) = 0$$
 \end{document}
