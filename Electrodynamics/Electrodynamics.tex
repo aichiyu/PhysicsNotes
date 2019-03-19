@@ -3,24 +3,32 @@
 \title{ElectroDynamics}
 \begin{document}
 \maketitle
-\se{方程}
+\se{方程} 
 真空麦克斯韦方程 
 $$\ar[rclrcll]{
-    \nabla\cdot\bm{E}&=&\f{\rho}{\epsilon_0}&\qquad \oiint_S\bm{E}\d \bm{s}&=&\f{Q}{\epsilon_0}&\text{高斯定律}\\
-    \nabla\cdot\bm{B}&=&0&\qquad \oiint_S\bm{B}\d \bm{s}&=&0&\text{高斯磁定律}\\
+    \nabla\cdot\bm{E}&=&\f{\rho}{\epsilon_0}&\qquad \oint_S\bm{E}\d \bm{s}&=&\f{Q}{\epsilon_0}&\text{高斯定律}\\
+    \nabla\cdot\bm{B}&=&0&\qquad \oint_S\bm{B}\d \bm{s}&=&0&\text{高斯磁定律}\\
     \nabla\times\bm{E}&=&-\pt{\bm{B}}&\qquad \oint_L\bm{E}\d \bm{l}&=&-\dt{\varphi_B}&\text{法拉第电磁感应定律}\\
     \nabla\times\bm{B}&=&\mu_0\bm{J}+\mu_0\epsilon_0 \pt{\bm{E}}&\qquad \oint_L\bm{B}\d \bm{l}&=&\mu_0I+\mu_0\epsilon_0\dt{\varphi_E}\quad &\text{安培定律}
 }$$
 物质内麦克斯韦方程
 $$\ar[rclrcll]{
-    \nabla\cdot\bm{D}&=&\rho_f&\qquad \oiint_S\bm{D}\d \bm{s}&=&Q_f&\text{高斯定律}\\
-    \nabla\cdot\bm{B}&=&0&\qquad \oiint_S\bm{B}\d \bm{s}&=&0&\text{高斯磁定律}\\
+    \nabla\cdot\bm{D}&=&\rho_f&\qquad \oint_S\bm{D}\d \bm{s}&=&Q_f&\text{高斯定律}\\
+    \nabla\cdot\bm{B}&=&0&\qquad \oint_S\bm{B}\d \bm{s}&=&0&\text{高斯磁定律}\\
     \nabla\times\bm{E}&=&-\pt{\bm{B}}&\qquad\quad\qquad \oint_L\bm{E}\d \bm{l}&=&-\dt{\varphi_B}&\text{法拉第电磁感应定律}\\
     \nabla\times\bm{H}&=&\bm{J}_f+\pt{\bm{D}}&\qquad \oint_L\bm{H}\d \bm{l}&=&I_f+\dt{\varphi_D}\quad\qquad &\text{安培定律}
 }$$
+泊松方程 
+$${\nabla}^2 \Phi = - {\rho \over \epsilon_0}$$
+电荷
+$$\ar{
+    \sigma_{total} =& \epsilon_0E\\
+    \sigma_{polar} =& P\\
+    \sigma_{free} =& D
+}$$
 边界条件（当无电流和自由电荷）
 $$\ar[rcl|rcl]{
-    H_{1\parallel}&=&H_{2\parallel}&E_{1\parallel}&=&E_{2\parallel}\\
+    H_{1\parallel}&=&H_{2\parallel}&E_{1\parallel}&=&E_{2\parallel}\\  
     B_{1\perp}&=&B_{2\perp}&D_{1\perp}&=&D_{2\perp}
 }$$
 洛伦兹力：$$\ar{

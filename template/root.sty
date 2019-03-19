@@ -2,10 +2,10 @@
 \ProvidesPackage{root}[2014/08/24 Example LaTeX package]
 \RequirePackage{amsfonts}
 \RequirePackage{geometry}
-\RequirePackage[OT1]{fontenc}                                             %change font
+%\RequirePackage[T1]{fontenc}                                             %change font
 \RequirePackage{mathtools}                                                %align needed
 \RequirePackage{balance}                                                  %blance when there two columns
-\RequirePackage{txfonts}                                                  %面积分体积分
+%\RequirePackage{txfonts}                                                  %面积分体积分
 \RequirePackage{bm}                                                       %bold font
 \RequirePackage{mathrsfs}                                                 %change greek font style
 \RequirePackage{enumerate}                                                %Sort by number
@@ -14,9 +14,14 @@
 \RequirePackage{fontspec}                                                 %expand font type
 \RequirePackage{graphicx}                                                 %to input pictures
 \RequirePackage[colorlinks,linkcolor=red,anchorcolor=blue,citecolor=green]{hyperref}                                                %cite
-\RequirePackage{verbatim}                                 %comment
-
+\RequirePackage{verbatim}                                                 %comment                            
+\RequirePackage{multicol}
 %begin{newcommands}
+    \newcommand\qqed{\\ \rightline{$\square$}}                                 %\square,QED
+    \newcommand\norm[1]{\left\| #1 \right\|}                                 %|| ||
+    
+    \newcommand\cm{\mathscr}                                               %dbar
+    \newcommand\dbar{\text{\dj}}                                           %dbar
     \renewcommand\d{\mathrm{d}}                                            %d
     \newcommand\sch{Schrödinger}                                           %Schrödinger
     \newcommand{\dd}[3][]{\frac{\mathrm{d}^{#1} #2}{\mathrm{d} #3^{#1}}}   %d/d^n
@@ -28,23 +33,23 @@
     \newcommand\rank{\mathrm{rank}}                                        %rank
     \newcommand\tr{\mathrm{tr}}                                            %tr
     \newcommand\e[1]{\times 10^{#1}}                                       %×10^
-    \renewcommand\Re{\mathrm{Re}}                                          %Re
-    \renewcommand\Im{\mathrm{Im}}                                          %Im
-    \renewcommand\ln{\mathrm{ln}}                                          %ln
-    \newcommand\Ln{\mathrm{Ln}}                                            %Ln
+    \renewcommand\Re{\mathrm{Re}\ }                                          %Re
+    \renewcommand\Im{\mathrm{Im}\ }                                          %Im
+    \renewcommand\ln{\mathrm{ln}\ }                                          %ln
+    \newcommand\Ln{\mathrm{Ln}\ }                                            %Ln
     \renewcommand\arg{\mathrm{arg}}                                        %arg
-    \newcommand\bra[1]{\left(#1\right)}                                    %(A)
     \newcommand\ip{\implies}                                               %→
     \newcommand\tm{\times}                                                 %×
     \renewcommand\l{\lambda}                                               %λ
     \renewcommand\a{\alpha}                                                %α
+    \renewcommand\k{\kappa}                                                %κ
     \renewcommand\o{\omega}                                                %ω
     \newcommand\D{\Delta}                                                  %Δ
     \newcommand\de{\delta}                                                 %δ
     \renewcommand\t{\theta}                                                %θ
     \renewcommand\epsilon{\varepsilon}                                     %ε
     \newcommand\abs[1]{\left| #1 \right|}                                  %|A|
-    \renewcommand\exp{\mathrm{exp}}                                        %exp
+    \renewcommand\exp{\mathrm{exp}\ }                                      %exp
     \newcommand\se{\section}                                               %section
     \newcommand\sub{\subsection}                                           %subsection
     \newcommand\sumi{\sum_{i=1}^n}                                         %∑ 
@@ -52,6 +57,7 @@
     \AtBeginDocument{\renewcommand{\hat}{\widehat}}                        %hat
     \newcommand\inti{\int_{0}^{infty}}                                     %∮
     \renewcommand{\arraystretch}{1.2}                                      %change array stretch
+    \newcommand{\dis}{\displaystyle}                                       %big equation
     \newcommand{\ar}[2][rl]{\begin{array}{#1}                              %begin an array
             #2
         \end{array}}                                                 
@@ -63,6 +69,9 @@
 %end{newcommands} 
 
 %resize the parentheses
+
+%\def({\lparen}\def){\rparen}
+%\def({\ifmmode \left\lparen \else\lparen\fi} \def){\ifmmode \right\rparen \else\rparen\fi}
 \def\lparen{(} 
 \def\rparen{)} 
 \catcode`(=\active 
