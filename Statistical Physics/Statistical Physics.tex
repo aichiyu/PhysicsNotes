@@ -53,17 +53,28 @@
     \def({\lparen} 
     \def){\rparen}
     \setlength{\arraycolsep}{5pt}                                         %space after &
-    $$\ar[rrlrllr]{
-        \text{内能} & U= & Q+W & \d U & =C_V\d T + \left[T(\pp{p}{T})_V-p\right]\d V  & =T\d S-P\d V & -(\pp{P}{S})_V=(\pp{T}{V})_S\\
-        \text{焓} & H= & U+pV & \d H  & =C_p\d T+\left[V-T(\pp{V}{T})_p\right]\d p & =T\d S+V\d P & (\pp{T}{P})_S=(\pp{V}{S})_p\\  
-        \text{自由能} & F= & U-TS & \d F & \d F_{T,V} \leq 0 & =-S\d T-P\d V & (\pp{S}{V})_T=(\pp{p}{T})_V\\
-        \text{吉布斯} & G= & U-TS+pV & \d G & \d G _{p,T} \leq 0 & =-S\d T+V\d P & -(\pp{S}{p})_T=(\pp{V}{T})_p\\
-        \text{熵} & S &  & \d S & =\f{C_V}{T}\d T+(\pp{p}{T})_V\d V\\
-                 & S  &   & \d S & =\f{C_p}{T}\d T+(\pp{V}{T})_p\d p
+    $$\ar[rlrllc]{
+        U= & Q+W & \d U & =C_V\d T + \left[T(\pp{p}{T})_V-p\right]\d V+\left[\mu-T(\pp{\mu}{T})_{V,n}\right]\d n & =T\d S-p\d V+\mu\d n \\
+        H= & U+pV & \d H  & =C_p\d T+\left[V-T(\pp{V}{T})_p\right]\d p & =T\d S+V\d p+\mu\d n \\  
+        F= & U-TS & \d F & \d F_{T,V} \leq 0 & =-S\d T-p\d V+\mu\d n \\
+        G= & U-TS+pV=\mu n & \d G & \d G _{p,T} \leq 0 & =-S\d T+V\d p+\mu\d n \\
+        S &  & \d S & =\f{C_V}{T}\d T+(\pp{p}{T})_V\d V-(\pp{\mu}{T})_{V,n}\d n & \\
+        S  &   & \d S & =\f{C_p}{T}\d T-(\pp{V}{T})_p\d p\\
+        J= & F-\mu n= -pV & \d J && =-S\d T-p\d V-n\d \mu\\
+        \mu  &   & \d\mu & & =-S_m\d T+V_m\d p = G_m(\text{单相})
+    }$$
+    \setlength{\arraycolsep}{1pt}
+    麦克斯韦: 
+    $$\ar{
+        -(\pp{p}{S})_V &= (\pp{T}{V})_S\\
+        (\pp{T}{p})_S &= (\pp{V}{S})_p\\
+        (\pp{S}{V})_T &= (\pp{p}{T})_V\\
+        -(\pp{S}{p})_T &= (\pp{V}{T})_p\\
+        \hline
+        (\pp{S}{n})_{T,V} &= -(\pp{\mu}{T})_{V,n}
     }$$
     \def({\ifmmode \left\lparen \else\lparen\fi} 
     \def){\ifmmode \right\rparen \else\rparen\fi}
-    \setlength{\arraycolsep}{1pt}
     记忆：Good Physicists Have Studied Under Very Fine Teacher. 按首字母顺序画出下图，势函数紧挨着的两个量是d里面的，若箭头指出则为正，箭头指入则为负。
     \putfig{0.15}{1.png}
 \sub{气体的节流过程和绝热膨胀过程}
@@ -71,15 +82,15 @@
 \sub{磁介质热力学}
 $\dbar W=V\d(\ff{2}{\mu_0H^2}+\mu_0VH\d M)$, 若体系只有磁介质, 没有磁场, $\dbar W=\mu_0VH\d M$. 与气体之间有代换关系: $p \rightarrow -\mu_0H,\ V\rightarrow m$. 热容$C_H=T(\pp{S}{T})_H$. 居里定律$m=\f{CV}{T}H$. 
 \se{单元系的相变}
-1、孤立系统达到平衡态的时候，系统的熵处于极大值状态，这是孤立系统平衡态的判据；如果极大值不止一个，则当系统处于较小的极大值的时候，系统处于亚稳平衡态。\\
-2．孤立系统处在稳定平衡态的充要条件是：$\D S<0$ ；等温等容系统处在稳定平衡态的充要条件是：$\D F>0$ ；等温等压系统处在稳定平衡态的充要条件是：$\D G>0$ 。\\
-3、当系统对于平衡状态而发生某种偏离的时候，系统中将会自发地产生相应的过程，直到恢复系统的平衡。\\
-4、开系的热力学基本方程：$\d U=T\d S-p\d V+\mu \d n$\\
-5、单元系的复相平衡条件：$T^\alpha=T^\beta,\ p^\alpha=p^\beta,\ \mu^\alpha=\mu^\beta$\\ 
-6、汽化线、熔解线与升华线的交点称为三相点，在三相点固、液、气三相可以平衡共存。\\
-7、单元系三相共存时，$\left\{\ar{&T^\alpha=T^\beta=T^\gamma=T_0\\
-&p^\alpha=p^\beta=p^\gamma=p_0\\
-&\mu^\alpha(T,p)=\mu^\beta(T,p)=\mu^\gamma(T,p)}\right.$,  即三相$(\alpha,\beta,\gamma)$的温度、压强和化学势必须相等。
+1. 孤立系统达到平衡态的时候，系统的熵处于极大值状态，这是孤立系统平衡态的判据；如果极大值不止一个，则当系统处于较小的极大值的时候，系统处于亚稳平衡态。\\
+2. 孤立系统处在稳定平衡态的充要条件是：$\D S<0$ ；等温等容系统处在稳定平衡态的充要条件是：$\D F>0$ ；等温等压系统处在稳定平衡态的充要条件是：$\D G>0$ 。\\
+3. 当系统对于平衡状态而发生某种偏离的时候，系统中将会自发地产生相应的过程，直到恢复系统的平衡。\\
+4. 开系的热力学基本方程：$\d U=T\d S-p\d V+\mu \d n$\\
+5. 单元系的复相平衡条件：$T^\alpha=T^\beta,\ p^\alpha=p^\beta,\ \mu^\alpha=\mu^\beta$\\ 
+6. 汽化线、熔解线与升华线的交点称为三相点，在三相点固、液、气三相可以平衡共存。\\
+7. 单元系三相共存时，$\left\{\ar{&T^\alpha=T^\beta=T^\gamma=T_0\\&p^\alpha=p^\beta=p^\gamma=p_0\\&\mu^\alpha(T,p)=\mu^\beta(T,p)=\mu^\gamma(T,p)}\right.$,  即三相$(\alpha,\beta,\gamma)$的温度、压强和化学势必须相等。\\
+8. 相变时$L=T\D S$, $\dd{p}{T}=\f{L}{T\D V}$, 对理想气体可简化为$\ff{p}{\dd{p}{T}=\f{L}{RT^2}}$.
+9. 相变时$T,p$不变, 相变潜热$L=H_m$.
 \se{多元系的复相平衡和化学平衡}
 1、多元系是由含有两种或两种以上化学组分组成的系统，在多元系既可以发生相变，也可以发生化学变化。\\
 2、在系统的$T$和$p$不变时，若各组元的摩尔数都增加$\l$倍，系统的$V,U,S$也应增加$\l$倍。\\
