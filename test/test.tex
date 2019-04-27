@@ -1,19 +1,9 @@
-\documentclass[UTF8,9pt]{ctexart} 
-\usepackage{../template/Notes/notes} 
-\title{Statisticysics}
-\begin{document} 
-所有量均为国际单位, 弹簧材料为碳钢:\\
-弹性模量: $varE=200\e{9}$.\\
-弹簧截面高度: $z=0.65\e{-3}$.\\
-弹簧截面宽度: $y=2.5\e{-3}$.\\
-弹簧截面长度(麦克风约位于70匝处): $z=70\tm(6.5\e{-3}\pi)$.\\
-密度: $rho=7830$.\\
-截面二次轴距, 若它为0则退化为E-B梁: $varI=z^3\times\f{x}{12}.$\\
-泊松比: $nu=0.25$.\\
-剪切模量: $G=\f{varE}{2(1+nu)}$.\\
-铁木辛柯剪切系数: $mu=5/6$.\\
-次级常数: \\
-$a = (\f{varE\tm varI}{rho A})^{1/2}$\\
-$b = (varI/A)^{1/2}$\\ 
-$d = (\f{rho}{G\tm mu})^{1/2}$
-\end{document}    
+\documentclass{article}
+\usepackage{../template/root}
+\begin{document}
+$$\ar[rcl]{
+    s \xx a\\
+    s &\!\!\!\!\!=&\!\!\!\!\! a\\
+    s=a
+}$$
+\end{document}

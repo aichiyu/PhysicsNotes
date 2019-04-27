@@ -1,88 +1,114 @@
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesPackage{root}[2014/08/24 Example LaTeX package]
 \RequirePackage{amsfonts}
-\RequirePackage{geometry}
+\RequirePackage{geometry}                                                %调整间距
 %\RequirePackage[T1]{fontenc}                                             %change font
 \RequirePackage{mathtools}                                                %align needed
-\RequirePackage{balance}                                                  %blance when there two columns
+%\RequirePackage{balance}                                                  %blance when there two columns
 %\RequirePackage{txfonts}                                                  %面积分体积分
 \RequirePackage{bm}                                                       %bold font
-\RequirePackage{mathrsfs}                                                 %change greek font style
+%\RequirePackage{mathrsfs}                                                 %change greek font style
 \RequirePackage{enumerate}                                                %Sort by number
-\RequirePackage{supertabular}                                             %allow long table in 2 pages
-\RequirePackage{soul}                                                     %highlight using \hl
-\RequirePackage{fontspec}                                                 %expand font type
+%\RequirePackage{supertabular}                                             %allow long table in 2 pages
+%\RequirePackage{soul}                                                     %highlight using \hl
+%\RequirePackage{fontspec}                                                 %expand font type
 \RequirePackage{graphicx}                                                 %to input pictures
-\RequirePackage[colorlinks,linkcolor=red,anchorcolor=blue,citecolor=green]{hyperref}                                                %cite
-\RequirePackage{verbatim}                                                 %comment                            
-\RequirePackage{multicol}
+%\RequirePackage[colorlinks,linkcolor=red,anchorcolor=blue,citecolor=green]{hyperref}                                                %cite
+%\RequirePackage{verbatim}                                                 %comment                            
+%\RequirePackage{multicol}
 %begin{newcommands}
+
+    \newcommand{\intzo}{\int_0^1}                                  %0 1
+    \newcommand{\intii}{\int_{-\infty}^\infty}                                  %-∞ ∞
+    \newcommand{\intzi}{\int_0^\infty}                                  %0 ∞
+    \newcommand{\sumoi}{\int_1^\infty}                                  %1 ∞
+    \newcommand{\sumti}{\int_2^\infty}                                  %2 ∞
+    \newcommand{\sumii}{\sum_{-\infty}^\infty}                          %-∞ ∞
+    \newcommand{\sumzi}{\sum_0^\infty}                                  %0 ∞
+    \newcommand{\sumon}{\sum_1^n}                                  %1 n
+    \newcommand{\sumzn}{\sum_0^n}                                  %0 n
+    \renewcommand{\inf}{\infty}                                  %∞
+    \newcommand\of[1]{\left( #1 \right)}                                  %(x)
     \newcommand\qqed{\rightline{$\square$}\\ }                                 %\square,QED
     \newcommand\norm[1]{\left\| #1 \right\|}                                 %|| ||
-    
-    \newcommand\cm{\mathscr}                                               %dbar
+    \newcommand\s{\sqrt}
+    \newcommand\cm{\mathscr}                                               %
     \newcommand\dbar{\text{\dj}}                                           %dbar
-    \renewcommand\d{\mathrm{d}}                                            %d
-    \newcommand\sch{Schrödinger}                                           %Schrödinger
+    \renewcommand\d{\mathop{}\!\mathrm{d}}                                            %d
+    \newcommand{\dr}{\mathop{}\!\mathrm{d}r}                                            %dr
+    \newcommand{\dx}{\mathop{}\!\mathrm{d}x}                                            %dx
+    %\newcommand\sch{Schrödinger}                                           %Schrödinger
     \newcommand{\dd}[3][]{\frac{\mathrm{d}^{#1} #2}{\mathrm{d} {#3}^{#1}}}   %d/d^n
     \newcommand{\dt}[2][]{\frac{\mathrm{d}^{#1} #2}{\mathrm{d} t^{#1}}}    %d/dt^n
     \newcommand{\pp}[3][]{\frac{\partial^{#1} #2}{\partial {#3}^{#1}}}       %∂/∂^n
     \newcommand{\pt}[2][]{\frac{\partial^{#1} #2}{\partial t^{#1}}}        %∂/∂t^n 
     \newcommand{\f}[2]{\frac{#1}{#2}}                                      %A/B
     \newcommand{\ff}[1]{\frac{1}{#1}}                                      %1/A
-    \newcommand\rank{\mathrm{rank}}                                        %rank
-    \newcommand\tr{\mathrm{tr}}                                            %tr
+    \newcommand\rank{\operatorname{rank}}                                        %rank
+    \newcommand\tr{\operatorname{tr}}                                            %tr
     \newcommand\e[1]{\times 10^{#1}}                                       %×10^
-    \newcommand\mo{^{-1}}                                       %^{-1}
-    \renewcommand\Re{\mathrm{Re}\ }                                          %Re
-    \renewcommand\Im{\mathrm{Im}\ }                                          %Im
-    \renewcommand\ln{\mathrm{ln}\ }                                          %ln
-    \newcommand\Ln{\mathrm{Ln}\ }                                            %Ln
-    \renewcommand\arg{\mathrm{arg}}                                        %arg
+    \newcommand\m{^{-1}}                                       %^{-1}
+    \renewcommand\Re{\operatorname{Re}}                                          %Re
+    \renewcommand\Im{\operatorname{Im}}                                          %Im
+    \newcommand\Ln{\operatorname{Ln}}                                            %Ln
     \newcommand\ip{\implies}                                               %→
     \newcommand\tm{\times}                                                 %×
-    \renewcommand\l{\lambda}                                               %λ
     \renewcommand\a{\alpha}                                                %α
-    \renewcommand\b{\beta}                                                %β
-    \renewcommand\C{\bm{Const}}                                                  %Const
+    \renewcommand\b{\beta}                                                 %β
+    \newcommand\C{\text{Const}}                                            %Const
     \newcommand\D{\Delta}                                                  %Δ
     \newcommand\de{\delta}                                                 %δ
-    \renewcommand\e{\varepsilon}                                           %ε
-    \newcommand\g{\gamma}                                                %γ
+    \newcommand\ep{\varepsilon}                                            %ε
+    \newcommand\g{\gamma}                                                  %γ
+    \renewcommand\r{\rho}                                                  %ρ
     \renewcommand\k{\kappa}                                                %κ
-    \newcommand\n{\nabla}                                                %nabla
-    \newcommand\grad{\nabla^2}                                                %grad
+    \renewcommand\l{\lambda}                                               %λ
+    \newcommand\n{\nabla}                                                  %nabla
+    \newcommand\laplace{\nabla^2}                                          %laplace
+    \newcommand\grad{\nabla}                                               %grad
+    \renewcommand\div{\nabla\cdot}                                         %div
+    \newcommand\curl{\nabla\times}                                         %\nabla×
+    \renewcommand\O{\Omega}                                                %Ω
     \renewcommand\o{\omega}                                                %ω
-    \newcommand\vp{\varphi}                                                %phi
+    \newcommand\sg{\sigma}                                                 %σ
+    \newcommand\p{\phi}                                                    %φ
+    \newcommand\vp{\varphi}                                                %φ
     \renewcommand\t{\theta}                                                %θ
     \newcommand\abs[1]{\left| #1 \right|}                                  %|A|
-    \renewcommand\exp{\mathrm{exp}\ }                                      %exp
     \newcommand\se{\section}                                               %section
     \newcommand\sub{\subsection}                                           %subsection
-    \newcommand\dis{\displaystyle}                                         %∑ 
+    \newcommand\dis{\displaystyle}                                         %big equation
+    \newcommand{\x}{=&\!\!\!\!\!}                                                    %
+    \newcommand{\xx}{&\!\!\!\!\!}                                                    %
     \AtBeginDocument{\renewcommand{\bar}{\overline}}                       %bar
     \AtBeginDocument{\renewcommand{\hat}{\widehat}}                        %hat
-    \newcommand\inti{\int_{0}^{infty}}                                     %∮
     \renewcommand{\arraystretch}{1.2}                                      %change array stretch
-    \renewcommand{\dis}{\displaystyle}                                       %big equation
+    \newcommand\ca{\frac{1}{4\pi\varepsilon_0}}                                 %constA
     \newcommand{\ar}[2][rl]{\begin{array}{#1}                              %begin an array
             #2
         \end{array}}                                                 
+    \newcommand{\hua}[2][rl]{\left\{\begin{array}{#1}                              %begin an {array
+        #2
+    \end{array}\right.}
     \newcommand\bkt[1]{\left< #1 \right>}                                  %<x>
     \newcommand\putfig[2]{                                                 %put a figure
         \begin{center}    
             \includegraphics[scale=#1]{#2}
         \end{center}}
+    \newcommand{\rk}[1]{\begin{enumerate}                              %enumerate
+        #1
+    \end{enumerate}}                                             
+
 %end{newcommands} 
 
 %resize the parentheses
 
 %\def({\lparen}\def){\rparen}
 %\def({\ifmmode \left\lparen \else\lparen\fi} \def){\ifmmode \right\rparen \else\rparen\fi}
-\def\lparen{(} 
-\def\rparen{)} 
-\catcode`(=\active 
-\catcode`)=\active
-\def({\ifmmode \left\lparen \else\lparen\fi} 
-\def){\ifmmode \right\rparen \else\rparen\fi}
+%\def\lparen{(} 
+%\def\rparen{)} 
+%\catcode`(=\active 
+%\catcode`)=\active
+%\def({\ifmmode \left\lparen \else\lparen\fi} 
+%\def){\ifmmode \right\rparen \else\rparen\fi}
 \date{\today}
