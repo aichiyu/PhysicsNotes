@@ -1,6 +1,8 @@
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesPackage{root}[2014/08/24 Example LaTeX package]
+\ProvidesPackage{../template/root}[2014/08/24 Example LaTeX package]
 \RequirePackage{amsfonts}
+\RequirePackage{anyfontsize}
+\RequirePackage{mathrsfs}                                                     %希腊字体
 \RequirePackage{geometry}                                                %调整间距
 %\RequirePackage[T1]{fontenc}                                             %change font
 \RequirePackage{mathtools}                                                %align needed
@@ -13,6 +15,7 @@
 %\RequirePackage{soul}                                                     %highlight using \hl
 %\RequirePackage{fontspec}                                                 %expand font type
 \RequirePackage{graphicx}                                                 %to input pictures
+\usepackage{bbm}                                                           %空心数字
 %\RequirePackage[colorlinks,linkcolor=red,anchorcolor=blue,citecolor=green]{hyperref}                                                %cite
 %\RequirePackage{verbatim}                                                 %comment                            
 %\RequirePackage{multicol}
@@ -32,12 +35,15 @@
     \newcommand\qqed{\rightline{$\square$}\\ }                                 %\square,QED
     \newcommand\norm[1]{\left\| #1 \right\|}                                 %|| ||
     \newcommand\s{\sqrt}
+    \newcommand{\wv}{\widetilde}                                               %\widetilde{}
+    \newcommand{\wave}{\widetilde}                                               %\widetilde{}
     \newcommand\cm{\mathscr}                                               %
     \newcommand\dbar{\text{\dj}}                                           %dbar
     \renewcommand\d{\mathop{}\!\mathrm{d}}                                            %d
+    \newcommand{\Tr}{\mathop{}\!\mathrm{Tr}}                                            %d
     \newcommand{\dr}{\mathop{}\!\mathrm{d}r}                                            %dr
     \newcommand{\dx}{\mathop{}\!\mathrm{d}x}                                            %dx
-    %\newcommand\sch{Schrödinger}                                           %Schrödinger
+    \newcommand\sch{Schrödinger}                                           %Schrödinger
     \newcommand{\dd}[3][]{\frac{\mathrm{d}^{#1} #2}{\mathrm{d} {#3}^{#1}}}   %d/d^n
     \newcommand{\dt}[2][]{\frac{\mathrm{d}^{#1} #2}{\mathrm{d} t^{#1}}}    %d/dt^n
     \newcommand{\pp}[3][]{\frac{\partial^{#1} #2}{\partial {#3}^{#1}}}       %∂/∂^n
@@ -47,7 +53,7 @@
     \newcommand\rank{\operatorname{rank}}                                        %rank
     \newcommand\tr{\operatorname{tr}}                                            %tr
     \newcommand\e[1]{\times 10^{#1}}                                       %×10^
-    \newcommand\m{^{-1}}                                       %^{-1}
+    \newcommand{\m}{^{-1}}                                       %^{-1}
     \renewcommand\Re{\operatorname{Re}}                                          %Re
     \renewcommand\Im{\operatorname{Im}}                                          %Im
     \newcommand\Ln{\operatorname{Ln}}                                            %Ln
@@ -78,26 +84,32 @@
     \newcommand\se{\section}                                               %section
     \newcommand\sub{\subsection}                                           %subsection
     \newcommand\dis{\displaystyle}                                         %big equation
-    \newcommand{\x}{=&\!\!\!\!\!}                                                    %
-    \newcommand{\xx}{&\!\!\!\!\!}                                                    %
+    \newcommand{\x}{&=}                                           %
     \AtBeginDocument{\renewcommand{\bar}{\overline}}                       %bar
     \AtBeginDocument{\renewcommand{\hat}{\widehat}}                        %hat
     \renewcommand{\arraystretch}{1.2}                                      %change array stretch
     \newcommand\ca{\frac{1}{4\pi\varepsilon_0}}                                 %constA
-    \newcommand{\ar}[2][rl]{\begin{array}{#1}                              %begin an array
-            #2
-        \end{array}}                                                 
-    \newcommand{\hua}[2][rl]{\left\{\begin{array}{#1}                              %begin an {array
-        #2
-    \end{array}\right.}
-    \newcommand\bkt[1]{\left< #1 \right>}                                  %<x>
-    \newcommand\putfig[2]{                                                 %put a figure
+    \newcommand{\ar}[1]{
+        \begin{aligned}                              %begin an array
+            #1
+        \end{aligned}   }                                     
+    \newcommand{\hua}[1]{\left\{\begin{aligned}                              %begin an {array
+        #1
+    \end{aligned}\right.}
+    \newcommand\bkt[1]{\langle {#1} \rangle}                                  %<x>
+    \newcommand\br[1]{\langle {#1} |}                                  %<x>
+    \newcommand\kt[1]{| {#1} \rangle}                                  %<x>
+    \newcommand{\bra}{\langle}                                  %<x>
+    \newcommand{\ket}{\rangle}                                  %<x>
+    \newcommand\T{^{\dagger}}                                  %<x>
+    \newcommand\putfig[2][0.25]{                                                 %put a figure
         \begin{center}    
-            \includegraphics[scale=#1]{#2}
+            \includegraphics[width=#1\textwidth]{#2}
         \end{center}}
     \newcommand{\rk}[1]{\begin{enumerate}                              %enumerate
-        #1
-    \end{enumerate}}                                             
+            #1
+    \end{enumerate}}
+    %\newcommand{\com}[2]{\left( \begin{matrix} #1 \\ #2 \end{matrix}\right)}
 
 %end{newcommands} 
 

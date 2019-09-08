@@ -1,0 +1,244 @@
+
+\documentclass[UTF8,9pt]{ctexart}
+\usepackage{../../template/homeworkTEMP/hw}
+\setcounter{secnumdepth}{0}
+\title{数理方法II第二次作业} 
+\begin{document} 
+\maketitle
+\se{Q1}
+1. 取齐次方程, 
+
+$$ 
+\left\{\begin{array}{c}{\frac{\partial^{2} u}{\partial t^{2}}=a^{2} \frac{\partial^{2} u}{\partial x^{2}},(-\infty<x<+\infty, t>0)} \\ {\left.u\right|_{t=0}=e^{-2 x^{2}},(-\infty<x<+\infty)} \\ {\left.\frac{\partial u}{\partial t}\right|_{t=0}=\sin (x),(-\infty<x<+\infty)}\end{array}\right.
+ $$
+由达朗贝尔公式:
+$$ 
+u(x,t)=\frac{1}{2}[\phi(x+a t)+\phi(x-a t)]+\frac{1}{2 a} \int_{x-a t}^{x+a t} \psi(x) \d x
+ $$
+$$u=\ff{2}\left[e^{-2(x+at)^2}+e^{-2(x-at)^2}\right]+\ff{2a}(\cos(x-at)-\cos(x+at))$$
+$$u=\ff{2}\left[e^{-2(x+at)^2}+e^{-2(x-at)^2}\right]+\ff{a}\sin x\sin at$$
+2.取齐次初始条件, 
+$$ 
+\left\{\begin{array}{l}{\frac{\partial^{2} u}{\partial t^{2}}=a^{2} \frac{\partial^{2} u}{\partial x^{2}}+\cos (\omega t) \cos (x),(-\infty<x<+\infty, t>0)} \\ {\left.u\right|_{t=0}=0,(-\infty<x<+\infty)} \\ {\left.\frac{\partial u}{\partial t}\right|_{t=0}=0,(-\infty<x<+\infty)}\end{array}\right.
+ $$
+ $$ \ar{
+ w(x, t ; \tau) =&\dis \frac{1}{2 a} \int_{x-a(t-\tau)}^{x+a(t-\tau)} \cos (\omega \tau) \cos (\xi) \d \xi\\
+ =& \dis \ff{2a}\cos(\o \tau)\left[ \sin(x+a(t-\tau)) - \sin(x-a(t-\tau)) \right]
+ }
+  $$
+  $$ \ar{
+  u(x, t) =& \int_{0}^{t} w(x, t ; \tau) \d \tau\\
+   =& \ff{2a}\cos x\left[ \f{\cos(at-a\tau+\o\tau)}{a-\o}+\f{\cos(at-a\tau-\o\tau)}{a+\o}\right]\bigg|_{\tau=0}^{\tau=t}\\
+   =& \cos x\f{\cos(\o t)-\cos (at)}{a^2-\o^2}
+  }$$
+叠加1,2的$u$: 
+$$u=\ff{2}\left[e^{-2(x+at)^2}+e^{-2(x-at)^2}\right]+\ff{a}\sin x\sin at+\cos x\f{\cos(\o t)-\cos (at)}{a^2-\o^2}$$
+
+
+\newpage
+\se{Q2}
+设$\dis u=\sum X(x)T(t)+C_0$.
+$$\left\{\ar{
+    XT''=a^2X''T\\
+    X'(0)T = X'(l)T=0\\
+    XT(0)=e^{-x^2}\\
+    XT'(0)=2axe^{-x^2}
+}\right.$$
+代入边界条件,  
+$$\ip\ar{
+    X=X_0\cos(\f{n\pi x}{l})\\
+    T=\left[T_1\cos(\f{an\pi}{l} t)+T_2\sin(\f{an\pi}{l} t)\right]
+}$$
+$$u(x,t) = C_0 + \sum_{n=1}^{\infty} \cos(\f{n\pi x}{l})\left[C_n\cos(\f{an\pi}{l} t)+D_n\sin(\f{an\pi}{l} t)\right]$$
+代入初始条件1: 
+$$u(x,0) = C_0 + \sum_{n=1}^{\infty} C_n\cos(\f{n\pi x}{l})=e^{-x^2}$$
+$$ 
+C_{0}=\frac{1}{l} \int_{0}^{l} e^{-x^2} d x = \f{\sqrt{\pi}\operatorname {erf}(l)}{2l}
+ $$
+ $$ 
+C_{n}=\frac{2}{l} \int_{0}^{l} e^{-x^2} \cos (\frac{n \pi}{l} x) d x = \frac{\sqrt{\pi } e^{-\frac{\pi ^2 n^2}{4 l^2}} (\operatorname {erf}(l+\frac{i \pi  n}{2 l})+\operatorname {erf}(l-\frac{i \pi  n}{2 l}))}{2 l}
+ $$
+代入初始条件2:
+$$\pp{u}{t}(x,0)=\sum_0^\infty \f{an\pi D_n}{l}\cos(\f{n \pi x}{l}) = 2axe^{-x^2}$$
+$$D_n = \frac{4}{n \pi} \int_{0}^{l} xe^{-x^2} \cos \frac{n \pi}{L} x \d x$$
+$$\ar{D_n=&\dis \frac{e^{-l^2-i \pi  n}}{2 \pi  l n}\bigg\{i \pi ^{3/2} n e^{\frac{(2 l^2+i \pi  n)^2}{4 l^2}} (-\operatorname {erf}(l+\frac{i \pi  n}{2 l})+\operatorname {erf}(l-\frac{i \pi  n}{2 l})+2 i \operatorname {erfi}(\frac{\pi  n}{2 l}))\\
+&\dis -2 l (-2 e^{l^2+i \pi  n}+e^{2 i \pi  n}+1)\bigg\}}$$
+最后可以得到$u(x,t)$:
+$$\boxed{ \ar{
+    u(x,t) =& \dis \f{\sqrt{\pi}\operatorname {erf}(l)}{2l}+\sum_{n=1}^{\infty}\cos(\f{n\pi x}{l})\bigg\{\\
+            &\dis\frac{\sqrt{\pi } e^{-\frac{\pi ^2 n^2}{4 l^2}} (\operatorname {erf}(l+\frac{i \pi  n}{2 l})+\operatorname {erf}(l-\frac{i \pi  n}{2 l}))}{2 l}\cos(\f{an\pi}{l} t)\frac{e^{-l^2-i \pi  n}}{2 \pi  l n}\bigg[\\
+            &+\dis i \pi ^{3/2} n e^{\frac{(2 l^2+i \pi  n)^2}{4 l^2}} (-\operatorname {erf}(l+\frac{i \pi  n}{2 l})+\operatorname {erf}(l-\frac{i \pi  n}{2 l})+2 i \operatorname {erfi}(\frac{\pi  n}{2 l}))\\
+            &\dis -2 l (-2 e^{l^2+i \pi  n}+e^{2 i \pi  n}+1)\bigg]\sin(\f{an\pi}{l} t)\bigg\}\\
+            \text{其中包含误差函数}:\\
+            \dis \operatorname {erf} (x) =&\dis {\frac {1}{\sqrt {\pi }}}\int _{-x}^{x}e^{-t^{2}}\d t={\frac {2}{\sqrt {\pi }}}\int _{0}^{x}e^{-t^{2}}\,\d t\\
+            \operatorname {erfi}(x) =& -i\operatorname {erf}(ix).
+}}$$
+数值模拟, 代入$a=1, l=100, n=1\rightarrow100$, 当$t=0,2,5$, 可以看到波向两端传播的过程:
+\putfig{0.4}{1_128.png}
+如图为时间连续变化波的传递状况:
+\putfig{0.4}{1_153.png}
+\newpage
+\se{Q3}
+代入球坐标系, 
+$$ 
+\frac{1}{r^{2}} \frac{\partial}{\partial r}(r^{2} \frac{\partial u}{\partial r})=\frac{1}{a^{2}} \frac{\partial^{2} u}{\partial t^{2}}
+ $$
+ 并做代换
+ $$ 
+v(r, t)=r u(r, t)
+ $$
+该函数满足一维波动方程解, $m(r)$为单位阶跃函数. 
+$$ 
+\left\{\begin{array}{l}
+{\dis \frac{\partial^{2} v}{\partial t^{2}}=a^{2} \frac{\partial^{2} v}{\partial r^{2}}, \quad r, t>0} \\ 
+{v(r, 0)=ru(0)m(R-r)} \\ 
+{\dis \pt{v}(r,0)=0}
+\end{array}\right.
+ $$
+$$v(r,t) = \ff{2}u(0)[(r+at)m(R-r-at)+(r-at)m(R-r+at)]$$
+回代$u$, 通解为 ($m(r)$为单位阶跃函数.)
+$$ 
+u(r,t) = \f{u(0)}{2r}[(r+at)m(R-r-at)+(r-at)m(R-r+at)],\quad r=\sqrt{x^2+y^2+z^2}
+ $$
+
+
+
+ \newpage
+\se{Q4}
+$$\left\{\ar{ 
+    \dis\frac{\partial u}{\partial t}=a^{2} \frac{\partial^{2} u}{\partial x^{2}}\\
+    u(0,t) = u(l,t) = 0\\
+    u(x,0) = bx(l-x)/l^2\\
+}\right.$$
+设$u=X(x)T(t)$. $X=X_0\sin(\f{n\pi x}{l}),\ T=T_0\exp[-(\f{na\pi}{l})^2t],\ $则
+$$ u(x,t) = \sum_1^{\infty} C_n \sin(\f{n\pi x}{l})\exp[-(\f{na\pi}{l})^2t]$$ 
+初始条件为: 
+$$u(x,0) = \sum_1^{\infty} C_n \sin(\f{n\pi x}{l}) = \f{b}{l^2}x(l-x)$$ 
+展开初始条件: 
+$$ 
+C_{n}=\f{2b}{l^3} \int_{0}^{l} x(l-x) \sin \frac{n \pi x}{l} d x = -\frac{4b ((-1)^n-1)}{\pi ^3 n^3}
+ $$
+最后可得: 
+$$u(x,t) =  \sum_1^{\infty} -\frac{4b ((-1)^n-1)}{\pi ^3 n^3} \sin(\f{n\pi x}{l})\exp[-(\f{na\pi}{l})^2t]$$ 
+取$a=b=1,l=10$, 各时间点图像为:
+\putfig{0.3}{1_151.png}
+从$t=0$到$t=16$连续演化为:
+\putfig{0.3}{1_152.png}
+
+\newpage
+\se{Q5}
+\sub{(1)}
+$$ 
+a_{1}(x) \frac{\partial^{2} u}{\partial x^{2}}+b_{1}(y) \frac{\partial^{2} u}{\partial y^{2}}+a_{2}(x) \frac{\partial u}{\partial x}+b_{2}(y) \frac{\partial u}{\partial y}=0
+ $$
+设$u=X(x)Y(y)$, 则上式变为:
+$$a_1X''/X+b_1Y''/Y+a_2X'/X+b_2Y'/Y=0$$
+由函数间无关性($c$为任意常数): 
+$$a_1X''/X+a_2X'/X=c$$
+$$\ip \boxed{a_1(x)X''(x)+a_2(x)X'(x)+cX(x)=0}$$
+同理可得$y$的方程
+$$b_1Y''/Y+b_2Y'/Y=-c$$
+$$\ip \boxed{b_1(y)Y''(y)+b_2(y)Y'(y) - cY(y)=0}$$
+\sub{(2)}
+原式 = $\D u(\rho,\vp)=0$, 设$u = R(\rho)\Psi (\vp)$, 原式可化为
+$$\f{R''\rho^2}{R}+\f{R'\rho}{R}+\f{\Psi ''}{\Psi}=0$$
+设常数$c$, 即
+$$\f{R''\rho^2}{R}+\f{R'\rho}{R} = \boxed{c \ip \rho^2 R''+\rho R'=cR}$$
+$$\f{\Psi ''}{\Psi}=-c \ip \boxed{\Psi ''+c\Psi =0}$$
+\se{(3)}
+设$u(r,\t) = R(r)\Theta(\t)$. 原式可化为
+$$\f{2R'r}{R}+\f{R''r^2}{R}+\f{\Theta'}{\Theta \tan\t}+\f{\Theta''}{\Theta}=0$$
+设常数$c$, 即
+$$\f{2R'r}{R}+\f{R''r^2}{R} = c \ip \boxed{ r^2R''(r)+2rR'(r)=cR(r)}$$
+$$\f{\Theta'}{\Theta \tan\t}+\f{\Theta''}{\Theta}=-c \ip \boxed{\Theta'(\t)+\tan\t\Theta''(\t)+c\tan\t\Theta(\t)=0}$$
+
+
+\newpage
+\se{Q6}
+当$\l\leq 0$, 仅有$X=0$的平庸解. 
+由泛定方程, $X_i=A_i\cos(\sqrt{\l_i}x)+B_i\sin(\sqrt{\l_i}x)$.
+由0处边界条件, 
+$$\a_1A_i +\b_1\sqrt{\l_i}B_i = 0 \ip A_i = -\f{\b_1\sqrt{\l_i}B_i}{\a_1}$$
+再代入$l$处边界条件,
+$$-\f{\b_1\sqrt{\l_i}}{\a_1}\a_2\cos(\sqrt{\l_i}l)+\a_2\sin(\sqrt{\l_i}l)$$
+$$+\f{\b_1\sqrt{\l_i}}{\a_1}\b_2\sqrt{\l_i}\sin(\sqrt{\l_i}l)+\b_2\sqrt{\l_i}\cos(\sqrt{\l_i}l)=0$$
+$$\ip (\a_2+\f{\b_1\sqrt{\l_i}}{\a_1}\b_2\sqrt{\l_i})\sin(\sqrt{\l_i}l)+(\b_2-\f{\b_1\sqrt{\l_i}}{\a_1}\a_2)\cos(\sqrt{\l_i}l)=0$$
+可用辅助角公式化为:
+$$\sin(\sqrt{\l_i}l+\phi)=0,\quad \phi = \arctan\f{\b_2-\f{\b_1\sqrt{\l_i}}{\a_1}\a_2}{\a_2+\f{\b_1\sqrt{\l_i}}{\a_1}\b_2\sqrt{\l_i}}$$
+即解为: 
+$$\boxed{ \sqrt{\l_i}l+\arctan\f{\b_2-\f{\b_1\sqrt{\l_i}}{\a_1}\a_2}{\a_2+\f{\b_1\sqrt{\l_i}}{\a_1}\b_2\sqrt{\l_i}} = i\pi,\quad i=1,2,3...}$$
+取$\b_1=\b_2=0,l=1,i=1$, 上式可化简为:
+$$\sqrt{\l_1}=\pi$$
+$$\left\{\ar{
+    \l_1=&\pi^2\\
+    A_1=& 0
+}\right.$$
+$$\ip X_1=B_1\sin(\pi x)$$
+取$\b_1=\b_2=0,l=1,i=2$, 上式可化简为:
+$$\sqrt{\l_2}=2\pi$$
+$$\left\{\ar{
+    \l_2=&4\pi^2\\
+    A_2=&0
+}\right.$$
+$$\ip X_2=B_2\sin(2\pi x)$$
+归一化:
+$$\int_0^1 X_1^2\d x=B_1^2\int_0^1 \sin^2(\pi x)\d x = \f{B_1^2}{2}=1 \ip B_1=\sqrt{2}$$
+$$\int_0^1 X_2^2\d x=B_2^2\int_0^1 \sin^2(2\pi x)\d x = \f{B_2^2}{2}=1 \ip B_2=\sqrt{2}$$
+正交性: 
+$$\boxed{ \int_0^1 X_1X_2 \d x=2\int_0^1 \sin(\pi x)\sin(2\pi x) \d x = 0 }$$
+\newpage
+\se{Q7}
+换用极坐标系, 
+$$ 
+\frac{1}{\rho} \frac{\partial}{\partial \rho}(\rho \frac{\partial u}{\partial \rho})+\frac{1}{\rho^{2}} \frac{\partial^{2} u}{\partial \theta^{2}} = 6\rho^2+6\rho^2\sin2\t
+ $$
+$$u(a,\t)=1,\quad \pp{u}{\rho}(b,\t)=0$$
+设
+$$ 
+u(\rho, \theta)=\sum_{n=0}^{\infty}\left\{A_{n}(\rho) \cos n \theta+B_{n}(\rho) \sin n \theta\right\}
+ $$
+泛定方程可以化为: 
+$$\D u(\rho,\t)=\ff{\rho}\sum[A_n'\cos n\t+B_n'\sin n\t]+\sum[A_n''\cos n\t+B_n''\sin n\t]-\ff{\rho^2}\sum[n^2A_n\cos n\t+n^2B_n\sin n\t]$$
+$$=\sum\left\{ \left[\f{A_n'}{\rho}+A_n''-\f{n^2A_n}{\rho^2}\right]\cos n\t + \left[\f{B_n'}{\rho}+B_n''-\f{n^2B_n}{\rho^2}\right]\sin n\t  \right\} = 6\rho^2(1+\sin2\t)$$
+第0,2阶为: 
+$$\ar{\f{A_0'}{\rho}+A_0''=&\dis 6\rho^2 \ip A_0=\f{3\rho^4}{8}+c_0\ln\rho+d_0\\
+\f{B_2'}{\rho}+B_2''-\f{4B_2}{\rho^2}=&6\rho^2 \ip B_2 = \dis m\rho^{2}+n\rho^{-2}+\ff{2}\rho^4
+}$$
+其余项均为齐次方程, 其通解为:
+$$ 
+\begin{array}{ll}
+{B_{0}(\rho)=c_{0}^{\prime}+d_{0}^{\prime} \ln \rho} & {(n=0)} \\ 
+{A_{n}(\rho)=c_{n} \rho^{n}+d_{n} \rho^{-n}} & {(n \neq 0)} \\ 
+{B_{n}(\rho)=c_{n}^{\prime} \rho^{n}+d_{n}^{\prime} \rho^{-n}} & {(n \neq 2)}
+\end{array}
+ $$
+代入边界条件:
+$$A_n(\rho)=0 \ip c_n=d_n=0,\ (n\neq 0)$$
+$$B_n(\rho)=0 \ip c'_n=d'_n=0,\ (n\neq 2)$$
+由于
+$$ u(a, \theta)=\sum_{n=0}^{\infty}\left\{A_{n}(a) \cos n \theta+B_{n}(a) \sin n \theta\right\} = 1 $$
+代入$A_0,B_2$表达式:
+$$ A_0(a)=\f{3a^4}{8}+c_0\ln a+d_0 = 1 $$
+$$B_2(a)=ma^2+na^{-2}+\ff{2}a^4 = 0$$
+又由于:
+$$\pp{u}{\rho}(b,\t)=\sum_{n=0}^{\infty}\left\{A_{n}'(b) \cos n \theta+B_{n}'(b) \sin n \theta\right\} = 0$$
+代入$A'_0,B'_2$表达式
+$$\ar{
+    A'_0 =& \dis \f{3\rho^3}{2}+\f{c_0}{\rho}\\
+    B'_2 =& \dis 2m\rho - 2n\rho^{-3}+2\rho^3
+}$$
+即得:
+$$\ar{A'_0(b) =&\dis \f{3b^3}{2}+\f{c_0}{b} = 0\\
+B_2'(a) =&\dis 2mb - 2nb^{-3}+2b^3 = 0}$$
+$$\ar[ll]{
+    \dis c_0 = -\f{3}{2}b^4, & \dis d_0 = 1-\f{3a^4}{8}+\f{3}{2}b^4\ln a\\
+    \\
+    \dis m = -\f{a^6+2b^6}{2(a^4+b^4)}, & \dis n = -\f{a^6b^4-2a^4b^6}{2(a^4+b^4)}
+    }$$
+
+$$\ar{u(\rho,\t) =&\dis (\f{3\rho^4}{8}-\f{3}{2}b^4\ln\rho+1-\f{3a^4}{8}+\f{3}{2}b^4\ln a) \\
+\\
+&\dis+ (-\f{a^6+2b^6}{2(a^4+b^4)}\rho^{2}-\f{a^6b^4-2a^4b^6}{2(a^4+b^4)}\rho^{-2}+\ff{2}\rho^4)\sin 2\t
+}$$
+\end{document}
+

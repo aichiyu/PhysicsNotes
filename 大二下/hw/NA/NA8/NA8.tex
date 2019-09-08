@@ -1,0 +1,63 @@
+\documentclass[UTF8,9pt]{ctexart}
+\usepackage{../../template/homeworkTEMP/hw}
+\usepackage{listings}
+\lstset{language=Matlab}
+\setcounter{secnumdepth}{0}
+\title{数值分析第八次作业} 
+\begin{document} 
+\maketitle
+\se{7}
+(1)
+$$A(h) = \ff{h}\tan(\pi h) = \pi + \ff{3}\pi^3h^2 +O(h^4)$$
+$$A(\f{h}{2}) = \f{2}{h}\tan(\pi h/2) = \pi + \f{1}{12}\pi^3h^2 +O(h^4)$$
+即二者误差均为$O\left(h^{2}\right)$
+
+(2) \\
+由第一问可知
+$$A(h)-4A(\f{h}{2}) = -3\pi + O(h^4)$$
+则可通过式$\f{4A(\f{h}{2})-A(h)}{3}$计算$\pi$, 误差阶数为$O(h^4)$.
+\se{8}
+$$ \hua{
+        \f{2}{3} \x A_1+A_2+A_3\\
+        0 \x A_1x_1+A_2x_2+A_3x_3\\
+        \f{2}{5} \x A_1x_1^2+A_2x_2^2+A_3x_3^2\\
+        0 \x A_1x_1^3+A_2x_2^3+A_3x_3^3\\
+        \f{2}{7} \x A_1x_1^4+A_2x_2^4+A_3x_3^4\\
+        0 \x A_1x_1^5+A_2x_2^5+A_3x_3^5
+}$$
+$$ \hua{
+        \f{2}{3} \x A_1+A_2+A_3\\
+        0 \x A_1x_1-A_3x_1\\
+        \f{2}{5} \x A_1x_1^2+A_3x_1^2\\
+        0 \x A_1x_1^3+A_3x_3^3\\
+        \f{2}{7} \x A_1x_1^4+A_3x_3^4\\
+        0 \x A_1x_1^5+A_3x_3^5
+} \ip \hua{
+        x_1 \x -\sqrt{\f{5}{7}}\\
+        x_2 \x 0\\
+        x_3 \x \sqrt{\f{5}{7}}\\
+        A_1 \x \f{7}{25}\\
+        A_2 \x \f{8}{75}\\
+        A_3 \x \f{7}{25}
+}$$
+\se{9}
+(1)
+$$\int_a^b mx+1 \d x = 0 \ip \f{m}{2}(b^2-a^2)+(b-a)=0$$
+$$m = -\f{2}{b+a}\ip mx+1 = 0 \iff x = \f{a+b}{2}$$
+$$\int_a^bf(\f{a+b}{2})\d x = A = (b-a)f(\f{a+b}{2})$$
+则$G_0(f) = (b-a)f(\f{a+b}{2})$. \\
+将$[a,b]\ n$等分,得到$G_n$. 每个区间为$I_i(f) = \int_{x_i}^{x_{i+1}}f(x)\d x\approx hf(a+ih+\f{h}{2})$. 
+则$$I \approx G_n = \sum_0^{n-1} I_i = h \sum_0^{n-1} f(a+ih+\f{h}{2})$$
+(2)\\
+$$\sum_0^{n-1} I_i = h \sum_0^{n-1} f((a+\f{h}{2})+ih)$$
+$$T_n(f) = \f{h}{2}\sum_0^{n-1} (f(a+ih)+f(a+(i+1)h)) = \f{h}{2}\sum_0^{n-1} (f(a+ih)+f(a+(i+1)h))$$
+$$\ar{
+        \dis T_{2n}(f) \x\dis \f{h}{4}\sum_0^{2n-1} (f(a+ih/2)+f(a+(i+1)h/2)) \\
+        \x\dis \f{h}{4}\sum_0^{2n-2} (f(a+ih/2)+f(a+ih/2+h/2)) \\
+        \x\dis \f{h}{4}\sum_0^{n-1} (f(a+ih)+2f(a+ih+h/2)+f(a+ih+h))\\
+\dis T_{2n}-\ff{2}T_n \x\dis \f{h}{4}\sum_0^{n-1} (2f(a+ih+h/2))\\
+\dis T_{2n}-\ff{2}T_n \x\dis \f{h}{2}\sum_0^{n-1}f(a+ih+h/2)\\
+\dis T_{2n}-\ff{2}T_n \x\dis \ff{2}G_n
+}$$
+因此$\a=2$.
+\end{document}

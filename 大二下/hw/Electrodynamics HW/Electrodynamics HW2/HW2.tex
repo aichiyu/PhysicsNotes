@@ -1,0 +1,48 @@
+\documentclass[UTF8,9pt]{ctexart}
+\usepackage{../../template/homeworkTEMP/hw}
+\setlength{\arraycolsep}{1pt}
+\setcounter{secnumdepth}{0}
+\title{The 2nd HW of Electrodynamics} 
+\begin{document} 
+\maketitle
+\se{Q1}
+1. Prove that $\nabla r=-\nabla'r=\f{\bm{r}}{r}$:\\
+for x direction:
+$$(\nabla r)_x=\pp{r}{x}=\ff{2r}2(x-x')=\f{\bm{r}_x}{r}$$
+$$(\nabla' r)_x=\pp{r}{x'}=\ff{2r}2(x-x')(-1)=-\f{\bm{r}_x}{r}$$
+the same for y and z direcion, therefore $\nabla r=-\nabla'r=\f{\bm{r}}{r}$\\
+2. Prove that $\nabla \ff{r}=-\nabla'\ff{r}=-\f{\bm{r}}{r^3}$:\\
+for x direction:
+$$(\nabla \ff{r})_x=\pp{1/r}{x}=-\ff{2}\ff{r^3}2(x-x')=-\f{\bm{r}_x}{r^3}$$
+$$(\nabla' \ff{r})_x=\pp{1/r}{x'}=-\ff{2}\ff{r^3}2(x-x')(-1)=\f{\bm{r}_x}{r^3}$$
+the same for y and z direcion, therefore $\nabla \ff{r}=-\nabla'\ff{r}=-\f{\bm{r}}{r^3}$\\
+3. Prove that $\nabla \times \f{\bm{r}}{r^3}=0$:\\
+from the question above we know $\nabla \ff{r}=-\f{\bm{r}}{r^3}$, and $\nabla \times (\nabla A)=0$ for any scalar $A$:
+$$\nabla \times \f{\bm{r}}{r^3}=-\nabla \times (\nabla \ff{r})=0$$
+4. Prove that $\nabla \cdot \f{\bm{r}}{r^3}=-\nabla \cdot \f{\bm{r}}{r^3}=0$ for any $r\neq 0$:\\
+for x direction:
+$$(\nabla \cdot \f{\bm{r}}{r^3})_x=\pp{\bm{r}_x/r^3}{x}=r^{-3}-\f{3}{2}2\bm{r}_x^2\ff{r^5}=\ff{r^3}-3\f{\bm{r}_x^2}{r^5}$$
+$$(\nabla' \cdot \f{\bm{r}}{r^3})_x=\pp{\bm{r}_x/r^3}{x'}=-r^{-3}+\f{3}{2}2\bm{r}_x^2\ff{r^5}=-\ff{r^3}+3\f{\bm{r}_x^2}{r^5}$$
+so for all directin:
+$$\nabla \cdot \f{\bm{r}}{r^3} = \f{3}{r^3}-\f{3}{r^5}(\bm{r}_x^2+\bm{r}_y^2+\bm{r}_z^2)=0$$
+$$\nabla' \cdot \f{\bm{r}}{r^3} = -\f{3}{r^3}+\f{3}{r^5}(\bm{r}_x^2+\bm{r}_y^2+\bm{r}_z^2)=0$$
+\se{Q2}
+Show that the interaction between two fixed current loops obeys Newton’s third law:
+$$F_{12}=\int_{C_1} I_1\d \bm{l}_1\times \bm{B}=\f{\mu_0I_1I_2}{4\pi}\iint_{C_1,C_2}\f{\d \bm{l}_1\times(\d\bm{l}_2\times \bm{r_{12}})}{r_{12}^3}$$
+
+$$\f{\d \bm{l}_1\times(\d\bm{l}_2\times \bm{r_{12}})}{r_{12}^3}=\f{(\d\bm{l}_2\cdot\bm{r}_2)\d\bm{l}_1}{r_{12}^3}-\f{(\d\bm{l}_1\cdot\d\bm{l}_2)\bm{r}_{12}}{r_{12}^3}$$
+$$\int_{C_2}\f{\d\bm{l}_2\cdot\bm{r}_2}{r_{12}^3}=\iint_{S_2}(\nabla\times \f{\bm{r}_2}{r_{12}^3})\d \bm{S}=0$$
+
+$$\ip F_{12}=-\f{\mu_0I_1I_2}{4\pi}\iint_{C_1,C_2}\f{(\d\bm{l}_1\cdot\d\bm{l}_2)\bm{r}_{12}}{r_{12}^3}$$
+And $\bm{r}_{12}=-\bm{r}_{21}$
+$$F_{21}=\f{\mu_0I_1I_2}{4\pi}\iint_{C_1,C_2}\f{\d \bm{l}_2\times(\d\bm{l}_1\times \bm{r_{21}})}{r_{21}^3}=\f{\mu_0I_1I_2}{4\pi}\iint_{C_1,C_2}\f{(\d\bm{l}_1\cdot\d\bm{l}_2)\bm{r}_{12}}{r_{12}^3}=-F_{12}$$
+\se{Q3}
+Use the equation below to find the related equation for the conduction current $\bm{J}=n_fe\bm{v}$. Solve this equation for $\bm{E}(t)=\bm{E}_0\delta(t)$ if $\bm{J}(t<0)=0$ . What is $\bm{J}$ immediately after $t=0$ ? Connect this with the sum rule.
+$$\dt{\bm{v}}=-\gamma\bm{v}+\f{e}{m}\bm{E}$$
+%When $\dt{v}=0$, we will get $v=\f{eE}{m\gamma}$.\\
+%$\ip J=n_fev=n_fe\f{eE}{m\gamma}=\f{n_fe^2}{m\gamma}E$\\
+After $t=0, x=\int v\d t=0$ 
+$$v=-\gamma\int v\d t+\f{e}{m}\int E\d t = \f{e}{m}E_0$$
+$$J=\f{n_fe^2E_0}{m}$$
+As $\mathcal{F}(\delta(t))=1$, $\bm{E}(t)=\bm{E}_0\delta(t)$ has all frequencies for the same strength. So that we can use it to determine $n_f$ experimentally using sum rule, 
+\end{document}

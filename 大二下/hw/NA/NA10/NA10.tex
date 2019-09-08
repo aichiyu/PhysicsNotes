@@ -1,0 +1,48 @@
+\documentclass[UTF8,9pt]{ctexart}
+\usepackage{../../template/homeworkTEMP/hw}
+\setcounter{secnumdepth}{0}
+\title{数值分析第十次作业} 
+\begin{document} 
+\maketitle
+\se{1}
+(1) 显式欧拉公式为$$ 
+y_{n+1}=y_{n}+h (x_n+1)
+ $$
+用右矩形公式, 隐式欧拉公式为$$ 
+ y_{n+1}=y_{n}+h (x_{n+1}+1)
+  $$
+
+(2) 显式欧拉公式的局部阶段误差为
+$$ 
+T_{n+1}=y\left(x_{n+1}\right)-y_{n+1}=\frac{y^{\prime \prime}(\xi)}{2 !} h^{2} +\mathcal{O}(h^{3})\approx \f{h^2}{2}
+ $$
+ 隐式欧拉公式的局部阶段误差为
+ $$ 
+ T_{n+1}=-\frac{h^{2}}{2} y^{\prime \prime}\left(x_{n}\right)+\mathcal{O}\left(h^{3}\right) \approx -\f{h^2}{2}
+  $$
+\se{2}
+(1) $f(x,y)=-y$. 
+用显式欧拉公式:
+$$y(0.1) = y(0)-0.1 = 0.9$$
+$$y(0.2) = y(0.1) -0.09 = 0.81$$
+用隐式欧拉公式: 
+$$y(0.1) = y(0) - 0.1*y(0.1) \ip y(0.1) = \ff{1.1}$$
+$$y(0.2) = y(0.1) - 0.1*y(0.2) \ip y(0.2) = \ff{1.1^2}\approx0.826$$
+用梯形公式: 
+$$y(0.1) = 1+\f{0.1}{2}[-1-y(0.1)] \ip y(0.1) = \f{19}{21}$$
+$$y(0.2) = \f{19}{21}+\f{0.1}{2}[-\f{19}{21}-y(0.2)] \ip y(0.1) = \f{19^2}{21^2} = 0.8186$$
+
+(2) 根据第一问所证, 当$n=1$, 满足上式, 若$n=k$满足上式, 则对于$n=k+1$,
+$$y_{k+1} = y_k-\f{h}{2}[y_k+y_{k+1}]\ip y_{k+1} = \f{2-h}{2+h}y_k = (\f{2-h}{2+h})^{k+1}$$
+依旧满足上式, 因此得证. \\
+$y_k = y(hk)$. 
+$$\lim_{k\to 0} y(hk) = \lim_{k\to 0} (\f{2-h}{2+h})^{k} $$
+设$x=hk$
+$$\lim_{k\to 0} y(x) = \lim_{k\to 0} (1-\f{2h}{2+h})^{\f{x}{h}}  = \lim_{k\to 0} (1-\f{2h}{2+h})^{\f{x}{h}}$$
+忽略高阶无穷小, 
+$$= \lim_{k\to 0} (1-h)^{\f{x}{h}} = \of{\lim_{k\to 0} (1-h)^{-{h}}}^{-x}=e^{-x}$$
+\se{3}
+$$T_{n+1} = y_n+hy'_n+\f{h^2}{2}y''_n+\f{h^3}{6}y'''_n-y_n-2hK_2+hK_1$$
+$$= y_n+hy'_n+\f{h^2}{2}y''_n+\f{h^3}{6}y'''_n-y_n-2h(y'_n+\f{h}{4}y''_n+\f{h^2}{16}y'''_n)+hy'_n$$
+$$=\ff{24}h^3y'''_n$$
+\end{document}

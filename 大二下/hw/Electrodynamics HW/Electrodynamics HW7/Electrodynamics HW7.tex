@@ -1,0 +1,54 @@
+\documentclass[UTF8,9pt]{ctexart}
+\usepackage{../../template/homeworkTEMP/hw}
+\setlength{\arraycolsep}{1pt}
+\setcounter{secnumdepth}{0}
+\title{The 7th HW of Electrodynamics} 
+\begin{document} 
+\maketitle
+\se{Q1}
+A spherical ball of radius a\dots\\
+The space have two parts of potential:
+$$\Phi_1=\sum (a_nr^n+\f{b_n}{r^{n+1}})P_n(\cos\t),\quad r<a$$
+$$\Phi_2=\sum (a'_nr^n+\f{b'_n}{r^{n+1}})P_n(\cos\t),\quad r>a$$
+For $\Phi_1$: 
+$$\Phi_1(0)<\infty \ip b_n=0$$
+And for $\Phi_2$ : 
+$$\Phi_2(\infty)=-H_0r\cos\t \ip \left\{\ar{
+  a_n=0,&\ n>1\\
+  a_1=&-H_0
+}\right.$$
+Thus 
+$$\Phi_1(r)=\sum a_nr^nP_n(\cos\t)$$
+$$\Phi_2(r)=-H_0r\cos\t+\sum\f{b'_n}{r^{n+1}}P_n(\cos\t)$$
+Two potentials are equal at $r=a$:
+$$a_na^n=\f{b'_n}{a^{n+1}}(n>1),\ a_1a=-H_0a+\f{b'_1}{a^2}$$
+And for $B_n$, they are equal:
+$$-B_{1n}(r)=\mu\pp{\Phi_1}{r}=\sum \mu na_nr^{n-1}P_n(\cos\t)$$
+$$-B_{2n}(r)=\mu_0\pp{\Phi_2}{r}=B_0\cos\t-\sum \mu_0(n+1)\f{b'_n}{r^{n+2}}P_n(\cos\t)$$
+Thus, 
+$$\mu na_na^{n-1} = -\mu_0(n+1)\f{b'_n}{a^{n+2}},\ n>1 $$
+$$\mu a_1 = B_0-2\mu_0\f{b'_1}{r^3}$$
+Finally, we have
+$$a_na^{2n+1} = -\f{\mu n a_n a^{2n+1}}{\mu_0 (n+1)} \ip a_n=b_n=0(n>1)$$
+$$\f{B_0}{\mu_0}+\f{b_1'}{a^3}=\f{B_0}{\mu}-\f{2\mu_0b'_1}{\mu r^3}$$
+$$(\ff{a^3}+\f{2\mu_0}{\mu a^3})b'_1=(\ff{\mu}-\ff{\mu_0})B_0$$
+$$b_1'=\f{(\mu_0-\mu)B_0a^3}{\mu_0\mu+2\mu_0^2}$$
+$$a_1=\f{B_0}{\mu_0}+\f{(\mu_0-\mu)B_0}{\mu_0\mu+2\mu_0^2}=\f{3B_0}{\mu+2\mu_0}$$
+Thus:
+$$B_{1n}(r)=-\f{3\mu B_0}{\mu+2\mu_0} \cos\t$$
+$$B_{2n}(r)=-B_0\cos\t+2\f{(\mu_0-\mu)B_0a^3}{\mu+2\mu_0}\f{1}{r^3} \cos\t$$
+$$B_{1t}=-\mu\pp{\Phi_1/r}{\t}=-\mu a_1\pp{\cos\t}{\t}=\f{3\mu B_0}{\mu+2\mu_0}\sin\t$$
+$$B_{2t}=-\mu\pp{\Phi_2/r}{\t}=\f{\mu B_0}{\mu_0}\sin\t+\f{\mu}{r^3}\f{(\mu_0-\mu)B_0a^3}{\mu_0\mu+2\mu_0^2}\sin\t$$
+$$\ar[rrl]{
+  B_1(r,t)=&\dis \bigg[ -\f{3\mu B_0}{\mu+2\mu_0} \cos\t,&\dis \f{3\mu B_0}{\mu+2\mu_0}\sin\t \bigg]\\
+  B_2(r,t)=&\dis \bigg[ -B_0\cos\t+2\f{(\mu_0-\mu)B_0a^3}{\mu+2\mu_0}\f{1}{r^3} \cos\t,&\dis  \f{\mu B_0}{\mu_0}\sin\t+\f{\mu}{r^3}\f{(\mu_0-\mu)B_0a^3}{\mu_0\mu+2\mu_0^2}\sin\t \bigg]\\
+  H_1(r,t)=&\dis \bigg[ -\f{3 B_0}{\mu+2\mu_0} \cos\t,&\dis \f{3B_0}{\mu+2\mu_0}\sin\t \bigg]\\
+  H_2(r,t)=&\dis \bigg[ -B_0\cos\t/\mu_0+2\f{(\mu_0-\mu)B_0a^3}{\mu\mu_0+2\mu_0^2}\ff{r^3} \cos\t,&\dis \f{\mu B_0}{\mu_0^2}\sin\t+\f{\mu}{r^3}\f{(\mu_0-\mu)B_0a^3}{\mu_0^2\mu+2\mu_0^3}\sin\t \bigg]
+}$$
+\se{Q2}
+Let $R$ be the radius of current loop, and $r$ be the distance of current unit and field point. \\
+Following the Biot-Savart Law, the magnetic field of one current loop at direction $x$ is:
+$$B_0=\f{\mu_0NI}{4\pi r^2}2\pi R\sin\t=\f{\mu_0NI}{4\pi R^2/\sin^2\t}2\pi R\sin\t = \f{\mu_0NI}{2R}\sin^3\t$$
+and integrate over $L$:
+$$B=\int_L B_0\d x= \int_{\t_1}^{\pi-\t_2} B_0 \f{R\d \t}{\sin^2\t} = \int_{\t_1}^{\pi-\t_2} \f{\mu_0NI}{2}\sin\t\d\t = \f{\mu_0NI}{2}(\cos\t_1+\cos\t_2)$$
+\end{document}

@@ -4,9 +4,17 @@
     "version": "2.0.0",
     "tasks": [
         {
-            "label": "echo",
+            "label": "python",
             "type": "shell",
-            "command": "echo Hello"
+            //"command": "C:\\Users\\xiao6\\AppData\\Local\\Microsoft\\WindowsApps\\python.exe",
+            "command": "C:\\Program Files\\Python37\\python.exe",
+            "args": [
+                "${file}"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
         }
     ]
 }

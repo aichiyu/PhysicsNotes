@@ -1,0 +1,60 @@
+\documentclass[UTF8,9pt]{ctexart}
+\usepackage{../../template/homeworkTEMP/hw}
+\setlength{\arraycolsep}{1pt}
+\setcounter{secnumdepth}{0}
+\title{统计力学第四次作业} 
+\begin{document} 
+\maketitle
+\se{3.5}
+对$S$求微分, 平衡时: $\de^2S^\a = \sum \f{\de^2U^\a-\de T^\a\de S^\a+p^\a\de^2V^\a+\de p^\a\de V^\a}{T}<0$, 且$\de^2U^1+\de^2U^2=\de^2V^1+\de^2V^2=0,\ T_1=T_2=T,\ p_1=p_2=p$.  
+$$\ip \de^2S^\a = \sum \f{-\de T^\a\de S^\a+\de p^\a\de V^\a}{T}<0 \ip \de T^\a\de S^\a-\de p^\a\de V^\a>0$$
+\qqed
+将$\de S=\pp{S}{T}\de T+\pp{S}{V}\de V,\ \de{p}=\pp{p}{T}\de T+\pp{p}{V}\de V$代入$\de T^\a\de S^\a-\de p^\a\de V^\a>0$, 可得
+$$\pp{S}{T}(\de T)^2+\pp{S}{V}\de V\de T-\pp{p}{T}\de T\de V-\pp{p}{V}(\de V)^2>0$$
+又Maxwell关系式有$(\pp{S}{V})_T=(\pp{p}{T})_V$, 因此
+$$\f{C_V}{T}(\de T)^2-\pp{p}{V}(\de V)^2>0$$
+即$C_V^\a>0,\ (\pp{p}{ {V^\alpha} })_T<0 \ip (\pp{ V^\alpha }{p})_T<0$. \\
+\qqed
+同理, 将$\de S=(\pp{S}{T})_p\de T+(\pp{S}{p})_T\de p,\ \de{V}=(\pp{V}{T})_p\de T+(\pp{V}{p})_T\de p$代入$\de T^\a\de S^\a-\de p^\a\de V^\a>0$, 可得
+$$(\pp{S}{T})_p(\de T)^2+(\pp{S}{p})_T\de p\de T-(\pp{V}{T})_p\de p\de T-(\pp{V}{p})_T(\de p)^2>0$$
+又Maxwell关系式有$-(\pp{S}{p})_T=(\pp{V}{T})_p$, 因此
+$$\sum \f{C_p}{T}(\de T)^2+2(\pp{S}{p})_T\de p\de T-\pp{V}{p}(\de p)^2>0$$
+即
+$$\f{C^1_p}{T}(\de T)^2+\f{C^2_p}{T}(\de T)^2+2(\pp{S_1}{p})_T\de p\de T+2(\pp{S_2}{p})_T\de p\de T-\pp{V_1}{p}(\de p)^2-\pp{V_2}{p}(\de p)^2>0$$
+孤立系统中$2(\pp{S_1}{p})_T\de p\de T+2(\pp{S_2}{p})_T\de p\de T=0$.\\
+即$C_p^\a>0,\ \pp{p}{{V^\a}}<0$. \\
+\qqed
+\se{3.7}
+$$\d F = -S\d T-p\d V+\mu \d n$$
+由微分变换关系可得:
+$$(\pp{S}{n})_{T,V}=-(\pp{\mu}{T})_{V,n}$$
+又由于$U(S,V,n)=T\d S-p\d V+\mu\d n$, 则$(\pp{U}{n})_{T,V} = \pp{U}{S}\pp{S}{n}+\pp{U}{n} = -T(\pp{\mu}{T})_{V,n}+\mu$.
+\se{3.8}
+$$\de S^\a=\f{\de Q^\a}{T} = \f{\de U^\a + p\de V^\a- \mu^\a \de n}{T}$$
+对$\de S^\a$求微分, 平衡时: $\de^2S^\a = \sum \f{\de^2U^\a-\de T^\a\de S^\a+p^\a\de V^\a-\de\mu^\a\de n^\a-\mu^\a\de^2 n^\a}{T}$, 且$\de^2U^1+\de^2U^2=\de^2V^1+\de^2V^2=\de^2n^1+\de^2n^2=0,\ T_1=T_2=T,\ p_1=p_2=p,\ \mu_1=\mu_2=\mu$.  则
+$$\de^2S^\a = \sum \f{-\de T^\a\de S^\a+\de p^\a\de V^\a-\de\mu\de n^\a}{T}<0$$
+$$\ip \sum -\de T^\a(n^\a\de S_m^\a+S_m^\a\de n^\a)+\de p^\a(n^\a\de V_m^\a+V_m^\a\de n^\a)-(-S_m\d T+V_m\d p)\de n^\a<0$$
+$$\ip \de T^\a\de S^\a-\de p^\a\de V^\a>0$$
+两个稳定平衡条件推导同problem 3.5. 
+\se{3.10}
+相变时$p, T$不变, $\D U_m=\D H_m-p\D V_m=L-p\D V$. 代入克拉珀龙方程$\D V=\f{L}{T}\dd{T}{p},\ \D U_m=L-\f{pL}{T}\dd{T}{p}$.
+\se{3.11}
+联立题中两式可得此时$T=195.2$K, $p=5934$Pa.\\
+由蒸气压计算式$\ln p=-\f{L}{RT}+A$.\\
+对升华: $L_1/R=3754 \ip L_1=31210.8$J. \\
+对汽化: $L_2/R=3063 \ip L_2=25465.8$J.\\
+对熔解: $L_3=L_1-L_2=5745$J.\\
+\se{3.15}
+$$\ff{V_m}\dd{V_m}{T}=\ff{V_m}(\pp{V_m}{p}\dd{p}{T}+\pp{V_m}{T})$$
+若为理想气体, 代入理想气体状态方程和克拉珀龙方程: 
+$$=\ff{T}-\ff{p}\dd{p}{T}=\ff{T}-\f{L}{RT^2}$$
+\se{3.16}
+极值点即$(\pp{p}{V_m})_T=0$. 范氏气体满足$(p+\f{a}{V_m^2})(V_m-b)=RT$,
+$$\ip RTV_m^3=2a(V_m-b)^2$$
+$$\ip p=\f{2a}{V_m^3}(V_m-b)-\f{a}{V_m^2} \ip pV_m^3=a(V_m-2b)$$
+\se{3.19}
+二级相变中, $\d s^{(1)}=\d s^{(2)}$, $\d v^{(1)}=\d v^{(2)}$. \\
+且根据定义, $\d v=\a v\d T-\k v\d p$.\\
+即$\a v^{(1)}\d T-\k v^{(1)}\d p=\a v^{(2)}\d T-\k v^{(2)}\d p \ip \dd{p}{T} = \f{\a^{(2)}-\a^{(1)}}{\k_T^{(2)}-\k_T^{(1)}}$.\\
+同理, $\d s=\f{C_p}{T}\d T-\a v\d p$, $\dd{p}{T}=\f{C_p^{(2)}-C_p^{(1)}}{Tv(\a^{(2)}-\a^{(1)})}$
+\end{document}

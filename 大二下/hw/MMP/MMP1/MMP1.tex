@@ -1,0 +1,115 @@
+
+\documentclass[UTF8,9pt]{ctexart}
+\usepackage{../../template/homeworkTEMP/hw}
+\setcounter{secnumdepth}{0}
+\title{数理方法II第一次作业} 
+\begin{document} 
+\maketitle
+\se{1}
+$$\ar{
+    \dt{\bm{r}}=&\dt{r\bm{e_r}}\\
+    =&r\dt{\bm{e_r}}+\dot{r}\bm{e_r}\\
+    =&r\dt{\t}\bm{e_\t}+\dot{r}\bm{e_r}\\
+    =&r\dot{\t}\bm{e_\t}+\dot{r}\bm{e_r}
+}$$
+$$\ar{
+    \dt{\bm{v}}=&\dt{}(r\dot{\t}\bm{e_\t}+\dot{r}\bm{e_r})\\
+    =&\dot{r}\dot{\t}\bm{e_\t}+r\ddot{\t}\bm{e_\t}-r\t^2\bm{e_r}+\ddot{r}\bm{e_r}+r\dt{\bm{e_r}}\\
+    =&\left.(2\dot{r}\dot{\t}+r\ddot\t)\right.\bm{e_\t}+(\ddot{r}-r\t^2)\bm{e_\t}
+}$$
+\newpage
+\se{2}
+$$r=|\bm{r}|=\sqrt{(x-x')^2+(y-y')^2+(z-z')^2}.$$
+(1) $x$ 方向:
+$$(\nabla \ff{r})_x=\pp{1/r}{x}=-\ff{2}\ff{r^3}2(x-x')=-\f{\bm{r}_x}{r^3}$$
+$y,z$方向同理,则有:
+$$\nabla \ff{r}=-\nabla'\ff{r}=-\f{\bm{r}}{r^3}$$
+(2) 由于$\nabla \ff{r}=-\f{\bm{r}}{r^3}$, 且对任何标量函数$\phi$有: $\nabla \times (\nabla A)=0$:
+$$\nabla \times \f{\bm{r}}{r^3}=-\nabla \times (\nabla \ff{r})=0$$
+(3) $$\nabla\times\bm{r}=\left|\ar[ccc]{
+    i&j&k\\
+    \pp{}{x}&\pp{}{y}&\pp{}{z}\\
+    x-x'&y-y'&z-z'
+}\right|=(\pp{z}{y}-\pp{y}{z})\bm{e}_x+(\pp{x}{z}-\pp{z}{x})\bm{e}_y+(\pp{y}{x}-\pp{x}{y})\bm{e}_z$$
+\newpage
+\se{3}
+设存在等距的三个点$a,b,c$,其间距为$\d x$. 在$b$点左侧受力:
+$$f_L\d x=Y(u(b,t)-u(a,t)) \ip f_L=Y\pp{u}{x}(b,t)$$
+总应力为左右两侧之差:
+$$f=f_R-f_L=Y(\pp{u}{x}(b,t)-\pp{u}{x}(a,t))$$
+单位长度牛顿第二定律:
+$$\rho S \dt[2]{u} = f_0+ \f{f}{\d x}=f_0+Y\pp[2]{u}{x}$$
+边界条件1, $x=0$处固定:
+$$u(0,t)=0$$
+边界条件2, $x=0$处受力:
+$$G(t)=Yu(0,t)$$
+\newpage
+\se{4}
+$\a=\pp{u}{\rho},\ \beta=\pp{u}{\phi}$, 设$\phi$方向的两个方向的方向矢量为$\bm{n}_1=(-\cos\f{\d\phi}{2},-\sin\f{\d\phi}{2},0),\bm{n}_2=(\cos\f{\d\phi}{2},-\sin\f{\d\phi}{2},0)$, 分别沿$x, y$轴旋转小角度$\a,\beta$:
+$$\bm{n}'=(
+    \begin{array}{ccc}
+        1 & 0 & \beta \\
+        0 & 1 & 0 \\
+        -\beta & 0 & 1 \\
+    \end{array}
+    )(
+    \begin{array}{ccc}
+        1 & 0 & 0 \\
+        0 & 1 & -\a \\
+        0 & \a & 1 \\
+    \end{array}
+    )\cdot(
+    \begin{array}{c}
+         x\\
+         y\\
+         z
+    \end{array}
+    )
+    =(
+    \begin{array}{c}
+            x + \a \beta y\\
+         y\\
+         -\beta x + \a y
+    \end{array})$$
+$\d\a=\pp{u(\rho+\d\rho)}{\rho}-\pp{u(\rho+\d\rho)}{\rho}=\pp[2]{u}{\rho}\d\rho$, 则这两个方向在$Z$分量的力为:
+$$F_{12}=T\d\rho\d\phi(\ff{\rho}\pp[2]{u}{\phi}-\pp{u}{\rho})$$
+再结合$\rho$方向的两个力:
+$$m\pt[2]{u}=T(\rho+\d\rho)\d\phi\pp{u}{\rho}(\rho+\d\rho)-T\rho\d\phi\pp{u}{\rho}(\rho)+F_{12}$$
+$$\ip \rho_m\pt[2]{u}=T\d\rho(\rho\pp[2]{u}{\rho})\d\phi+T\ff{\rho}\pp[2]{u}{\phi}\d\rho\d\phi=T\ff{\rho}\pp{}{\rho}(\rho\pp{u}{\rho})+T\ff{\rho^2}\pp[2]{u}{\phi}=T\nabla^2 u$$
+化为直角坐标:
+$$\rho_m\pp[2]{u}{t}=T(\pp[2]{u}{x}+\pp[2]{u}{y})$$
+\newpage
+\se{5}
+(1) 
+$$\D=4-5<0$$
+$$\dd{y}{x}=2\pm\sqrt{4-5}=2 \pm i \ip (2 \pm i)x-y=\gamma$$
+$$\ip \xi=2x+y,\ \eta=x$$
+$$a=4 -4\tm 2+5=1,\quad d = 2-2=0,\quad e = 1$$
+方程变为:
+$$\pp[2]{u}{\xi}+\pp[2]{u}{\eta} = -\pp{u}{\eta}$$
+
+(2)
+$$\D=-y$$
+$$\dd{y}{x}=\pm (-y)^{1/2} \ip x\pm 2(-y)^{1/2}=\gamma$$
+当$y>0,\D<0$:
+$$\xi=x,\ \eta=2\sqrt{y}$$
+$$a=1,\quad d=0,\quad e=\f{y^{-3/2}}{2}+\ff{2\sqrt{y}}$$
+方程变为:
+$$\pp[2]{u}{\xi}+\pp[2]{u}{\eta} = -\f{y^{-3/2}}{2}\pp{u}{\eta} = -\f{4}{\eta^3}\pp{u}{\eta}$$
+当$y<0,\D>0$:
+$$\xi=x + 2\sqrt{-y},\ \eta=x - 2\sqrt{-y}$$
+$$\mu=x,\ \nu=2\sqrt{-y}$$
+$$b=2,\quad d=-\ff{\sqrt{-y}},\quad e=\ff{\sqrt{-y}}$$
+方程变为:
+$$\pp[2]{u}{\mu}-\pp[2]{u}{\nu} = -\ff{2}(-2\ff{\sqrt{-y}}\pp{u}{\nu})=\ff{\sqrt{-y}}\pp{u}{\nu} = \f{2}{\nu}\pp{u}{\nu}$$
+当$y=\D=0$:
+$$\pp[2]{u}{x}+\ff{2}\pp{u}{y}=0$$
+
+(3)
+$$\D = 4>0$$
+$$\dd{y}{x}=-\cos x \pm 2 \ip \sin x +y \pm 2x=\gamma$$
+$$\xi=\sin x + 2x + y,\ \eta=\sin x - 2x + y,\quad\mu=\sin x + y,\ \nu = 2x$$
+$$b=4(\cos x-1),\quad d=-\sin x-1,\quad e=-\sin x-1$$
+方程变为:
+$$\pp[2]{u}{\mu}-\pp[2]{u}{\nu} = -\ff{4(\cos x-1)}\left[-2(\sin x+1)\pp{u}{\mu}-2y\right] = \ff{2(\cos \f{\nu}{2}-1)}\left[(\sin \f{\nu}{2}+1)\pp{u}{\mu}+(\mu - \sin\f{\nu}{2})\right]$$
+\end{document}

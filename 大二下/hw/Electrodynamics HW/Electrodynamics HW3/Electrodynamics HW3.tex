@@ -1,0 +1,39 @@
+\documentclass[UTF8,9pt]{ctexart}
+\usepackage{../../template/homeworkTEMP/hw}
+\setlength{\arraycolsep}{1pt}
+\setcounter{secnumdepth}{0}
+\title{The 3rd HW of Electrodynamics} 
+\begin{document} 
+\maketitle
+\se{Q1}
+Find the relation between the current and the field in the gap of a quadrupole magnet.\\
+\putfig{0.1}{1.jpg}
+按如图路径积分,仅$C_1,C_2$处$\bm{B}\d \bm{l} \neq 0$.
+$$\int_{C_1} \vec{H} \cdot d \vec{l}+\int_{C_2} \vec{H} \cdot d \vec{l}=N I$$
+由边界条件:
+$$ 
+B_{\text { gap }}=B_{\text { iron }}
+ $$
+ $$ 
+ H_{\mathrm{gap}}=\frac{B_{\mathrm{gap}}}{\mu_{0}}, H_{\mathrm{iron}}=\frac{B_{\mathrm{iron}}}{\mu_{0} \mu_{\mathrm{iron}}}
+  $$
+设$h$为半个gap长.
+$$ 
+N I=\frac{B_{\mathrm{gap}} h}{\mu_{0}} +\frac{B_{\mathrm{iron}} l_{\mathrm{iron}}}{\mu_{0} \mu_{\mathrm{iron}}}
+ $$
+ $$ 
+ \ip N I=\ff{\eta} \frac{B_{\mathrm{gap}} h}{\mu_{0}} , \eta=\frac{\frac{B_{\text { gap }} h}{\mu_{0}} }{\frac{B_{\text { gap }} h}{\mu_{0}} +\frac{B_{\text { iron }} l_{\text { iron }}}{\mu_{0} \mu_{\text { iron }}}}
+$$
+通常$ \mu_{\text { iron }} \approx 1000,\eta \approx 0.99$可化简为:
+$$N I=\frac{B_x h}{\mu_{0}} \ip B_x=\f{NI\mu_0}{h}$$
+设边界坐标为$(x,y)$, 边界方程为$xy=C$, 则$y=\f{C}{x}=\f{C}{h}$, 代入上式, $B_x=\f{NI\mu_0}{C}y$. 将积分轨迹变为沿直线$x=y$对称的另一条轨迹, 同理可得$y$方向磁场:$B_y=\f{NI\mu_0}{C}x$, 即
+$$B=(y,x,0)\f{NI\mu_0}{C}.$$
+\se{Q2} 
+Find the potential of a uniformly charged ring with radius $R$ and line charge density $\tau$. Find the explicit function of the potential on the symmetry axis.
+
+设线圈在$r'=R$处, 线圈上一点坐标为$(R,\t',0)$. 场点$P$在$(r,\t,z)$处. 
+$$\phi = \oint \ff{4\pi\epsilon_0}\f{\tau}{\sqrt{(R\cos\t'-r\cos\t)^2+(R\sin\t'-r\sin\t)^2+z^2}}R\d \t'$$
+$$\ip \phi = \f{\tau R}{4\pi\epsilon_0}\int_0^{2\pi}\f{\d\t'}{\sqrt{R^2+r^2-2Rr(\cos\t'\cos\t+\sin\t'+\sin\t)+z^2}}$$
+在$z$轴上$r=0$, 积分可化简: 
+$$\phi = \f{\tau R}{4\pi\epsilon_0}\int_0^{2\pi}\f{\d\t'}{\sqrt{R^2+z^2}}=\f{\tau R}{2\epsilon_0 \sqrt{R^2+z^2} }$$
+\end{document}

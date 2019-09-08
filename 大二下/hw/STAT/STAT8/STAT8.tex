@@ -1,0 +1,23 @@
+\documentclass[UTF8,9pt]{ctexart}
+\usepackage{../../template/homeworkTEMP/hw}
+\setcounter{secnumdepth}{0}
+\title{统计力学第八次作业} 
+\begin{document} 
+\maketitle
+\se{9.18}
+$$\ar{ P_n \x \sum\rho_{n,s}\\
+\x \ff{\Xi}e^{-\a n}\sum e^{-\b E_s}\\
+\x \ff{\Xi}e^{-\a n}Z_n(T,v)
+}$$
+又
+$$Z_n(T,v) = \ff{n!}[Z_1(T,v)]^n$$
+$$\ln\Xi = e^{-\a}Z_1(T,v)$$
+$$\bar{n} = \ln\Xi$$
+可得$$P_n=\ff{Xi}\ff{n!}e^{-\a n}[Z_1(T,v)]^n=\ff{n!}e^{-\bar{n}}(\bar{n})^n$$
+\se{2}
+$$\Xi = \sum e^{-\a N}Z_N(T,A)= \sum e^{-\a N} \ff{N!}Z_1^N$$
+$$Z_1 = A\of{\f{2\pi m}{\b h^2}e^{\b\ep_0}}$$
+$$\ip \Xi = e^{e^{-\a}A\of{\f{2\pi m}{\b h^2}e^{\b\ep_0}}}$$
+$$\bar{N} = -\pp{}{\a}\ln\Xi=A\of{\f{2\pi mkT}{h^2}}e^{\f{\ep_0+\mu}{kT}}$$
+$$\f{\bar{N}}{A} = \f{p}{kT}\of{\f{h^2}{2\pi mkT}}^{1/2}e^{\f{\ep_0}{kT}}$$
+\end{document}

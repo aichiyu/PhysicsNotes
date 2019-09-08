@@ -1,0 +1,126 @@
+\documentclass[UTF8,9pt]{ctexart}
+\usepackage{../../template/homeworkTEMP/hw}
+\setcounter{secnumdepth}{0}
+\title{The 11th HW of Electrodynamics}
+\begin{document} 
+\maketitle
+\se{1}
+$$ 
+\begin{array}{rl}
+E_{z}\x E_{0} J_{m}\left(k_{m n} r\right) \cos m \phi \cos \frac{p \pi z}{l} e^{-i \omega t} \\ 
+E_{r}\x -\frac{p \pi}{l} \frac{1}{k_{m n}} E_{0} J_{m}^{\prime}\left(k_{m n} r\right) \cos m \phi \sin \frac{p \pi z}{l} e^{-i \omega t}\\ 
+E_{\phi}\x \frac{p \pi}{l} \frac{m}{r k_{m n}^{2}} E_{0} J_{m}\left(k_{m n} r\right) \sin m \phi \sin \frac{p \pi z}{l} e^{-i \omega t}
+\end{array}
+ $$
+ 代入$mnp=010$,
+$$ 
+\begin{array}{rl}
+E_{z}\x E_{0} J_{0}\left(k_{0 1} r\right) \phi e^{-i \omega t} \\ 
+E_{r}\x 0\\ 
+E_{\phi}\x 0
+\end{array}
+ $$
+代入$k_{01} = \f{2.405}{a}$
+$$E_{z} = E_{0} J_{0}\left(\f{2.405}{a} r\right) \cos(\omega t)$$
+
+总能量为电场能两倍:
+$$w = \ep_0E^2 = \ep_0E_0^2J_{0}^2\left(\f{2.405}{a} r\right) \cos^2(\omega t)$$
+$$U = 4\pi\ep_0 E_0^2\cos^2\o tl\int_0^aJ_0^2r\d r$$
+电流密度为:
+$$J=\sg E = E_{0} J_{0}\left(2.405\right) \cos(\omega t)$$
+$$I = (l+2a)*\de*J = \de lE_0J_0\left(2.405\right)\cos\o t$$
+代入
+$\o = \f{2.405}{\sqrt{\mu_0\ep_0}a}$
+因此
+$$Q=\f{\omega U}{P} = \frac{2.405 \sqrt{\mu_{0} / \epsilon_{0}}}{2 R_{S}} \frac{1}{1+a / l}$$
+\se{2}
+For an electromagnetic wave traveling in an waveguide...\\
+由Maxwell方程, 
+$$\pp{H_z}{y}-\pp{H_y}{z}=-i\o \ep_0 E_x$$
+$$\pp{H_x}{z}-\pp{H_z}{x}=-i\o \ep_0 E_y$$
+$$\pp{H_y}{x}-\pp{H_x}{y}=-i\o \ep_0 E_z = 0$$
+代入$H=H(x,y)e^{i(k_zz-\o t)}$
+$$\pp{H_z}{y}-ik_zH_y=-i\o \ep_0 E_x$$
+$$ik_zH_x-\pp{H_z}{x}=-i\o \ep_0 E_y$$
+$$\pp{H_y}{x}-\pp{H_x}{y}=-i\o \ep_0 E_z = 0$$
+$E$同理, 则可以得到:
+$$\boxed{\ar{
+    E_x \x \f{i}{k^2-k_z^2}\of{\o \mu_0\pp{H_z}{y}+k_z\pp{E_z}{x}}\\
+    E_y \x \f{i}{k^2-k_z^2}\of{-\o \mu_0\pp{H_z}{x}+k_z\pp{E_z}{y}}\\
+    H_x \x \f{i}{k^2-k_z^2}\of{-\o \ep_0\pp{E_z}{y}+k_z\pp{H_z}{x}}\\
+    H_y \x \f{i}{k^2-k_z^2}\of{\o \ep_0\pp{E_z}{x}+k_z\pp{H_z}{y}}
+}}$$
+如果将$$ 
+E_z=E_{0} J_{m}\left(k_{m n} r\right) \cos m \phi \cos \frac{p \pi z}{l} e^{-i \omega t}
+ $$代入上式, 
+再由于:
+$$\pp{E_z}{x} = E_{0} J'_{m}\left(k_{m n} r\right)\f{x}{r}(-m) \sin m \phi\f{y}{r^2} \cos \frac{p \pi z}{l} e^{-i \omega t}$$
+$$\pp{E_z}{y} = E_{0} J'_{m}\left(k_{m n} r\right)\f{y}{r}(-m) \sin m \phi\f{x}{r^2} \cos \frac{p \pi z}{l} e^{-i \omega t}$$
+$$H_z=0$$
+便有
+$$E_x=\f{-mik_zxy}{k_{mn}^2r^3}E_{0} J'_{m}\left(k_{m n} r\right) \sin m \phi \cos \frac{p \pi z}{l} e^{-i \omega t}$$
+代入$k_z=\f{p\pi}{l_3}$,
+$$E_x=\f{-imp\pi xy}{l_3k_{mn}^2r^3}E_{0} J'_{m}\left(k_{m n} r\right) \sin m \phi \cos \frac{p \pi z}{l} e^{-i \omega t}$$
+对于$y$方向:
+$$E_y=\f{-imp\pi xy}{l_3k_{mn}^2r^3}E_{0} J'_{m}\left(k_{m n} r\right) \sin m \phi \cos \frac{p \pi z}{l} e^{-i \omega t}$$
+变换直角坐标为柱坐标可得:
+$$ \boxed{
+\begin{array}{l}{E_{r}=-\frac{p \pi}{l} \frac{1}{k_{m n}} E_{0} J_{m}^{\prime}\left(k_{m n} r\right) \cos m \phi \sin \frac{p \pi z}{l} e^{-i \omega t}} \\ {F_{\phi}=\frac{p \pi}{l} \frac{m}{r k_{m n}^{2}} E_{0} J_{m}\left(k_{m n} r\right) \sin m \phi \sin \frac{p \pi z}{l} e^{-i \omega t}}\end{array}
+ }$$
+
+同理, 如果将$$ 
+E_z=E_{0} J_{m}\left(k_{m n} r\right) \cos m \phi \cos \frac{p \pi z}{l} e^{-i \omega t}
+ $$
+代入
+$$\ar{
+    H_x \x \f{i}{k^2-k_z^2}\of{-\o \ep_0\pp{E_z}{y}+k_z\pp{H_z}{x}}\\
+    H_y \x \f{i}{k^2-k_z^2}\of{\o \ep_0\pp{E_z}{x}+k_z\pp{H_z}{y}}
+}$$
+再由于:
+$$\pp{E_z}{x} = E_{0} J'_{m}\left(k_{m n} r\right)\f{x}{r}(-m) \sin m \phi\f{y}{r^2} \cos \frac{p \pi z}{l} e^{-i \omega t}$$
+$$\pp{E_z}{y} = E_{0} J'_{m}\left(k_{m n} r\right)\f{y}{r}(-m) \sin m \phi\f{x}{r^2} \cos \frac{p \pi z}{l} e^{-i \omega t}$$
+$$H_z=0$$
+便有
+$$ \boxed{
+\begin{array}{l}{B_{r}=i \omega \frac{m}{r k_{m n c^{2}}^{2} c^{2}} E_{0} J_{m}\left(k_{m n} r\right) \sin m \phi \cos \frac{p \pi z}{l} e^{-i \omega t}} \\ {B_{\phi}=i \omega \frac{1}{k_{m n} c^{2}} E_{0} J_{m}^{\prime}\left(k_{m n} r\right) \cos m \phi \cos \frac{p \pi z}{l} e^{-i \omega t}}\end{array}
+ }$$
+\se{3}
+电场能量为
+$$ 
+\begin{aligned} \int U_{E} \d V &=\frac{1}{2} \varepsilon E_{0}^{2} \int_{0}^{a} d x \int_{0}^{a} \sin ^{2} k_{y} y d y \int_{0}^{a} \sin ^{2} k_{z} z d z \cos ^{2}(\omega t) \\ &=\frac{1}{8} \varepsilon E_{0}^{2} a^{3} \cos ^{2}(\omega t) \end{aligned}
+ $$
+ 磁场能量为
+ $$ 
+\begin{aligned} \int U_{H} d V=& \frac{1}{2} \frac{k_{z}^{2}}{\mu \omega^{2}} E_{0}^{2} \int_{0}^{a} d x \int_{0}^{a} \sin ^{2}(k y) d y \int_{0}^{a} \cos ^{2}(k z) d z \sin ^{2}(\omega t) \\ &+\frac{1}{2} \frac{k_{y}^{2}}{\mu \omega^{2}} E_{0}^{2} \int_{0}^{a} d x \int_{0}^{a} \cos ^{2}(k y) d y \int_{0}^{a} \sin ^{2}(k z) d z \sin ^{2}(\omega t) \\=& \frac{1}{8} \frac{\left(k_{y}^{2}+k_{z}^{2}\right)}{\mu \omega^{2}} E_{0}^{2} a^{3} \sin ^{2}(\omega t) \end{aligned}
+ $$
+ 代入$k_{y}^{2}+k_{z}^{2}=\frac{w_{2}}{c^{2}}$
+ 则磁场能量可被化为
+ $$ 
+\int U_{H} d V=\frac{1}{8} \frac{1}{\mu c^{2}} E_{0}^{2} a^{3} \sin ^{2}(\omega t)=\frac{1}{8} \varepsilon E_{0}^{2} a^{3} \sin ^{2}(\omega t)
+ $$
+由于$\sin^2\o t$与$\cos^2\o t$的周期平均是相同的, 因此二者能量相等, 且和为
+$$ 
+\mathcal{E}_{E}+\mathcal{E}_{H}=\frac{1}{8} \varepsilon E_{0}^{2} a^{3}
+ $$
+ \se{4}
+ 将三角形波导看为矩形波导+对角线边界条件, 对于TE波, 方波导中的磁场为
+ $$ 
+B_{z}=B_{0} \cos \left(\frac{m \pi x}{a}\right) \cos \left(\frac{n \pi y}{a}\right) e^{i k z-i \omega t}
+ $$
+再令其满足边界条件$\pp{B}{n}\big|_{z=y}=0$, 即$\frac{1}{\sqrt{2}}\left[\frac{\partial B_{Z}}{\partial x}-\frac{\partial B_{Z}}{\partial y}\right]_{y=x}=0$
+即得三角波导的$B$
+$$ 
+B_{z}=B_{0}\left[\cos \left(\frac{m \pi x}{a}\right) \cos \left(\frac{n \pi y}{a}\right)+\cos \left(\frac{n \pi x}{a}\right) \cos \left(\frac{m \pi y}{a}\right)\right] e^{i k z-i \omega t}
+ $$
+对于TM波, 将$\left[E_{z}\right]_{x=y}=0$代入方波表达式$$ 
+E_{z}=E_{0} \sin \left(\frac{m \pi x}{a}\right) \sin \left(\frac{n \pi y}{a}\right) e^{i k z-i \omega t}
+ $$
+ 可得到
+ $$ 
+E_{z}=E_{0}\left[\sin \left(\frac{m \pi x}{a}\right) \sin \left(\frac{n \pi y}{a}\right)-\sin \left(\frac{n \pi x}{a}\right) \sin \left(\frac{m \pi y}{a}\right)\right] e^{i k z-i \omega t}
+ $$
+这个计算方法显然可看出截止频率与方波相同, 为
+$$ 
+\omega_{m n}=\frac{c \pi}{a} \sqrt{m^{2}+n^{2}}
+ $$
+\end{document}

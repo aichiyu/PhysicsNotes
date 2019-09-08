@@ -1,0 +1,199 @@
+\documentclass[UTF8,9pt]{ctexart}
+\usepackage{../../template/homeworkTEMP/hw}
+\setcounter{secnumdepth}{0}
+\title{统计力学第七次作业} 
+\begin{document} 
+\maketitle
+\se{8.3}
+弱简并费米(玻色)气体的内能为
+$$U=\f{3}{2}NkT\left[ 1\pm \ff{2^{5/2}}\ff{g}\f{N}{V}\of{\f{h^2}{2\pi mkT}}^{3/2} \right]$$
+由于$p=\f{2}{3}U/V$, 设$n=N/V$, 压强为:
+$$nkT\left[ 1\pm \ff{2^{5/2}}\ff{g}n\of{\f{h^2}{2\pi mkT}}^{3/2} \right]$$
+定容热容为
+$$C_v = \f{3}{2}Nk\left[ 1\mp \ff{2^{5/2}}\ff{g}n\of{\f{h^2}{2\pi mkT}}^{3/2} \right]$$
+可计算熵为:
+$$S = \f{3}{2}Nk\ln T\pm Nk\ff{2^{7/2}}\ff{g}n \of{\f{h^2}{2\pi mkT}}^{3/2}+S_0$$
+$$ = Nk\left\{ \ln [\ff{g}n \of{\f{h^2}{2\pi mkT}}^{3/2}] +\f{5}{2} \pm \ff{2^{7/2}}\ff{g}n \of{\f{h^2}{2\pi mkT}}^{3/2} \right\}$$
+\se{8.4}
+二维粒子的状态密度为
+$$D\d\ep = \f{2\pi L^2}{h^2}m\d \ep$$
+代入$T_c$表达式可得
+$$\f{2\pi L^2}{h^2}m\intzi \ff{e^{\f{\ep}{kT_c}}-1} = n$$
+该积分发散, 因此不存在玻色凝聚. 
+\se{8.9}
+$$\l T= \f{hv}{4.9651k}$$
+代入各参数为
+$$T=6000K$$
+\se{8.17}
+压强为
+$$p = \f{2}{5}n\mu(0) = \f{2}{5}\f{\hbar^2}{2m}(3\pi^2)^{2/3}\of{N/V}^{5/3}$$
+0K下
+$$\k_T = -\ff{V}(\pp{V}{p})_T = \f{3}{2}\f{V}{\f{\hbar^2}{2m}(3\pi^2)^{2/3}\of{N/V}^{5/3}} = \f{3}{2}\ff{n\mu(0)}$$
+由于0K下T=0与S=0等温线重合, 
+$$\k_s=\f{3}{2}\ff{n\mu(0)}$$
+\se{8.19}
+面积A内自由电子量子态数为:
+$$D\d\ep = \f{4\pi A}{h^2}m\d \ep$$
+费米能量由下式确定:
+$N=\frac{4 \pi A}{h^{2}} m \int_{0}^{\mu(0)} \mathrm{d} \varepsilon=\frac{4 \pi A}{h^{2}} m \mu(0)$
+即
+$$ 
+\mu(0)=\frac{h^{2}}{4 \pi m} \frac{N}{A}=\frac{h^{2}}{4 \pi m} n
+ $$
+ 0K时内能为
+ $$ 
+U=\frac{4 \pi A}{h^{2}} m \int_{0}^{\mu(0)} \varepsilon \mathrm{d} \varepsilon=\frac{4 \pi A}{h^{2}} \frac{m}{2} \mu^{2}(0)=\frac{N}{2} \mu(0)
+ $$
+ 代入$p=U/A$
+ $$ 
+p=\frac{1}{2} n \mu(0)
+ $$
+ \se{9.1}
+ 将$\rho_s=\ff{\O}$代入$S=-k\sum\rho_s\ln\rho_s$.
+ 得$$ 
+ S=-k \sum_{s} \frac{1}{\Omega} \ln \frac{1}{\Omega}
+  $$
+  再代入$\sum\ff{\O}=1$,$$ 
+  S=-k \ln \frac{1}{\Omega}=k \ln \Omega
+   $$
+   这正是玻耳兹曼关系
+   \se{9.2}
+   $$ 
+\rho_{s}=\frac{1}{Z} \mathrm{e}^{-\beta E_{s}}
+ $$$$ 
+ Z=\sum_{s} \mathrm{e}^{-\beta E_s}
+  $$由于$$ 
+  \sum_{s} \rho_{s}=1
+   $$$$ 
+\begin{aligned} S &=k\left(\ln Z-\beta \frac{\partial}{\partial \beta} \ln Z\right) \\ &=k(\ln Z+\beta U) \\ &=k \sum \rho_{s}\left(\ln Z+\beta E_{s}\right) \end{aligned}
+ $$因此$$ 
+ \ln \rho_{s}=-\left(\ln Z+\beta E_{s}\right)
+  $$
+  所以
+  $$ 
+S=-k \sum \rho_{s} \ln \rho_s
+ $$
+ \se{9.3}
+ 其能量为
+ $$ 
+E=\sum_{i=1}^{3 N} \frac{p_{i}^{2}}{2 m}
+ $$
+ $$Z 
+=\frac{V^{N}}{N ! h^{3 N}} \prod_{i=1}^{3 N} \int \mathrm{e}^{-\beta_{2 i}^{2}} \mathrm{d} p_{i}
+ $$$$ 
+ =\frac{V^{N}}{N !}\left(\frac{2 \pi m}{\beta h^{2}}\right)^{\frac{3 N}{2}}
+  $$
+  气体压强为
+  $$ 
+p=\frac{1}{\beta} \frac{\partial}{\partial V} \ln Z=\frac{N}{\beta} \frac{\partial}{\partial V} \ln V=\frac{N k T}{V}
+ $$因此物态方程为$$ 
+ p V=N k T
+  $$
+  $$ 
+U=-\frac{\partial}{\partial \beta} \ln Z=-\frac{3 N}{2} \frac{\partial}{\partial \beta} \ln \frac{1}{\beta}=\frac{3 N}{2} k T
+ $$$$ 
+\begin{aligned} S &=k\left(\ln Z-\beta \frac{\partial}{\partial \beta} \ln Z\right) \\ &=k(\ln Z+\beta U) \\ &=\frac{3}{2} N k \ln T+N k \ln \frac{V}{N}+N k\left[\ln \left(\frac{2 \pi m k}{h^{2}}\right)^{\frac{3}{2}}+\frac{5}{2}\right] \end{aligned}
+ $$$$ 
+\begin{aligned} \mu &=\left(\frac{\partial F}{\partial N}\right)_{r, v}=-k T \frac{\partial}{\partial N} \ln Z \\ &=-k T\left[N \ln V-N(\ln N-1)+\frac{3 N}{2} \ln \left(\frac{2 \pi m}{\beta h^{2}}\right)\right] \\ &=k T \ln \frac{N}{V}\left(\frac{h^{2}}{2 \pi m k T}\right)^{3 / 2} \end{aligned}
+ $$
+ \se{9.5}
+ $$ 
+E=\sum_{i=1}^{3 N_{A}} \frac{p_{A i}^{2}}{2 m_{A}}+\sum_{j=1}^{3 N_{B}} \frac{p_{B_{j}}^{2}}{2 m_{B}}
+ $$
+ $$Z 
+=\frac{1}{N_{A} ! h^{3 N_{A}}} \int \mathrm{e}^{-\beta E_{A}} \mathrm{d} \Omega_{\mathrm{A}} \cdot \frac{1}{N_{\mathrm{B}} ! h^{3 N_{\mathrm{B}}}} \int \mathrm{e}^{-\beta E_{\mathrm{B}}} \mathrm{d} \Omega_{\mathrm{B}} = Z_AZ_B
+ $$
+ $$ 
+p=\frac{1}{\beta} \frac{\partial}{\partial V} \ln Z=\left(N_{A}+N_{B}\right) \frac{k T}{V}
+ $$因此物态方程为
+ $$ 
+p V=\left(N_{\mathrm{A}}+N_{\mathrm{B}}\right) k T
+ $$$$ 
+ U=-\frac{\partial}{\partial \beta} \ln Z=\frac{3}{2}\left(N_{A}+N_{\mathrm{B}}\right) k T
+  $$$$ 
+\begin{aligned} S &=k\left(\ln Z-\beta \frac{\partial}{\partial \beta} \ln Z\right) \\ &=k(\ln Z+\beta U) \\=& N_{\mathrm{A}} k \ln \left[\frac{V}{N_{\mathrm{A}}}\left(\frac{2 \pi m_{A} k T}{h^{2}}\right)^{\frac{3}{2}}\right]+\frac{5}{2} N k+\\ & N_{\mathrm{B}} k \ln \left[\frac{V}{N_{\mathrm{A}}}\left(\frac{2 \pi m_{\mathrm{B}} k T}{h^{2}}\right)^{\frac{3}{2}}\right]+\frac{5}{2} N k \end{aligned}
+ $$
+ \se{9.5}$$ 
+ E=\sum_{i=1}^{N} \varepsilon_{i}=\sum_{i=1}^{N} c p_{i}
+  $$
+  $$Z 
+=\frac{1}{N !}\left(Z_{1}\right)
+ $$
+ 其中$$ 
+ Z_{1}=\frac{4 \pi V}{h^{3}} \int_{0}^{\infty} \mathrm{e}^{-\beta \varepsilon p} p^{2} \mathrm{d} p=8 \pi V\left(\frac{k T}{h c}\right)^{3}
+  $$所以$$ 
+  Z=\frac{1}{N !}\left[8 \pi V\left(\frac{k T}{h c}\right)^{3}\right]^{N}
+   $$
+   $$ 
+\begin{aligned} F &=-k T \ln Z \\ &=-N k T \ln \left[\frac{8 \pi V}{N}\left(\frac{k T}{h c}\right)^{3}\right]-N k T \end{aligned}
+ $$$$ 
+ p=-\left(\frac{\partial F}{\partial V}\right)_{N, T}=\frac{N k T}{V}
+  $$物态方程为
+  $$ 
+p V=N k T
+ $$
+ $$ 
+S=-\left(\frac{\partial F}{\partial T}\right)_{v, N}=N k \ln \left[\frac{8 \pi V}{N}\left(\frac{k T}{h c}\right)^{3}\right]+4 N k
+ $$$$ 
+ U=F+T S=3 N k T
+  $$$$ 
+  \mu=\left(\frac{\partial F}{\partial N}\right)_{r, v}=-k T \ln \left[\frac{8 \pi V}{N}\left(\frac{k T}{h c}\right)^{3}\right]
+   $$
+   \se{9.8}
+   $$ 
+E=\sum_{i=1}^{2 N} \frac{1}{2 m} p_{i}^{2}+\sum_{i<j} \phi\left(r_{i j}\right)
+ $$$$ 
+ Z=\frac{1}{N ! h^{2 N}} \int \cdots \int \mathrm{e}^{-\beta E} \mathrm{d} \boldsymbol{r}_{1} \cdots \mathrm{d} \boldsymbol{r}_{N} \mathrm{d} \boldsymbol{p}_{1} \cdots \mathrm{d} \boldsymbol{p}_{N}
+  =\frac{1}{N ! h^{2 N}}\left(\frac{2 \pi m}{\beta h^{2}}\right)^{N} Q
+   $$
+   $$ 
+Q=\int \cdots \int \mathrm{e}^{-\beta \sum_{i<j} \phi\left(r_{i j}\right)} \mathrm{d} \boldsymbol{r}_{1} \cdots \mathrm{d} \boldsymbol{r}_{N}
+ $$
+ 近似为
+ $$ 
+\begin{aligned} Q &=S^{N}+\frac{N^{2}}{2} \int \cdots \int f_{12} \mathrm{d} \boldsymbol{r}_{1} \cdots \mathrm{d} \boldsymbol{r}_{N} \\ &=S^{N}\left(1+\frac{N^{2}}{2} S^{N-2}\right] f_{12} \mathrm{d} \boldsymbol{r}_{1} \mathrm{d} \boldsymbol{r}_{2} ) \\ &=A^{N}\left[1+\frac{N^{2}}{2 S} \int_{0}^{+\infty}\left(\mathrm{e}^{-\beta \phi(r)}-1\right) 2 \pi r \mathrm{d} r\right] \\ &=S^{N}\left(1-\frac{N^{2}}{N_{A} S} B\right) \end{aligned}
+ $$其中$$ 
+ B=-\frac{N_{\mathrm{S}}}{2} \int\left(\mathrm{e}^{-\beta \phi}-1\right) 2 \pi r \mathrm{d} r
+  $$
+  因此
+  $$ 
+Z=\frac{1}{N !}\left(\frac{2 \pi m}{\beta h^{2}}\right)^{N} S^{N}\left(1-\frac{N^{2}}{N_{A} S} B\right)
+ $$
+ $$ 
+p=\frac{1}{\beta} \frac{\partial}{\partial S} \ln Z=\frac{N k T}{S}\left(1+\frac{N}{N_{A}} \frac{B}{S}\right)
+ $$
+ \qqed
+ $$ 
+Z=\mathrm{e}^{-\beta \phi_{0}} \prod_{i}^{3 N} \frac{\mathrm{e}^{-\beta \frac{\hbar \omega_{i}}{2}}}{1-\mathrm{e}^{-\beta \hbar \omega_{i}}}
+ $$$$ 
+ \ln Z=-\beta U_{0}-\sum_{i=1}^{3 N} \ln \left(1-\mathrm{e}^{-\beta \hbar \omega_{i}}\right)
+  $$其中$$ 
+  U_{0}=\phi_{0}+\sum_{i=1}^{3 N} \frac{\hbar \omega_{i}}{2}
+   $$
+   德拜频谱为
+   $$ 
+D(\omega) \mathrm{d} \omega=\left\{\begin{array}{ll}{\frac{9 N}{\omega_{\mathrm{D}}^{3}} \omega^{2} \mathrm{d} \omega,} & {\omega \leq \omega_{\mathrm{D}}} \\ {0,} & {\omega>\omega_{\mathrm{D}}}\end{array}\right.
+ $$于是$$ 
+ \ln Z=-\beta U_{0}-\frac{9 N}{\omega_{\mathrm{D}}^{3}} \int_{0}^{\omega_{0}} \omega^{2} \ln \left(1-\mathrm{e}^{-\beta \hbar \omega}\right) \mathrm{d} \omega
+  $$
+  设$$ 
+\begin{array}{c}{y=\frac{\hbar \omega}{k T}} \\ {x=\frac{\hbar \omega_{0}}{k T}=\frac{\theta_{0}}{T}}\end{array}
+ $$
+ 高温(x<<1)下有近似
+ $$ 
+\begin{aligned} \ln Z &=-\beta U_{0}-3 N \ln x+N \\ &=-\beta U_{0}-3 N \ln \left(\beta \hbar \omega_{\mathrm{D}}\right)+N \end{aligned}
+ $$$$ 
+ U=-\frac{\partial}{\partial \beta} \ln Z=U_{0}+3 N k T
+  $$$$ 
+  S=k(\ln Z+\beta U)=3 N k \ln \frac{T}{\theta_{\mathrm{D}}}+4 N h
+   $$$$ 
+   S=k(\ln Z+\beta U)=3 N k \ln \frac{T}{\theta_{\mathrm{D}}}+4 N k
+    $$低温下有近似$$ 
+    \ln Z=-\beta U_{0}+\frac{N \pi^{4}}{5} \frac{1}{x^{3}} 
+=-\beta U_{0}+\frac{N \pi^{4}}{5}\left(\frac{1}{\beta \hbar \omega_{\mathrm{D}}}\right)^{3}
+ $$$$ 
+ U=U_{0}+3 N k \frac{\pi^{4}}{5} \frac{T^{4}}{\theta_{\mathrm{D}}^{3}}
+  $$$$ 
+  S=k(\ln Z+\beta U)=\frac{4 \pi^{4}}{5} N k\left(\frac{T}{\theta_{\mathrm{D}}}\right)^{3}
+   $$
+\end{document}

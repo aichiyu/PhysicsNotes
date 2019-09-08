@@ -1,0 +1,359 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%Do not alter this block of commands.  If you're proficient at LaTeX, you may include additional packages, create macros, etc. immediately below this block of commands, but make sure to NOT alter the header, margin, and comment settings here. 
+\documentclass[12pt]{article}
+ \usepackage[margin=1in]{geometry} 
+ \usepackage{mathrsfs}
+\usepackage{amsmath,amsthm,amssymb,amsfonts, enumitem, fancyhdr, color, comment, graphicx, environ}
+\pagestyle{fancy}
+\setlength{\headheight}{65pt}
+\newenvironment{problem}[2][Problem]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{sol}
+    {\emph{Solution:}
+    }
+    {
+    \qed
+    }
+\specialcomment{com}{ \color{blue} \textbf{Comment:} }{\color{black}} %for instructor comments while grading
+\NewEnviron{probscore}{\marginpar{ \color{blue} \tiny Problem Score: \BODY \color{black} }}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+ 
+
+\usepackage{CTEX}
+\usepackage{amsfonts}
+\usepackage{geometry}
+\usepackage{mathtools}                                                %align needed
+\usepackage{balance}                                                  %blance when there two columns
+\usepackage{bm}                                                        %bold font
+\usepackage{mathrsfs}                                                 %change greek font style
+\usepackage{supertabular}                                             %allow long table in 2 pages
+\usepackage{soul}                                                     %highlight using \hl
+\usepackage{fontspec}                                                 %expand font type
+\usepackage{graphicx}                                                 %to input pictures
+\usepackage[colorlinks,linkcolor=red,anchorcolor=blue,citecolor=green]{hyperref}                                                %cite
+\usepackage{verbatim}                                                 %comment                            
+
+%begin{newcommands}
+    \newcommand\qqed{\rightline{$\square$}}                                 %\square
+    \newcommand\cm{\mathscr}                                               %dbar
+    \newcommand\dbar{\text{\dj}}                                           %dbar
+    \renewcommand\d{\mathrm{d}}                                            %d
+    \newcommand\sch{Schrödinger}                                           %Schrödinger
+    \newcommand{\dd}[3][]{\frac{\mathrm{d}^{#1} #2}{\mathrm{d} #3^{#1}}}   %d/d^n
+    \newcommand{\dt}[2][]{\frac{\mathrm{d}^{#1} #2}{\mathrm{d} t^{#1}}}    %d/dt^n
+    \newcommand{\pp}[3][]{\frac{\partial^{#1} #2}{\partial #3^{#1}}}       %∂/∂^n
+    \newcommand{\pt}[2][]{\frac{\partial^{#1} #2}{\partial t^{#1}}}        %∂/∂t^n 
+    \newcommand{\f}[2]{\frac{#1}{#2}}                                      %A/B
+    \newcommand{\ff}[1]{\frac{1}{#1}}                                      %1/A
+    \newcommand\rank{\mathrm{rank}}                                        %rank
+    \newcommand\tr{\mathrm{tr}}                                            %tr
+    \newcommand\e[1]{\times 10^{#1}}                                       %×10^
+    \renewcommand\Re{\mathrm{Re}\ }                                          %Re
+    \renewcommand\Im{\mathrm{Im}\ }                                          %Im
+    \renewcommand\ln{\mathrm{ln}\ }                                          %ln
+    \newcommand\Ln{\mathrm{Ln}\ }                                            %Ln
+    \renewcommand\arg{\mathrm{arg}}                                        %arg
+    \newcommand\ip{\implies}                                               %→
+    \newcommand\tm{\times}                                                 %×
+    \renewcommand\l{\lambda}                                               %λ
+    \renewcommand\a{\alpha}                                                %α
+    \renewcommand\k{\kappa}                                                %κ
+    \renewcommand\o{\omega}                                                %ω
+    \newcommand\D{\Delta}                                                  %Δ
+    \newcommand\de{\delta}                                                 %δ
+    \renewcommand\t{\theta}                                                %θ
+    \renewcommand\epsilon{\varepsilon}                                     %ε
+    \newcommand\abs[1]{\left| #1 \right|}                                  %|A|
+    \renewcommand\exp{\mathrm{exp}\ }                                        %exp
+    \newcommand\se{\section}                                               %section
+    \newcommand\sub{\subsection}                                           %subsection
+    \newcommand\sumi{\sum_{i=1}^n}                                         %∑ 
+    \AtBeginDocument{\renewcommand{\bar}{\overline}}                       %bar
+    \AtBeginDocument{\renewcommand{\hat}{\widehat}}                        %hat
+    \newcommand\inti{\int_{0}^{infty}}                                     %∮
+    \renewcommand{\arraystretch}{1.2}                                      %change array stretch
+    \newcommand{\dis}{\displaystyle}                                       %big equation
+    \newcommand{\ar}[2][rl]{\begin{array}{#1}                              %begin an array
+            #2
+        \end{array}}                                                 
+    \newcommand\bkt[1]{\left< #1 \right>}                                  %<x>
+    \newcommand\putfig[2]{                                                 %put a figure
+        \begin{center}    
+            \includegraphics[scale=#1]{#2}
+        \end{center}}
+%end{newcommands} 
+
+%resize the parentheses
+\def\lparen{(} 
+\def\rparen{)} 
+\catcode`(=\active 
+\catcode`)=\active
+\def({\ifmmode \left\lparen \else\lparen\fi} 
+\def){\ifmmode \right\rparen \else\rparen\fi}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%Fill in the appropriate information below
+\lhead{Name: 肖涵薄\\ StudentID: 31360164}  %replace with your name
+\rhead{SI 140 \\ Probability and Statistics \\ Semester Spring 2019 \\ Assignment 2} %replace XYZ with the homework course number, semester (e.g. ``Spring 2019"), and assignment number.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%Do not alter this block.
+\begin{document}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%Solutions to problems go below.  Please follow the guidelines from https://www.overleaf.com/read/sfbcjxcgsnsk/
+
+
+%Copy the following block of text for each problem in the assignment.
+\begin{problem}{1} 
+Show that if $P$ and $Q$ are two probability measures defined on the same (countable) sample space, then $aP+bQ$ is also a probability measure for any two nonnegative numbers $a$ and $b$ satisfying $a+b=1$. Give a concrete illustration of such a mixture.
+\end{problem}
+\begin{sol}
+    \\
+    (i) for all $H(A)=aP(A)+bQ(A)$, $P(A),Q(A) \geq 0$. Thus $H(A) \geq 0$. \\
+    (ii) $$\ar{
+        H(A_1+A_2)&=aP(A_1+A_2)+bQ(A_1+A_2)\\
+        &=\left[aP(A_1)+bQ(A_1)\right]+\left[aP(A_2)+bQ(A_2)\right]\\
+        &=H(A_1)+H(A_2)
+        }$$
+    (iii) $H(\Omega)=aP(\Omega)+bQ(\Omega)=a+b=1$\\
+\end{sol}
+
+
+
+%Copy the following block of text for each problem in the assignment.
+\begin{problem}{2}
+If $P$ is a probability measure, show that the function $P/2$ satisfies Axioms (i) and (ii) but not (iii). The function $P^2$ satisfies (i) and (iii) but not necessarily (ii); give a conterexample to (ii).
+\end{problem}
+\begin{sol}\\
+    $P/2$: \\
+(1) $P/2(A)=\f{P(A)}{2} \geq 0$.\\
+(2) $P/2(A+B)=\f{P(A+B)}{2}=\f{P(A)}{2}+\f{P(B)}{2}=P/2(A)+P/2(B)$.\\
+(3) $P/2(\Omega)=\f{P(\Omega)}{2}=\ff{2} \neq 1$.
+
+    $P^2$: \\
+(1) $P^2(A)=P(A)^2 \geq 0$.\\
+(2) $P^2(A+B) =[P(A)+P(B)]^2=P(A)^2+P(B)^2+2P(A)P(B) \neq P^2(A)+P^2(B)$.\\
+(3) $P^2(\Omega) = 1^2 =1$.\\
+conterexample to (ii): Suppose $P(A)=P(B)=0.1$, $P^2(A+B)=0.2^2=0.04$, however $P^2(A)+P^2(B) = 0.1^2+0.1^2=0.02$.
+\end{sol}
+
+
+
+%Copy the following block of text for each problem in the assignment.
+\begin{problem}{3}
+Show that if the two events $(A,B)$ are independent, then so are $(A,B^c)$, $(A^c,B)$ and $(A^c,B^c)$. Generalize this result to three independent events. 
+\end{problem}
+\begin{sol}
+    \\
+    The independence follows that $P(A)P(B)=P(AB)$.\\
+    $P(A)P(B^C)=P(A)(1-P(B))=P(A)-P(AB)=P(AB^C)$.\\
+    $P(A^CB)=(1-P(A))P(B)=P(B)-P(AB)=P(A^CB)$.\\
+    $P(A^C)P(B^C)=(1-P(A))(1-P(B))=1-P(A)-P(B)+P(AB)=P(A^CB^C)$.\\
+    $P(A^C)P(B)P(C)=(1-P(A))P(BC)=P(BC)-P(ABC)=P(A^CBC)$.\\
+    $P(A^C)P(B^C)P(C)=P(A^CB^C)P(C)=P(A^CB^CC)$.\\
+    $P(A^C)P(B^C)P(C^C)=P(A^CB^C)P(C^C)=P(A^CB^CC^C)$.\\
+\end{sol}
+
+
+
+%Copy the following block of text for each problem in the assignment.
+\begin{problem}{4}
+Show that if $A,B,C$ are independent events, then $A$ and $B\cup C$ are independent, and $A\setminus B$ and $C$ are independent.
+\end{problem}
+\begin{sol}
+    \\
+    $P(A)P(B \cup C) = P(A)(P(B)+P(C)-P(BC))=P(AB)+P(AC)-P(ABC)=P[(A \cap B) \cup (A \cap C)]=P[A\cap(B\cup C)]$.\\
+    $P(A \backslash B)P(C)=(P(A)-P(AB))P(C)=P(AC)-P(ABC)=P(AB^CC)=P[(A \backslash B)C]$.
+\end{sol}
+
+
+
+%Copy the following block of text for each problem in the assignment.
+\begin{problem}{5}
+Let $\Omega$ be a set and $\mathscr{F}\subset2^{\Omega}$ be a $\sigma$-algebra. A function $P$: $\mathscr{F}\to \mathbb{R}\cup \{+\infty,-\infty\}$ is called a probability measure if it satisfies the following three properties:
+\begin{enumerate}
+    \item For all $A\in \mathscr{F}$, $P(A)\geq 0$
+    \item $P(\Omega)=1$
+    \item For all countable collections disjoint $A_1,A_2,...$ in $\mathscr{F}$,
+    \[P(\bigcup_{j=1}^{\infty}A_j)=\sum_{j=1}^{\infty} P(A_j)\]
+\end{enumerate}
+Given a nested increasing sequence of events $A_1\subset A_2\subset A_3 ... \subset A_n \subset ...$ such that $\cup_{i=1}^{\infty}A_i$ is also an event, prove that $$\lim_{n\to \infty}P(A_n)=P(\bigcup_{i=1}^{\infty}A_i)$$
+\end{problem}
+\begin{sol}
+    \\
+    For any $i>j$, $A_i \cup A_j =A_i$, so that $\displaystyle \bigcup_{i=1}^nA_i = A_n \ip P(\bigcup_{i=1}^nA_i) = P(A_n)$.\\
+    Using probability axiom: $\displaystyle P(\lim_{n\rightarrow \infty}\bigcup_{i=1}^nA_i)=\lim_{n\rightarrow \infty} P(\bigcup_{i=1}^nA_i)$.
+    $$P(\bigcup_{i=1}^{\infty} A_{i}) = P(\lim_{n\rightarrow \infty}\bigcup_{i=1}^nA_i) = \lim_{n\rightarrow \infty} P(\bigcup_{i=1}^nA_i)=\lim_{n\rightarrow \infty} P(A_n)$$
+\end{sol}
+
+
+
+%Copy the following block of text for each problem in the assignment.
+\begin{problem}{6}
+Find an example where $$P(AB) < P(A)P(B)$$
+
+\end{problem}
+\begin{sol}
+    \\
+    Throw a coin, A = front face. B = back face. Then $P(A)=P(B)=1/2$, and $P(AB)=0$.
+\end{sol}
+
+
+%Copy the following block of text for each problem in the assignment.
+\begin{problem}{7}
+What can you say about the event A if it is independent of itself? If
+the events A and B are disjoint and independent, what can you say of
+them?
+\end{problem}
+\begin{sol}\\
+    
+If the event A is independent of itself, $P(A)^2=P(A)=1$.\\
+If the events A and B are disjoint and independent, $P(AB)=0 = P(A)P(B)$. So that $P(A)=0$ or $P(B)=0$. 
+\end{sol}
+
+%Copy the following block of text for each problem in the assignment.
+\begin{problem}{8}
+Prove that $$P(A \cap B \cap C) = P(A) + P(B) + P(C)
+− P(AB) − P(AC) − P(BC) + P(ABC)$$
+when A, B, C are independent by considering $P(A^{c}B^{c}C^{c})$
+\end{problem}
+\begin{sol}
+
+    $$\ar{
+        %&P(A)+P(B)+P(C)P(AB)P(AC)P(BC)+P(ABC)\\
+        %=&P(A)+P(B)+P(A)^2+P(B)^2+P(C)^3+P(ABC)\\
+        P(A \cup B \cup C)=&1-P(A^CB^CC^C)\\
+        =&1-(1-P(A))(1-P(B))(1-P(C))\\
+        =&P(A)+P(B)+P(C)-P(BC)-P(AB)-P(AC)+P(ABC)
+    }$$
+\end{sol}
+
+
+%Copy the following block of text for each problem in the assignment.
+\begin{problem}{9}
+Let $S = (−\infty,+\infty)$, the real line. Then $\mathscr{F}$ is chosen to contain all sets of the form 
+$$(a,b], [a,b], [a,b), (a,b)$$
+for all real numbers a and b.Show that  $\mathscr{F}$ is a Borel field.
+\end{problem}
+\begin{sol}\\
+    1. For every element $A=(a, b],[a, b],[a, b),(a, b)$ in $\mathscr{F}$, \\
+    $A^C = (-\infty,a]\cup(b,+\infty),\ (-\infty,a)\cup(b,+\infty),\ (-\infty,a)\cup[b,+\infty),\ (-\infty,a]\cup[b,+\infty)$ is also in $\mathscr{F}$.\\
+    2. If $A_i=[/(a_i,b_i]/),\ A=\bigcup A_i$. Then \\
+    $$A=\bigcup _{i=1}^\infty A_i=[/(min(a_i),max(b_i)]/) \in \mathscr{F}$$
+    As $\mathscr{F}$ satisfy 1,2, it's a Borel field.
+\end{sol}
+
+    \def({\ifmmode \left\lparen \else\lparen\fi} 
+    \def){\ifmmode \right\rparen \else\rparen\fi}
+    
+    
+
+%Copy the following block of text for each problem in the assignment.
+\begin{problem}{10}
+Suppose that the land of a square kingdom is divided into three strips
+A, B, C of equal area and suppose the value per unit is in the ratio
+of 1:3:2. For any piece of (measurable) land $S$ in this kingdom, the
+relative value with respect to that of the kingdom is then given by the
+formula:
+$$V(S) = \frac{P(SA)+3P(SB)+2P(SC)}{2}$$
+where P is as in Example 2 of 2.1. Show that V is a probability
+measure．
+\end{problem}
+\begin{sol}\\
+1. Since $P(S)=\f{|A|}{|\Omega|} \geq 0$, $V(S) \geq 0$.\\
+2. $SA=SB=SC=\ff{3}|\Omega|,\ P(SA)=P(SB)=P(SC)=\f{\ff{3}|\Omega|}{|\Omega|}=\ff{3}$, Thus $V(|\Omega|)=\f{\ff{3}+3\ff{3}+2\ff{3}}{2}=1$.\\
+3. For any $A,B$, because $A,B$ are disjoint, $|A+B|=|A|+|B|$. Thus $P[S(A+B)] = \f{|A+B|}{|\Omega|} = \f{|A|+|B|}{|\Omega|}=\f{|A|}{|\Omega|}+\f{|B|}{|\Omega|}=P(SA)+P(SB)$.
+ 
+\end{sol}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%Do not alter anything below this line.
+\end{document}

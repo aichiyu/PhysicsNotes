@@ -1,0 +1,78 @@
+\documentclass[UTF8,9pt]{ctexart}
+\usepackage{../../template/homeworkTEMP/hw}
+\setcounter{secnumdepth}{0}
+\title{The 15th HW of Electrodynamics}
+\begin{document} 
+\maketitle
+\se{1}Prove that the above invariants are indeed invariant under Lorentz transformation.
+$$\frac{1}{2} F_{\mu \nu} F_{\mu \nu}=B^{2}-\frac{1}{c^{2}} E^{2}$$
+$$\frac{i}{8} \epsilon_{\mu \nu \lambda \tau} F_{\mu \nu} F_{\lambda \tau}=\frac{1}{c} \vec{B} \cdot \vec{E}$$
+Proof:\\
+\sub{1}对于式
+$$\frac{1}{2} F_{\mu \nu} F_{\mu \nu}=B^{2}-\frac{1}{c^{2}} E^{2}$$
+定义$$ 
+a=\left(\begin{array}{cccc}{\gamma} & {0} & {0} & {i \beta \gamma} \\ {0} & {1} & {0} & {0} \\ {0} & {0} & {1} & {0} \\ {-i \beta \gamma} & {0} & {0} & {\gamma}\end{array}\right)
+ $$
+$$\vec{B'}=\g(\vec{B}-\f{\vec{v}}{c^2}\tm\vec{E})$$
+$$\vec{E'}=\g(\vec{E}-\vec{v}\tm\vec{B})$$
+则有
+$$ 
+F_{\mu \nu}^{\prime}=a_{\mu \lambda} a_{v \tau} F_{\lambda \tau} = aF\wv{a}=
+\left(\begin{array}{cccc}
+0 & \g(B_3-\f{v}{c^2}E_2) &-\g(B_2+\f{v}{c^2}E_3) &-\f{i}{c}E_1 \\ 
+\g(-B_3+\f{v}{c^2}E_2) & 0& B_1 &-\f{i}{c}\g(E_2-vB_3)\\ 
+\g(B_2+\f{v}{c^2}E_3) & -B_1 &0 &-\f{i}{c}\g(E_3+vB_2)\\ 
+\f{i}{c}E_1 & \f{i}{c}\g(E_2-vB_3) & \f{i}{c}\g(E_3+vB_2) & 0
+\end{array}\right)
+ $$
+$F_{\mu \nu}^{\prime}F_{\mu \nu}^{\prime} = 2*B1^2 - (2*E1^2)/c^2 + 2*B2^2*g^2 + 2*B3^2*g^2 - (2*E2^2*g^2)/c^2 - (2*E3^2*g^2)/c^2 - (2*B2^2*g^2*v^2)/c^2 - (2*B3^2*g^2*v^2)/c^2 + (2*E2^2*g^2*v^2)/c^4 + (2*E3^2*g^2*v^2)/c^4 + (8*B2*E3*g^2*v)/c^2
+$\\\\
+$B'^{2}-\frac{1}{c^{2}} E'^{2} = B1^2 - E1^2/c^2 + B2^2*g^2 + B3^2*g^2 - (E2^2*g^2)/c^2 - (E3^2*g^2)/c^2 - (B2^2*g^2*v^2)/c^2 - (B3^2*g^2*v^2)/c^2 + (E2^2*g^2*v^2)/c^4 + (E3^2*g^2*v^2)/c^4
+$\\
+可以发现$$\ff{2}(F_{\mu \nu}^{\prime}F_{\mu \nu}^{\prime}) = B'^{2}-\frac{1}{c^{2}} E'^{2}$$
+\sub{2}
+对于式
+$$\frac{i}{8} \epsilon_{\mu \nu \lambda \tau} F_{\mu \nu} F_{\lambda \tau}=\frac{1}{c} \vec{B} \cdot \vec{E}$$
+洛伦兹变换后:
+$$\sum_{\mu=1}^4\sum_{\nu=1}^4\sum_{\l=1}^4\sum_{\tau=1}^4(\epsilon_{\mu \nu \lambda \tau} F'_{\mu \nu} F'_{\lambda \tau}) = -\f{8}{ic}\vec{B}\cdot\vec{E}$$
+由于$\vec{B}\cdot\vec{E}$是一个洛伦兹不变量, $\vec{B'}\cdot\vec{E'}=\vec{B}\cdot\vec{E}$
+因此
+$$\sum_{\mu=1}^4\sum_{\nu=1}^4\sum_{\l=1}^4\sum_{\tau=1}^4(\epsilon_{\mu \nu \lambda \tau} F'_{\mu \nu} F'_{\lambda \tau}) = -\f{8}{ic}\vec{B'}\cdot\vec{E'}$$
+\se{2}
+(1) Lab系中系统的动量为
+$$ p = \f{\sqrt{E_1^2-m_1^2c^4}}{c}$$
+洛伦兹变换得
+$$ 
+\begin{array}{l}{p_{1}=\frac{p_{1}^{\prime}+\frac{\beta_{c}}{c^{2}} E_{1}^{\prime}}{\sqrt{1-\beta_{c}^{2} / c^{2}}} ; E_{1}=\frac{E_{1}^{\prime}+\beta_{c} p_{1}^{\prime}}{\sqrt{1-\beta_{c}^{2} / c^{2}}}} \\ {p_{2}=\frac{p_{2}^{\prime}+\frac{\beta_{c}}{c^{2}} E_{2}^{\prime}}{\sqrt{1-\beta_{c}^{2} / c^{2}}} ; \quad E_{2}=\frac{E_{2}^{\prime}+\beta_{c} p_{2}^{\prime}}{\sqrt{1-\beta_{c}^{2} / c^{2}}}}\end{array}
+ $$
+即
+$$ 
+\begin{array}{c}{p_{1}=\gamma \frac{\beta_{c}}{c^{2}}\left(E_{1}^{\prime}+E_{2}^{\prime}\right)} \\ {E_{1}+E_{2}=\gamma\left(E_{1}^{\prime}+E_{2}^{\prime}\right)}\end{array}
+ $$
+因此$$ 
+\beta_{c}=\frac{p_{1} c^{2}}{E_{1}+E_{2}}=\frac{\sqrt{E_{1}^{2}+m_{1}^{2} c^{4}}}{E_{1}+m_{2} c^{2}} c
+ $$
+ (2)$$ 
+ \left|\vec{p}_{1}^{\prime}\right|=\frac{m_{2} \sqrt{E_{1}^{2}-m_{1}^{2} c^{4}}}{M c}, \quad\left|\vec{p}_{2}^{\prime}\right|=\left|\vec{p}_{1}^{\prime}\right|
+  $$
+  $$ 
+E_{1}^{\prime}=\sqrt{p_{1}^{\prime 2} c^{2}+m_{1}^{2} c^{4}}=\frac{m_{1}^{2} c^{2}+m_{2} E_{1}}{M}, \quad E_{2}^{\prime}=\sqrt{p_{2}^{\prime 2} c^{2}+m_{2}^{2} c^{4}}=\frac{m_{2} E_{1}+m_{2}^{2} c^{2}}{M}
+ $$
+因此总能量$$ 
+ E^{\prime}=E_{1}^{\prime}+E_{2}^{\prime}=\frac{\left(m_{1}^{2}+m_{2}^{2}\right) c^{2}+2 m_{2} E_{1}}{M}
+  $$其中$$ 
+  M^{2} c^{4}=m_{1}^{2} c^{4}+m_{2}^{2} c^{4}+2 m_{2} E_{1} c^{2}
+   $$
+(3) 实验室系中$$ 
+p_{\mu}=\left[\vec{p}_{1}+\vec{p}_{2}, \frac{i}{c}\left(E_{1}+E_{2}\right)\right]=\left[]\vec{p}, \frac{i}{c}\left(E_{1}+E_{2}\right)\right]
+$$质心系中$$ 
+p_{v}^{\prime}=\left[\vec{p}_{1}^{\prime}+\vec{p}_{2}^{\prime}, \frac{i}{c}\left(E_{1}^{\prime}+E_{2}^{\prime}\right)\right]=\left[0, \frac{i}{c} 2 E_{1}^{\prime}\right]
+$$
+可得$$ 
+-2 m_{e} E_{1}=-\frac{1}{c^{2}} 4 E_{1}^{\prime 2}
+ $$
+ 即
+ $$ 
+E_{1}=\frac{2 E_{1}^{\prime 2}}{m_{e} c^{2}}=1.9 \times 10^{4} G e V
+ $$
+\end{document}

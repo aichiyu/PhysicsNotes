@@ -1,0 +1,152 @@
+\documentclass[UTF8,9pt]{ctexart}
+\usepackage{../../template/homeworkTEMP/hw}
+\setcounter{secnumdepth}{0}
+\title{数理方法II第三次作业} 
+\begin{document} 
+\maketitle
+\se{1}
+(1) 
+$$x\dd[2]{y}{x}+\dd{y}{x}+(2+\l/x)y=0$$
+$$\dd{}{x}(x\dd{y}{x})-(-2)y+\f{\l}{x}y=0$$
+即$$k(x)=x,q(x)=-2, \rho(x)=\ff{x}$$
+\newpage
+(2)\\
+原式化为$y''+\f{a-bx}{x-x^2}y'-\f{\l}{x-x^2}y=0$\\
+$\dis\exp(\int\f{a-bx}{x-x^2}\d x)=\exp(a\int\ff{x}\d x+(a-b)\int\ff{1-x}\d x )=\exp( a\ln x-(a-b)\ln(1-x))=\f{x^a}{(1-x)^{a-b}}$\\
+则最后可化为标准形式:
+$$\dd{}{x}(\f{x^a}{(1-x)^{a-b}}y')+\l(\f{x^{a-1}}{(1-x)^{a-b+1}})y=0$$
+\newpage
+\se{2}
+设$y_m,y_n,n\neq m$是函数不同本征值的两个解. 
+$$ 
+\left\{\begin{array}{rl}
+    \dd{}{x}(py_m')+(\l_m\rho-q)y_m=0\\
+    \dd{}{x}(py_n')+(\l_n\rho-q)y_n=0
+\end{array}\right.
+ $$
+两式分别乘以$y_n,y_m$，相减, $y_n\dd{}{x}(py_m')-y_m\dd{}{x}(py_n')+(\l_m-\l_n)y_my_n=0$. 求区间$[a,b]$积分, 
+$$
+\int_{a}^{b}\left[y_{n} \frac{d}{d x}(p y_{m}^{\prime})-y_{m} \frac{d}{d x}(p y_{n}^{\prime})\right] d x+\int_{a}^{b}(p y_{m}^{\prime} \frac{d}{d x} y_{n}-p y_{n}^{\prime} \frac{d}{d x} y_{m}) d x+(\lambda_{m}-\lambda_{n}) \int_{a}^{b} \rho y_{m} y_{n} d x
+ $$
+ $$ 
+=\int_{a}^{b} \frac{d}{d x}(p y_{n} y_{m}^{\prime}-p y_{m} y_{n}^{\prime}) d x+(\lambda_{m}-\lambda_{n}) \int_{a}^{b} \rho y_{m} y_{n} d x
+ $$
+ $$ 
+=\left.(p y_{n} y_{m}'-p y_{m} y_{n}^{\prime})\right|_{x=b}-\left.(p y_{n} y_{m}^{\prime}-p y_{m} y_{n}^{\prime})\right|_{x=a}+(\lambda_{m}-\lambda_{n}) \int_{a}^{b} \rho y_{m} y_{n} d x
+ $$
+由于$\abs{\ar{a_{11}&a_{12}\\a_{21}&a_{22}}}$, 有$y_n(b)y_m'(b)=y_m(b)y_n'(b)$, $y_n(a)y_m'(a)=y_m(a)y_n'(a)$
+$$=(\lambda_{m}-\lambda_{n}) \int_{a}^{b} \rho y_{m} y_{n} d x = 0$$
+当$\l_m\neq \l_n$, $\int_{a}^{b} \rho y_{m} y_{n} d x = 0$.
+\newpage
+\se{3}
+(1)\\
+根据定义, $\int\de(\bm{r}-\bm{r}_0)\d r^3 = 1$, 在球坐标下即为
+$$\int_0^\infty\d r\int_0^{2\pi}r\d\vp\int_0^{\pi}r\sin\vp\de(\bm{r}-\bm{r}_0)\d\t=1$$
+$$\ip\int_0^\infty\d r\int_0^{2\pi}\d\cos\vp\int_0^{\pi}r^2\de(\bm{r}-\bm{r}_0)\d\t=1$$
+根据直角坐标下形式, 可知
+$$
+\delta(r-r_{0}) \delta(\cos \theta-\cos \theta_{0}) \delta(\varphi-\varphi_{0}) = r^2\de(\bm{r}-\bm{r}_0)
+ $$
+移项即得
+$$
+\de(\bm{r}-\bm{r}_0) = \ff{r^2}\delta(r-r_{0}) \delta(\cos \theta-\cos \theta_{0}) \delta(\varphi-\varphi_{0})
+ $$
+
+ \newpage
+(2)\\
+$$\laplace\ff{|r-r_0|} = -\div\ff{(r-r_0)^2}$$
+由高斯定理可知
+$$-\int \div\ff{(r-r_0)^2}\d V = - \int_\O \ff{(r-r_0)^2}\d S$$
+取积分面为$r-r_0=a$的球壳, $a$为任意常数. 
+$$- \int_\O \ff{(r-r_0)^2}\d S = -4\pi a^2\ff{a^2} = -4\pi$$
+即
+$$\int \laplace\ff{|r-r_0|} \d r^3 = -4\pi$$
+根据定义, 
+$$\laplace\ff{|r-r_0|} =  -4\pi\de(\bm{r}-\bm{r}_0)$$
+\newpage
+\se{4}
+(1)
+先计算$\mathcal{F}(e^{-a|t|})$
+$$\mathcal{F}(e^{-a|t|}) = \int_{-\infty}^{0} e^{at-iwt}\d t+\int^{\infty}_{0} e^{-at-iwt} \d t
+ $$
+$$=\int^{\infty}_{0} (e^{-(a+iw)t}+e^{-(a-iw)t})\d t = \f{2a}{a^2+w^2}$$
+则$\mathcal{F}^{-1}(\f{2a}{a^2+w^2}) = \ff{2\pi}\int_{-\infty}^{\infty} \f{2a}{a^2+w^2}e^{iwt} \d w = e^{-a|t|}$, 两边求实部: 
+$$\int_{-\infty}^{\infty} \f{1}{a^2+w^2}\cos wt \d w = \f{\pi}{a}e^{-a|t|}$$
+\newpage
+(2)\\
+(i)
+$$\int \ff{r}e^{ikr\cos\t} \d r= \int_0^{\infty}\ff{r}r^2\d r\int_1^{-1}e^{ikr\cos\t} \d\cos\t\int_0^{2\pi}\d\vp$$
+$$=2\pi \int_0^{\infty}\ff{r}r^2\ff{ikr} (e^{ikr}-e^{-ikr})\d r = \f{2\pi}{ik}\int_0^\infty  (e^{ikr}-e^{-ikr})\d r$$
+$$=\f{2\pi}{ik}(2i\int_0^\infty \sin kr\d r) = \f{4\pi}{k}\int_0^\infty \sin kr\d r$$
+$$\ar{
+    \dis\int_0^\infty \sin kr\d r =& \dis\lim_{\ep\rightarrow0^+}\Im(\int_0^\infty e^{\ep r}e^{ikr}\d r)\\
+    =& \dis\lim_{\ep\rightarrow0^+}\Im(\int_0^\infty e^{(\ep+ik)r}\d r)\\
+    =& \dis\lim_{\ep\rightarrow0^+}\Im(\f{e^{(\ep+ik)\infty}-1}{\ep+ik})\\
+    =& \dis\ff{k}
+}$$
+则$$\mathcal{F}(\ff{r}) = \ff{(2\pi)^{3/2}}\int \ff{r}e^{ikr\cos\t} \d r = \f{\sqrt{2}}{\sqrt{\pi}k}\int_0^\infty \sin kr\d r = \f{\sqrt{2}}{\sqrt{\pi}k^2}$$
+\newpage
+(ii)
+$$\int \f{\de(r-a)}{r}e^{-ikr\cos\t} \d r=\int_0^{\infty}\f{\de(r-a)}{r}r^2\d r\int_1^{-1}e^{-ikr\cos\t} \d\cos\t\int_0^{2\pi}\d\vp$$
+$$=-2\pi \int_0^{\infty}\f{\de(r-a)}{ik} (e^{ikr}-e^{-ikr})\d r = -\f{2\pi}{ik}(e^{ika}-e^{-ika}) = \f{\pi}{k}\sin ka$$
+则可得到
+$$\mathcal{F}^{-1}(\f{\sin ak}{k}) = \sqrt{\frac{\pi}{2}} \frac{\delta(r-a)}{r}$$
+\newpage
+\se{5}
+根据周期性有: $$\mathcal{L}(f(t-a))=\mathcal{L}(f(t)u(t-a)) $$
+又由于
+$$\mathcal{L}(f(t-a)) = \int_0^\infty\f{f(t-a)}{e^{ap}}e^{-pt+ap}\d t = e^{-ap}F(p)$$
+$$\mathcal{L}(f(t)u(t-a)) =F(p)-\int_0^a f(t)e^{-pt}\d t $$
+上面两式相等即可得到
+$$(1-e^{-ap})F(p)=\int_0^a f(t)e^{-pt}\d t \ip F(p)=\frac{1}{1-e^{-a p}} \int_{0}^{a} f(t) e^{-p t} d t$$
+\newpage
+\se{6}
+(1) 
+$$pU(x,p)-u(x,0)=a^2\pp[2]{U}{x}+F(x,p)$$
+$$\ip pU(x,p)-\vp(x)=a^2\pp[2]{U}{x}+F(x,p)$$
+有通解
+$$\ar{
+    \dis U(x,p) =&\dis -\f{a}{2\sqrt{p}}\int_{-\infty}^{\infty} \exp(-\f{\sqrt{p}}{a}|x-x'|)(-\f{F(x')+\vp(x')}{a^2})\d x'\\
+    =&\dis     \f{1}{2a}\int_{-\infty}^{\infty} \exp(-\f{\sqrt{p}}{a}|x-x'|)(\f{F(x')+\vp(x')}{\sqrt{p}})\d x'\\
+    =&\dis   \f{1}{2a}\int_{-\infty}^{\infty} \ff{\sqrt{p}}\exp(-\f{\sqrt{p}}{a}|x-x'|)(F(x')+\vp(x'))\d x'\\
+    %=&\dis     \f{1}{2a}(\f{F(x)+\vp(x)}{\sqrt{p}})*e^{-\f{\sqrt{p}}{a}|x|}
+}$$
+记$m(x,x',p)=\ff{p}e^{-\f{|x-x'|}{a}p}$, 则$\mathcal{L}^{-1}(m) = \eta(t - \f{|x-x'|}{a})$. 那么
+$$m(x,x',p) = \int_0^{\infty}\eta(t - \f{|x-x'|}{a})e^{-pt}\d t$$
+或写为
+$$m(x,x',\sqrt{p}) = \int_0^{\infty}\eta(t - \f{|x-x'|}{a})e^{-\sqrt{p}t}\d t = \int_0^{\infty}\eta(t - \f{|x-x'|}{a})\f{e^{-\sqrt{p}t}}{e^{-pt}}e^{-pt}\d t$$
+因此$\dis\mathcal{L}^{-1}(m(x,x',\sqrt{p})) = \eta(t - \f{|x-x'|}{a})\f{e^{-\sqrt{p}t}}{e^{-pt}}$
+$$u(x,t) = \f{1}{2a}\int_{-\infty}^{\infty} \eta(t - \f{|x-x'|}{a})\f{e^{-\sqrt{p}t}}{e^{-pt}}(F(x')+\vp(x'))\d x'$$
+$$ 
+u(x, t)=\int_{-\infty}^{\infty} \phi(\xi) K(x-\xi, t) \mathrm{d} \xi+\int_{0}^{t} \mathrm{d} \tau \int_{-\infty}^{\infty} f(\xi, \tau) K(x-\xi, t-\tau) \mathrm{d} \xi
+ $$
+ \newpage
+(2)
+$$\pp{U}{t}(w,t) = -a^2w^2 U(w,t) +F(w,t)$$
+$$U|_{t=0} = \Phi(w)$$
+则$$U(w,t)=e^{-a^2w^2t}\Phi(w)+\int_0^t F(w,\tau)e^{-a^2w^2(t-\tau)}\d \tau$$
+做逆变换: 
+$$ 
+u(x, t)=\frac{1}{2 \pi} \int_{-\infty}^{\infty} \Phi(w ) \mathrm{e}^{-a^{2} w ^{2} t} \mathrm{e}^{\mathrm{i} w  x} \mathrm{d} w +\mathcal{F}^{-1}\left\{\int_{0}^{t} F(w , \tau) \mathrm{e}^{-a^{2} w ^{2}(t-\tau)} \mathrm{d} \tau\right\}
+ $$
+ $$ 
+ u(x, t)=\int_{-\infty}^{\infty} \phi(\xi) K(x-\xi, t) \mathrm{d} \xi+\int_{0}^{t} \mathrm{d} \tau \int_{-\infty}^{\infty} f(\xi, \tau) K(x-\xi, t-\tau) \mathrm{d} \xi
+  $$
+  \newpage
+\se{7}
+先对$t$求拉普拉斯, $\mathcal{L}(u(x,t))=U(x,p)$:
+$$p^2U(x,p)-pu(x,0)-\pp{u}{t}(x,0) = c^2\pp[2]{U}{x}(x,p)$$
+$$\ip p^2U(x,p)-p\vp(x)-\psi(x) = c^2\pp[2]{U}{x}(x,p)$$
+再对$x$求傅里叶, $\mathcal{F}(U(x,p))=U^*(w,p)$: 
+$$p^2U^*(w,p) - p\Phi(w)-\Psi(w)=-c^2w^2U^*(w,p)$$
+$$\ip U^*(w,p) = \f{p\Phi(w)+\Psi(w)}{p^2+c^2w^2}$$
+拉普拉斯逆变换得到
+$$U(w,t)=\Phi(w)\cos(cwt)+\f{\Psi(w)}{cw}\sin(cwt)$$
+$$\mathcal{F}^{-1}[\Phi(w)e^{icwt}] = \phi(x+ct)$$
+$$\mathcal{F}^{-1}[\Phi(w)e^{-icwt}] = \phi(x-ct)$$
+$$\mathcal{F}^{-1}[\ff{cw}\Psi(w)e^{icwt}] =\f{i}{c} \int_{-\infty}^{x+ct}\psi(x+ct)\d x$$
+$$\mathcal{F}^{-1}[\ff{cw}\Psi(w)e^{-icwt}] =\f{i}{c} \int_{-\infty}^{x-ct}\psi(x-ct)\d x$$
+$$\ip u(x,t) = \ff{2}\left[\phi(x+ct)+ \phi(x-ct) + \f{1}{c} \int_{-\infty}^{x+ct}\psi(x+ct)\d x-\f{1}{c} \int_{-\infty}^{x-ct}\psi(x-ct)\d x\right]$$
+$$\ip u(x,t) = \ff{2}\left[\phi(x+ct)+ \phi(x-ct)\right] + \ff{2c}\int_{x-ct}^{x+ct}\psi(x+ct)\d x$$
+\end{document}
+

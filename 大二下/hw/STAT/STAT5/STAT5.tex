@@ -1,0 +1,93 @@
+\documentclass[UTF8,9pt]{ctexart}
+\usepackage{../../template/homeworkTEMP/hw}
+\setlength{\arraycolsep}{1pt}
+\setcounter{secnumdepth}{0}
+\title{统计力学第五次作业} 
+\begin{document} 
+\maketitle
+\se{4.2}
+由于$\mu$是强度量, 各组员$T,p$不变且比例不变时, 与$n$无关, 即对任意$\l$, 有
+$$\mu_{T,p}(\l n_i) = \mu_{T,p}(n_i)$$
+根据Euler定理, 满足:
+$$\sum n_i\pp{\mu}{n_i}=0$$
+上式对任意$T,p$均成立.
+\se{4.3}
+(a) 混合前: $G_1=n_1g_1+n_2g_2$. 混合后$G_2=n_1\mu_1+n_2\mu_2$.
+$$G_2-G_1 = n_1RT\ln x_1+n_2RT\ln x_2$$
+
+(b) $pV=RT(n_1+n_2)$, 等温等压下$\D V=0$.
+
+(c) $\D S = -\D (\pp{G}{T})_{p,n_i}=-n_1R\ln x_1-n_2R\ln x_2$.
+
+(d) $H (T,p)$是$T,p$的函数, 等温等压下$H$不变.
+
+(e) $\D U =T\D S - P\D V=0$.
+\se{4.6}
+化学势满足式
+$$\mu=\sum RT[\vp_i+\ln(x_ip)]$$
+则水的化学势变化为: 
+$$\D \mu = RT[-\ln(p)+\ln((1-x)p)] = RT\ln(1-x)$$
+又由于$\D\mu = g_1(T,p)-g_1(T,p_0)$, 
+$$ g_1(T,p_0)+RT\ln(1-x)=g_1(T,p)$$
+\se{4.8}
+(1) 
+$$p=\f{n}{V}=\f{n_1+n_2}{V_1+V_2}RT$$
+
+(2)\\
+由于
+$$S=\sum n_i\left[\int\f{c_{pi}}{T}\d T-R\ln(x_ip)+s_{i0}\right]$$
+$$\D S= -n_1R\ln\f{n_1}{n_1+n_2}p-n_2R\ln\f{n_1}{n_1+n_2}p+n_1R\ln p_1+n_2R\ln p_2$$
+代入(1)中$p$, 
+$$\ip \D S= -n_1R\ln\f{n_1RT}{V_1+V_2}-n_2R\ln\f{n_1RT}{V_1+V_2}+n_1R\ln \f{n_1RT}{V_1}+n_2R\ln \f{n_2RT}{V_2}$$
+$$\D S = n_1R\ln\f{V_1+V_2}{V_1}+n_2R\ln\f{V_1+V_2}{V_2}$$
+
+(3)\\
+利用式$S=nC_{p,m}\ln T-nR\ln p+S_0$,
+$$\D S = (n_1+n_2)C\ln T-(n_1+n_2)R\ln\f{V_1+V_2}{n_1+n_2}-n_1C\ln T+n_1R\ln V_1/n_1-n_2C\ln T+n_2R\ln V_2/n_2$$
+$$=-(n_1+n_2)R\ln\f{V_1+V_2}{n_1+n_2}+n_1R\ln V_1/n_1+n_2R\ln V_2/n_2$$
+\se{4.9}
+$$K_1 = \f{c_{NH_3}}{c_{N_2}^{1/2}c_{H_2}^{3/2}},\quad K_2 = \f{c^2_{NH_3}}{c_{N_2}c_{H_2}^{3}}=K_1^2$$
+$$\ip K_2=K_1^2 = \f{27}{16}\tm\f{\ep^4}{(1-\ep^2)^2}p^2$$
+\se{4.11}
+表面张力系数为$\sigma=(\frac{\partial G}{\partial A})_{T, p}$. 热力学第三定律指出$T\rightarrow0$时, $\pp{\D G}{T}=-(\D S)_T = 0$.\\
+则$$\pp{}{A}\pp{\D G}{T}=0=\dd{}{T}\pp{\D G}{A} = \dd{}{T}\sg$$
+即$\dd{\sg}{T} = 0$.
+\se{4.13}
+设熵分别为
+$$S=S_g(0)+\int_0^{T_0}\f{c_g}{T}+L/T_0\ip \D S = 51.80\text{J/mol}$$
+$$S=S_w(0)+\int_0^{T_0}\f{c_w}{T}\ip \D S= 51.54\text{J/mol}$$
+二者误差范围内相等, 即$S_g(0)=S_w(0)$.
+\se{6.2}
+$\d x\d p = \d x \d\sqrt{2m\ep}=\f{\sqrt{m}}{\sqrt{2\ep}}\d x\d \ep=h$. 则$\d p =\f{\sqrt{m}}{\sqrt{2\ep}}\d \ep$下, 量子态数为$\f{L\d p}{h} = \f{L}{h}\sqrt{\f{2\ep}{m}}\d\ep$
+\se{6.4}
+在$\d p=\d\ep/c$下, 量子态数为$\f{4\pi p^2V\d p}{h^3}$. 代入$\d p=\d\ep/c,\ p=\ep/c$.
+$$D\d\ep = \f{4\pi \ep^2V\d\ep}{c^3h^3}$$
+\se{6.5}
+分布为玻耳兹曼分布. 则两个气体的微观状态数为:
+$$\O=\f{N!}{\prod a_l!}\prod \o_l^{a_l}$$
+$$\O'=\f{N'!}{\prod a_l'!} \prod {\o'}_l^{a_l'}$$
+则总状态数为
+$$\ln\O_0 = \ln\O\O' = N\ln N-\sum a_l\ln a_l+\sum a_l\ln \o_l+N'\ln N'-\sum a'_l\ln a'_l+\sum a'_l\ln \o'_l$$
+$\O_0$为极大时, 变分为0:
+$$\de\ln\O_0 = -\sum\ln\f{a_l}{\o_l}\de a_l-\sum\ln\f{a'_l}{\o'_l}\de a'_l=0$$
+又根据$\sum a_l=0, \sum a'_l=0, \sum\ep_l\de a_l+\sum\ep'_l\de a'_l=0$. 用拉氏乘子得
+$$\de\ln\O_0-\a\de N-\a'\de N'-\b\de E = -\sum(\ln\f{a_l}{\o_l}+\a+\b\ep_l)\de a_l-\sum(\ln\f{a'_l}{\o'_l}+\a'+\b\ep'_l)\de a'_l=0$$
+各个变分项独立: 
+$$\ln\f{a_l}{\o_l}+\a+\b\ep_l=0$$
+$$\ln\f{a'_l}{\o'_l}+\a'+\b\ep'_l$$
+即
+$$a_l=\o_le^{-\a-\b\ep_l}$$
+$$a'_l=\o'_le^{-\a'-\b\ep'_l}$$
+\se{6.6}
+约束条件不变. $\O$为玻色子, $\O'$为费米子, 微观状态数变为
+$$\O=\prod \f{(\o_l+a_l-1)!}{a_l!(\o_l-1)!}$$
+$$\O'=\prod \f{\o'_l}{a'_l!(\o'_l-a_l')!}$$
+$$\ln\O_0 = \sum[(\o_l+a_l)\ln(\o_l+a_l)-a_l\ln a_l-\o_l\ln\o_l]+\sum[-(\o'_l-a'_l)\ln(\o'_l-a'_l)+a'_l\ln a'_l+\o'_l\ln\o'_l]$$
+$$\de\ln\O_0 = \sum \f{\ln(\o_l+a_l)}{a_l}\de a_l+\sum\ln\f{\o_l'-a'_l}{a'_l}\de a_l'=0$$
+利用乘子法:
+$$=\sum (\f{\ln(\o_l+a_l)}{a_l}-\a-\b\ep_l)\de a_l+\sum (\ln\f{\o_l'-a'_l}{a'_l}-\a'-\b\ep_l')\de a_l'=0$$
+即
+$$a_l=\f{\o_l}{e^{\a+\b\ep_l}-1}$$
+$$a'_l=\f{\o'_l}{e^{\a'+\b\ep'_l}-1}$$
+
+\end{document}

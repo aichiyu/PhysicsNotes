@@ -1,0 +1,90 @@
+\documentclass[UTF8,9pt]{ctexart}
+\usepackage{../../template/homeworkTEMP/hw}
+\setcounter{secnumdepth}{0}
+\title{统计力学第九次作业} 
+\begin{document} 
+\maketitle
+\se{10.2}
+根据式(10.1.12)$$ 
+\begin{array}{c}{\overline{\Delta T \cdot \Delta V}=0} \\ {\overline{(\Delta T)^{2}}=\frac{k T^{2}}{C_{V}}} \\ {\overline{(\Delta V)^{2}}=-k T\left(\frac{\partial V}{\partial p}\right)_{V}}\end{array}
+ $$展开$\D S$
+ $$ 
+\begin{aligned} \Delta S &=\left(\frac{\partial S}{\partial T}\right)_{v} \Delta T+\left(\frac{\partial S}{\partial V}\right)_{r} \Delta V \\ &=\frac{C_{v}}{T} \Delta T+\left(\frac{\partial p}{\partial T}\right)_{V} \Delta V \end{aligned}
+ $$$$ 
+\begin{aligned} \overline{\Delta T \Delta S} &=\frac{C_{v}}{T}(\Delta T)^{2}+\left(\frac{\partial p}{\partial T}\right) \overline{\Delta T \Delta V} \\ &=\frac{C_{v}}{T} \frac{k T^{2}}{C_{v}} \\ &=k T \end{aligned}
+ $$同理$$ 
+\begin{aligned} \overline{\Delta S \Delta V} &=\frac{C_{v}}{T} \overline{\Delta T \Delta V}+\left(\frac{\partial p}{\partial T}\right)_{v} \overline{(\Delta V)} \\ &=\left(\frac{\partial p}{\partial T}\right)_{v}(-k T)\left(\frac{\partial V}{\partial p}\right)_{T} \\ &=k T\left(\frac{\partial V}{\partial T}\right)_{p} \end{aligned}
+ $$展开$\D p$
+ $$ 
+\Delta p=\left(\frac{\partial p}{\partial T}\right)_{v} \Delta T+\left(\frac{\partial p}{\partial V}\right)_{r} \Delta V
+ $$$$ 
+\begin{aligned} \overline{\Delta p \Delta V} &=\left(\frac{\partial p}{\partial T}\right) \overline{\Delta T \Delta V}+\left(\frac{\partial p}{\partial V}\right)_{r} \overline{(\Delta V)^{2}} \\ &=\left(\frac{\partial p}{\partial V}\right)_{r}(-k T)\left(\frac{\partial V}{\partial p}\right)_{r} \\ &=-k T \end{aligned}
+ $$同理$$ 
+\begin{aligned} \overline{\Delta p \Delta T} &=\left(\frac{\partial p}{\partial T}\right)_{v} \overline{(\Delta T)^{2}}+\left(\frac{\partial p}{\partial V}\right) \frac{\overline{\Delta V \Delta T}}{\Delta V \Delta T} \\ &=\frac{k T^{2}}{C_{V}}\left(\frac{\partial p}{\partial T}\right)_{V} \end{aligned}
+ $$
+\se{10.3}由于$$ 
+W \propto \mathrm{e}^{\frac{\Delta s(0)}{k}}
+ $$且可设$$ 
+ \Delta S^{(0)}=\Delta S+\Delta S_r
+  $$
+  在开系中有$$ 
+  \Delta S_{\mathrm{r}}=\frac{1}{T}\left(\Delta E_{r}+p \Delta V_{r}-\mu \Delta N_{\mathrm{r}}\right)
+   $$
+   在孤立系统中$$ 
+\begin{array}{l}{\Delta E_{r}=-\Delta E} \\ {\Delta V_{r}=-\Delta V} \\ {\Delta N_{r}=-\Delta N}\end{array}
+ $$
+ 即$$ 
+ \Delta S_{r}=-\frac{\Delta E+p \Delta V-\mu \Delta N}{T}
+  $$
+  代回原式即证$$ 
+  W \propto e^{-\frac{\Delta E+p \Delta V-T \Delta S-\mu \Delta N}{k T}}
+   $$展开$E$
+   $$ 
+\begin{aligned} E=& \overline{E}+\left(\frac{\partial E}{\partial S}\right)_{0} \Delta S+\left(\frac{\partial E}{\partial V}\right)_{0} \Delta V+\left(\frac{\partial E}{\partial N}\right)_{0} \Delta N+\\ & \frac{1}{2}\left.\bigg[\left(\frac{\partial^{2} E}{\partial S^{2}}\right)_{0}(\Delta S)^{2}+\left(\frac{\partial^{2} E}{\partial V^{2}}\right)_{0}(\Delta V)^{2}+\left(\frac{\partial^{2} E}{\partial N^{2}}\right)_{0}(\Delta N)^{2}+\right.\\ & 2\left(\frac{\partial^{2} E}{\partial S \partial V}\right)_{0} \Delta S \Delta V+2\left(\frac{\partial^{2} E}{\partial S \partial N}\right)_{0} \Delta S \Delta N+2\left(\frac{\partial^{2} E}{\partial V \partial N}\right)_{0} \Delta V \Delta N \bigg]\end{aligned}
+ $$
+ $$ 
+\begin{array}{l}{\left(\frac{\partial E}{\partial S}\right)_{0}=T} \\ {\left(\frac{\partial E}{\partial V}\right)_{0}=-p} \\ {\left(\frac{\partial E}{\partial N}\right)_{0}=\mu}\end{array}
+ $$
+ 可得$$ 
+\begin{aligned} & \Delta E-T \Delta S+p \Delta V-\mu \Delta N \\=& \frac{1}{2} \Delta S\left[\frac{\partial}{\partial S}\left(\frac{\partial E}{\partial S}\right)_{0} \Delta S+\frac{\partial}{\partial V}\left(\frac{\partial E}{\partial S}\right)_{0} \Delta V+\frac{\partial}{\partial N}\left(\frac{\partial E}{\partial S}\right)_{0} \Delta N\right]+\\ & \frac{1}{2} \Delta V\left[\frac{\partial}{\partial S}\left(\frac{\partial E}{\partial V}\right)_{0} \Delta S+\frac{\partial}{\partial V}\left(\frac{\partial E}{\partial V}\right)_{0} \Delta V+\frac{\partial}{\partial N}\left(\frac{\partial E}{\partial V}\right)_{0} \Delta N\right]+\\ & \frac{1}{2} \Delta N\left[\frac{\partial}{\partial S}\left(\frac{\partial E}{\partial N}\right)_{0} \Delta S+\frac{\partial}{\partial V}\left(\frac{\partial E}{\partial N}\right)_{0} \Delta V+\frac{\partial}{\partial N}\left(\frac{\partial E}{\partial N}\right)_{0} \Delta N\right] \\=& \frac{1}{2}(\Delta S \Delta T-\Delta p \Delta V+\Delta N \Delta \mu) \end{aligned}
+ $$与高斯分布标准形式比较可得$$ 
+ \overline{(\Delta N)^{2}}=k T\left(\frac{\partial N}{\partial \mu}\right)_{T, V}
+  $$
+  同理有$$ 
+\begin{aligned} \overline{\Delta \mu \Delta N} &=\left(\frac{\partial \mu}{\partial N}\right)_{T, v} \overline{(\Delta N)^{2}} \\ &=\left(\frac{\partial \mu}{\partial N}\right)_{r, v} \cdot k T\left(\frac{\partial N}{\partial \mu}\right)_{T, v} \\ &=k T \end{aligned}
+ $$
+ 当$T,V$不变,$$ 
+ \Delta N=\left(\frac{\partial N}{\partial \mu}\right)_{r, V} \Delta \mu
+  $$
+  因此$$ 
+  \overline{(\Delta \mu)^{2}}=k T\left(\frac{\partial \mu}{\partial N}\right)_{T, V}
+   $$
+
+\se{10.8}
+一维布朗运动中$$ 
+\overline{\left[x_{i}-x_{i}(0)\right]^{2}}=\frac{2 k T}{m \gamma} t
+ $$
+ 根据题中所给条件, 三个方向互不相关, 因此对于三维情况
+ $$ 
+\overline{[\bm{x}-\bm{x}(0)]^{2}}=\sum_{i=1}^{3}\left[x_{i}-x_{i}(0)\right]^{2}=\frac{6 k T}{m \gamma} t
+ $$
+\se{10.9}
+此时朗之万方程为$$ 
+m \frac{\mathrm{d} v}{\mathrm{d} t}=-\alpha v+q E+F(t)
+ $$
+ 取平均, 注意到$$ 
+ \frac{\mathrm{d} \overline{v}}{\mathrm{d} t}=0
+  $$$$ 
+  \overline{F}(t)=0
+   $$$$ 
+   \overline{v}=\frac{q E}{\alpha}
+    $$令$\mu=\f{\bar{v}}{E}$, 
+    $$ 
+\mu=\frac{q}{\alpha}
+ $$$$ 
+ D=\frac{k T}{\alpha}
+  $$比较可得$$ 
+  \frac{\mu}{D}=\frac{q}{k T}
+   $$
+   
+\end{document}

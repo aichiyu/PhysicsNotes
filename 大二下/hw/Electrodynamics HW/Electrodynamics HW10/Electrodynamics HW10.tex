@@ -1,0 +1,20 @@
+\documentclass[UTF8,9pt]{ctexart}
+\usepackage{../../template/homeworkTEMP/hw}
+\setcounter{secnumdepth}{0}
+\title{The 9th HW of Electrodynamics}
+\begin{document} 
+\maketitle
+\se{1}There is an uniform dielectric film of thickness\dots\\
+For normal incidence, we have
+$$ R_{s}=R_{p}=\left|\frac{\hat{n}_{2}-n_{1}}{\hat{n}_{2}+n_{1}}\right|^{2}=\frac{\left(n-n_{1}\right)^{2}+\kappa^{2}}{\left(n+n_{1}\right)^{2}+\kappa^{2}} = 0$$
+$$\ip n = n_1 = \sqrt{\ep \mu}, \k =0$$
+\se{2}Find a method to measure the optical coefficients\dots\\
+As
+$$ 
+R_{S}=\left|\frac{\sin \left(\theta-\theta_{t}\right)}{\sin \left(\theta+\theta_{t}\right)}\right|^{2}
+\quad \text{and} \quad
+R_{p}=\left|\frac{\tan \left(\theta-\theta_{t}\right)}{\tan \left(\theta+\theta_{t}\right)}\right|^{2}
+ $$
+用上面两个式子中的一个, 控制$\t$, 偏振方向, 测量反射率, 可以算出$\t$. 而$\hat{n} = n + i\k = \f{\sin\t}{\sin\t_t}n_1$. 当环境是真空, $n_1=1$. 即得到$n =\Re(\hat{n}),\k = \Im(\hat{n})$. \\
+如果测量多个点, 利用最小二乘法计算, 可以减小误差. 
+\end{document}

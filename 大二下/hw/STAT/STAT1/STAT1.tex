@@ -1,0 +1,69 @@
+
+\documentclass[UTF8,9pt]{ctexart}
+\usepackage{../../template/homeworkTEMP/hw}
+\setlength{\arraycolsep}{1pt}
+\setcounter{secnumdepth}{0}
+\title{统计力学第一次作业} 
+\begin{document} 
+\maketitle
+\se{1-1}
+$$\alpha=\ff{V}(\pp{V}{T})_P=\ff{V}\f{Nk}{p}=\ff{T}$$
+$$\beta=\ff{p}(\pp{p}{T})_V=\ff{p}\f{Nk}{V}=\ff{T}$$
+$$\kappa_T=-\ff{V}(\pp{V}{p})_T=\ff{V}\f{NkT}{p^2}=\ff{p}$$
+\se{1-2}
+$V$可表示为独立变量$T,p$的函数,
+$$\ar{
+    \d V=&\pp{V}{T}\d T+\pp{V}{p}\d p\\
+    \d V=&V\alpha\d T-V\kappa_T\d p\\
+    \d(\ln V)=&\alpha\d T-\kappa_T\d p\\
+    \ip \ln V=&\int(\alpha\d T-\kappa_T\d p)
+}$$
+代入$\alpha=\ff{T},\ \kappa_T=\ff{p}$,
+$$\ln V = \int (\d(\ln T)-\d(\ln p)) = \ln T -\ln p + C$$
+$$\ip \ln(\f{pV}{T}) = C \ip pV = k_0T=nRT$$
+\se{1-4}
+(a)
+$$\alpha \D T=\kappa_T \D p$$
+$$\D p= \f{4.85\e{-5}\tm 10}{7.8\e{-7}}=622p_n$$
+(b)
+$$\D V/V_0=\alpha \D T-\kappa_T \D p=4.85\e{-5}\tm 10 - 7.8\e{-7} \tm 100 =4.07\e{-4}$$
+\se{1-5}
+$$\d\cm T=\pp{\cm T}{L}\d L+\pp{\cm T}{T}\d\cm T=\f{AE}{L}\d L+\f{AE}{L}\a L\d T$$
+当两端固定, $\D L=0$,
+$$\d\cm{T}=AE\a\d T\ip \D \cm T = -EA\a (T_2-T_1)$$
+\qqed
+\se{1-6}
+(a) 
+$$E=\f{L}{A}(\pp{\cm T}{L})_T=\f{L}{A}\tm bT(\ff{L_0}+2\f{L_0^2}{L^3}) = \f{bT}{A}\tm (\f{L}{L_0}+\f{2L_0^2}{L^2})$$
+(b)
+$\cm T$不变, 对物态方程求$T$的偏导:
+$$0=\d \cm T = \left[(\f{L}{L_0}-\f{L_0^2}{L^2})+T(-\f{L}{L_0^2}-2\f{L_0}{L^2})\dd{L_0}{T}\right]\d T+T(\ff{L_0}+\f{2L_0^2}{L^3})\d L$$
+$$\ip \a T(\f{L^3+2L_0^3}{L_0L^2})=-\f{L^3-L_0^3}{L_0L^2}+T\dd{L_0}{T}(\f{L}{L_0^2}+3\f{2L_0}{L^2})$$
+$$\ip \a = \ff{L_0}\dd{L_0}{T} - \ff{T}\f{L^3/L_0^3-1}{L^3/L_0^3+2}=\a_0 - \ff{T}\f{L^3/L_0^3-1}{L^3/L_0^3+2}  $$
+\qqed 
+\se{1-8}
+$$pV = C_1T,\ pV^n=C_2 \ip TV^{n-1}=C_3 \ip V+(n-1)T\dd{V}{T}=0 \ip \dd{V}{T} = \f{-V}{(n-1)T}$$
+$$C_n=\f{\dbar Q}{\d T} = C_V+p\dd{V}{T} = C_V - \f{pV}{(n-1)T} = C_V - \f{\gamma-1}{n-1}C_V = \f{n-\gamma}{n-1}C_V$$
+\qqed
+\se{1-9}
+$$C_n=\f{\dbar Q}{\d T} = C_V+p\dd{V}{T} = const,\ip \f{p\dd{V}{T}}{C_n-C_V} = 1 = \ff{C_p-C_V}\f{pV}{T} \ip 
+\d(\ln V^{C_p-C_V})=\d(\ln T^{C_n-C_V})$$
+$$\ip V^{\f{C_p-C_V}{C_n-C_V}}=const\cdot T = const\cdot pV \ip PV^{1-\f{C_p-C_V}{C_n-C_V}}=PV^{\f{C_n-C_p}{C_n-C_V}}=const$$ 
+\qqed
+\se{1-10}
+$$a^2=\pp{p}{V}\pp{V}{\rho}+\pp{p}{T}\dd{T}{U}\dd{U}{\rho}=\f{NkT}{-V^2}\f{m}{-(m^2/V^2)}+\f{Nk}{V}\ff{C_V}\f{pV^2}{m}=\f{\gamma NkT}{m}$$
+$$u=\int \ff{m}C_V\d T=\f{C_VT}{m}+u_0=\f{NkT}{(\gamma-1)m}+u_0=\f{a_0^2}{\gamma(\gamma-1)}+u_0$$
+$$h=u+\f{pV}{m}=u+\f{a^2}{\gamma}=\f{a_0^2}{\gamma-1}+u_0$$
+\qqed
+\se{1-12}
+$$\d (\ln VF)=\d(\ln V+\ln F)=\d\ln V+\f{\d\ln T}{(\gamma-1)}$$
+$$pV^\gamma=const\ip TV^{\gamma-1}=const$$
+关于$T$求导:
+$$\d T+T\ln V\d \gamma=0 \ip \d\ln T+\ln V\d\gamma=(\gamma-1)(\d(\ln VF)-\d\ln V)+\ln V\d\gamma=0$$
+$$\ip \d (\ln VF)=0\ip VF=const$$
+\se{1-13}
+等温过程不做功, 绝热过程中,由于$ TV^{\gamma-1}=const$, $\f{V_2}{V_1}=\f{V_3}{V_4}$. 
+$$\D W = -\int_{T_1}^{T_2} p\d V=Nk(T_1-T_2)\ln\f{V_2}{V_1}$$
+$$\eta=\f{W}{Q}=\f{ (T_1-T_2)\ln \f{V_2}{V_1} }{ T_1\ln\f{V_2}{V_1} }=1-\f{T_2}{T_1}$$
+\qqed
+\end{document}

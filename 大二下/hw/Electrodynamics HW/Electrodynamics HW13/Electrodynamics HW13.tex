@@ -1,0 +1,181 @@
+\documentclass[UTF8,9pt]{ctexart}
+\usepackage{../../template/homeworkTEMP/hw}
+\setcounter{secnumdepth}{0}
+\title{The 13th HW of Electrodynamics}
+\begin{document} 
+\maketitle
+\se{1}
+A common textbook example of a rotating system is a configuration of charges fixed relative to each other but in rotation. The charge density is obviously a function of time, but it itnot in the form of\dots\\
+a) Show that for rotating charges one alternative is to calculate real time-dependent
+multipole moments using $ρ(x, t)$ directly and then compute the multipole moments for a given harmonic frequency with the convention of (9.1) by inspection
+or Fourier decomposition of the time-dependent moments. Note that care must
+be taken when calculating qlm(t) to form linear combinations that are real before
+making the connection.\\
+对于一组旋转的电荷，其旋转方向为z轴，电荷密度可以写成$$ 
+\rho=\rho\left(r, \theta, \phi-\omega_{0} t\right)
+ $$$\o_0$为旋转角频率。利用这一点，我们首先研究与时间有关的多极矩, 做代换$\phi=\phi^{\prime}+\omega_{0} t$, $$ 
+\begin{aligned} q_{l m}(t) &=\int r^{l} Y_{l m}^{*}(\theta, \phi) \rho\left(r, \theta, \phi-\omega_{0} t\right) d^{3} x \\ &=\int r^{l} Y_{l m}^{*}\left(\theta, \phi^{\prime}+\omega_{0} t\right) \rho\left(r, \theta, \phi^{\prime}\right) d^{3} x \end{aligned}
+ $$
+ 又由于$Y_{l m}(\theta, \phi) \sim e^{i m \phi}$,
+ $$ 
+Y_{l m}\left(\theta, \phi^{\prime}+\omega_{0} t\right)=Y_{l m}\left(\theta, \phi^{\prime}\right) e^{i m \omega_{0} t}
+ $$这使得我们可以分离出$q_{l m}(t)$\begin{equation}
+ q_{l m}(t)=\overline{q}_{l m} e^{-i m \omega_{0} t}
+\end{equation}
+由于$$ 
+  \Re\left(e^{-i m \omega t}\right)=\Re\left(e^{+i m \omega t}\right)=\cos (m \omega t)
+   $$为了避免负频率，我们可以使用恒等式$$ 
+   Y_{l,-m}(\theta, \phi)=(-1)^{m} Y_{l m}^{*}(\theta, \phi)
+    $$
+现在可以将(1)重写为$$ 
+q_{l m}(t)=\left\{\begin{array}{ll}{\overline{q}_{l m} e^{-i m \omega_{0} t}} & {m>0} \\ {\overline{q}_{l 0}} & {m=0} \\ {(-1)^{m}\left[\overline{q}_{l|m|} e^{-i|m| \omega_{0} t}\right]^{*}} & {m<0}\end{array}\right.
+ $$然后给出$+m$和$-m$项的线性叠加$$ 
+ q_{l m}(t) Y_{l m}(\theta, \phi)+q_{l,-m}(t) Y_{l,-m}(\theta, \phi)=\Re\left[2 \overline{q}_{l m} Y_{l m}(\theta, \phi) e^{-i m \omega_{0} t}\right]
+  $$这表明，当对辐射的所有多极子求和时，只对正频率模求和就足够了，同时还要加上一个额外的因子2。也就是说\begin{equation}
+q_{l m}^{\mathrm{eff}}=\left\{\begin{array}{ll}{2 \overline{q}_{l m}} & {m>0} \\ {\overline{q}_{l 0}} & {m=0}\end{array}\right. \quad \text { with frequencies } m \omega_{0}
+\end{equation}
+
+ b) Consider a charge density ρ(~x, t) that is periodic in time with period T = 2π/ω0.
+ By making a Fourier series expansion, show that it can be written as\dots\\
+ 时间变量t的复傅里叶级数可以写成
+ $$ 
+\begin{aligned} \rho(\vec{x}, t) &=\sum_{n=-\infty}^{\infty} \rho_{n}(\vec{x}) e^{-i n \omega_{0} t} \\ \rho_{n}(\vec{x}) &=\frac{1}{T} \int_{0}^{T} \rho(\vec{x}, t) e^{i n \omega_{0} t} d t \end{aligned}
+ $$
+注意到当$\rho(\vec{x}, t)$是实的时, 
+$$ 
+\rho_{-n}(\vec{x})=\rho_{n}(\vec{x})^{*}
+ $$
+ 因此$$ 
+\begin{aligned} \rho(\vec{x}, t) &=\rho_{0}(\vec{x})+\sum_{n=1}^{\infty}\left[\rho_{n}(\vec{x}) e^{-i n \omega_{0} t}+\rho_{-n}(\vec{x}) e^{i n \omega_{0} t}\right] \\ &=\rho_{0}(\vec{x})+\sum_{n=1}^{\infty}\left[\rho_{n}(\vec{x}) e^{-i n \omega_{0} t}+\left(\rho_{n}(\vec{x}) e^{-i n \omega_{0} t}\right)^{*}\right] \\ &=\rho_{0}(\vec{x})+\sum_{n=1}^{\infty} \Re\left[2 \rho_{n}(\vec{x}) e^{-i n \omega_{0} t}\right] \end{aligned}
+ $$
+
+ c) For a single charge q rotating about the origin in the x-y plane in a circle of
+ radius R at constant angular speed ω0, calculate the l = 0 and l = 1 multipole
+ moments by the methods of parts a and b and compare. In method b express the
+ charge density ρn(~x ) in cylindrical coordinates. Are there higher multipoles, for
+ example, quadrupole? At what frequencies?\\
+ 对于单个旋转电荷q，与时间有关的电荷密度可用球坐标表示$$ 
+ \rho(\vec{x}, t)=\frac{q}{R^{2}} \delta(r-R) \delta(\cos \theta) \delta\left(\phi-\omega_{0} t\right)
+  $$\begin{equation}
+\begin{aligned} \overline{q}_{l m} &=\int r^{l} Y_{l m}^{*}(\theta, \phi) \overline{\rho}(r, \theta, \phi) r^{2} d r d \cos \theta d \phi \\ &=q R^{l} Y_{l m}^{*}(\pi / 2,0) \\ &=q R^{l} \sqrt{\frac{2 l+1}{4 \pi} \frac{(l-m) !}{(l+m) !}} P_{l}^{m}(0) \end{aligned}
+\end{equation}
+ $l=0,1$的极矩为$$ 
+ \overline{q}_{00}=\sqrt{\frac{1}{4 \pi}} q, \quad \overline{q}_{11}=-\sqrt{\frac{3}{8 \pi}} q R
+  $$代入(2)可得
+  $$ 
+q_{00}^{\mathrm{eff}}=\sqrt{\frac{1}{4 \pi}} q, \quad q_{11}^{\mathrm{eff}}=-\sqrt{\frac{3}{2 \pi}} q R
+ $$
+ 又可根据$$ 
+\begin{aligned} \rho_{n}(\vec{x}) &=\frac{\omega_{0}}{2 \pi} \int_{0}^{2 \pi / \omega_{0}} \rho(\vec{x}, t) e^{i n \omega_{0} t} d t \\ &=\frac{\omega_{0}}{2 \pi} \int_{0}^{2 \pi / \omega_{0}} \frac{q}{R^{2}} \delta(r-R) \delta(\cos \theta) \delta\left(\phi-\omega_{0} t\right) e^{i n \omega_{0} t} d t \\ &=\frac{q}{2 \pi R^{2}} \delta(r-R) \delta(\cos \theta) e^{i n \phi} \end{aligned}
+ $$
+ 得到$$ 
+\begin{aligned} q_{l m}\left[\rho_{n}\right] &=\int r^{l} Y_{l m}^{*}(\theta, \phi) \rho_{n}(r, \theta, \phi) r^{2} d r d \cos \theta d \phi \\ &=\frac{q}{2 \pi R^{2}} \int r^{l} Y_{l m}^{*}(\theta, \phi) \delta(r-R) \delta(\cos \theta) e^{i n \phi} r^{2} d r d \cos \theta d \phi \\ &=q R^{l} \frac{1}{2 \pi} \int_{0}^{2 \pi} Y_{l m}^{*}(\pi / 2, \phi) e^{i n \phi} d \phi \\ &=q R^{l} \delta_{m n} Y_{l m}^{*}(\pi / 2,0) \\ &=q R^{l} \delta_{m n} \sqrt{\frac{2 l+1}{4 \pi} \frac{(l-m) !}{(l+m) !}} P_{l}^{m}(0) \end{aligned}
+ $$
+ 注意到, 必然有$m=n$。当有效电荷密度$\rho_{n}(\vec{x})$翻倍,有效极矩$q_{l m}\left[\rho_{n}\right]$也翻了一番。
+最后，我们从(3)中注意到，只要$P_{l}^{m}(0)\neq0$, 那么所有较高的多极都存在. 因此$l$级子的频率为$l \omega_{0},(l-2) \omega_{0},(l-4) \omega_{0}, \dots$
+\se{2}
+A rotating quadrupole consists of a square of side $a$ with charges $\pm q$ at alternate corners. The square rotates with angular velocity 𝜔𝜔about an axis normal to the plane of the square and through its center. Calculate the quadruple moments, the radiation fields, the angular distribution of the radiation, and the total radiated power, all in the long-wavelength approximation. What is the frequency of the radiation?\\
+根据定义, 电四极矩为\begin{equation}
+Q=
+\sum_{k} q_{k}\left[3 x_{i}^{(k)} x_{j}^{(k)}-\left(r^{(k)}\right)^{2} \delta_{i j}\right]
+\end{equation}
+  且几个电荷的位置满足$$
+  \left(r^{(k)}\right)^{2}=\left(x_{1}^{(k)}\right)^{2}+\left(x_{2}^{(k)}\right)^{2}+\left(x_{3}^{(k)}\right)^{2}=\frac{1}{2} a^{2}
+$$
+   设各个电荷的位置为\begin{equation}
+  \begin{array}{rl}+q : \quad \frac{a}{\sqrt{2}}(\cos \omega t, \sin \omega t, 0), &\quad+q :-\frac{a}{\sqrt{2}}(\cos \omega t, \sin \omega t, 0) \\ -q : \quad \frac{a}{\sqrt{2}}(\sin \omega t,-\cos \omega t, 0), &\quad-q : \quad \frac{a}{\sqrt{2}}(-\sin \omega t, \cos \omega t, 0)\end{array}
+  \end{equation}
+将(5)代入(4), 可得$$ Q(t)
+=3 a^{2} q \left( \begin{array}{ccc}{\cos 2 \omega t} & {\sin 2 \omega t} & {0} \\ {\sin 2 \omega t} & {-\cos 2 \omega t} & {0} \\ {0} & {0} & {0}\end{array}\right)
+ $$
+或写作$$ 
+Q(t)=3 a^{2} q e^{-2 i \omega t} \left( \begin{array}{rrr}{1} & {i} & {0} \\ {i} & {-1} & {0} \\ {0} & {0} & {0}\end{array}\right)
+ $$可以看到频率是$2\o$. 因此$\rho(\overrightarrow{\boldsymbol{x}}, t)=\rho(\overrightarrow{\boldsymbol{x}}) e^{-2 i \omega t}$. 且$$ 
+Q=\int\left(3 x_{i} x_{j}-r^{2} \delta_{i j}\right) \rho(\overrightarrow{\boldsymbol{x}}) d^{3} x=3 a^{2} q \left( \begin{array}{ccc}{1} & {i} & {0} \\ {i} & {-1} & {0} \\ {0} & {0} & {0}\end{array}\right)
+ $$即$$ 
+ Q_{i}=\sum_{j=1}^{3} Q_{i j} \hat{n}_{j}
+  $$
+再代入$\hat{\boldsymbol{n}}=(\sin \theta \cos \phi, \sin \theta \sin \phi, \cos \theta)$可解得
+\begin{equation}
+\vec{Q}=3 a^{2} q \sin \theta e^{i \phi}(\hat{x}+i \hat{y})
+\end{equation}
+ 可以算出$$ 
+\begin{aligned} \hat{\boldsymbol{n}} \times \overrightarrow{Q} &=3 a^{2} q \sin \theta e^{i \phi} \operatorname{det} \left( \begin{array}{ccc}{\hat{\boldsymbol{x}}} & {\hat{\boldsymbol{y}}} & {\hat{\boldsymbol{z}}} \\ {\sin \theta \cos \phi} & {\sin \theta \sin \phi} & {\cos \theta} \\ {1} & {i} & {0}\end{array}\right) \\ &=-3 a^{2} q i \sin \theta e^{i \phi}\left[\cos \theta(\hat{\boldsymbol{x}}+i \hat{\boldsymbol{y}})-\sin \theta e^{i \phi} \hat{\boldsymbol{z}}\right] \end{aligned}
+ $$
+ $$ 
+\overrightarrow{\boldsymbol{H}}=-\frac{c k^{3}}{8 \pi} \frac{e^{i k r}}{r} a^{2} q \sin \theta e^{i \phi}\left[\cos \theta(\hat{\boldsymbol{x}}+i \hat{\boldsymbol{y}})-\sin \theta e^{i \phi} \hat{\boldsymbol{z}}\right]
+ $$然后给出磁场$$ 
+\begin{array}{c}{\operatorname{Re}\left(\overrightarrow{\boldsymbol{H}} e^{-2 i \omega t}\right)=-\frac{c k^{3} a^{2} q}{8 \pi r} \sin \theta\{\hat{\boldsymbol{x}} \cos \theta \cos (k r-2 \omega t+\phi)-\hat{\boldsymbol{y}} \cos \theta \sin (k r-2 \omega t+\phi)} \\ {-\hat{\boldsymbol{z}} \sin \theta \cos (k r-2 \omega t+2 \phi) \}}\end{array}
+ $$得到电场可通过$$ 
+ \overrightarrow{\boldsymbol{E}}=Z_{0} \overrightarrow{\boldsymbol{H}} \times \hat{\boldsymbol{n}}
+  $$其中$Z_{0}=\sqrt{\mu_{0} / \epsilon_{0}}$为自由空间的阻抗. 也即
+  $$ 
+\begin{aligned}
+ \overrightarrow{\boldsymbol{E}}=-\frac{Z_{0} k^{3}}{8 \pi} \frac{e^{i k r}}{r} a^{2} q \sin \theta e^{i \phi} \operatorname{det} \left( \begin{array}{ccc}{\hat{\boldsymbol{x}}} & {\hat{\boldsymbol{y}}} & {\hat{\boldsymbol{z}}} \\ 
+{\cos \theta} & {i \cos \theta} & {-\sin \theta e^{i \phi}} \\ 
+{\sin \theta \cos \phi} & {\sin \theta \sin \phi} & {\cos \theta}\end{array}\right) \\
+=-\frac{Z_{0} k^{3}}{8 \pi} \frac{e^{i k r}}{r} a^{2} q \sin \theta e^{i \phi}\left\{\hat{\boldsymbol{x}}\left(\sin ^{2} \theta \sin \phi e^{i \phi}+i \cos ^{2} \theta\right)\right.& \\
+-\hat{\boldsymbol{y}}\left(\sin ^{2} \theta \cos \phi e^{i \phi}+\cos ^{2} \theta\right)-i \hat{\boldsymbol{z}} \sin \theta \cos \theta e^{i \phi} \} \end{aligned}
+ $$
+取实部为实际的场:$$ 
+\begin{aligned} \operatorname{Re}\left(\overrightarrow{\boldsymbol{E}} e^{-2 i \omega t}\right)=-\frac{Z_{0} k^{3} a^{2} q}{8 \pi r} \sin \theta &\left\{\hat{\boldsymbol{x}}\left[\sin ^{2} \theta \sin \phi \cos (k r-2 \omega t+2 \phi)-\cos ^{2} \theta \sin (k r-2 \omega t+\phi)\right]\right.\\ &-\hat{\boldsymbol{y}}\left[\sin ^{2} \theta \cos \phi \cos (k r-2 \omega t+2 \phi)+\cos ^{2} \theta \cos (k r-2 \omega t+\phi)\right] \\ &+\hat{\boldsymbol{z}} \sin \theta \cos \theta \sin (k r-2 \omega t+2 \phi) \} \end{aligned}
+ $$接下来，计算单位立体角辐射的时间平均功率, 利用\begin{equation}
+ \frac{d P}{d \Omega}=\frac{c^{2} Z_{0}}{1152 \pi^{2}} k^{6}\left[\vec{Q}^{*} \cdot \vec{Q}-|\hat{n} \cdot \vec{Q}|^{2}\right]
+\end{equation}
+根据(6)式, 可以得到$$ 
+\vec{Q}^{*} \cdot \vec{Q}=18 a^{4} q^{2} \sin ^{2} \theta, \quad|\hat{\boldsymbol{n}} \cdot \overrightarrow{\boldsymbol{Q}}|^{2}=\left|3 a^{2} q \sin ^{2} \theta e^{2 i \phi}\right|^{2}=9 a^{4} q^{2} \sin ^{2} \theta
+ $$
+ 因此
+ $$ 
+\vec{Q}^{*} \cdot \vec{Q}-|\hat{n} \cdot \vec{Q}|^{2}=9 a^{4} q^{2} \sin ^{2} \theta\left(2-\sin ^{2} \theta\right)=9 a^{4} q^{2} \sin ^{2} \theta\left(1+\cos ^{2} \theta\right)
+ $$
+再回代到(7)中, $$ 
+\frac{d P}{d \Omega}=\frac{c^{2} Z_{0} a^{4} q^{2} k^{6}}{128 \pi^{2}} \sin ^{2} \theta\left(1+\cos ^{2} \theta\right)
+ $$
+ 利用$k=2 \omega / c$,
+ $$ 
+\frac{d P}{d \Omega}=\frac{Z_{0} a^{4} q^{2} \omega^{6}}{2 \pi^{2} c^{4}} \sin ^{2} \theta\left(1+\cos ^{2} \theta\right)
+ $$总辐射功率是通过对立体角积分得到的。利用
+ $$ 
+\int d \Omega \sin ^{2} \theta\left(1+\cos ^{2} \theta\right)=2 \pi \int_{-1}^{1}\left(1-\cos ^{4} \theta\right) d \cos \theta=\frac{16 \pi}{5}
+ $$
+ 最后有
+ $$ 
+P=\frac{8 Z_{0} a^{4} q^{2} \omega^{6}}{5 \pi c^{4}}
+ $$
+ \se{3}
+ Two halves of a spherical metallic shell of radius 𝑅𝑅and infinite conductivity are separated by a very small insulating gap. An alternating potential is applied between the two halves of the sphere so that the potentials are ±𝑉𝑉cos𝜔𝜔𝜔 . In the long-wavelength limit, find the radiation fields, the angular distribution of the radiation, and the total radiated power from the sphere.\\
+在长波长极限下，电偶极子近似是合理的。在这种情况下，我们可以先计算出源的多极展开，然后提取偶极项。对于这个问题,本质上是一个谐波源$\left(e^{-i \omega t}\right)$。长波长极限也等效于低频极限。因此，把源看作准静态对象是有效的。利用方位对称，可以勒让德多项式展开
+$$ 
+\Phi(r, \theta)=\sum_{l} \alpha_{l}\left(\frac{R}{r}\right)^{l+1} P_{l}(\cos \theta)
+ $$
+ 其中
+ $$ 
+\alpha_{l}=\frac{2 l+1}{2} \int_{-1}^{1} \Phi(R, \cos \theta) P_{l}(\cos \theta) d \cos \theta
+ $$
+ 对于在$\mp V$下的两个半球, $$ 
+ \alpha_{l}=(2 l+1) V \int_{0}^{1} P_{l}(x) d x \quad \text { odd } l
+  $$
+  显然有$\alpha_{1}=\frac{3}{2} V$, 这就产生了这种形式的偶极子势$$ 
+  \Phi_{l=1}=\frac{3}{2} V\left(\frac{R}{r}\right)^{2} P_{1}(\cos \theta)=\frac{3}{2} V R^{2} \frac{z}{r^{3}}
+   $$
+   通过比较偶极矩势能的表达式$$ 
+   \Phi=\frac{1}{4 \pi \epsilon_{0}} \frac{\vec{p} \cdot \vec{r}}{r^{3}}
+    $$
+    可以得到电偶极矩
+    $$ 
+\vec{p}=4 \pi \epsilon_{0}\left(\frac{3}{2} V R^{2} \hat{z}\right)=6 \pi \epsilon_{0} V R^{2} \hat{z}
+ $$
+ 产生的辐射场为$$ 
+ \vec{H}=\frac{c k^{2}}{4 \pi}(\hat{r} \times \vec{p}) \frac{e^{i k r}}{r}=-\frac{c k^{2}}{4 \pi} 6 \pi \epsilon_{0} V R^{2} \frac{e^{i k r}}{r} \sin \theta \hat{\phi}=-\frac{3}{2} Z_{0}^{-1} V(k R)^{2} \frac{e^{i k r}}{r} \sin \theta \hat{\phi}
+  $$
+  $$ 
+\vec{E}=-Z_{0} \hat{r} \times \vec{H}=-\frac{3}{2} V(k R)^{2} \frac{e^{i k r}}{r} \sin \theta \hat{\theta}
+ $$
+ 偶极子的角分布为
+ $$ 
+\frac{d P}{d \Omega}=\frac{c^{2} Z_{0}}{32 \pi^{2}} k^{4}|\vec{p}|^{2} \sin ^{2} \theta=\frac{c^{2} Z_{0}}{32 \pi^{2}} k^{4} 36 \pi^{2} \epsilon_{0}^{2} V^{2} R^{4} \sin ^{2} \theta=\frac{9}{8} Z_{0}^{-1} V^{2}(k R)^{4} \sin ^{2} \theta
+ $$总辐射功率是$$ 
+ P=3 \pi Z_{0}^{-1} V^{2}(k R)^{4}
+  $$
+\end{document}

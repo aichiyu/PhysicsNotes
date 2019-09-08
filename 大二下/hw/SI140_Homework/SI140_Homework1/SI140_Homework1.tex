@@ -1,0 +1,363 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%Do not alter this block of commands.  If you're proficient at LaTeX, you may include additional packages, create macros, etc. immediately below this block of commands, but make sure to NOT alter the header, margin, and comment settings here. 
+\documentclass[12pt]{article}
+ \usepackage[margin=1in]{geometry} 
+\usepackage{amsmath,amsthm,amssymb,amsfonts, enumitem, fancyhdr, color, comment, graphicx, environ}
+\pagestyle{fancy}
+\setlength{\headheight}{65pt}
+\newenvironment{problem}[2][Problem]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{sol}
+    {\emph{Solution:} 
+    }
+    {
+    \qed
+    }
+\specialcomment{com}{ \color{blue} \textbf{Comment:} }{\color{black}} %for instructor comments while grading
+\NewEnviron{probscore}{\marginpar{ \color{blue} \tiny Problem Score: \BODY \color{black} }}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\usepackage{CTEX}
+\usepackage{amsfonts}
+\usepackage{geometry}
+\usepackage{mathtools}                                                %align needed
+\usepackage{balance}                                                  %blance when there two columns
+\usepackage{bm}                                                        %bold font
+\usepackage{mathrsfs}                                                 %change greek font style
+\usepackage{enumerate}                                                %Sort by number
+\usepackage{supertabular}                                             %allow long table in 2 pages
+\usepackage{soul}                                                     %highlight using \hl
+\usepackage{fontspec}                                                 %expand font type
+\usepackage{graphicx}                                                 %to input pictures
+\usepackage[colorlinks,linkcolor=red,anchorcolor=blue,citecolor=green]{hyperref}                                                %cite
+\usepackage{verbatim}                                                 %comment                            
+
+%begin{newcommands}
+    \newcommand\qqed{\rightline{$\square$}}                                 %\square
+    \newcommand\cm{\mathscr}                                               %dbar
+    \newcommand\dbar{\text{\dj}}                                           %dbar
+    \renewcommand\d{\mathrm{d}}                                            %d
+    \newcommand\sch{Schrödinger}                                           %Schrödinger
+    \newcommand{\dd}[3][]{\frac{\mathrm{d}^{#1} #2}{\mathrm{d} #3^{#1}}}   %d/d^n
+    \newcommand{\dt}[2][]{\frac{\mathrm{d}^{#1} #2}{\mathrm{d} t^{#1}}}    %d/dt^n
+    \newcommand{\pp}[3][]{\frac{\partial^{#1} #2}{\partial #3^{#1}}}       %∂/∂^n
+    \newcommand{\pt}[2][]{\frac{\partial^{#1} #2}{\partial t^{#1}}}        %∂/∂t^n 
+    \newcommand{\f}[2]{\frac{#1}{#2}}                                      %A/B
+    \newcommand{\ff}[1]{\frac{1}{#1}}                                      %1/A
+    \newcommand\rank{\mathrm{rank}}                                        %rank
+    \newcommand\tr{\mathrm{tr}}                                            %tr
+    \newcommand\e[1]{\times 10^{#1}}                                       %×10^
+    \renewcommand\Re{\mathrm{Re}\ }                                          %Re
+    \renewcommand\Im{\mathrm{Im}\ }                                          %Im
+    \renewcommand\ln{\mathrm{ln}\ }                                          %ln
+    \newcommand\Ln{\mathrm{Ln}\ }                                            %Ln
+    \renewcommand\arg{\mathrm{arg}}                                        %arg
+    \newcommand\ip{\implies}                                               %→
+    \newcommand\tm{\times}                                                 %×
+    \renewcommand\l{\lambda}                                               %λ
+    \renewcommand\a{\alpha}                                                %α
+    \renewcommand\k{\kappa}                                                %κ
+    \renewcommand\o{\omega}                                                %ω
+    \newcommand\D{\Delta}                                                  %Δ
+    \newcommand\de{\delta}                                                 %δ
+    \renewcommand\t{\theta}                                                %θ
+    \renewcommand\epsilon{\varepsilon}                                     %ε
+    \newcommand\abs[1]{\left| #1 \right|}                                  %|A|
+    \renewcommand\exp{\mathrm{exp}\ }                                        %exp
+    \newcommand\se{\section}                                               %section
+    \newcommand\sub{\subsection}                                           %subsection
+    \newcommand\sumi{\sum_{i=1}^n}                                         %∑ 
+    \AtBeginDocument{\renewcommand{\bar}{\overline}}                       %bar
+    \AtBeginDocument{\renewcommand{\hat}{\widehat}}                        %hat
+    \newcommand\inti{\int_{0}^{infty}}                                     %∮
+    \renewcommand{\arraystretch}{1.2}                                      %change array stretch
+    \newcommand{\dis}{\displaystyle}                                       %big equation
+    \newcommand{\ar}[2][rl]{\begin{array}{#1}                              %begin an array
+            #2
+        \end{array}}                                                 
+    \newcommand\bkt[1]{\left< #1 \right>}                                  %<x>
+    \newcommand\putfig[2]{                                                 %put a figure
+        \begin{center}    
+            \includegraphics[scale=#1]{#2}
+        \end{center}}
+%end{newcommands} 
+
+%resize the parentheses
+\def\lparen{(} 
+\def\rparen{)} 
+\catcode`(=\active 
+\catcode`)=\active
+\def({\ifmmode \left\lparen \else\lparen\fi} 
+\def){\ifmmode \right\rparen \else\rparen\fi}
+\date{\today}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%Fill in the appropriate information below
+\lhead{Name:肖涵薄\\ StudentID:31360164}  %replace with your name
+\rhead{SI 140 \\ Probability and Statistics \\ Semester Spring 2019 \\ Assignment 1} %replace XYZ with the homework course number, semester (e.g. ``Spring 2019"), and assignment number.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%Do not alter this block.
+\begin{document}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%Solutions to problems go below.  Please follow the guidelines from https://www.overleaf.com/read/sfbcjxcgsnsk/
+
+
+%Copy the following block of text for each problem in the assignment.
+\begin{problem}{1} 
+If two sets have identical complements, then they are themselves identical.
+Show this in two ways:(i) by verbal definition, (ii) by using formula$(A^{c})^{c}$
+\end{problem}
+\begin{sol}\\
+(i) It means for any $\o$, satisfy $I_A(\o)=I_B(\o)$, obviously A and B are identical.\\
+(ii) $I_{(A^C)^C}=1-I_{A^C}=1-(1-I_A)=I_A$, so A and B are identical.
+\end{sol}
+
+
+
+%Copy the following block of text for each problem in the assignment.
+\begin{problem}{2}
+Show that
+$$(A \cup B) \cap C \neq A \cup(B \cap C)$$
+but also give some special cases where there is equality.
+\end{problem}
+\begin{sol}\\
+inequality example:\\
+$$\left\{\ar[rcl]{
+    A&=&\{1,2,3\}\\
+    B&=&\{1,2\}\\
+    C&=&\{1\}
+}\right.$$
+In this case, $(A \cup B) \cap C=\{1\}$, but $A \cup(B \cap C) = \{1,2,3\}$.\\
+equality examples:\\
+$$A=B=C$$
+$$A=\emptyset$$
+$$C=A \cup B$$
+\end{sol}
+
+ 
+
+%Copy the following block of text for each problem in the assignment.
+\begin{problem}{3}
+ Show that A $\subset$ B if and only if AB = A; or A$\cup$ B = B. (So the relation
+of inclusion can be defined through identity and the operations.)
+\end{problem}
+\begin{sol}\\
+$A \subset B \iff$  for any $\o \in A$, satisfy $\o \in B$.\\
+$A\cup B = B \iff 1-I_{(A \cup B)^C}=1-I_{A^C}I_{B^C}=I_A+I_B-I_AI_B=I_B \iff I_AI_B=I_A \iff AB = A$\\\\
+For $\o_0 \in A$, suppose $A \subset B$, then $\o_0 \in A$, so that: $I_AI_B=I_A=1$.\\
+So  $A \subset B$ $\ip$ AB = A or A$\cup$ B = B\\\\
+For $I_AI_B=I_A=1,\o \in A$ and $\o \in B$\\
+For $I_AI_B=I_A=0,\o \notin A $\\
+So, if $\o \in A$, it must have $\o \in B$, which means that $AB=A \implies A \subset B$.\\
+\end{sol}
+
+
+
+%Copy the following block of text for each problem in the assignment.
+\begin{problem}{4}
+Show that there is a distributive law also for difference:
+$$(A \backslash B) \cap C = (A \cap C) \backslash (B \cap C).$$
+Is the dual
+$$(A \cap B) \backslash C = (A \backslash C) \cap (B \backslash C)$$
+also true?
+\end{problem}
+\begin{sol} \\
+Accroding to $A\backslash B=A-A\cap B$, it follows $I_{A\backslash B}=I_A-I_AI_B$, \\
+(1)
+$$\ar[rcl]{
+    (\left.A \backslash B) \cap C &=& (\left.I_A-I_AI_B)I_C\\
+    (\left.A \cap C) \backslash (B \cap C) &=& I_AI_C-I_AI_CI_BI_C=I_AI_C-I_AI_BI_C
+}$$
+obviously $(I_A-I_AI_B)I_C=I_AI_C-I_AI_BI_C$. \\
+(2) Yes.
+$$\ar[rcl]{
+    (A\left. \cap B) \backslash C &=& I_AI_B-I_AI_BI_C\\
+    (A\left. \backslash C) \cap (B \backslash C) &=& (\left.I_A-I_AI_C)(I_B-I_BI_C) = I_AI_B-2I_AI_BI_C+I_AI_BI_C=I_AI_B-I_AI_BI_C
+}$$
+\end{sol}
+
+
+
+%Copy the following block of text for each problem in the assignment.
+\begin{problem}{5}
+Show that A $\subset$ B if and only if $I_{A} \leq I_{B}$; and A $\cap$ B =  $\emptyset$ if and only if
+$I_{A}I_{B}$ =0.
+\end{problem}
+\begin{sol}\\
+(1)\\
+Suppose that $A \subset B, I_A=1>I_B=0$, then there exist $\o$, s.t. $\o \in A$ and $\o \notin B$, that's impossible. Thus $A \subset B \ip I_{A} \leq I_{B}$\\
+Suppose that $I_A \leq I_B$, and there exist $\o_0 \in A,\o_0 \notin B$. Then $I_A(\o)=1>I_B(\o)=0$, that's impossible. Thus $I_{A} \leq I_{B} \ip A \subset B$\\
+(2)\\
+$A \cap B = \emptyset$ follows that, if $\o \in A(I_A=1)$, then $\o \notin B(I_B=0)$, and if $\o \in B(I_B=1)$, then $\o \notin A(I_A=0)$.\\
+Thus $I_A(\o_0)I_B(\o_0) = 0 $.
+\end{sol}
+
+
+
+%Copy the following block of text for each problem in the assignment.
+\begin{problem}{6}
+Given $n$ events $A_1,A_2, ..., A_n$ and indicators $I_j, j=1,...,n$ ($I_j=1$ if $A_j$ occur, else $I_j=0$). Let $X=\sum_{j=1}^n I_j$ be the number of events that occur. You need to find the number of pairs of distinct events that occur: (i) Write your answer in terms of $X$. (ii) Write your answer in terms of indicators.
+\end{problem}
+\begin{sol}\\
+(i) $$P=\binom{X}{2}=\f{X(X-1)}{2}$$
+(ii) $$P=\sum_{i>j}I_iI_j$$
+\end{sol}
+
+
+
+%Copy the following block of text for each problem in the assignment.
+\begin{problem}{7}
+Express $I_{A\cup B\cup C}$ as a polynomial of $I_A, I_B, I_C$.
+\end{problem}
+\begin{sol}
+$$\ar{
+    I_{A \cup B \cup C}&=1-I_{(A \cup B \cup C)^C}\\
+    &=1-I_{A^C}I_{B^C}I_{C^C}\\
+    &=1-(1-I_A)(1-I_B)(1-I_C)\\
+    &=I_A+I_B+I_C-I_AI_B-I_AI_C-I_BI_C+I_AI_BI_C
+}$$
+
+\end{sol}
+
+
+
+%Copy the following block of text for each problem in the assignment.
+\begin{problem}{8}
+Show that 
+\[I_{ABC}=I_A+I_B+I_C-I_{A\cup B}-I_{A\cup C}-I_{B\cup C}+I_{A\cup B\cup C}\]
+You can verify this directly, but it is nicer to derive it from problem 7 by duality.
+\end{problem}
+\begin{sol}
+$$\ar{
+     &I_A+I_B+I_C-I_{A\cup B}-I_{A\cup C}-I_{B\cup C}+I_{A\cup B\cup C}\\
+    =&I_A+I_B+I_C-3+I_{(A \cup B)^C}+I_{(A \cup C)^C}++I_{(B \cup C)^C}+I_{A \cup B \cup C}\\
+    =&I_A+I_B+I_C-2I_A-2I_B-2I_C+I_AI_B+I_AI_C+I_BI_C+I_{A \cup B \cup C}\\
+    &(\left.\text{substitute }\ I_{A \cup B \cup C}\text{ in problem 7})\\
+    =& I_AI_BI_C\\
+    =& I_{ABC}
+}$$
+\end{sol}
+
+
+
+%Copy the following block of text for each problem in the assignment.
+\begin{problem}{9}
+Prove that the set of all rational numbers is countable.
+\end{problem}
+\begin{sol}
+Write rational numbers for the following rule:
+$$\begin{matrix}
+    \f{1}{1},&\f{1}{2},&\f{1}{3},&\cdots\\
+    \f{2}{1},&\f{2}{2},&\f{2}{3},&\cdots\\
+    \f{3}{1},&\f{3}{2},&\f{3}{3},&\cdots\\
+    \vdots   &\vdots   &\vdots   &\ddots
+\end{matrix}$$
+Sort start from column 1, row 1,\\
+then column 1, row 2,\\
+then colsum 2, row 1,\\
+then column 3, row 1,\\
+and so on. Following the snake shape track. Every element on the table will be counted.
+\end{sol}
+
+
+
+%Copy the following block of text for each problem in the assignment.
+\begin{problem}{10}
+Let $A$ be the set of all sequences whose elements are the digits $0$ and $1$. For example, the following sequence is a element of $A$.
+\[1,0,1,0,0,0,1,1,...\]Prove that set $A$ is uncountable. (Hint: You can prove it by using Cantor's diagonal process.)
+\end{problem}
+\begin{sol}
+
+If $A$ is countable, sort elements in $A$, and let $A_i$ be $i^{\mathrm{th}}$ sequence of $A$.\\
+Let sequence $b$ satisfy that:\\
+If $i^{\mathrm{th}}$ number in $A_i$ is 1, then $i^{\mathrm{th}}$ number in $b$ is 0, else $i^{\mathrm{th}}$ number in $b$ is 1.\\
+So, for any $i$, $i^{\mathrm{th}}$ number in $A_i$ is different from $b$, which means $A_i$ has at least one different number from $b$. \\
+Thus $b$ is different from all $A_i$, $A$ is uncountable.
+\end{sol}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%Do not alter anything below this line.
+\end{document}

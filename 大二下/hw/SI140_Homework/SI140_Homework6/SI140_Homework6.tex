@@ -1,0 +1,282 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%Do not alter this block of commands.  If you're proficient at LaTeX, you may include additional packages, create macros, etc. immediately below this block of commands, but make sure to NOT alter the header, margin, and comment settings here. 
+\documentclass[12pt]{article}
+ \usepackage[margin=1in]{geometry} 
+\usepackage{amsmath,amsthm,amssymb,amsfonts, enumitem, fancyhdr, color, comment, graphicx, environ}
+\pagestyle{fancy}
+\setlength{\headheight}{65pt}
+\newenvironment{problem}[2][Problem]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{sol}
+    {\emph{Solution:}
+    }
+    {
+    \qed
+    }
+\specialcomment{com}{ \color{blue} \textbf{Comment:} }{\color{black}} %for instructor comments while grading
+\NewEnviron{probscore}{\marginpar{ \color{blue} \tiny Problem Score: \BODY \color{black} }}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+
+
+\usepackage{CTEX}
+\usepackage{amsfonts}
+\usepackage{geometry}                                                %调整间距
+%\usepackage[T1]{fontenc}                                             %change font
+\usepackage{mathtools}                                                %align needed
+%\usepackage{balance}                                                  %blance when there two columns
+%\usepackage{txfonts}                                                  %面积分体积分
+\usepackage{bm}                                                       %bold font
+%\usepackage{mathrsfs}                                                 %change greek font style
+%\usepackage{enumerate}                                                %Sort by number
+%\usepackage{supertabular}                                             %allow long table in 2 pages
+%\usepackage{soul}                                                     %highlight using \hl
+%\usepackage{fontspec}                                                 %expand font type
+\usepackage{graphicx}                                                 %to input pictures
+%\usepackage[colorlinks,linkcolor=red,anchorcolor=blue,citecolor=green]{hyperref}                                                %cite
+%\usepackage{verbatim}                                                 %comment                            
+%\usepackage{multicol}
+%begin{newcommands}
+
+    \newcommand{\intzo}{\int_0^1}                                  %0 1
+    \newcommand{\intii}{\int_{-\infty}^\infty}                                  %-∞ ∞
+    \newcommand{\intzi}{\int_0^\infty}                                  %0 ∞
+    \newcommand{\sumoi}{\int_1^\infty}                                  %1 ∞
+    \newcommand{\sumti}{\int_2^\infty}                                  %2 ∞
+    \newcommand{\sumii}{\sum_{-\infty}^\infty}                          %-∞ ∞
+    \newcommand{\sumzi}{\sum_0^\infty}                                  %0 ∞
+    \newcommand{\sumon}{\sum_1^n}                                  %1 n
+    \newcommand{\sumzn}{\sum_0^n}                                  %0 n
+    \renewcommand{\inf}{\infty}                                  %∞
+    \newcommand\of[1]{\left( #1 \right)}                                  %(x)
+    \newcommand\qqed{\rightline{$\square$}\\ }                                 %\square,QED
+    \newcommand\norm[1]{\left\| #1 \right\|}                                 %|| ||
+    \newcommand\s{\sqrt}
+    \newcommand\cm{\mathscr}                                               %
+    \newcommand\dbar{\text{\dj}}                                           %dbar
+    \renewcommand\d{\mathop{}\!\mathrm{d}}                                            %d
+    \newcommand{\dr}{\mathop{}\!\mathrm{d}r}                                            %dr
+    \newcommand{\dx}{\mathop{}\!\mathrm{d}x}                                            %dx
+    %\newcommand\sch{Schrödinger}                                           %Schrödinger
+    \newcommand{\dd}[3][]{\frac{\mathrm{d}^{#1} #2}{\mathrm{d} {#3}^{#1}}}   %d/d^n
+    \newcommand{\dt}[2][]{\frac{\mathrm{d}^{#1} #2}{\mathrm{d} t^{#1}}}    %d/dt^n
+    \newcommand{\pp}[3][]{\frac{\partial^{#1} #2}{\partial {#3}^{#1}}}       %∂/∂^n
+    \newcommand{\pt}[2][]{\frac{\partial^{#1} #2}{\partial t^{#1}}}        %∂/∂t^n 
+    \newcommand{\f}[2]{\frac{#1}{#2}}                                      %A/B
+    \newcommand{\ff}[1]{\frac{1}{#1}}                                      %1/A
+    \newcommand\rank{\operatorname{rank}}                                        %rank
+    \newcommand\tr{\operatorname{tr}}                                            %tr
+    \newcommand\e[1]{\times 10^{#1}}                                       %×10^
+    \newcommand\m{^{-1}}                                       %^{-1}
+    \renewcommand\Re{\operatorname{Re}}                                          %Re
+    \renewcommand\Im{\operatorname{Im}}                                          %Im
+    \newcommand\Ln{\operatorname{Ln}}                                            %Ln
+    \newcommand\ip{\implies}                                               %→
+    \newcommand\tm{\times}                                                 %×
+    \renewcommand\a{\alpha}                                                %α
+    \renewcommand\b{\beta}                                                 %β
+    \newcommand\C{\text{Const}}                                            %Const
+    \newcommand\D{\Delta}                                                  %Δ
+    \newcommand\de{\delta}                                                 %δ
+    \newcommand\ep{\varepsilon}                                            %ε
+    \newcommand\g{\gamma}                                                  %γ
+    \renewcommand\r{\rho}                                                  %ρ
+    \renewcommand\k{\kappa}                                                %κ
+    \renewcommand\l{\lambda}                                               %λ
+    \newcommand\n{\nabla}                                                  %nabla
+    \newcommand\laplace{\nabla^2}                                          %laplace
+    \newcommand\grad{\nabla}                                               %grad
+    \renewcommand\div{\nabla\cdot}                                         %div
+    \newcommand\curl{\nabla\times}                                         %\nabla×
+    \renewcommand\O{\Omega}                                                %Ω
+    \renewcommand\o{\omega}                                                %ω
+    \newcommand\sg{\sigma}                                                 %σ
+    \newcommand\p{\phi}                                                    %φ
+    \newcommand\vp{\varphi}                                                %φ
+    \renewcommand\t{\theta}                                                %θ
+    \newcommand\abs[1]{\left| #1 \right|}                                  %|A|
+    \newcommand\se{\section}                                               %section
+    \newcommand\sub{\subsection}                                           %subsection
+    \newcommand\dis{\displaystyle}                                         %big equation
+    \newcommand{\x}{=&\!\!\!\!\!}                                                    %
+    \newcommand{\xx}{&\!\!\!\!\!}                                                    %
+    \AtBeginDocument{\renewcommand{\bar}{\overline}}                       %bar
+    \AtBeginDocument{\renewcommand{\hat}{\widehat}}                        %hat
+    \renewcommand{\arraystretch}{1.2}                                      %change array stretch
+    \newcommand\ca{\frac{1}{4\pi\varepsilon_0}}                                 %constA
+    \newcommand{\ar}[2][rl]{\begin{array}{#1}                              %begin an array
+            #2
+        \end{array}}                                                 
+    \newcommand{\hua}[2][rl]{\left\{\begin{array}{#1}                              %begin an {array
+        #2
+    \end{array}\right.}
+    \newcommand\bkt[1]{\left< #1 \right>}                                  %<x>
+    \newcommand\putfig[2][0.25]{                                                 %put a figure
+        \begin{center}    
+            \includegraphics[width=#1\textwidth]{#2}
+        \end{center}}
+    \newcommand{\rk}[1]{\begin{enumerate}                              %enumerate
+        #1
+    \end{enumerate}}                                             
+    \renewcommand{\com}[2]{
+        \left( \begin{matrix} 
+            #1 \\
+            #2 
+            \end{matrix} 
+        \right)
+    }
+%end{newcommands} 
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%Fill in the appropriate information below
+\lhead{Name: 肖涵薄\\ StudentID: 31360164}  %replace with your name
+\rhead{SI 140 \\ Probability and Statistics \\ Semester Spring 2019 \\ Assignment 6} %replace XYZ with the homework course number, semester (e.g. ``Spring 2019"), and assignment number.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%Do not alter this block.
+\begin{document}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%Solutions to problems go below.  Please follow the guidelines from https://www.overleaf.com/read/sfbcjxcgsnsk/
+
+
+%Copy the following block of text for each problem in the assignment.
+\begin{problem}{1}
+Let $X$ be the total from rolling 6 fair dice, and let $X_1,...,X_6$ be the individual rolls. What is $P(X=18)$?
+\end{problem}
+\begin{sol}
+$$g_{X_i}(z)=\ff{6}(z+\dots+z^6)$$
+$$g_{X}(z)=\prod g_{X_i}(z) = \ff{6^6}(z+\dots+z^6)^6$$
+$P(X=18)$为$z^{18}$的系数, 为$\f{3431}{6^6}\approx0.0735$
+\end{sol}
+\begin{problem}{2} 
+Find the MGF of $X\sim Unif(a,b)$ and $Y\sim Expo(\lambda)$.
+\end{problem}
+\begin{sol}
+$$ 
+M(t)=E\left[e^{-t X}\right]=\int_{-\infty}^{\infty} e^{-t x} f(x) d x
+$$
+For $Unif(a,b)$, $f(x) = \ff{b-a}$, then $M(t) = \ff{b-a}\int_a^b e^{-tx}\d x=\frac{e^{-t b}-e^{-t a}}{t(a-b)}$. \\
+For $Expo(\lambda)$, $f(y) = \l e^{-\l y}$, then $M(t) = -\l \intzi e^{-(t+\l)y}\d y = \f{\l}{t+\l}(t<\l)$.
+\end{sol}
+
+
+
+%Copy the following block of text for each problem in the assignment.
+\begin{problem}{3}
+Find the MGF of $X\sim Bern(p)$ and $Y\sim Bin(n,p)$.
+\end{problem}
+\begin{sol}
+For $X\sim Bern(p)$, $M(t) = pe^{-t}+1-p$.\\
+For $Y\sim Bin(n,p)$, $M(t)=(1-p+pe^{-t})^n$
+\end{sol}
+
+\begin{problem}{4}
+Consider a setting where a Poisson approximation should work well: let $A_1,...,A_n$ be independent, rare events, with $n$ large and $p_j=P(A_j)$ small for all $j$. Let $X=I(A_1)+\cdots+I(A_n)$ count how many of the rare events occur, and Let $\lambda = E(X)$.
+\begin{enumerate}
+    \item[(a).] Find the MGF of $X$.
+    \item[(b).] If the approximation $1+x\approx e^x$ (this is a good approximation when $x$ is very close to $0$ but terrible when $x$ is not close to $0$) is used to write each factor in the MGF of $X$ as $e$ to a power.What happens to the MGF? 
+    (Hint: if $Y\sim Pois(\lambda)$, then $M_Y=e^{(e^{-t}-1)\lambda}$)
+\end{enumerate}
+\end{problem}
+\begin{sol}
+\begin{enumerate}
+    \item[(a).] 
+$$\sum p_j =E(x) =\l$$
+$$M_X(t) = \prod M_{I_j}(t)$$
+而$M_{I_j}(t) = 1-p_j+p_je^{-t}$
+因此
+$$M_X(t) = \prod_{j=1}^n \of{1-p_j+p_je^{-t}}$$
+
+    \item[(b).] 
+    $$M_X(t) = \prod_{j=1}^n \of{1+p_j(e^{-t}-1)} \approx \prod_{j=1}^n e^{(e^{-t}-1)p_j} = e^{(e^{-t}-1)\l}$$
+    
+\end{enumerate}
+\end{sol}
+
+
+
+%Copy the following block of text for each problem in the assignment.
+\begin{problem}{5}
+Suppose $X\sim Bin(n,p)$.
+By using Binomial PGF, find the expectation $E(X)$ and variance $Var(X)$.
+\end{problem}
+\begin{sol}
+二项分布的PGF为$M(t)=\left(p e^{-t}+1-p\right)^{n}$, 因此
+$$ 
+M^{\prime}(t)=-n p\left(p e^{-t}+1-p\right)^{n-1} e^{-t}
+ $$
+$$E(X)= -M'(0)  = np$$
+$$ 
+M^{\prime \prime}(t)=(n-1) n p^2 e^{-2 t} \left(p e^{-t}-p+1\right)^{n-2}+n p e^{-t} \left(p e^{-t}-p+1\right)^{n-1}
+ $$
+ $$ 
+E (X^{2})=M^{\prime \prime}(0)=n p + (n-1) n p^2
+ $$
+ $$ 
+Var(X)=E (X^{2})-(E (X))^{2}=n p(1-p)
+ $$
+\end{sol}
+
+
+
+
+%Copy the following block of text for each problem in the assignment.
+\begin{problem}{6}
+If a random variable X has the following moment-generating function:
+$$M(t) = \frac{1}{10}e^{-t} + \frac{2}{10}e^{-2t} + \frac{3}{10}e^{-3t} + \frac{4}{10}e^{-4t}$$
+for all t, then what is the$ PMF$ of X?
+\end{problem}
+\begin{sol}
+根据MGF的定义$$ 
+M_{X}(t)=\sum_{k=0}^{\infty} e^{-t k} p(X=k)
+ $$
+可知
+$$\hua{
+    P(X=1) \x \f{1}{10}\\
+    P(X=2) \x \f{2}{10}\\
+    P(X=3) \x \f{3}{10}\\
+    P(X=4) \x \f{4}{10}
+}$$
+\end{sol}
+
+
+
+%Copy the following block of text for each problem in the assignment.
+\begin{problem}{7}
+ Suppose that Y has the following moment-generating function:
+ $$ M_{Y}(t) = \frac{e^{-t}}{4-3e^{-t}}$$
+ \\
+ I).Find E(Y)\\
+ II).Find Var(Y)
+\end{problem}
+\begin{sol}
+I) $$M'_Y(t) = \f{-4e^t}{(4e^t-3)^2}$$
+$$E(Y) = -M'_Y(0) = 4$$ 
+
+II) $$M''_Y(t) = \frac{4 e^t \left(4 e^t+3\right)}{\left(4 e^t-3\right)^3}$$
+$$E(Y^2) = M''_Y(0) = 28$$
+$$\text{Var}(Y) = E(Y^2)-(E(Y))^2 = 12$$
+\end{sol}
+
+
+
+%Copy the following block of text for each problem in the assignment.
+\begin{problem}{8}If a random variable X has  $E[X^k] = 0.2$ k=1,2,3....,then what is the $ PMF$ of X?
+\end{problem}
+\begin{sol}
+题述条件说明$E[x^k] = (-1)^nM^{(k)}(0) = 0.2$.
+即$$M(t)=1-0.2t+\f{0.2}{2}t^2+\cdots = 0.2e^{-t}+0.8$$
+即$$\hua{P(X=0)=0.8\\P(X=1)=0.2}$$
+\end{sol}
+
+%Copy the following block of text for each problem in the assignment.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%Do not alter anything below this line.
+\end{document}

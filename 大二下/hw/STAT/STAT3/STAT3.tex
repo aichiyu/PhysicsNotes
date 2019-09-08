@@ -1,0 +1,62 @@
+
+\documentclass[UTF8,9pt]{ctexart}
+\usepackage{../../template/homeworkTEMP/hw}
+\setlength{\arraycolsep}{1pt}
+\setcounter{secnumdepth}{0}
+\title{统计力学第三次作业} 
+\begin{document} 
+\maketitle
+\se{2.15}
+单位时间总能量 $E=1.35\e{3}\cdot 4\pi (1.495\e{11})^2=3.8\e{26}\ J.$ 则根据黑体辐射规律, $E/(4\pi (6.955\e{8})^2)=\sigma T^4 \ip T=5760K.$
+\se{2.16}
+$U=Vu$,
+$$\ar{
+    \d Q =& \d(Vu)+p\d V\\
+    =&V\d u+u\d V+p\d V\\
+    &u=aT^4\text{在等温过程不变},\ \d u= 0,\  \text{再代入} p=\ff{3}u\\
+    =&\f{4}{3}u\d V\\
+    =&\f{4}{3}\a T^4\d V
+}$$
+$$\ip Q=\f{4}{3}\a T^4(V_2-V_1)$$
+\se{2.17}
+$\dbar Q=T\d S$, 
+等温过程, 在两个温度下吸热分别为: 
+$$\D Q_1=T_1(S_2-S_1),\ \D Q_2=T_2(S_2-S_1)$$.\\
+绝热(等熵)过程中 $\D Q = 0$, 则
+$$\eta = 1- \f{Q_2}{Q_1} = 1- \f{T_2(S_2-S_1)}{T_1(S_2-S_1)} = 1-\f{T_2}{T_1}.$$
+\se{2.19}
+对气体体系$C_p-C_V=\dd{(H-U)}{T}=T(\pp{p}{T})_V(\pp{V}{T})_p$ 作代换 $p \rightarrow -\mu_0H,\ V\rightarrow m$: $C_p-C_V=-\mu_0T(\pp{H}{T})_m(\pp{m}{T})_H$. 再代入 $(\pp{m}{T})_H=(\pp{H}{T})_m(\pp{m}{H})_T$, 可得$C_p-C_V=\mu_0T(\pp{H}{T})^2_m(\pp{m}{H})_T$.
+\se{2.20}
+在等温过程中, $\dbar S(T,H) = \pp{S}{T}\d T+\pp{S}{H}\d H = \pp{S}{H}\d H$.
+$$Q=\int T \dbar S(T,H) = \int T\pp{S}{H}\d H $$
+代入$(\pp{S}{H})_T=\mu_0(\pp{m}{T})_H$, $Q = \int \mu_0T\pp{m}{T}\d H $,\\
+再代入居里定律, 
+$$Q = -\int \f{\mu_0CV}{T}H\d H = -\f{\mu_0CV}{2T}H^2$$
+\se{3.1}
+(a) 由热力学第二定律, $\d U = \dbar Q + \dbar W < T\d S -P\d V$, 当$S,V$不变, 即$\d U < 0$. 因此在非平衡态$U$会减小, 稳定时$U$保持不变, 为最小.
+
+(b) $H=U+pV,\ \d H< T\d S+V\d p$, 当$S,p$不变, 即$\d H < 0$. 因此在非平衡态$H$会减小, 稳定时$H$保持不变, 为最小.
+
+(c) 由(b)式, $T\d S > \d H-V\d p$, 当$H,p$不变, 即$\d S > 0$. 因此在非平衡态$S$会增大, 稳定时$S$保持不变, 为最大.
+
+(d) $F=U-TS,\ \d F < -S\d T-p\d V$, 当$F,V$不变, 即$\d T < 0$. 因此在非平衡态$T$会减小, 稳定时$T$保持不变, 为最小.
+
+(e) $G=F+pV,\ \d G < -S\d T + V\d p$, 当$G,p$不变, 即$\d T < 0$. 因此在非平衡态$T$会减小, 稳定时$T$保持不变, 为最小.
+
+(f) $\d U < T\d S-p\d V$, 当$U,S$不变, 即$\d V < 0$. 因此在非平衡态$V$会减小, 稳定时$V$保持不变, 为最小.
+
+(G) $F=U-TS,\ \d F < -S\d T-p\d V$, 当$F,T$不变, 即$\d V < 0$. 因此在非平衡态$V$会减小, 稳定时$V$保持不变, 为最小.
+\se{3.2}
+$$\de^2 S(U<V) = \pp[2]{S}{U}\de^2 U+2\frac{\partial^2 S}{\partial U\partial V}\de U\de V+\pp[2]{S}{V}\de^2 V$$
+$$ \ar{
+    \pp[2]{S}{U} =& \pp{}{U}(\ff{T})=-\ff{T^2C_V}\\
+    \frac{\partial^2 S}{\partial U\partial V} =& \pp{}{V}(\ff{T}) = \ff{T^2C_V}[T\pp{p}{T}-p]=\f{p}{C_VT}\beta-\f{p}{C_VT^2}\\
+    \pp[2]{S}{V} =& \pp{}{V}(\f{p}{T}) = \ff{T^2}(T\pp{p}{V}-p\pp{T}{V}) = -\ff{T}\f{[T\pp{p}{T}-p]+C_V\pp{T}{V}}{C_V\pp{T}{p}}-\ff{T^2}p\pp{T}{V}=\f{2p^2\beta}{C_VT}-\f{p^2}{C_VT^2}-\f{p^2\beta^2}{C_V}-\ff{TV\kappa_T}
+}$$
+代入上式即为所需证明的方程.
+\qqed
+\se{3.4}
+$$C_p-C_V=\f{VT\a^2}{\kappa_T}$$
+由于$\kappa_T=-\ff{V}(\pp{V}{p})_T>0$, 因此$C_p\geq C_V>0$.\\
+又由于$\f{\kappa_S}{\kappa_T}=\f{\pp{V}{p}}{\pp{V}{p}}=\f{C_V}{C_p}\leq 1$. 因此$\pp{V}{p} \leq \pp{V}{p}<0$.
+\end{document}

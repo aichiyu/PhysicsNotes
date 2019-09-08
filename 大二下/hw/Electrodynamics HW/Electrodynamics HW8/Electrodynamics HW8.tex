@@ -1,0 +1,50 @@
+\documentclass[UTF8,9pt]{ctexart}
+\usepackage{../../template/homeworkTEMP/hw}
+\setlength{\arraycolsep}{1pt}
+\setcounter{secnumdepth}{0}
+\title{The 8th HW of Electrodynamics} 
+\begin{document} 
+\maketitle
+\se{Q1}
+Two particles with magnetic dipole moment m1 and m2 and are placed at locations with distance R
+
+(a)
+$$ 
+\vec{B}=\frac{\mu_{0}}{4 \pi} \frac{3(\vec{m} \cdot \hat{R}) \hat{R}-\vec{m}}{R^{3}}
+ $$
+可知当$R\perp m_1$, $B$与$m_1$ 方向相反. 平衡时要求$M=m \tm B=0$ , $m_2$与$B(m_1)$同向为稳定平衡, 反向时为不稳定平衡, 即$m_1, m_2$方向平行时可以平衡. 
+
+(b)
+当$m$与$R$平行, $B=\frac{\mu_{0}}{4 \pi} \f{2\bm{m}}{R^3}$. 当$m_1,m_2$同向, 达到稳定平衡, 反向则为不稳定平衡. 
+
+(c)
+平衡时$m_1$产生的磁场与$m_2$平行. 则需要$B_1$平行于$m_2$. 设$\bm{m}_1 = |m_1|(x_1,y_1,z_1)$, $\bm{m}_2 = |m_2|(x_2,y_2,z_2)$. 其中$\sqrt{x^2+y^2+z^2}=1$.
+由于$m_1$与$B_2$平行. 取$\hat{R} = (1,0,0)$.
+$$m_1\tm B_2 = 0$$
+$$m_1\tm\of{ (m_2\cdot \hat{R})\hat{R} - m_2 }= 0$$
+$$\begin{array}{rl}
+    (x_1,y_1,z_1) \tm\{[ (x_2,y_2,z_2)\cdot(1,0,0)]\, (1,0,0) - (x_2,y_2,z_2) \} =0\\
+    (x_1,y_1,z_1) \tm\{(x_2) (1,0,0) - (x_2,y_2,z_2)\}=0\\
+    (x_1,y_1,z_1) \tm (0,y_2,z_2)=0\\
+    (y_1z_2-y_2z_1,-x_1z_2,x_1y_2)=0
+\end{array}$$
+由对称性, 共有:
+$$\hua{
+    y_1z_2 - y_2z_1 =& 0\\
+    x_1z_2 = x_2z_1 =& 0\\
+    x_2y_1 = x_1y_2 =& 0
+}$$
+有两种情况满足上式, \\
+1.两个偶极子互相平行, 且垂直于$R$. \\
+2. 两个偶极子均平行于$R$方向.  
+\se{Q2}
+设镜像偶极子在$d'$处, 偶极矩大小为$m'$, 空间距球心$R$, 与偶极子距离为$r$, 夹角为$\t$的一点磁势为
+$$ 
+\varphi=\frac{m\cos\t}{4 \pi r^2}+\frac{m'\cos\t'}{4 \pi r'^2}
+ $$
+ $d^2+r^2-R^2=2dr\cos\t$, 则$\dd{r}{R} = \f{R}{r-d\cos\t}$
+$$\pp{\vp}{R} = -\f{m\cos\t}{2\pi r^3}\f{R}{r-d\cos\t}-\f{m'\cos\t'}{2\pi r'^3}\f{R}{r'-d'\cos\t'}$$
+在$R=a$处, $B_R=-\pp{\vp}{R}=0$
+$$0 = -\f{m\cos\t}{r^3}\ff{r-d\cos\t}-\f{m'\cos\t'}{r'^3}\ff{r'-d'\cos\t'}$$
+$$\ip m'=-(\f{a}{d})^3m,\quad z=d'=\f{a^2}{d}$$
+\end{document}

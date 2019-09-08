@@ -1,0 +1,175 @@
+\documentclass{revtex4}
+\usepackage{mathrsfs}
+\usepackage{amsthm}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{graphicx} 
+\usepackage{color}
+  
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%begin{newcommands}
+\newcommand\qqed{\rightline{$\square$}}                                 %\square
+\newcommand\cm{\mathscr}                                               %dbar
+\newcommand\dbar{\text{\dj}}                                            %dbar
+\renewcommand\d{\mathrm{d}}                                            %d
+\newcommand\sch{Schrödinger}                                           %Schrödinger
+\newcommand{\dd}[3][]{\frac{\mathrm{d}^{#1} #2}{\mathrm{d} #3^{#1}}}   %d/d^n
+\newcommand{\dt}[2][]{\frac{\mathrm{d}^{#1} #2}{\mathrm{d} t^{#1}}}    %d/dt^n
+\newcommand{\pp}[3][]{\frac{\partial^{#1} #2}{\partial #3^{#1}}}       %∂/∂^n
+\newcommand{\pt}[2][]{\frac{\partial^{#1} #2}{\partial t^{#1}}}        %∂/∂t^n 
+\newcommand{\f}[2]{\frac{#1}{#2}}                                      %A/B
+\newcommand{\ff}[1]{\frac{1}{#1}}                                      %1/A
+\newcommand\rank{\mathrm{rank}}                                        %rank
+\newcommand\tr{\mathrm{tr}}                                            %tr
+\newcommand\e[1]{\times 10^{#1}}                                       %×10^
+\renewcommand\Re{\mathrm{Re}\ }                                          %Re
+\renewcommand\Im{\mathrm{Im}\ }                                          %Im
+\renewcommand\ln{\mathrm{ln}\ }                                          %ln
+\newcommand\Ln{\mathrm{Ln}\ }                                            %Ln
+\renewcommand\arg{\mathrm{arg}}                                        %arg
+\newcommand\ip{\implies}                                               %→
+\newcommand\tm{\times}                                                 %×
+\renewcommand\l{\lambda}                                               %λ
+\renewcommand\a{\alpha}                                                %α
+\renewcommand\k{\kappa}                                                %κ
+\renewcommand\o{\omega}                                                %ω
+\newcommand\D{\Delta}                                                  %Δ
+\newcommand\de{\delta}                                                 %δ
+\renewcommand\t{\theta}                                                %θ
+\renewcommand\epsilon{\varepsilon}                                     %ε
+\newcommand\abs[1]{\left| #1 \right|}                                  %|A|
+\renewcommand\exp{\mathrm{exp}\ }                                        %exp
+\newcommand\se{\section}                                               %section
+\newcommand\sub{\subsection}                                           %subsection
+\newcommand\sumi{\sum_{i=1}^n}                                         %∑ 
+\AtBeginDocument{\renewcommand{\bar}{\overline}}                       %bar
+\AtBeginDocument{\renewcommand{\hat}{\widehat}}                        %hat
+\newcommand\inti{\int_{0}^{infty}}                                     %∮
+\renewcommand{\arraystretch}{1.2}                                      %change array stretch
+\newcommand{\dis}{\displaystyle}                                       %big equation
+\newcommand{\ar}[2][rl]{\begin{array}{#1}                              %begin an array
+        #2
+    \end{array}}                                                 
+\newcommand\bkt[1]{\left< #1 \right>}                                  %<x>
+\newcommand\putfig[2]{                                                 %put a figure
+    \begin{center}    
+        \includegraphics[scale=#1]{#2}
+    \end{center}}
+%end{newcommands}
+
+%resize the parentheses
+\def\lparen{(} 
+\def\rparen{)} 
+\catcode`(=\active 
+\catcode`)=\active
+\def({\ifmmode \left\lparen \else\lparen\fi} 
+\def){\ifmmode \right\rparen \else\rparen\fi}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+
+\pagestyle{empty}
+
+\raisebox{40pt}[0pt][0pt]{\vbox to 0pt{\includegraphics{ShanghaiTech-Logo.png}}}
+
+\raisebox{35pt}[0pt][0pt]{\hbox to \textwidth{\hfil\bfseries \LARGE\color[rgb]{1,0,0} Group Theory\hfil}}
+
+\raisebox{24pt}[0pt][0pt]{\hbox to \textwidth{\hfil\bfseries \LARGE\color[rgb]{0,0,0.9}  Homework Assignment 02\hfil}}
+
+\raisebox{13pt}[0pt][0pt]{\hbox to \textwidth{\hfil\bfseries \Large\color[rgb]{0,0.5,0} Spring, 2019\hfil}}
+
+\noindent\raisebox{13pt}[0pt][0pt]{\rule{\textwidth}{1pt}}
+
+\vspace{-6pt}
+
+\begin{enumerate}
+%\item Find the multiplication table for the group $D_{4}$. For the evaluation of the products of the elements of $D_{4}$, provide as many details as possible.
+
+\item Show that the intersection $S$ of two invariant subgroups $S_{1}$ and $S_{2}$ of a group $G$ is an invariant subgroup.
+
+$S=S_1\cap S_2$, for $T \in S$, $X \in G$, $S \in S_1,S_2$, thus $XTX^{-1} \in S_1,S_2 \ip XTX^{-1} \in S$.
+\item The multiplication table of a finite group $G$ is given by
+
+\begin{center}
+\begin{tabular}{c|cccccccccccc}
+        & $E$ & $A$ & $B$ & $C$ & $D$ & $F$ & $I$ & $J$ & $K$ & $L$ & $M$ & $N$\\
+\hline
+$E$ &  $E$ & $A$ & $B$ & $C$ & $D$ & $F$ & $I$ & $J$ & $K$ & $L$ & $M$ & $N$\\
+$A$  & $A$  & $E$  & $F$  & $I$  & $J$  & $B$  & $C$  & $D$  & $M$  & $N$  & $K$  & $L$\\
+$B$  & $B$  & $F$  & $A$  & $K$  & $L$  & $E$  & $M$  & $N$  & $I$  & $J$  & $C$  & $D$\\
+$C$  & $C$  & $I$  & $L$  & $A$  & $K$  & $N$  & $E$  & $M$  & $J$  & $F$  & $D$  & $B$\\
+$D$  & $D$  & $J$  & $K$  & $L$  & $A$  & $M$  & $N$  & $E$  & $F$  & $I$  & $B$  & $C$\\
+$F$  & $F$  & $B$  & $E$  & $M$  & $N$  & $A$  & $K$  & $L$  & $C$  & $D$  & $I$  & $J$\\
+$I$  & $I$  & $C$  & $N$  & $E$  & $M$  & $L$  & $A$  & $K$  & $D$  & $B$  & $J$  & $F$\\
+$J$  & $J$  & $D$  & $M$  & $N$  & $E$  & $K$  & $L$  & $A$  & $B$  & $C$  & $F$  & $I$\\
+$K$  & $K$  & $M$  & $J$  & $F$  & $I$  & $D$  & $B$  & $C$  & $N$  & $E$  & $L$  & $A$\\
+$L$  & $L$  & $N$  & $I$  & $J$  & $F$  & $C$  & $D$  & $B$  & $E$  & $M$  & $A$  & $K$\\
+$M$  & $M$  & $K$  & $D$  & $B$  & $C$  & $J$  & $F$  & $I$  & $L$  & $A$  & $N$  & $E$\\
+$N$  & $N$  & $L$  & $C$  & $D$  & $B$  & $I$  & $J$  & $F$  & $A$  & $K$  & $E$  & $M$
+\end{tabular}
+\end{center}
+
+\begin{enumerate}
+\item Find the inverse of each element of $G$.
+$$\ar{
+    E^{-1}=&E\\
+    A^{-1}=&A\\
+    B^{-1}=&F\\
+    C^{-1}=&I\\
+    D^{-1}=&J\\
+    F^{-1}=&B\\
+    I^{-1}=&C\\
+    J^{-1}=&D\\
+    K^{-1}=&L\\
+    L^{-1}=&K\\
+    M^{-1}=&N\\
+    N^{-1}=&M
+}$$
+\item Find the elements in each class of $G$.
+$$\{E\}, \  \{A\},\  \{B,C,D\}, \  \{F,I,J\}, \  \{K,L,M\}, \  \{N\}.$$
+\item Find all invariant subgroups of $G$.
+$$\{E\},\  \{E,A\},\ \{E,A,K,L,M,N\}\,\ \{E,A,B,C,D,F,I,J,K,L,M,N\}$$
+\end{enumerate}
+
+\item Consider the group $D_{3}$.
+\begin{enumerate}
+\item List all the classes of $D_{3}$. 
+$$\{E\},\ \{D,F\},\ \{A,B,C\}$$
+\item Find the right and left cosets of the subgroup $S=\{E, A\}$ of $D_{3}$.
+\end{enumerate}
+Right cosets: 
+$$\ar{
+    SE=SA=&\{E,A\}\\
+    SD=SC=&\{D,C\}\\
+    SF=SB=&\{F,B\}
+}$$
+Left cosets:
+$$\ar{
+    ES=AS=&\{E,A\}\\
+    DS=BS=&\{D,B\}\\
+    FS=CS=&\{F,C\}
+}$$
+\item For the group $D_{3}$ and its invariant subgroup $S=\{E, D, F\}$, find the factor group $D_{3}/S$. Construct the multiplication table for the factor group.\\
+Right cosets: 
+$$\ar{
+    SE=SD=SF=S\\
+    SA=SB=SC=\{A,B,C\}
+}$$
+Multiplication table:
+$$\ar[c|cc]{
+     &SE&SA\\
+    \hline
+    SE&SE&SA\\
+    SA&SA&SE
+}$$
+\item Consider $C_{6} = \{E, \,  a, \,  a^{2}, \,  a^{3}, \,  a^{4}, \,  a^{5}\}$ and its two subgroups $S_{1}=\{E, \,  a^{3}\}$ and $S_{2}=\{E, \,  a^{2}, \, a^{4}\}$. Show that $C_{6} = S_{1}\otimes S_{2}$.
+$$\ar{
+    EE=&E\\
+    Ea^2=&a^2\\
+    Ea^4=&a^4\\
+    a^3E=&a^3\\
+    a^3a^2=&a^5\\
+    a^3a^4=&a
+}$$
+$$\ip C_{6} = S_{1}\otimes S_{2}.$$
+\end{enumerate}
+\end{document}

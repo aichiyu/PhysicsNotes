@@ -1,0 +1,73 @@
+\documentclass[UTF8,9pt]{ctexart}
+\usepackage{../../template/homeworkTEMP/hw}
+\setcounter{secnumdepth}{0}
+\title{The 9th HW of Electrodynamics} 
+\begin{document} 
+\maketitle
+\se{1}
+Two independent monochromatic electromagnetic waves with electric fields perpendicular to each otherare traveling in vacuum along the same direction.
+
+设两个波分别为$E_1=e^{i(kx-\o t)}\bm{e}_1,E_2=e^{i(kx-\o t+\vp)}\bm{e}_2$.\\
+则合波为:$E=E_1+E_2 =e^{i(kx-\o t)}\bm{e}_1+ e^{i(kx-\o t+\vp)}\bm{e}_2 = (\bm{e}_1+e^{i\vp}\bm{e}_2)e^{i(kx-\o t)}$. \\
+当$\vp=0$, 沿$(\bm{e}_1+\bm{e}_2)$方向即45°方向. \\
+当$\vp=\pi/2$, $E=(\bm{e}_1+i\bm{e}_2)e^{i(kx-\o t)}$. 沿$(\bm{e}_1+i\bm{e}_2)$方向, 即为顺时针的圆偏光. \\
+当$\vp=-\pi/2$, $E=(\bm{e}_1-i\bm{e}_2)e^{i(kx-\o t)}$. 沿$(\bm{e}_1-i\bm{e}_2)$方向, 即为逆时针的圆偏光. 
+
+\se{2}
+全反射时
+$$ \sin\theta_{T}=\frac{n_{2}}{n_{1}} $$
+对于p光, 当$\t=\t_T$, $\t''=\pi/2$. 代入
+$$ 
+\frac{E^{\prime}}{E}=\frac{\tan \left(\theta-\theta^{\prime \prime}\right)}{\tan \left(\theta+\theta^{\prime \prime}\right)} = 1
+ $$
+ $$ 
+\frac{E^{\prime \prime}}{E}=\frac{2 \cos \theta \sin \theta^{\prime \prime}}{\sin \left(\theta+\theta^{\prime \prime}\right) \cos \left(\theta-\theta^{\prime \prime}\right)} = \f{2n_1}{n_2}
+ $$
+ $$k_z' = k_z$$
+ $$ 
+ k_z''=\sqrt{k''^2-k_{x}^{\prime \prime 2}}=\sqrt{\left(k \frac{n_{2}}{n_{1}}\right)^{2}-k_{x}^{2}}=\sqrt{\left(k \frac{n_{2}}{n_{1}}\right)^{2}-k^{2} \sin ^{2} \theta_{T}}=0
+  $$
+当$\t>\t_T$,$k_{Z}^{\prime \prime}=\sqrt{k^{\prime \prime 2}-k_{x}^{\prime \prime 2}}=i k \sqrt{\sin ^{2} \theta-\left(\frac{n_{2}}{n_{1}}\right)^{2}}=i \kappa$
+因此$$ 
+R_{s}=\frac{\overline{\vec{S}}_{r} \cdot \hat{z}}{\overline{\vec{S}}_{i} \cdot \hat{z}}=\frac{\operatorname{Re}\left(\vec{E}^{* *} \cdot \vec{E}^{\prime}\right)}{\operatorname{Re}\left(\vec{E}^{*} \cdot \vec{E}\right)}=1
+ $$
+ $$ 
+T_{s}=\frac{\overline{\vec{S}}_{t} \cdot \hat{z}}{\overrightarrow{\vec{S}}_{i} \cdot \hat{z}}=0
+ $$
+\se{3}
+(a)\\
+当正向移动的波产生相位移动时, 单位长度的相位移动应该与介质总长度无关, 即相移应该呈指数形式, 即
+$$ 
+\begin{aligned} E_{+}^{\prime} &=E_{+}\left(z=t_{j}\right)=E_{+}(z=0) e^{i k_{j} t_{j}}=E_{+} e^{i k_{j} t_{j}} \\ E_{-}^{\prime} &=E_{-}\left(z=_{j}\right)=E_{-}(z=0) e^{-i k_{j} t_{j}}=E_{-} e^{-i k_{j} t_{j}} \end{aligned}
+ $$
+ 则透射方程可以表示为: 
+$$T=\left[\ar{e^{ikt}&0\\0&e^{-ikt}}\right]$$
+则$$T^{-1} = \left[\ar{e^{-ikt}&0\\0&e^{ikt}}\right] $$
+而
+$$T^* = \left[\ar{e^{-ikt}&0\\0&e^{ikt}}\right]$$
+二者相等. 
+
+(b)\\ 
+边界处有边界条件:
+$$\begin{array}{cc}{E^{\| } :} & {E_{+}+E_{-}=E_{+}^{\prime}+E_{-}^{\prime}} \\ {H^{ \|} :} & {n_{1}\left(E_{+}-E_{-}\right)=n_{2}\left(E_{+}^{\prime}-E_{-}^{\prime}\right)}\end{array}$$
+设$n=n_1/n_2$则有
+$$ 
+\begin{aligned} E_{+}^{\prime} &=\frac{1}{2} E_{+}(1+n)+\frac{1}{2} E_{-}(1-n) \\ E_{-}^{\prime} &=\frac{1}{2} E_{+}(1-n)+\frac{1}{2} E_{-}(1+n) \end{aligned}
+ $$
+矩阵形式为
+$$ 
+T_{\text { interface }}(2,1)=\frac{1}{2} \left( \begin{array}{cc}{n+1} & {-(n-1)} \\ {-(n-1)} & {n+1}\end{array}\right)
+ $$
+
+ (c)\\
+由于透射端只有沿透射方向的波, 
+$$ 
+\left( \begin{array}{c}{E_{t}} \\ {0}\end{array}\right)=T \left( \begin{array}{c}{E_{i}} \\ {E_{r}}\end{array}\right)=\left( \begin{array}{cc}{t_{11}} & {t_{12}} \\ {t_{21}} & {t_{22}}\end{array}\right) \left( \begin{array}{c}{E_{i}} \\ {E_{r}}\end{array}\right)
+ $$
+可以解得
+$$ 
+E_{r}=-\frac{t_{21}}{t_{22}} E_{i}, \quad E_{t}=\frac{t_{11} t_{22}-t_{12} t_{21}}{t_{22}} E_{i}=\frac{\operatorname{det}(T)}{t_{22}} E_{i}
+ $$
+ \qqed
+ $$w,\o$$
+\end{document}

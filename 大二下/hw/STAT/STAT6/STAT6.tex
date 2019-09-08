@@ -1,0 +1,104 @@
+\documentclass[UTF8,9pt]{ctexart}
+\usepackage{../../template/homeworkTEMP/hw}
+\setcounter{secnumdepth}{0}
+\title{统计力学第六次作业} 
+\begin{document} 
+\maketitle
+\se{7.1}
+$\ep = \ff{2m}(\f{2\pi\hbar}{L})^2\sum n^2 = aL^{-2} = aV^{-2/3}$, $a$为常数$a=\f{(2\pi\hbar)^2\sum n_i^2}{2m}$. \\
+则$\pp{\ep}{V} = -\f{2}{3}\ep/V$. 用$l$取代$\sum n_i^2$. $\pp{\ep}{V} =  -\f{2}{3}\ep/V$\\
+因此$p=-\sum a_l\pp{\ep_l}{V} = \f{2}{3}\sum a_l \f{\ep}{V} = \f{2}{3}\f{U}{V}$
+\se{7.2}
+$\ep = c\f{2\pi\hbar}{L}\sqrt{\sum n^2} = aL^{-1} = aV^{-1/3}$, $a$为常数$a=c2\pi\hbar\sqrt{\sum n^2}$. \\
+则$\pp{\ep}{V} = -\f{1}{3}\ep/V$. 用$l$取代$\sqrt{\sum n^2}$. $\pp{\ep}{V} =  -\f{1}{3}\ep/V$\\
+因此$p=-\sum a_l\pp{\ep_l}{V} = \f{1}{3}\sum a_l \f{\ep}{V} = \f{1}{3}\f{U}{V}$
+\se{7.4}
+$$S = Nk(\ln Z_1-\b\pp{}{\b}\ln Z_1) $$
+总的$S$为各状态的概率平均:
+$$= Nk\sum_s P_s(\ln Z_1-\b\pp{}{\b}(-\b\ep_s-\ln P_s))$$
+$$=\sum_s P_sNk(\ln Z_1+\b\ep_s) = \sum_s P_sNk(-\b\ep_s-\ln P_s+\b\ep_s) = -\sum_s P_s\ln P_s$$
+当系统为非定域, $$S = Nk(\ln Z_1-\b\pp{}{\b}\ln Z_1) -k\ln N! = -\sum_s P_s\ln P_s -k\ln N! $$
+$$= -\sum_s P_s\ln P_s -Nk(\ln N-1)$$ 
+\se{7.5}
+$A$原子共有$Nx$个, 因此c
+$$\O = \of{\ar{N\\Nx}} = \f{N!}{(Nx)! (N-Nx)!}$$% = \f{N(\ln N-1)}{Nx(\ln N+\ln x -1)N(1-x)(\ln N+\ln(1-x)-1)}$$
+又由于定域系统中$S=k\ln\O$.
+$$S=k\ln\f{N!}{(Nx)! (N-Nx)!}$$
+利用$\ln N =N(\ln N-1)$可化简为:
+$$S = -Nk[x\ln x+(1-x)\ln(1-x)]$$
+\se{7.6}
+(a)\\
+总的状态数为
+$$\O = \of{\ar{N\\n}}^2= \of{\f{N!}{n! (N-n)!}}^2$$
+又由于定域系统中$S=k\ln\O$.
+$$S=2k\ln\f{N!}{n! (N-n)!} = 2k(N\ln N-n\ln n-(N-n)\ln (N-n))$$
+
+(b)\\
+平衡态时$F$极小要求$\pp{F}{n} \to 0 \ip u=T\pp{S}{n} $. 
+$$\pp{S}{n} = 2k(-\ln n+\ln(N-n)) = 2k\ln(N/n-1) \approx  2k\ln(N/n)$$
+因此$$\f{u}{2kT} = \ln(N/n) \ip n =Ne^{-\f{u}{2kT}}$$
+\se{7.7}
+这种情况由于只有空位没有间隙原子出现, 因此$S$变为7.5的表达式, 即
+$$S=k\ln\f{N!}{n! (N-n)!} = k(N\ln N-n\ln n-(N-n)\ln (N-n))$$
+同理, 平衡态时$F$极小要求$\pp{F}{n} \to 0 \ip w=T\pp{S}{n} $. 
+$$\pp{S}{n} = k(-\ln n+\ln(N-n)) = k\ln(N/n-1) \approx  k\ln(N/n)$$
+因此$$\f{w}{kT} = \ln(N/n) \ip n =Ne^{-\f{w}{kT}}$$
+\se{7.9}
+当气体没有整体运动时, 最概然分布为:
+$$\d N = e^{-\a-\f{\b}{2m}(p_x^2+p_y^2+p_z^2)}\f{V\d p_x\d p_y\d p_z}{h^3}$$
+使坐标系做沿$-z$方向, 速度为$v_0$的运动, 设此时相对速度变化为$v_z' = v_z +v_0 \iff p_z' = p_z + p_0$, 分布为:
+$$\d N = e^{-\a-\f{\b}{2m}(p_x^2+p_y^2+p_z'^2)}\f{V\d p_x\d p_y\d p_z}{h^3}$$
+用$p_z$代替$p_z'$,
+$$\d N = e^{-\a-\f{\b}{2m}(p_x^2+p_y^2+(p_z-p_0)^2)}\f{V\d p_x\d p_y\d p_z}{h^3}$$
+这等价于气体沿$z$方向运动.
+\se{7.12}
+根据速度分布律, 
+$$f(\vec{v}) = (\f{m}{2\pi k_BT})^{3/2}\exp (-\f{mv^2/2}{k_BT})=C \exp (-\f{mv^2/2}{k_BT})$$
+则某一状态概率为
+$$\d W = C^2 \exp (-\f{mv_1^2/2}{k_BT})\exp (-\f{mv_2^2/2}{k_BT})\d\vec{v_1}{\d\vec{v}_2}$$
+修改积分变量$(\vec{v_1},\vec{v_2})\to(\vec{v_r},\vec{v_e})$. 其中$v_e=\ff{2}(v_1+v_2), v_r = v_2-v_1$
+Jacobi行列式为$$\abs{\pp{(v_1,v_2)}{(v_e,v_r)}} = \abs{\ar{1&1\\-\ff{2}&\ff{2}}}=1$$
+此时质量的含义发生变化, 用等效质量替换: $m_e=2m,m_\mu = m/2$, 
+$$\d W = C_eC_\mu \exp (-\f{m_ev_e^2/2}{k_BT})\exp (-\f{m_\mu v_r^2/2}{k_BT})\d \vec{v}_e\d \vec{v}_r$$
+对于相对速度$v_r$, 其分布为
+$f(v_r)=C_\mu\exp (-\f{m_\mu v_r^2/2}{k_BT})$
+$$\ip f(v_r)=(\f{m_\mu}{2\pi k_BT})^{3/2}\exp (-\f{m_\mu v_r^2/2}{k_BT})$$
+由于对称性, $|v_r|$相同的各个$v_r$的分布是相同的, 因此
+$\d|v_r| = 4\pi |v_r|^2\d v_r$
+速度分布为
+$$f(|v_r|)\d|v_r| = f(v_r) 4\pi |v_r|^2\d v_r=(\f{m_\mu}{2\pi k_BT})^{3/2}\exp (-\f{m_\mu v_r^2/2}{k_BT}) 4\pi |v_r|^2\d v_r$$
+$$\bar{|v|} = \intzi |v|f(|v|)\d|v|$$
+$$\bar{|v_r|} = \intzi |v_r|f(|v_r|)\d|v_r| =\intzi |v_r|(\f{m_\mu}{2\pi k_BT})^{3/2}\exp (-\f{m_\mu v_r^2/2}{k_BT}) 4\pi |v_r|^2\d v_r$$
+$$ = \intzi \f{|v_r|}{\sqrt{2}}\ff{2}(\f{m}{2\pi k_BT})^{3/2}\exp (-\f{m (v_r/\sqrt{2})^2/2}{k_BT}) 4\pi 2\tm(\f{|v_r|}{\sqrt{2}})^2\sqrt{2}\d \f{v_r}{\sqrt{2}}$$
+做变量替换$\f{v_r}{\sqrt{2}} = v$
+$$ = \sqrt{2}(\f{m}{2\pi k_BT})^{3/2}\exp (-\f{m v^2/2}{k_BT}) 4\pi |v|^2\d v = \sqrt{2}f(|v|)\d |v| = \sqrt{2}\bar{|v|}$$
+即$\bar{|v_r|} = \sqrt{2}\bar{|v|}$
+\se{7.14}
+单位时间逃逸的分子数密度为: $\Gamma = \pi  n \of{\f{m}{2\pi kT}}^{3/2} \exp(-\f{mv^2}{2kT}) \d v$. \\
+分子平均速率为
+$$\bar{v} =\f{\intzi \Gamma v\d v}{\intzi \Gamma \d v} = \f{\intzi v^4\exp(-\f{mv^2}{2kT}) \d v}{\intzi v^3\exp(-\f{mv^2}{2kT}) \d v} = \sqrt{\f{9\pi kT}{8m}}$$
+方均根速率为
+$$\sqrt{\bar{v^2}} =\sqrt{\f{\intzi \Gamma v^2\d v}{\intzi \Gamma \d v}} = \sqrt{\f{\intzi v^5\exp(-\f{mv^2}{2kT}) \d v}{\intzi v^3\exp(-\f{mv^2}{2kT}) \d v}} = \sqrt{\f{4 kT}{m}}$$
+平均能量为: 
+$$\bar{E} = \ff{2}m\bar{v^2} = 2kT$$
+\se{7.18}
+简谐振动能级为: 
+$$\ep = (n+\ff{2})\hbar \o $$
+简并度为1, 则
+$$Z_1 = \sum \exp(-\b(n+\ff{2})\hbar \o) = \f{e^{-\ff{2}\b\hbar\o}}{1-e^{-\b\hbar\o}}$$
+$$\ln Z_1 = -\ff{2}\b\hbar\o -\ln(1-e^{-\b\hbar\o})$$
+$$S = Nk\of{\ln Z_1 -\b\pp{}{\b}\ln Z_1}$$
+$$ = Nk\of{ -\ff{2}\b\hbar\o -\ln(1-e^{-\b\hbar\o})   -\b (-\ff{2}\hbar\o-\ff{1-e^{-\b\hbar\o}}e^{-\b\hbar\o}(-\hbar\o))}$$
+$$ = Nk\of{-\ln(1-e^{-\b\hbar\o})  + \f{\b\hbar\o}{e^{\b\hbar\o}-1}}$$
+代入$\t = T\b\hbar\o$,
+$$ = Nk\of{-\ln(1-e^{-\t/T}) +\f{\t/T}{e^{\t/T}-1}}$$
+\se{7.21}
+$$Z_1 = e^{-\b \ep_1} + e^{-\b \ep_2}, N =e^{-\a-\b \ep_1} + e^{-\a-\b \ep_2}$$
+$$U = -N\pp{}{\b}\ln Z_1 = -N\pp{}{\b}\ln(e^{-\b \ep_1} + e^{-\b \ep_2})$$
+$$ = -N(\ff{e^{-\b \ep_1} + e^{-\b \ep_2}}(-\ep_1e^{-\b \ep_1} -\ep_2e^{-\b \ep_2}))$$
+$$ = N(\ff{e^{-\b \ep_1} + e^{-\b \ep_2}}(\ep_1e^{-\b \ep_1} + \ep_2e^{-\b \ep_2}))$$
+$$ = N\ep_1+\f{N(\ep_2-\ep_1)}{1+e^{\b(\ep_2-\ep_1)}}$$
+$$S = Nk\of{\ln Z_1 -\b\pp{}{\b}\ln Z_1}$$
+$$=Nk\of{-\b\ep_1+\ln(1+e^{-\b(\ep_2-\ep_1)})  +\b\ep_1+\f{\b(\ep_2-\ep_1)}{1+e^{\b(\ep_2-\ep_1)}}}$$
+$$=Nk\of{\ln(1+e^{-\b(\ep_2-\ep_1)})  +\f{\b(\ep_2-\ep_1)}{1+e^{\b(\ep_2-\ep_1)}}}$$
+\end{document}

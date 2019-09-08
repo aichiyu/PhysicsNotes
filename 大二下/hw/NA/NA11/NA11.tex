@@ -1,0 +1,51 @@
+\documentclass[UTF8,9pt]{ctexart}
+\usepackage{../../template/homeworkTEMP/hw}
+\setcounter{secnumdepth}{0}
+\title{数值分析第十一次作业} 
+\begin{document} 
+\maketitle
+\se{4}
+(1)\\
+$$\ar{
+  y_{n+1} \x y_n+\f{h}{4}\of{y_n'+3K_2}\\
+  y_{n+1} \x y_n +hy'_n +\ff{2}h^2y''_n+\ff{6}h^3y'''_n+\ff{27}h^4y''''_n
+}$$
+因此截断误差主项为$y(x_{n+1})-y_{n+1}=\ff{216}h^4y''''_n$.
+
+(2)\\
+$$y_{n+1}=y_n+\f{n}{4}(4\l y_n+2h\l^2y_n)=(1+\l h+\ff{2}h^2\l^2)y_n$$
+$\ep_{n+1} = (1+\l h+\ff{2}h^2\l^2)\ep_n$, 令$\ep_{n+1}<\ep_n$, 要求$0<h<-\f{2}{\l}$.
+\se{5}
+$$y_n+2hy_n'+\f{(2h)^2}{2}y_n''+\f{(2h)^3}{6}y_n''' = ay_n+ahy'_n+\f{ah^2}{2}y''_n-\ff{5}y_n+\f{7h}{5}(y'_n+hy''_n+\f{h^2}{2}y'''_n)+\f{hb}{5}y_n'$$
+
+$$ \f{6}{5}y_n+2hy_n'+2h^2y_n''+\f{4h^3}{3}y_n''' 
+=
+ ay_n+(a+\f{7}{5}+\f{b}{5})hy'_n+(\f{a}{2}+\f{7}{5})h^2y''_n+\f{7h^3}{10}y'''_n $$
+ 则当
+ $$\hua{
+   a \x \f{6}{5}\\
+   b \x -3\\
+ }$$
+ 阶数最高, 截断误差主部为$(\f{4}{3}-\f{7}{10}-\ff{6})h^3y'''_n = \f{13}{30}h^3y'''_n$
+ \se{6}
+ $$y_{n+1} = \ff{2}y_n+\ff{2}y_n - \ff{2}hy'_n+\ff{4}h^2y''_n-\ff{12}h^3y'''_n+\f{h}{4}\of{4y'_n+4hy''_n+2h^2y'''_n-y'_n+3y'_n-hy''_n+\f{3}{2}h^2y'''_n}$$
+ $$y_{n+1} = y_n+hy'_n+\f{1}{2}h^2y''_n+\f{19}{24}h^3y'''_n$$
+ 截断误差主部为$(\ff{6}-\f{19}{24})h^3=-\f{5}{8}h^3y'''_n$.
+ \se{7}
+(1)\\
+定义$\vec{y} = [y,y']^T$. 原式化为
+$$\vec{y'} = \of{\ar{0\quad &1\\-1\quad &0}}y=Ay$$
+利用梯形公式
+$$ 
+y_{n+1}=y_{n}+\frac{h}{2}\left[y'_n+y'_{n+1}\right] \ip y_{n+1} = \of{1+\ff{h-\ff{2}}}y_n
+ $$
+$$\ip (I+\f{h}{2}A)y_n = (I-\f{h}{2}A)y_{n+1}$$
+两边取二范数, 由于$A$反对称, 
+$$\norm{I+\f{h}{2}A} = \norm{I-\f{h}{2}A}$$
+因此$$\norm{y_n}^2=\norm{y_{n+1}}^2$$
+
+(2)\\
+(1)问中的A即为这里的A, 由上述推导, A需要满足
+$$\norm{I+\f{h}{2}A} = \norm{I-\f{h}{2}A}$$
+当$A$为反对称矩阵时该式满足. 
+\end{document}

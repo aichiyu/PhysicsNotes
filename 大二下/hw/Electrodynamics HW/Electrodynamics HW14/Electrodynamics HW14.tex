@@ -1,0 +1,35 @@
+\documentclass[UTF8,9pt]{ctexart}
+\usepackage{../../template/homeworkTEMP/hw}
+\setcounter{secnumdepth}{0}
+\title{The 14th HW of Electrodynamics}
+\begin{document} 
+\maketitle
+\se{1}
+夫琅禾费衍射式满足
+$$ 
+\psi(\vec{r})=-\frac{i \psi_{0} e^{i k r}}{4 \pi r} \iint_{S_{0}} e^{i\left(\vec{k}_{1}-\vec{k}_{2}\right) \cdot \vec{r}^{\prime}}\left(\cos \theta_{1}+\cos \theta_{2}\right) d S^{\prime}
+$$考虑$$ \theta_{1}=0$$
+此时$\cos\t_1=1,\vec{k}_1\cdot\vec{r'}=0$, 则$$ 
+\psi(\vec{r})=-\f{i \psi_0 e^{i k r}}{4 \pi r} \iint_{S_0} e^{-i\vec{k}_2 \cdot \vec{r'}}(1+\cos\t_2)\d S'
+$$
+\begin{equation} 
+\psi(\vec{r})=-\f{i \psi_0 e^{i k r}}{4 \pi r}(1+\cos\t_2) \iint_{S_0} e^{-i\vec{k}_2 \cdot \vec{r'}}\d S'
+\end{equation}
+现在需要计算积分
+$$\ar{
+   \iint_{S_0} e^{-i\vec{k}_2 \cdot \vec{r'}}\d S' \x \int_0^R r\d r\int_{-\pi}^{\pi}e^{-ik_2r\cos\t}\d\t
+}$$
+根据Bessel函数的积分表示定义$$J_{\alpha }(x)={\frac {1}{2\pi }}\int _{-\pi }^{\pi }e^{i(\alpha \tau -x\sin \tau )}d\tau $$
+令$\a=0,\ x=k_2r,\ \t=\t+\pi/2$, 易得
+$$\ar{\iint_{S_0} e^{-i\vec{k}_2 \cdot \vec{r'}}\d S'
+  \x \int_0^R r\d r\int_{-\pi}^{\pi}e^{-ik_2r\cos\t}\d\t\\ \x 2\pi \int_0^R rJ_0(k_2r)\d r\\
+  \x 2\pi \ff{k_2}\int_0^R \d\of{rJ_1(k_2r)}\\
+  \x 2\pi \ff{k_2} rJ_1(k_2r)\big|_0^R\\
+  \x \f{2\pi}{k_2}RJ_1(k_2R)
+}$$
+将积分回代到(1)中
+$$\ar{
+  \psi(\vec{r})\x-\f{i \psi_0 e^{i k r}}{4 \pi r}(1+\cos\t_2) \f{2\pi}{k_2}RJ_1(k_2R)\\
+  \x -\f{i \psi_0 e^{i k r}R}{2k_2 r}(1+\cos\t_2)J_1(k_2R)\\
+}$$
+\end{document}

@@ -1,0 +1,374 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%Do not alter this block of commands.  If you're proficient at LaTeX, you may include additional packages, create macros, etc. immediately below this block of commands, but make sure to NOT alter the header, margin, and comment settings here. 
+\documentclass[12pt]{article}
+ \usepackage[margin=1in]{geometry} 
+\usepackage{amsmath,amsthm,amssymb,amsfonts, enumitem, fancyhdr, color, comment, graphicx, environ}
+\pagestyle{fancy}
+\setlength{\headheight}{65pt}
+\newenvironment{problem}[2][Problem]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{sol}
+    {\emph{Solution:}
+    }
+    {
+    \qed
+    }
+\specialcomment{com}{ \color{blue} \textbf{Comment:} }{\color{black}} %for instructor comments while grading
+\NewEnviron{probscore}{\marginpar{ \color{blue} \tiny Problem Score: \BODY \color{black} }}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+
+
+
+\usepackage{CTEX}
+\usepackage{amsfonts}
+\usepackage{geometry}                                                %调整间距
+%\usepackage[T1]{fontenc}                                             %change font
+\usepackage{mathtools}                                                %align needed
+%\usepackage{balance}                                                  %blance when there two columns
+%\usepackage{txfonts}                                                  %面积分体积分
+\usepackage{bm}                                                       %bold font
+%\usepackage{mathrsfs}                                                 %change greek font style
+%\usepackage{enumerate}                                                %Sort by number
+%\usepackage{supertabular}                                             %allow long table in 2 pages
+%\usepackage{soul}                                                     %highlight using \hl
+%\usepackage{fontspec}                                                 %expand font type
+\usepackage{graphicx}                                                 %to input pictures
+%\usepackage[colorlinks,linkcolor=red,anchorcolor=blue,citecolor=green]{hyperref}                                                %cite
+%\usepackage{verbatim}                                                 %comment                            
+%\usepackage{multicol}
+%begin{newcommands}
+
+    \newcommand{\intzo}{\int_0^1}                                  %0 1
+    \newcommand{\intii}{\int_{-\infty}^\infty}                                  %-∞ ∞
+    \newcommand{\intzi}{\int_0^\infty}                                  %0 ∞
+    \newcommand{\sumoi}{\int_1^\infty}                                  %1 ∞
+    \newcommand{\sumti}{\int_2^\infty}                                  %2 ∞
+    \newcommand{\sumii}{\sum_{-\infty}^\infty}                          %-∞ ∞
+    \newcommand{\sumzi}{\sum_0^\infty}                                  %0 ∞
+    \newcommand{\sumon}{\sum_1^n}                                  %1 n
+    \newcommand{\sumzn}{\sum_0^n}                                  %0 n
+    \renewcommand{\inf}{\infty}                                  %∞
+    \newcommand\of[1]{\left( #1 \right)}                                  %(x)
+    \newcommand\qqed{\rightline{$\square$}\\ }                                 %\square,QED
+    \newcommand\norm[1]{\left\| #1 \right\|}                                 %|| ||
+    \newcommand\s{\sqrt}
+    \newcommand\cm{\mathscr}                                               %
+    \newcommand\dbar{\text{\dj}}                                           %dbar
+    \renewcommand\d{\mathop{}\!\mathrm{d}}                                            %d
+    \newcommand{\dr}{\mathop{}\!\mathrm{d}r}                                            %dr
+    \newcommand{\dx}{\mathop{}\!\mathrm{d}x}                                            %dx
+    %\newcommand\sch{Schrödinger}                                           %Schrödinger
+    \newcommand{\dd}[3][]{\frac{\mathrm{d}^{#1} #2}{\mathrm{d} {#3}^{#1}}}   %d/d^n
+    \newcommand{\dt}[2][]{\frac{\mathrm{d}^{#1} #2}{\mathrm{d} t^{#1}}}    %d/dt^n
+    \newcommand{\pp}[3][]{\frac{\partial^{#1} #2}{\partial {#3}^{#1}}}       %∂/∂^n
+    \newcommand{\pt}[2][]{\frac{\partial^{#1} #2}{\partial t^{#1}}}        %∂/∂t^n 
+    \newcommand{\f}[2]{\frac{#1}{#2}}                                      %A/B
+    \newcommand{\ff}[1]{\frac{1}{#1}}                                      %1/A
+    \newcommand\rank{\operatorname{rank}}                                        %rank
+    \newcommand\tr{\operatorname{tr}}                                            %tr
+    \newcommand\e[1]{\times 10^{#1}}                                       %×10^
+    \newcommand\m{^{-1}}                                       %^{-1}
+    \renewcommand\Re{\operatorname{Re}}                                          %Re
+    \renewcommand\Im{\operatorname{Im}}                                          %Im
+    \newcommand\Ln{\operatorname{Ln}}                                            %Ln
+    \newcommand\ip{\implies}                                               %→
+    \newcommand\tm{\times}                                                 %×
+    \renewcommand\a{\alpha}                                                %α
+    \renewcommand\b{\beta}                                                 %β
+    \newcommand\C{\text{Const}}                                            %Const
+    \newcommand\D{\Delta}                                                  %Δ
+    \newcommand\de{\delta}                                                 %δ
+    \newcommand\ep{\varepsilon}                                            %ε
+    \newcommand\g{\gamma}                                                  %γ
+    \renewcommand\r{\rho}                                                  %ρ
+    \renewcommand\k{\kappa}                                                %κ
+    \renewcommand\l{\lambda}                                               %λ
+    \newcommand\n{\nabla}                                                  %nabla
+    \newcommand\laplace{\nabla^2}                                          %laplace
+    \newcommand\grad{\nabla}                                               %grad
+    \renewcommand\div{\nabla\cdot}                                         %div
+    \newcommand\curl{\nabla\times}                                         %\nabla×
+    \renewcommand\O{\Omega}                                                %Ω
+    \renewcommand\o{\omega}                                                %ω
+    \newcommand\sg{\sigma}                                                 %σ
+    \newcommand\p{\phi}                                                    %φ
+    \newcommand\vp{\varphi}                                                %φ
+    \renewcommand\t{\theta}                                                %θ
+    \newcommand\abs[1]{\left| #1 \right|}                                  %|A|
+    \newcommand\se{\section}                                               %section
+    \newcommand\sub{\subsection}                                           %subsection
+    \newcommand\dis{\displaystyle}                                         %big equation
+    \newcommand{\x}{=&\!\!\!\!\!}                                                    %
+    \newcommand{\xx}{&\!\!\!\!\!}                                                    %
+    \AtBeginDocument{\renewcommand{\bar}{\overline}}                       %bar
+    \AtBeginDocument{\renewcommand{\hat}{\widehat}}                        %hat
+    \renewcommand{\arraystretch}{1.2}                                      %change array stretch
+    \newcommand\ca{\frac{1}{4\pi\varepsilon_0}}                                 %constA
+    \newcommand{\ar}[2][rl]{\begin{array}{#1}                              %begin an array
+            #2
+        \end{array}}                                                 
+    \newcommand{\hua}[2][rl]{\left\{\begin{array}{#1}                              %begin an {array
+        #2
+    \end{array}\right.}
+    \newcommand\bkt[1]{\left< #1 \right>}                                  %<x>
+    \newcommand\putfig[2][0.25]{                                                 %put a figure
+        \begin{center}    
+            \includegraphics[width=#1\textwidth]{#2}
+        \end{center}}
+    \newcommand{\rk}[1]{\begin{enumerate}                              %enumerate
+        #1
+    \end{enumerate}}                                             
+
+%end{newcommands} 
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%Fill in the appropriate information below
+\lhead{Name: 肖涵薄\\ StudentID: 31360164}  %replace with your name
+\rhead{SI 140 \\ Probability and Statistics \\ Semester Spring 2019 \\ Assignment 5} %replace XYZ with the homework course number, semester (e.g. ``Spring 2019"), and assignment number.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%Do not alter this block.
+\begin{document}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%Solutions to problems go below.  Please follow the guidelines from https://www.overleaf.com/read/sfbcjxcgsnsk/
+
+
+%Copy the following block of text for each problem in the assignment.
+\begin{problem}{1} 
+On a flight from Urbana to Paris my luggage did not arrive with me. It
+had been transferred three times and the probabilities that the transfer
+was not done in time were estimated to be 4/10, 2/10, 1/10, respectively, in the order of transfer. What is the probability that the first
+airline goofed?
+\end{problem}
+\begin{sol}
+令三次转移没有成功事件分别为A.B.C. 最后没有成功为事件D.\\
+$$P(A|D) = \f{P(D|A)P(A)}{P(D)} = \f{4/10}{P(D)}$$
+$$P(D) = 1-P(A^CB^CC^C) = 1-0.6*0.8*0.9 = 0.568$$
+Hence $P(A|D) = 0.704225$
+\end{sol}
+
+
+
+%Copy the following block of text for each problem in the assignment.
+\begin{problem}{2}
+Suppose that the probability that both twins are boys is $\alpha$, and that
+both are girls $\beta$; suppose also that when the twins are of different sexes
+the probability of the first born being a girl is 1/2. If the first born of
+twins is a girl, what is the probability that the second is also a girl?
+\end{problem}
+\begin{sol}
+设第一次和第二次生girl是$A_1,A_2$. 
+$$P(A_1A_2) = \b$$
+$$P(A_1^cA_2^c) = \a \ip 1 + P(A_1A_2) - P(A_1) - P(A_2)=\a $$
+$$\ip \a +P(A_1)+P(A_2) = \b+1$$
+$$P(A_1A_2^C|(A_1A_2^C+A_1^CA_2))=\f{1}{2} \ip P(A_1A_2^c) = P(A_1^cA_2) \ip P(A_1) = P(A_2)$$
+$$\ip \a +2P(A) = \b+1$$
+所要求的是$P(A_1A_2|A_1)$.
+$$P(A_1A_2|A_1) = \f{P(A_1|A_1A_2)P(A_1A_2)}{P(A_2)} = \f{\b}{P(A_2)} = \f{\b}{\f{\b+1-\a}{2}} = \f{2\b}{\b+1-\a}$$
+\end{sol}
+
+\begin{problem}{3}
+A line of 100 airline passengers is waiting to board a plane. They each hold a ticket to one of the 100 seats on that flight. Unfortunately, the first person in line is crazy, and will ignore the seat number on their ticket, picking a random seat to occupy. All of the other passengers are quite normal, and will go to their proper seat unless it is already occupied. If it is occupied, they will then find a free seat to sit in, at random. What is the probability that the last (100th) person to board the plane will sit in their proper seat
+\end{problem}
+\begin{sol}
+如果有2个人, 则概率为1/2.\\ 
+如果有3个人, 则概率为$\ff{3}+\ff{3*2}$.\\
+如果有4个人, 则概率为$\ff{4}+\ff{3*4}+ \ff{4*3*2}+\ff{4*2}$.\\
+以此类推, 当有100个人时, 概率为
+$$P = \ff{100} + \sum_2^{99} \ff{n(n+1)} = \ff{2}$$
+\end{sol}
+
+
+
+%Copy the following block of text for each problem in the assignment.
+
+
+
+
+%Copy the following block of text for each problem in the assignment.
+\begin{problem}{4}
+Prove the sure-thing principle: if
+$$P(A|C) \geq P(B|C)$$
+$$P(A|C^{c}) \geq P(B|C^{c})$$
+then $P (A) \geq P (B)$.
+\end{problem}
+\begin{sol}
+显然
+$$\ar{
+    P(A|C) + P(A|C^c) = P(A)\\
+    P(B|C) + P(B|C^c) = P(B)\\
+}$$
+因此有
+$$P(A) - P(A|C^c) \geq P(B) - P(B|C^c)$$
+$$P(A|C^{c}) \geq P(B|C^{c})$$
+二式相加: 
+$$P (A) \geq P (B)$$
+\end{sol}
+
+
+
+%Copy the following block of text for each problem in the assignment.
+\begin{problem}{5}
+i).Wang's Family has ten children, and we know that at least 9 of them are boys, show the prob that the rest is also a boy.\\
+ii).Wang's Family has ten children, You come to his house and see nine boys, show the probability of the remaining one to be a boy.
+\end{problem}
+\begin{sol}
+
+    i)\\
+设男孩概率为$P(A_i)=1/2$, 且互相独立
+$$P = \f{P(\prod_{1}^{10} A_i)}{P(\prod_{1}^{10} A_i) +\sum_{j=1}^{10}\of{P(A_j^c)P(\prod_{i\neq j}^{10} A_i)}}$$
+$$P(\prod_{1}^{10} A_i) = 1/2^{10}$$
+$$P(A_j^c)P(\prod_{i\neq j}^{10} A_i) =1/2^{10} $$
+$$\ip P=1/11$$
+
+    ii)\\
+$$P(\prod_{1}^{10} A_i|\prod_{1}^9 A_i) = P(A) =1/2$$
+
+
+\end{sol}
+
+\begin{problem}{6}
+A hat contains 100 coins, where at least 99 are fair, but there may be one that is double-headed(always
+landing Heads); if there is no such coin, then all 100 are fair. Let $D$ be the event that there is such a coin, and suppose that $P(D) = 1/2$. A coin is chosen uniformly at random. The chosen coin is flipped 7 times, and it lands Heads all 7 times.
+
+(i). Given this information, what is the probability that one of the coins is double headed?
+
+(ii). Given this information, what is the probability that the chosen coin is double-headed?
+\end{problem}
+\begin{sol}
+
+    (i)\\
+    设题述7次为正面事件为事件A. 当D发生. 连扔7次为heads的概率是
+    $$P(A|D) = \ff{100} + (1-\ff{100})\ff{2^7}$$
+    当D未发生, 概率为: 
+    $$P(A|D^c) = \ff{2^7}$$
+    因此$P(A)= P(AD)+P(AD^c) = \ff{2}(\ff{100} + (1-\ff{100})\ff{2^7})   +   \ff{2^7}\ff{2}$\\
+    所要求的是$P(D|A)$
+    $$P(D|A) =\f{P(A|D)P(D)}{P(A)} = \f{(\ff{100} + (1-\ff{100})\ff{2^7})\tm\ff{2}}{\ff{2}(\ff{100} + (1-\ff{100})\ff{2^7})+\ff{2^7}\ff{2}}$$
+    $$\ip P(D|A) = P(D|A) =\f{P(A|D)P(D)}{P(A)} = \f{(\ff{100} + (1-\ff{100})\ff{2^7})}{(\ff{100} + (1-\ff{100})\ff{2^7})+\ff{2^7}} \approx 69.4\%$$
+
+    (ii)\\
+    此题所要求的是
+    $$P(\text{choose THE coin}|AD)P(D|A)$$
+    $P(\text{choose THE coin}|AD)$即为有一颗硬币double-headed, 且丢了七次都是heads的概率. 设此时D为全集, 显然: 
+    $$P(\text{choose THE coin}|AD) = \f{P(A|\text{choose THE coin},D)}{P(A|D)}{P(\text{choose THE coin}|D)}$$
+    可得: 
+    $$P(\text{choose THE coin}|AD)P(D|A) = 0.564*0.694 = 0.39$$
+
+\end{sol}
+
+
+
+%Copy the following block of text for each problem in the assignment.
+\begin{problem}{7}
+An urn contains red, green, and blue balls. Let $r, g, b$ be the proportions of red, green, blue balls, respectively
+$(r + g + b = 1)$.
+
+(i). Balls are drawn randomly with replacement. Find the probability that the first time a green ball is drawn is before the first time a blue ball is drawn.\\
+Hint: Explain how this relates to finding the probability that a draw is green, given that it is either green or blue.
+
+(ii). Balls are drawn randomly without replacement. Find the probability that the first time a green ball is
+drawn is before the first time a blue ball is drawn. Is the answer the same or different than the answer
+in (i)?\\
+Hint: Imagine the balls all lined up, in the order in which they will be drawn. Note that where the red
+balls are standing in this line is irrelevant.
+
+(iii). Generalize the result from (i) to the following setting. Independent trials are performed, and the outcome of each trial is classified as being exactly one of type 1, type 2,..., or type $n$, with probabilities $p_1,p_2,...,p_n$, respectively. Find the probability that the first trial to result in type $i$ comes before the first trial to result in type $j$, for $i\neq j$.
+
+\end{problem}
+\begin{sol}
+
+(i)\\
+如果全为绿球, 蓝球, 那么必然第一个就抽到绿球. 即$P=g$. 若存在红球, 设第n次拿到第一个绿球, 则之前的n-1次必然全为红球. 则概率为: 
+$$P = g +rg + r^2g +\dots = \f{g}{1-r}$$
+
+(ii)\\
+设一共有N个球, 那么绿球和蓝球的组合方法有$\left( \begin{matrix} Ng+Nb \\ Ng \end{matrix} \right)$\\
+绿球在蓝球前面的组合方法有$\left( \begin{matrix} Ng+Nb-1 \\ Ng-1 \end{matrix} \right)$\\
+因此概率为$$P=\f{\left( \begin{matrix} Ng+Nb-1 \\ Ng-1 \end{matrix} \right)}{\left( \begin{matrix} Ng+Nb \\ Ng \end{matrix} \right)}=\f{g}{g+b}=\f{g}{1-r}$$
+与(i)中相同. 
+
+    (iii)\\
+有三种可能: i, j, 既不是i也不是j, 这三种可能分别对应g, b, r三色. 因此
+$$P = \f{g}{g+b} = \f{p_i}{p_i+p_j}$$
+\end{sol}
+
+
+%Copy the following block of text for each problem in the assignment.
+\begin{problem}{8}
+Consider four nonstandard dice (the Efron dice), whose sides are labeled as follows (he 6 sides on each die
+are equally likely).
+\begin{enumerate}
+    \item[A:] 4,4,4,4,0,0
+    \item[B:] 3,3,3,3,3,3
+    \item[C:] 6,6,2,2,2,2
+    \item[D:] 5,5,5,1,1,1
+\end{enumerate}
+These four dice are each rolled once. Let $A$ be the result for die A, $B$ be the result for die B, etc.
+
+(i). Find $P(A>B)$, $P(B>C)$, $P(C>D)$ and $P(D>A)$.
+
+(ii). Is the event $A>B$ independent of the event $B>C$? Is the event $B>C$ independent of the event $C>D$? Explain.
+\end{problem}
+\begin{sol}
+
+    (i)\\
+恒有$B=3$. 因此$P(A>B)= P(A=4)= 4/6=2/3$. \\
+同理$P(B>C)= P(C=2)= 4/6=2/3$.\\
+$P(C>D) = P(C=6) + P(C=2,D=1) = 2/6+2/6=2/3$.\\
+$P(D>A) = P(D=5) + P(D=1)P(A=0) = 1/2+1/6 = 2/3$.
+
+    (ii)\\
+$P(A>B>C) = P(A=4,C=2)=(2/3)^2$. 由第一问, $P(A>B>C)=P(A>B)P(B>C)$. 因此独立. \\
+$P(B>C>D) = P(C=2,D=1) = 1/3$. 由第一问, $P(B>C)P(C>D)=4/9$.二者不相等, 因此不独立. 
+\end{sol}
+
+
+
+%Copy the following block of text for each problem in the assignment.
+\begin{problem}{9}
+A family has two children. Let $C$ be a characteristic that a child can have, and assume that each child has
+characteristic $C$ with probability $p$, independently of each other and of gender. Find that the probability that both children are girls
+given that at least one is a girl with characteristic $C$.
+\end{problem}
+\begin{sol}
+至少有一个女孩有性格C设为事件A. 两个都是女孩为事件B. 
+$$P(A) = \ff{4}(1-(1-p)^2) + \ff{2}p = p-\f{p^2}{4}$$
+$$P(B) = \ff{4}$$.
+$$P(B|A) = \f{P(A|B)P(B)}{P(A)} = \f{\ff{4}(1-(1-p)^2)}{p-\f{p^2}{4}} = \f{2-p}{4-p}$$
+\end{sol}
+
+
+
+%Copy the following block of text for each problem in the assignment.
+\begin{problem}{10}
+Alice is trying to communicate with Bob, by sending a message (encoded in binary) across a channel.
+
+(i). Suppose for this part that she sends only one bit (a 0 or 1), with equal probabilities. If she sends a 0, there is a 5\% chance of an error occurring, resulting in Bob receiving a 1; if she sends a 1, there is a 10\% chance of an error occurring, resulting in Bob receiving a 0. Given that Bob receives a 1, what is the probability that Alice actually sent a 1?
+
+(ii). To reduce the chance of miscommunication, Alice and Bob decide to use a repetition code. Again Alice wants to convey a 0 or a 1, but this time she repeats it two more times, so that she sends 000 to convey 0 and 111 to convey 1. Bob will decode the message by going with what the majority of the bits were. Assume that the error probabilities are as in (i), with error events for different bits independent of each other. Given that Bob receives 110, what is the probability that Alice intended to convey a 1?
+\end{problem}
+\begin{sol}
+
+    (i)\\设收到的数字为$0_r,1_r$. 发出的为$0_s,1_s$.
+$$P(1_r) = 0.05P(0_s) +0.9P(1_s) = 0.475$$
+$$P(1_s|1_r) = \f{P(1_r|1_s)P(1_s)}{P(1_r)} = \f{0.9*0.5}{0.475} = 0.947$$
+
+    (ii)\\
+    $$P(110_r) = 0.9^2*0.1P(111_s) + 0.05*0.05*0.95P(000_s) = 0.0416875$$
+    $$P(110_r|111_s)=0.9^2*0.1=0.081$$
+    $$P(111_s|110_r) = \f{P(110_r|111_s)P(111_s)}{P(110_r)} = \f{0.081*0.5}{0.0416875}=0.97$$
+\end{sol}
+
+%Copy the following block of text for each problem in the assignment.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%Do not alter anything below this line.
+\end{document}

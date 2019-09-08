@@ -1,0 +1,79 @@
+\documentclass[UTF8,9pt]{ctexart}
+\usepackage{../../template/homeworkTEMP/hw}
+\setlength{\arraycolsep}{1pt}
+\setcounter{secnumdepth}{0}
+\title{The 1st HW of Electrodynamics} 
+\begin{document} 
+\maketitle
+1. Prove that $\bm{A}\times(\bm{B}\times\bm{C})=(\bm{A}\cdot\bm{C})\bm{B} - (\bm{A}\cdot\bm{B})\bm{C}$: 
+$$\ar{
+    \bm{A}\times(\bm{B}\times\bm{C})&=\bm{A} \times [(B_yC_z-B_zC_y)\bm{i}+(B_zC_x-B_xC_z)\bm{j}+(B_xC_y-B_yC_x)\bm{k}]\\
+    &=[A_y(B_xC_y-B_yC_x)-A_z(B_zC_x-B_xC_z)]\bm{i}\\
+    &+[A_z(B_yC_z-B_zC_y)-A_x(B_xC_y-B_yC_x)]\bm{j}\\
+    &+[A_x(B_zC_x-B_xC_z)-A_y(B_yC_z-B_zC_y)]\bm{k}
+}$$
+$$\ar{
+    (\left.\bm{A}\cdot\bm{C} ) \bm{B} - (\bm{A}\cdot\bm{B})\bm{C} &= (A_xC_x+A_yC_y+A_zC_z)\bm{B} - (A_xB_x+A_yB_y+A_zB_z)\bm{C}\\
+    &=[(A_xC_x+A_yC_y+A_zC_z)B_x-(A_xB_x+A_yB_y+A_zB_z)C_x]\bm{i}\\
+    &+[(A_xC_x+A_yC_y+A_zC_z)B_y-(A_xB_x+A_yB_y+A_zB_z)C_y]\bm{j}\\
+    &+[(A_xC_x+A_yC_y+A_zC_z)B_z-(A_xB_x+A_yB_y+A_zB_z)C_z]\bm{k}\\
+    &=[(A_yC_y+A_zC_z)B_x-(A_yB_y+A_zB_z)C_x]\bm{i}\\
+    &+[(A_xC_x+A_zC_z)B_y-(A_xB_x+A_zB_z)C_y]\bm{j}\\
+    &+[(A_xC_x+A_yC_y)B_z-(A_xB_x+A_yB_y)C_z]\bm{k}
+}$$
+Therefore we have $\bm{A}\times(\bm{B}\times\bm{C})=(\bm{A}\cdot\bm{C})\bm{B} - (\bm{A}\cdot\bm{B})\bm{C}$, \\
+and for the same reason, $\nabla\times(\nabla\times\bm{A})=\nabla(\nabla\cdot\bm{A}) - \nabla^2\bm{A}$\\
+$$\ar{
+    \nabla\times(\nabla\times\bm{A})
+    &=\nabla \times [(\pp{}{y}A_z-\pp{}{z}A_y)\bm{i}+(\pp{}{z}A_x-\pp{}{x}A_z)\bm{j}+(\pp{}{x}A_y-\pp{}{y}A_x)\bm{k}]\\
+    &=[\pp{}{y}(\pp{}{x}A_y-\pp{}{y}A_x)-\pp{}{z}(\pp{}{z}A_x-\pp{}{x}A_z)]\bm{i}\\
+    &+[\pp{}{z}(\pp{}{y}A_z-\pp{}{z}A_y)-\pp{}{x}(\pp{}{x}A_y-\pp{}{y}A_x)]\bm{j}\\
+    &+[\pp{}{x}(\pp{}{z}A_x-\pp{}{x}A_z)-\pp{}{y}(\pp{}{y}A_z-\pp{}{z}A_y)]\bm{k}
+}$$
+$$\ar{
+    \nabla(\nabla\cdot\bm{A}) - \nabla^2\bm{A} &= \nabla(\pp{}{x}A_x+\pp{}{y}A_y+\pp{}{z}A_z) - (\pp[2]{}{x}+\pp[2]{}{y}+\pp[2]{}{z})\bm{A}\\
+    &=[\pp{}{x}(\pp{}{x}A_x+\pp{}{y}A_y+\pp{}{z}A_z)-(\pp[2]{}{x}+\pp[2]{}{y}+\pp[2]{}{z})A_x]\bm{i}\\
+    &+[\pp{}{y}(\pp{}{x}A_x+\pp{}{y}A_y+\pp{}{z}A_z)-(\pp[2]{}{x}+\pp[2]{}{y}+\pp[2]{}{z})A_y]\bm{j}\\
+    &+[\pp{}{z}(\pp{}{x}A_x+\pp{}{y}A_y+\pp{}{z}A_z)-(\pp[2]{}{x}+\pp[2]{}{y}+\pp[2]{}{z})A_z]\bm{k}\\
+    &=[\pp{}{x}(\pp{}{y}A_y+\pp{}{z}A_z)-(\pp[2]{}{y}+\pp[2]{}{z})A_x]\bm{i}\\
+    &+[\pp{}{y}(\pp{}{x}A_x+\pp{}{z}A_z)-(\pp[2]{}{x}+\pp[2]{}{z})A_y]\bm{j}\\
+    &+[\pp{}{z}(\pp{}{x}A_x+\pp{}{y}A_y)-(\pp[2]{}{x}+\pp[2]{}{y})A_z]\bm{k}\\
+    &=[\pp{}{y}(\pp{}{x}A_y-\pp{}{y}A_x)-\pp{}{z}(\pp{}{z}A_x-\pp{}{x}A_z)]\bm{i}\\
+    &+[\pp{}{z}(\pp{}{y}A_z-\pp{}{z}A_y)-\pp{}{x}(\pp{}{x}A_y-\pp{}{y}A_x)]\bm{j}\\
+    &+[\pp{}{x}(\pp{}{z}A_x-\pp{}{x}A_z)-\pp{}{y}(\pp{}{y}A_z-\pp{}{z}A_y)]\bm{k}
+}$$
+Q.E.D.\\\\
+2. Prove that $\nabla \cdot ( \bm{ A } \times \bm{ B } ) = \bm{ B } \cdot ( \mathbf { \nabla } \times \bm{ A } ) - \bm{ A } \cdot ( \mathbf { \nabla } \times \bm{ B } )$\\
+$$\ar{\nabla \cdot ( \bm{ A } \times \bm{ B } ) &= \left|\begin{matrix}
+    \pp{}{x} & \pp{}{y} & \pp{}{z}\\
+    A_x & A_y & A_z\\
+    B_x & B_y & B_z
+\end{matrix}\right|\\
+&= \pp{}{x}(A_yB_z-A_zB_y) + \pp{}{y}(A_zB_x-A_xB_z) + \pp{}{z}(A_xB_y-A_yB_x)
+}$$
+and for the same reason:
+$$\ar[rll]{
+    \bm{B} \cdot ( \nabla \times \bm{A})
+    &=&B_x(\pp{}{y}A_z-\pp{}{z}A_y) + B_y(\pp{}{z}A_x-\pp{}{x}A_z) + B_z(\pp{}{x}A_y-\pp{}{y}A_x)\\
+    - \bm{A} \cdot ( \nabla \times \bm{B})
+    &=-& A_x(\pp{}{y}B_z-\pp{}{z}B_y) - A_y(\pp{}{z}B_x-\pp{}{x}B_z) - A_z(\pp{}{x}B_y-\pp{}{y}B_x)
+}$$
+They are all equal. Q.E.D.\\\\
+3. Prove $\nabla \times ( \bm{ A } \times \bm{ B } ) = \bm{ A } ( \nabla \cdot \bm{ B } ) - \bm{ B } ( \nabla \cdot \bm{ A } ) + ( \bm{ B } \cdot \nabla ) \bm{ A } - ( \bm{ A } \cdot \nabla ) \bm{ B }$\\
+$$\nabla\times(\bm{A}\times\bm{B})=(\nabla\cdot\bm{B})\bm{A} - (\nabla\cdot\bm{A})\bm{B}$$
+$$\ar{
+    \nabla\times(\bm{A}\times\bm{B})&=\nabla \times [(A_yB_z-A_zB_y)\bm{i}+(A_zB_x-A_xB_z)\bm{j}+(A_xB_y-A_yB_x)\bm{k}]\\
+    &=[\pp{}{y}(A_xB_y-A_yB_x)-\pp{}{z}(A_zB_x-A_xB_z)]\bm{i}\\
+    &+[\pp{}{z}(A_yB_z-A_zB_y)-\pp{}{x}(A_xB_y-A_yB_x)]\bm{j}\\
+    &+[\pp{}{x}(A_zB_x-A_xB_z)-\pp{}{y}(A_yB_z-A_zB_y)]\bm{k}
+}$$
+$$\ar{
+    \bm{ A } ( \nabla \cdot \bm{ B } ) - \bm{ B } ( \nabla \cdot \bm{ A } ) + ( \bm{ B } \cdot \nabla ) \bm{ A } - ( \bm{ A } \cdot \nabla ) \bm{ B }
+    &= (\pp{B_x}{x}+\pp{B_y}{y}+\pp{B_z}{z} + B_x\pp{}{x}+B_y\pp{}{y}+B_z\pp{}{z})\bm{A} \\
+    &- (\pp{A_x}{x}+\pp{A_y}{y}+\pp{A_z}{z} + A_x\pp{}{x}+A_y\pp{}{y}+A_z\pp{}{z})\bm{B}\\
+    &=[\pp{}{y}(A_xB_y-A_yB_x)-\pp{}{z}(A_zB_x-A_xB_z)]\bm{i}\\
+    &+[\pp{}{z}(A_yB_z-A_zB_y)-\pp{}{x}(A_xB_y-A_yB_x)]\bm{j}\\
+    &+[\pp{}{x}(A_zB_x-A_xB_z)-\pp{}{y}(A_yB_z-A_zB_y)]\bm{k}
+}$$
+Q.E.D.
+\end{document}

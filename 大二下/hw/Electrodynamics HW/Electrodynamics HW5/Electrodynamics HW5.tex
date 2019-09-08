@@ -1,0 +1,125 @@
+\documentclass[UTF8,9pt]{ctexart}
+\usepackage{../../template/homeworkTEMP/hw}
+\setlength{\arraycolsep}{1pt}
+\setcounter{secnumdepth}{0}
+\title{The 5th HW of Electrodynamics} 
+\begin{document} 
+\maketitle
+\se{Q1}
+Following the Example 2 above, i.e., a charge $q$ is located at...
+
+a) \\
+we guess that there is an image charge inside the ball. Let us assume that the charge is $−q′$ and the location is $(b,0,0)$. The potential outside of the ball is
+$$ 
+\varphi=\frac{1}{4 \pi \epsilon_{0}}(\frac{q}{r}-\frac{q^{\prime}}{r^{\prime}})
+ $$
+ where
+ $$ 
+\begin{array}{r}{r=\sqrt{(x-d)^{2}+y^{2}+z^{2}}} \\ {r^{\prime}=\sqrt{(x-b)^{2}+y^{2}+z^{2}}}\end{array}
+ $$
+ From the boundary condition on the surface of the ball, we have
+ $$ 
+\begin{array}{l}{\displaystyle \frac{q}{\sqrt{R^{2}+d^{2}-2 R d \cos \theta}}-\frac{q^{\prime}}{\sqrt{R^{2}+b^{2}-2 R b \cos \theta}}=0} \\ {q \sqrt{R^{2}+b^{2}-2 R b \cos \theta}=q^{\prime} \sqrt{R^{2}+d^{2}-2 R d \cos \theta}}\end{array}
+ $$
+Solving the two equations, we obtain
+$$ 
+b=\frac{R^{2}}{d}, q^{\prime}=\frac{R}{d} q
+ $$
+$$F_x = \ff{4\pi\epsilon_0}\f{qq'}{(b+d)^2} = \ff{4\pi\epsilon_0}\f{Rq^2}{d}\f{1}{(\f{R^2}{d}+d)^2} = \ff{4\pi\epsilon_0}\f{Rdq^2}{R^4+2R^2d^2+d^4}$$
+%The potential is
+%$$ \varphi=\frac{1}{4 \pi \epsilon_{0}}\left[\frac{q}{\sqrt{(x-d)^{2}+y^{2}+z^{2}}}-\frac{\frac{R}{d} q}{\sqrt{(x-\frac{R^{2}}{d})^{2}+y^{2}+z^{2}}}\right]$$
+%$$W=\varphi q= \frac{1}{4 \pi \epsilon_{0}}\left[\frac{q^2}{\sqrt{(x-d)^{2}+y^{2}+z^{2}}}-\frac{\frac{R}{d} q^2}{\sqrt{(x-\frac{R^{2}}{d})^{2}+y^{2}+z^{2}}}\right]$$
+$$W= - \f{Rq^2}{4\pi\epsilon_0} \int_d^\infty \f{x}{(R^2+x^2)^2} \d x = -\f{Rq^2}{8\pi\epsilon_0(R^2+d^2)}$$
+
+b)\\
+Put a charge $q''$ at the center of the ball. It must have $q''=Q-q'=Q-\f{R}{d}q$. 
+Now $$W' = - \ff{4\pi\epsilon_0} \int_d^\infty \f{(Q-\f{R}{d}q)q}{x^2} \d x = -\f{(Q-\f{R}{d}q)q}{4\pi\epsilon_0}$$
+$$W_{Total}=W+W' = -(\f{Rq^2}{8\pi\epsilon_0(R^2+d^2)}+\f{(Q-\f{R}{d}q)q}{4\pi\epsilon_0})$$
+\se{Q2}
+Solve the example above using the image charge method.
+
+将点电荷看做平行于另外两个板的无穷大平面, 并保持总电荷不变, 则感应电荷也不变. 感应电荷之和为$Q$: $Q_1+Q_2=-Q$. \\
+且二者电势$U=\f{Qd}{A\e}$相等, 即$Q_1d_1=Q_2d_2$
+$$\ip\ar{
+    Q_1 =& -\frac{d_{2} q}{d_{1}+d_{2}}\\
+    Q_2 =& -\frac{d_{1} q}{d_{1}+d_{2}}
+}$$
+\se{Q3}
+Show that the Green function ...
+
+a)
+$$\pp[2]{G}{x}=-2\sum n^2\pi^2g_n(y,y')\sin (n\pi x)\sin(n \pi x')$$
+$$\pp[2]{G}{y}=2\sum \pp[2]{g_n(y,y')}{y}\sin (n\pi x)\sin(n \pi x')$$
+则有:
+$$\nabla^2G=2\sum(\pp[2]{}{y}-n^2\pi^2)g_n(y,y')\sin (n\pi x)\sin(n \pi x') = -8\pi\delta(y-y')\sum(\sin (n\pi x)\sin(n \pi x'))$$
+$$\sum(\sin (n\pi x)\sin(n \pi x'))=\ff{2}\de(x-x')$$
+代入上式得
+$$\nabla^2G = -4\pi\delta(y-y')\delta(x-x')$$
+b) 
+由题意, $g$可以写作
+$$ 
+g_{n}(y, y^{\prime})=\left\{\begin{array}{l}{
+    g_{<} \equiv a_{<} \sinh (n \pi y^{\prime})+b_{<} \cosh (n \pi y^{\prime}) \quad y^{\prime}<y} \\ 
+{g_{>} \equiv a_{>} \sinh (n \pi y^{\prime})+b_{>} \cosh (n \pi y^{\prime})} \quad {y^{\prime}>y}
+\end{array}\right.
+ $$
+边界条件为: $y=y'$时$g_{>}=g_{<}, \quad \partial_{y^{\prime}} g_{>}=\partial_{y^{\prime}} g_{<}-4 \pi$. 由题意$g_{n}(y, 0)=g_{n}(y, 1)=0$. 
+$$\ip b_<=0, a_>\sinh(n\pi)+b_>\cosh(n\pi)=0$$
+$$ \ip
+g_{n}(y, y^{\prime})=\left\{\begin{array}{llr}{a_{<} \sinh (n \pi y^{\prime})} & {y^{\prime}<y} \\ {a_{>}\left[\sinh (n \pi y^{\prime})\right.-\tanh (n \pi) \cosh (n \pi y^{\prime})} & {y^{\prime}>y}\end{array}\right.
+ $$
+可以解得:
+$$ 
+g_{n}(y, y^{\prime})=\frac{4}{n \sinh (n \pi)}
+\times \left\{\begin{array}{ll}{\sinh (n \pi y^{\prime})[\sinh (n \pi) \cosh (n \pi y)-\cosh (n \pi) \sinh (n \pi y)]} & {y^{\prime}<y} \\ {\sinh (n \pi y)\left[\sinh (n \pi) \cosh (n \pi y^{\prime})-\cosh (n \pi) \sinh (n \pi y^{\prime})\right]} & {y^{\prime}>y}\end{array}\right.
+ $$
+化简可得:
+$$ 
+g_{n}(y, y^{\prime})=\frac{4}{n \sinh (n \pi)} \sinh (n \pi y_{<}) \sinh \left[n \pi(1-y_{>})\right]
+ $$
+ 代入$G$表达式即为
+ $$ 
+G(x, y ; x^{\prime}, y^{\prime})=\sum_{n} \frac{8}{n \sinh (n \pi)} \sin (n \pi x) \sin (n \pi x^{\prime}) \sinh (n \pi y_{<}) \sinh \left[n \pi(1-y_{>})\right]
+ $$
+ 
+\se{Q4}
+A two-dimensional potential exists on a unit square area...
+\def({\lparen}\def){\rparen}
+$$ 
+\begin{aligned} \Phi(x, y)=& \frac{1}{4 \pi \epsilon_{0}} \int_{0}^{1} d x^{\prime} \int_{0}^{1} d y^{\prime} G\left(x, y ; x^{\prime} y^{\prime}\right) \rho\left(x^{\prime}, y^{\prime}\right) \\=& \frac{2}{\pi \epsilon_{0}} \sum_{n=1}^{\infty} \frac{\sin n \pi}{n \sinh n \pi} \int_{0}^{1} \sin n \pi x^{\prime} d x^{\prime}\left[\sinh n \pi(1-y) \int_{0}^{y} \sinh n \pi y^{\prime} d y^{\prime}\right.\\ & \quad \sinh n \pi y \int_{y}^{1} \sinh n \pi\left(1-y^{\prime}\right) d y^{\prime} ] \rho\left(x^{\prime}, y^{\prime}\right) \end{aligned}
+ $$
+当$\rho$为常数, 
+$$ 
+\begin{aligned} \int_{0}^{1} \sin n \pi x^{\prime} d x^{\prime} &=\frac{2}{n \pi} \text { for odd } n \text { and } 0 \text { for even } n \\ \int_{0}^{1} \sinh n \pi y^{\prime} d y^{\prime} &=\frac{1}{n \pi}[\cosh n \pi y-1] \\ \int_{y}^{1} \sinh n \pi\left(1-y^{\prime}\right) d y^{\prime} &=\frac{1}{n \pi}[\cosh n \pi(1-y)-1] \end{aligned}
+ $$
+ $$ 
+\begin{aligned} &(\cosh n \pi y-1) \sinh n \pi(1-y)+(\cosh n \pi(1-y)-1) \sinh n \pi y \\ &= \sinh n \pi-\sinh n \pi y-\sinh n \pi(1-y) \\ &=\sinh n \pi\left[1-\frac{2 \sinh \frac{n \pi}{2} \cosh n \pi\left(y-\frac{1}{2}\right)}{\sinh n \pi}\right] \\ &=\sinh n \pi\left[1-\frac{\cosh n \pi\left(y-\frac{1}{2}\right)}{\cosh \frac{n \pi}{2}}\right] \end{aligned}
+ $$
+代入并取$n=m+1$可得: 
+$$ 
+\Phi(x, y)=\frac{4}{\pi^{3} \epsilon_{0}} \sum_{m=0}^{\infty} \frac{\sin (2 m+1) \pi x}{(2 m+1)^{3}}\left[1-\frac{\cosh (2 m+1) \pi\left(y-\frac{1}{2}\right)}{\cosh \frac{(2 m+1) \pi}{2}}\right]
+ $$
+ \def({\ifmmode \left\lparen \else\lparen\fi} \def){\ifmmode \right\rparen \else\rparen\fi}
+\se{Q5}
+Find the electric quadrupole moment of the problem above. One more problem is problem 5 on page 71 of the textbook.
+
+$\mathcal{D}=\int 3x_ix_j\rho(x)\d V$. p65题中的电荷分布为$\rho=Q\de(0,0,\f{l}{2})-Q\de(0,0,-\f{l}{2})$. 则
+\setlength{\arraycolsep}{5pt}
+$$\mathcal{D}=(\ar[ccc]{
+    0 & 0 & 0\\
+    0 & 0 & 0\\
+    0 & 0 & 0
+})$$
+problem 5 on page 71:\\
+导体球内电荷分布不影响外界电场因此对于$R>R_2$:
+$$\vp=\ca\f{Q}{R}$$
+$$\s_2=\f{Q}{4\pi R^2_2}$$ 
+导体表面$\vp=\ca\f{Q}{R_2}$, 于是导体内部
+$$\vp=(a_nr^n+\f{b_n}{r^{(n+1)}})P_n(r)+\ca\f{Q}{R_2}$$
+$r=0$处$\vp$有限, 于是$b_n=0$.
+$$\varphi_{1}=\frac{1}{4 \pi \varepsilon_{0}}\left[\frac{\vec{p} \cdot \vec{r}}{r^{3}}+\frac{Q}{R_{2}}-\frac{\vec{P} \cdot \vec{r}}{R_{1}^{3}}\right]$$
+$$ 
+\sigma_{1}=-\varepsilon_{0} \frac{\partial \varphi_{1}}{\partial r}=-\frac{3 p \cos \theta}{4 \pi R_{1}^{3}}
+$$
+
+\end{document}

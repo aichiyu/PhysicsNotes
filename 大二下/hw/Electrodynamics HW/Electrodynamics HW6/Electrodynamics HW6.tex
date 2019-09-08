@@ -1,0 +1,158 @@
+\documentclass[UTF8,9pt]{ctexart}
+\usepackage{../../template/homeworkTEMP/hw}
+\setlength{\arraycolsep}{1pt}
+\setcounter{secnumdepth}{0}
+\title{The 6th HW of Electrodynamics} 
+\begin{document} 
+\maketitle
+\se{Q1}
+$n=1,\ a=0,\ \a=\pi/3$
+$$ 
+\dd{z_1}{z_2}=C_{1} \prod_{i=1}^{n}(z_{2}-a_{i})^{\a_i/\pi-1} = C_1z_2^{-2/3}
+ $$
+$$\ip z_1=3C_1z_2^{1/3}+C_2$$
+$$ 
+W=i|\vec{E}| z_{2}=iC_3|\vec{E}|z_1^3=(y^3-3x^2y)+i(x^3-3xy^2)
+ $$
+ $$ \ip \phi = (y^3-3x^2y),\ \psi = x^3-3xy^2$$
+ \se{Q2}
+\sub{(a)}\def({\lparen}\def){\rparen}
+该分布满足Laplace方程:
+$$ 
+\frac{1}{\rho} \frac{\partial}{\partial \rho}\left(\rho \frac{\partial \Phi}{\partial \rho}\right)+\frac{1}{\rho^{2}} \frac{\partial^{2} \Phi}{\partial \phi^{2}}=0
+ $$
+其分离变量解为:
+$$ 
+\Phi(\rho, \phi)=\left(a_{0}+b_{0} \ln \rho\right)\left(A_{0}+B_{0} \phi\right)+\sum_{\nu \neq 0}\left(a_{\nu} \rho^{\nu}+b_{\nu} \rho^{-\nu}\right)\left(A_{\nu} e^{i \nu \phi}+B_{\nu} e^{-i \nu \phi}\right)
+$$
+代入边界条件$\Phi(\phi=0)=0$, 
+$$ 
+0=\left(a_{0}+b_{0} \ln \rho\right)\left(A_{0}\right)+\sum_{\nu \neq 0}\left(a_{\nu} \rho^{\nu }+b_{\nu } \rho^{-\nu }\right)\left(A_{\nu }+B_{\nu }\right)
+$$
+要使上式对任意$\rho$均成立, 必然有$A_0=0,\ A_\nu =-B_\nu $.则解的形式可以简化为:
+$$ 
+\Phi(\rho, \phi)=\left(a_{0}+b_{0} \ln \rho\right)\left(B_{0} \phi\right)+\sum_{\nu  \neq 0}\left(a_{\nu } \rho^{\nu }+b_{\nu } \rho^{-\nu }\right) A_{\nu } \sin (\nu  \phi)
+$$
+代入边界条件$\Phi(\phi=\b)=0$, 
+$$ 
+0=\left(a_{0}+b_{0} \ln \rho\right)\left(B_{0} \beta\right)+\sum_{\nu  \neq 0}\left(a_{\nu } \rho^{\nu }+b_{\nu } \rho^{-\nu }\right) A_{\nu } \sin (\nu  \beta)
+$$
+要使上式对任意$\rho$均成立, 必然有$B_0=0,\ \sin(\nu \b)=0\ip \nu \b=n\pi$.则解的形式可以简化为:
+$$ 
+\Phi(\rho, \phi)=\sum_{n=1}^{\infty}\left(a_{n} \rho^{n \pi / \beta}+b_{n} \rho^{-n \pi / \beta}\right) A_{n} \sin \left(\frac{n \pi \phi}{\beta}\right)
+$$
+代入边界条件$\Phi(\rho=a)=0$, 
+$$ 
+0=\sum_{n=1}^{\infty}\left(a_{n} a^{n \pi / \beta}+b_{n} a^{-n \pi / \beta}\right) A_{n} \sin \left(\frac{n \pi \phi}{\beta}\right)
+ $$
+ 要使上式对任意$\phi$均成立, 必然有$b_{n}=-a_{n} a^{2 n \pi / \beta}$.则解的形式可以简化为:
+ $$ 
+ \Phi(\rho, \phi)=\sum_{n=1}^{\infty} A_{n}\left(\left(\frac{\rho}{a}\right)^{n \pi / \beta}-\left(\frac{\rho}{a}\right)^{-n \pi / \beta}\right) \sin \left(\frac{n \pi \phi}{\beta}\right)
+  $$
+\sub{(b)}
+$$ 
+E_{\rho}=-\frac{\partial \Phi}{\partial \rho}=-\frac{\partial}{\partial \rho} \sum_{n=1}^{\infty} A_{n}\left(\left(\frac{\rho}{a}\right)^{n \pi / \beta}-\left(\frac{\rho}{a}\right)^{-n \pi / \beta}\right) \sin \left(\frac{n \pi \phi}{\beta}\right)
+ $$
+ $$ 
+ \ip E_{\rho}=-\sum_{n=1}^{\infty} A_{n} \frac{n \pi}{a \beta}\left(\left(\frac{\rho}{a}\right)^{n \pi / \beta-1}+\left(\frac{\rho}{a}\right)^{-n \pi / \beta-1}\right) \sin \left(\frac{n \pi \Phi}{\beta}\right)
+  $$
+最低阶项为:
+$$ 
+E_{\rho}=-A_{1} \frac{\pi}{a \beta}\left(\left(\frac{\rho}{a}\right)^{\pi / \beta-1}+\left(\frac{\rho}{a}\right)^{-\pi / \beta-1}\right) \sin \left(\frac{\pi \phi}{\beta}\right)
+ $$
+同理对于$E_\phi$,
+$$ 
+E_{\phi}=-\sum_{n=1}^{\infty} A_{n} \frac{n \pi}{a \beta}\left(\left(\frac{\rho}{a}\right)^{n \pi / \beta-1}-\left(\frac{\rho}{a}\right)^{-n \pi / \beta-1}\right) \cos \left(\frac{n \pi \phi}{\beta}\right)
+ $$
+ 最低阶项为:
+ $$ 
+E_{\phi}=-A_{1} \frac{\pi}{a \beta}\left(\left(\frac{\rho}{a}\right)^{\pi / \beta-1}-\left(\frac{\rho}{a}\right)^{-\pi / \beta-1}\right) \cos \left(\frac{\pi \phi}{\beta}\right)
+$$
+$$ 
+\sigma(\rho, 0)=\left[\epsilon_{0} E_{\phi}\right]_{\Phi=0}
+$$
+$$ 
+\sigma(\rho, 0)=-A_{1} \frac{\pi \epsilon_{0}}{a \beta}\left(\left(\frac{\rho}{a}\right)^{\pi / \beta-1}-\left(\frac{\rho}{a}\right)^{-\pi / \beta-1}\right)
+$$
+$$ 
+\sigma(\rho, \beta)=\left[-\epsilon_{0} E_{\phi}\right]_{\phi=\beta}
+    $$
+    $$ 
+\sigma(\rho, \beta)=-A_{1} \frac{\pi \epsilon_{0}}{a \beta}\left(\left(\frac{\rho}{a}\right)^{\pi / \beta-1}-\left(\frac{\rho}{a}\right)^{-\pi / \beta-1}\right)
+$$
+$$ 
+\sigma(a, \phi)=\left[\epsilon_{0} E_{\rho}\right]_{\rho=a}
+$$
+$$ 
+\sigma(a, \phi)=-A_{1} \frac{2 \pi \epsilon_{0}}{a \beta} \sin \left(\frac{\pi \phi}{\beta}\right)
+$$
+\sub{(c)}
+由(b)中计算,
+$$ 
+\mathbf{E}=\sum_{n=1}^{\infty} A_{n} \frac{n \pi}{a \beta}\left[-\hat{\bm{\rho}}\left(\left(\frac{\rho}{a}\right)^{n \pi / \beta-1}+\left(\frac{\rho}{a}\right)^{-n \pi / \beta-1}\right) \sin \left(\frac{n \pi \phi}{\beta}\right)-\hat{\Phi}\left(\left(\frac{\rho}{a}\right)^{n \pi / \beta-1}-\left(\frac{\rho}{a}\right)^{-n \pi / \beta-1}\right) \cos \left(\frac{n \pi \phi}{\beta}\right)\right]
+ $$
+当$\b=\pi$, 
+$$ 
+\mathbf{E}=\sum_{n=1}^{\infty} A_{n} \frac{n}{a}\left[-\hat{\boldsymbol{\rho}}\left(\left(\frac{\rho}{a}\right)^{n-1}+\left(\frac{\rho}{a}\right)^{-n-1}\right) \sin (n \Phi)-\hat{\Phi}\left(\left(\frac{\rho}{a}\right)^{n-1}-\left(\frac{\rho}{a}\right)^{-n-1}\right) \cos (n \Phi)\right]
+ $$
+其最低阶项为:
+$$ 
+\mathbf{E}=A_{1} \frac{1}{a}\left[-\hat{\boldsymbol{\rho}}\left(1+\left(\frac{a}{\rho}\right)^{2}\right) \sin (\Phi)-\hat{\Phi}\left(1-\left(\frac{a}{\rho}\right)^{2}\right) \cos (\phi)\right]
+ $$
+当$\rho>>a$:
+$$ 
+\mathbf{E}=-A_{1} \frac{1}{a}[\hat{\boldsymbol{\rho}} \sin (\phi)+\hat{\mathbf{\phi}} \cos (\phi)] = -\frac{A_{1}}{a} \hat{\mathbf{j}}
+ $$
+半球面上的面电荷为:
+$$ 
+\sigma(a, \phi)=\sigma_{0} \sin (\phi),\  \sigma_{0}=-A_{1} \frac{2 \epsilon_{0}}{a}
+  $$
+在边缘处:
+$$ 
+\sigma(\rho, 0)=\sigma(\rho, \beta)=\frac{\sigma_{0}}{2}\left(1-\left(\frac{\rho}{a}\right)^{-2}\right)
+ $$
+半球面上的总电荷为:
+$$ 
+Q_{\text { half-cyl }}=-A_{1} \frac{2 \epsilon_{0}}{a} \int_{0}^{\pi} \sin (\phi) a \d \phi =-4A_1\ep_0
+ $$
+边缘处平均面电荷为:
+$$ 
+\sg_{\text{side}}=\ep_0E=-\f{\ep_0A_1}{a}
+ $$
+长度为$2a$的一段的总电荷为:
+$$Q_{\text{side}}=2a\sg_{\text{side}}=-2\ep_0A_1$$
+对比可以发现
+$$2Q_{\text{side}} = Q_{\text { half-cyl }}$$
+包含了半球的总电荷为:
+$$ 
+\begin{array}{l}
+    {\dis Q_{1}=2 \int_{a}^{l}\left(-A_{1}\right) \frac{\epsilon_{0}}{a}\left(1-\left(\frac{\rho}{a}\right)^{-2}\right) d \rho+Q_{\text { half-cyl }}} \\
+     {\dis Q_{1}=-2\left(A_{1}\right) \frac{\epsilon_{0}}{a}(l-a)-2\left(A_{1}\right) a \epsilon_{0}(1 / l-1 / a)+Q_{\text { half-cyl }}} \\
+     {\dis Q_{1}=2 A_{1} \epsilon_{0}\left[\frac{-l}{a}-\frac{a}{l}\right]}
+\end{array}
+ $$
+当$l>>a$:
+$$ 
+Q_{1}=\frac{-2 l \epsilon_{0} A_{1}}{a}
+ $$
+当没有半球面时, 总电荷为
+$$ 
+\begin{array}{l}{\dis Q_{2}=\sigma 2 l} \\ 
+    {\dis Q_{2}=\left[\epsilon_{0} E_{y}\right]_{y=0} \sigma 2 l} \\ 
+    {\dis Q_{2}=\left(-\epsilon_{0} A_{1} / a\right) 2 l} \\ 
+    {\dis Q_{2}=\frac{-2 l \epsilon_{0} A_{1}}{a}}
+\end{array}
+ $$
+二式相同. 
+
+
+
+
+
+
+
+
+
+
+\def({\ifmmode \left\lparen \else\lparen\fi} \def){\ifmmode \right\rparen \else\rparen\fi}
+\end{document}

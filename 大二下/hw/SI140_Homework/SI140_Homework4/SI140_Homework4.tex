@@ -1,0 +1,369 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%Do not alter this block of commands.  If you're proficient at LaTeX, you may include additional packages, create macros, etc. immediately below this block of commands, but make sure to NOT alter the header, margin, and comment settings here. 
+\documentclass[12pt]{article}
+ \usepackage[margin=1in]{geometry} 
+ \usepackage{mathrsfs}
+\usepackage{amsmath,amsthm,amssymb,amsfonts, enumitem, fancyhdr, color, comment, graphicx, environ}
+\pagestyle{fancy}
+\setlength{\headheight}{65pt}
+\newenvironment{problem}[2][Problem]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{sol}
+    {\emph{Solution:}
+    }
+    {
+    \qed
+    }
+\specialcomment{com}{ \color{blue} \textbf{Comment:} }{\color{black}} %for instructor comments while grading
+\NewEnviron{probscore}{\marginpar{ \color{blue} \tiny Problem Score: \BODY \color{black} }}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+
+\usepackage{CTEX}
+\usepackage{amsfonts}
+\usepackage{geometry}
+\usepackage{mathtools}                                                %align needed
+\usepackage{balance}                                                  %blance when there two columns
+\usepackage{bm}                                                        %bold font
+\usepackage{mathrsfs}                                                 %change greek font style
+\usepackage{supertabular}                                             %allow long table in 2 pages
+\usepackage{soul}                                                     %highlight using \hl
+\usepackage{fontspec}                                                 %expand font type
+\usepackage{graphicx}                                                 %to input pictures
+\usepackage[colorlinks,linkcolor=red,anchorcolor=blue,citecolor=green]{hyperref}                                                %cite
+\usepackage{verbatim}                                                 %comment                            
+
+%begin{newcommands}
+\newcommand\ep{\varepsilon}
+    \newcommand\qqed{\rightline{$\square$}}                                 %\square
+    \newcommand\cm{\mathscr}                                               %dbar
+    \newcommand\dbar{\text{\dj}}                                           %dbar
+    \renewcommand\d{\mathrm{d}}                                            %d
+    \newcommand\sch{Schrödinger}                                           %Schrödinger
+    \newcommand{\dd}[3][]{\frac{\mathrm{d}^{#1} #2}{\mathrm{d} #3^{#1}}}   %d/d^n
+    \newcommand{\dt}[2][]{\frac{\mathrm{d}^{#1} #2}{\mathrm{d} t^{#1}}}    %d/dt^n
+    \newcommand{\pp}[3][]{\frac{\partial^{#1} #2}{\partial #3^{#1}}}       %∂/∂^n
+    \newcommand{\pt}[2][]{\frac{\partial^{#1} #2}{\partial t^{#1}}}        %∂/∂t^n 
+    \newcommand{\f}[2]{\frac{#1}{#2}}                                      %A/B
+    \newcommand{\ff}[1]{\frac{1}{#1}}                                      %1/A
+    \newcommand\rank{\mathrm{rank}}                                        %rank
+    \newcommand\tr{\mathrm{tr}}                                            %tr
+    \newcommand\e[1]{\times 10^{#1}}                                       %×10^
+    \renewcommand\Re{\mathrm{Re}\ }                                          %Re
+    \renewcommand\Im{\mathrm{Im}\ }                                          %Im
+    \renewcommand\ln{\mathrm{ln}\ }                                          %ln
+    \newcommand\Ln{\mathrm{Ln}\ }                                            %Ln
+    \renewcommand\arg{\mathrm{arg}}                                        %arg
+    \newcommand\ip{\implies}                                               %→
+    \newcommand\tm{\times}                                                 %×
+    \renewcommand\l{\lambda}                                               %λ
+    \renewcommand\a{\alpha}                                                %α
+    \renewcommand\k{\kappa}                                                %κ
+    \renewcommand\o{\omega}                                                %ω
+    \newcommand\D{\Delta}                                                  %Δ
+    \newcommand\de{\delta}                                                 %δ
+    \renewcommand\t{\theta}                                                %θ
+    \renewcommand\epsilon{\varepsilon}                                     %ε
+    \newcommand\abs[1]{\left| #1 \right|}                                  %|A|
+    \renewcommand\exp{\mathrm{exp}\ }                                        %exp
+    \newcommand\se{\section}                                               %section
+    \newcommand\sub{\subsection}                                           %subsection
+    \newcommand\sumi{\sum_{i=1}^n}                                         %∑ 
+    \AtBeginDocument{\renewcommand{\bar}{\overline}}                       %bar
+    \AtBeginDocument{\renewcommand{\hat}{\widehat}}                        %hat
+    \newcommand\inti{\int_{0}^{infty}}                                     %∮
+    \renewcommand{\arraystretch}{1.2}                                      %change array stretch
+    \newcommand{\dis}{\displaystyle}                                       %big equation
+    \newcommand{\ar}[2][rl]{\begin{array}{#1}                              %begin an array
+            #2
+        \end{array}}                                                 
+    \newcommand\bkt[1]{\left< #1 \right>}                                  %<x>
+    \newcommand\putfig[2]{                                                 %put a figure
+        \begin{center}    
+            \includegraphics[scale=#1]{#2}
+        \end{center}}
+%end{newcommands} 
+
+%resize the parentheses
+\def\lparen{(} 
+\def\rparen{)} 
+\catcode`(=\active 
+\catcode`)=\active
+\def({\ifmmode \left\lparen \else\lparen\fi} 
+\def){\ifmmode \right\rparen \else\rparen\fi}
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%Fill in the appropriate information below
+\lhead{Name: 肖涵薄\\ StudentID: 31360164}  %replace with your name
+\rhead{SI 140 \\ Probability and Statistics \\ Semester Spring 2019 \\ Assignment 4} %replace XYZ with the homework course number, semester (e.g. ``Spring 2019"), and assignment number.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%Do not alter this block.
+\begin{document}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%Solutions to problems go below.  Please follow the guidelines from https://www.overleaf.com/read/sfbcjxcgsnsk/
+
+
+%Copy the following block of text for each problem in the assignment.
+\begin{problem}{1} 
+Let $\lambda>0$ and define $f$ as follows:
+\begin{equation}
+    f(u)=\begin{cases}
+    &\frac{1}{2}\lambda e^{-\lambda u} \quad \text{if } u\geq 0;\\
+    &\frac{1}{2}\lambda e^{+\lambda u} \quad \text{if } u<0
+    \end{cases}
+\end{equation}
+This $f$ is called bilateral exponential. If $X$ has density $f$, find the density of $|X|$.
+\end{problem}
+\begin{sol}
+    density of $|X|$ = density of $X,-X$. so
+    $$f'(u)=f(u)+f(-u)=\l e^{-\lambda u}$$
+    %$$|X|=\int_0^{+\infty} \lambda e^{+ \lambda u}\d u=$$
+
+\end{sol}
+
+
+
+%Copy the following block of text for each problem in the assignment.
+\begin{problem}{2}
+If $X$ is a positive random variable with density $f$, find the density of $+\sqrt{X}$. Apply this to the distribution of the side length of a square when its area is uniformly distributed in $[a,b]$.
+\end{problem}
+\begin{sol}\\
+    $$\int_0^{\sqrt{x_1}} f_{\sqrt x}(x) \d x =\int _0^{x_1} f(x) \d x \ip f_{\sqrt{2}}(x)=F'(x^2)=2xf(x^2)$$
+    Now $X$ is area of square, $X\in[a,b]$. $f(x)=\ff{b-a}$, 
+    $$\int_0^{\sqrt{x_1}} f_{\sqrt{x}}(x) \d x =\int _0^{x_1} \ff{b-a} \d x=\f{x_1}{b-a}$$
+    $$\ip F_{\sqrt{x}}(x)=\f{x^2}{b-a} \ip f_{\sqrt{x}}(x)=\f{2x}{b-a}$$
+\end{sol}
+
+
+
+%Copy the following block of text for each problem in the assignment.
+\begin{problem}{3}
+If $X$ has density $f$, find the density of (i)$aX+b$ where $a$ and $b$ are constants; (ii) $X^2$.
+\end{problem}
+\begin{sol}
+
+    (i) $$\int_{-\infty}^{ax+b} f_1(x) \d x =\int _{-\infty}s^{x} f(x) \d x$$
+    $$f_1(x)=\abs{F'(\f{x-b}{a})}=\ff{|a|}f(\f{x-b}{a})$$.
+
+    (ii) For the same reason, 
+    $$f_2(x)=\abs{F'(\sqrt{x})}+\abs{F'(-\sqrt{x})}=\ff{2\sqrt{x}}f(\sqrt{x})+\ff{2\sqrt{x}}f(-\sqrt{x})$$
+\end{sol}
+
+
+
+%Copy the following block of text for each problem in the assignment.
+\begin{problem}{4}
+If $f$ and $g$ are two density functions, show that $\lambda f+\mu g$ is also a density function, where $\lambda+\mu=1, \lambda\geq 0, \mu \geq 0$.
+\end{problem}
+\begin{sol}
+
+    (1)
+    $$\int_{-\infty}^{+\infty} \lambda f(x)+\mu g(x) \d x=\l+\mu=1$$
+    (2)
+    $$\lambda,f,\mu,g>0 \ip \lambda f+\mu g>0$$
+
+\end{sol}
+
+
+
+%Copy the following block of text for each problem in the assignment.
+\begin{problem}{5}
+Let \[
+f(u)=ue^{-u}, \quad u\geq 0
+\]
+Show that $f$ is a density function. Find $\int_0^{\infty} uf(u) du$.
+\end{problem}
+\begin{sol}
+
+    (1)
+    $$\int_{0}^{+\infty} ue^{-u} \d u= 1$$
+    (2)
+    $$\text{For any }u\geq0, f(u)=ue^{-u}\geq0$$
+    So that $f(u)$ is a density function. 
+    $$E(u) = \int_0^{\infty} uf(u) \d u = \int_{0}^{+\infty} u^2e^{-u} \d u=2$$
+\end{sol}
+
+
+
+%Copy the following block of text for each problem in the assignment.
+\begin{problem}{6}
+A number of $\mu$ is called the median of the random variable $X$ iff $P(X\geq \mu)\geq 1/2$ and $P(X\leq \mu)\geq 1/2$. Show that such a number always exists but need not be unique. Here is a practical example. After $n$ examination papers have been graded, they are arranged in descending order. There is one in the middle if $n$ is odd, two if $n$ is even, corresponding to the median(s). Explain the probability model used.
+\end{problem}
+\begin{sol}\\
+Let x be the order of paper, and $P(x)=1/n$.
+
+    (1) When $n$ is odd. \\
+Let $(n+1)/2_{th}$ paper be $\mu$. There are $(n+1)/2$ pieces of paper before and after $\mu$(include $\mu$ itself). Following the $P(x)$ define above, $P(X\leq\mu)=P(X\geq\mu)=\ff{n}\f{n+1}{2}=\f{n+1}{2n}>\ff{2}$. 
+
+    (2) When $n$ is even.\\
+Let $n/2_{th}$ paper be $\mu_1$, and $n/2_{th}+1$ paper be $\mu_2$.\\
+For $\mu_1$, there are $n/2$ pieces of paper before $\mu_1$ (include $\mu_1$ itself) and $n/2+1$ pieces of paper after $\mu_1$ (include $\mu_1$ itself). Following the $P(x)$ define above, $P(X\leq\mu_1)=\ff{n}\f{n}{2}=\ff{2}$, and $P(X\geq\mu_1)=\ff{n}(\f{n}{2}+1)>\ff{2}$\\
+For $\mu_2$. There are $n/2+1$ pieces of paper before $\mu_2$ (include $\mu_2$ itself) and $n/2$ pieces of paper after $\mu_2$ (include $\mu_2$ itself). Following the $P(x)$ define above, $P(X\leq\mu_2)=\ff{n}(\f{n}{2}+1)>\ff{2}$, and $P(X\geq\mu_2)=\ff{n}\cdot\f{n}{2}=\ff{2}$\\
+\end{sol}
+
+
+%Copy the following block of text for each problem in the assignment.
+\begin{problem}{7}
+Suppose $X_1, X_2,X_3$ are independent identically distributed (i.i.d.) $\text{Unif}(0,1)$ random variables and let $Y=X_1+X_2+X_3$. (i). Find PDF of $Y$; (ii). Find $E(Y)$.
+\end{problem}
+\begin{sol}
+
+    (i) 
+    $$F(X_1)=x_1,F(X_2)=x_2,F(X_3)=x_3$$
+    \putfig{0.3}{1_166.png}
+    As is shown, plot a space of $x_1,x_2,x_3\in(0,1)$, and the surface of $x_1+x_2+x_3=y$ is the probability density. Let the area of this surface be $A$.
+    $$A=\left\{\ar{
+        \f{\sqrt{3}}{2}y^2 ,&\quad 0<y<1\\
+        \f{\sqrt{3}}{2}y^2 - \f{3\sqrt{3}}2(y-1)^2 ,&\quad 1\leq y<2\\
+        \f{\sqrt{3}}{2}(3-y)^2  ,&\quad 2\leq y<3\\
+    }\right.$$
+    If we denote vector $\bm{n}=(1,1,1)$, a thin slice $A\d \bm{n}$ is the probability of $P(y<Y \leq y+\d y)$, which means $f(y)\d y =P(y<Y \leq y+\d y)=A(y)\d \bm{n}$, $\d\bm{n}=\sqrt{3}\d x=\ff{\sqrt{3}}\d y$. So that 
+    $$f(y)=\left\{\ar{
+        \ff{2}y^2 ,&\quad 0<y<1\\
+        \ff{2}y^2 - \f{3}2(y-1)^2 ,&\quad 1\leq y<2\\
+        \ff{2}(3-y)^2  ,&\quad 2\leq y<3\\
+    }\right.$$
+    Plot as:
+    \putfig{0.3}{1_169.png}
+    (ii)
+    $$E(y)=\int_0^3 yf(y)\d y=\f{3}{2}$$
+\end{sol}
+
+%Copy the following block of text for each problem in the assignment.
+\begin{problem}{8}
+There are $40$ people in a room. Assume each person's birthday is equally likely to be any of the $365$ days of the year (we exclude February 29), and that peoples birthdays are independent (we assume there are no twins in the room). What is the probability that two or more people in the group have the same birthday?
+\end{problem}
+\begin{sol}
+The probability of everyone has unique birthday is
+$$P_0=\f{365}{365}\cdot\f{364}{365}\cdots\f{365-40+1}{365}=\f{365!}{365^{40}\times325!}=0.11$$
+So the answer is
+$$P=1-P_0\approx0.89$$
+\end{sol}
+
+
+%Copy the following block of text for each problem in the assignment.
+\begin{problem}{9}
+Let $X_1$,...,$X_n$ be independent, with $X_j\sim \text{Expo}(\lambda_j)$. Let $L=\min\{X_1,...,X_n\}$. Show that $L\sim \text{Expo}(\lambda_1+\lambda_2+\cdots+\lambda_n)$ and find $E(L)$.
+\end{problem}
+\begin{sol}
+    $$P_j(t)=\l_j e^{-\l_jt},\quad t\geq 0$$
+The probability $X_j$ does not happen before $t_0$ is
+$$1 - F_j(t)=\int_{t_0}^\infty P_j(t)\d t = e^{-\l_jt_0}$$
+So that the probability that every $X_j$ does not happen before $t_0$ is:
+$$\prod_j \int_{t_0}^\infty P_j(t)\d t  = \prod_j e^{-\l_jt_0} = \exp(-\sum_j\l_jt_0)$$
+Which equals to $1-F_L(t_0) \ip F_L(t) = 1-\exp(-\sum_j\l_jt_0)$.
+So
+$$P_L(t) = \dt{F_L(t)} = -\dt{}\exp(-\sum_j\l_jt) = (\sum_j\l_j) \exp(-\sum_j\l_jt)$$
+This tells that
+$$L\sim \text{Expo}(\sum_j\l_j)=\text{Expo}(\lambda_1+\lambda_2+\cdots+\lambda_n)$$
+\end{sol}
+
+%Copy the following block of text for each problem in the assignment.
+\begin{problem}{10}
+(Expectation via Survival Function) Let $X$ be a nonnegative random variable. Let $F$ be the CDF of $X$, and $G(x) = 1-F(x) =P(X>x)$. The function $G$ is called the survival function of $X$. Show that \\(i). The expectation of a nonnegative integer-valued discrete random variable $X$ is \[E(X)=\sum_{n=0}^{\infty} G(n)\] 
+(ii). The expectation of a nonnegative continuous random variable $X$ is \[E(X)=\int_0^{\infty} G(x)dx\]
+\end{problem}
+\begin{sol}
+
+    (1)
+$$\sum_{n=0}^{\infty} G(n) =\sum_{n=0}^{\infty}\left[ 1-\sum_{i=0}^{n}p(i) \right] = \sum_{n=0}^{\infty}\sum_{i=n+1}^\infty p(i)=\sum_0^\infty np(n) = E(X)$$
+
+    (2)
+$$E(y)=\int_{0}^{\infty} y F(y) d y=yF(y)\big|_0^\infty-\int_0^\infty \int_0^y f(u)\d u\d y$$
+$$=\int_{0}^{\infty}( y-\int_0^y f(u)\d u) \d y = \int_0^\infty G(y)\d y$$
+\end{sol}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%Do not alter anything below this line.
+\end{document}

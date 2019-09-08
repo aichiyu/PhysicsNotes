@@ -1,0 +1,45 @@
+
+\documentclass[UTF8,9pt]{ctexart}
+\usepackage{../../template/homeworkTEMP/hw}
+\usepackage{listings}
+\lstset{language=Matlab}
+\setcounter{secnumdepth}{0}
+\title{数值分析第六次作业} 
+\begin{document} 
+\maketitle
+\se{8}
+(1) \\
+$f(-1)=1/e$, $f(0)=1$, $f(1)=e$. 
+则为连接相邻两点的直线
+$$S(x)=\left\{\ar{
+        \,(1-1/e)\, x+1, &x\in[-1,0]\\
+        \,(e-1)\, x+1, &x\in[0,1]
+}\right.$$
+
+(2)\\
+即求$I(x)_{min}=min\left\{ \int_{-1}^0(S_1(x)-e^x)^2\d x+\int_{0}^1(S_2(x)-e^x)^2\d x \right\}$. 设$S_1(x)=k_1x+b$, $S_2(x)=k_2x+b$. 
+$$I(x)=\f{k_1^2x^3}{3}+k_1bx^2+b^2x-2(k_1x+b)e^x+2k_1e^x+\ff{2}e^{2x}\big|_{-1}^0+\f{k_1^2x^3}{3}+k_2bx^2+b^2x-2(k_2x+b)e^x+2k_2e^x+\ff{2}e^{2x}\big|_{0}^1$$
+$$I=2 b^2-b k_1+\frac{2 (b-2 k_1)}{e}+b (k_2-2 e+2)-2 b+\frac{k_1^2}{3}+2 k_1+\frac{1}{6} (2 k_2^2-12 k_2+3 e^2-3)+\frac{1}{2}-\frac{1}{2 e^2}$$
+且满足
+$$\pp{I}{b}=\pp{I}{k_1}=\pp{I}{k_2}=0$$
+$$\ip S(x)=\left\{\ar{
+        \frac{3 (4-4 e+e^2)}{e} x+\frac{2 (2-3 e+e^2)}{e}, &x\in[-1,0]\\
+        \-\frac{3 (2-4 e+e^2)}{e} x+\frac{2 (2-3 e+e^2)}{e}, &x\in[0,1]
+}\right.$$
+\se{9}
+基函数为$1,x^2$,
+即要求$$\ar{
+        \,(1,1)a+(1,x^2)b=(f(x),1)\\
+        \,(x^2,1)a+(x^2,x^2)b=(f(x),x^2)
+}$$
+代入$(1,1)=1,(1,x^2)=1/3,(x^2,x^2)=1/5$, 可解得
+$$\ar{
+        a+b/3=\pi/4\\
+        a/3+b/5 = 1-\pi/4
+}\bigg\}\ip a=-\f{9\pi}{4},b=\f{15\pi}{2}$$
+\se{10}
+$Ax*=b \ip A^TAx^*=A^Tb \ip x^*=(A^TA)^{-1}A^Tb$.
+$$A^TA=(\ar{2&2\\2&5})\ip (A^TA)^{-1} = \ff{6}(\ar{5&-2\\-2&2})$$
+$$A^Tb=(\ar{-3\\-5})$$
+$$\ip x^* = -\ff{6}(\ar{5\\4})$$
+\end{document}

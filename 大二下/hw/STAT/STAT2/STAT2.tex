@@ -1,0 +1,54 @@
+
+\documentclass[UTF8,9pt]{ctexart}
+\usepackage{../../template/homeworkTEMP/hw}
+\setlength{\arraycolsep}{1pt}
+\setcounter{secnumdepth}{0}
+\title{统计力学第二次作业} 
+\begin{document} 
+\maketitle
+\se{2.2}
+$$(\pp{U}{V})_T=R\pp{p}{T}-p=Tf(v)-p=0$$
+\qqed
+\se{2.3}
+    (a)\\
+$\d H=T\d S+V\d p=0 \ip \d S=-\f{V}{T}\d p$, 由于$\f{V}{T}>0$, 当$\d p>0$, $\d S<0$, 即$(\pp{S}{p})_H<0$.  
+
+    (b)\\
+$\d U =T\d S-p\d V=0 \ip \d S=\f{p}{T}\d V$, 由于$\f{p}{T}>0$, 当$\d V>0$, $\d S>0$, 即$(\pp{S}{V})_U>0$.
+\qqed
+\se{2.4}
+ $$(\pp{U}{p})_T=(\pp{U}{V})_T(\pp{V}{p})_T=0 \ip (\pp{U}{p})_T=0$$
+\qqed
+\se{2.5}
+$$(\pp{S}{V})_p=(\pp{S}{T})_p(\pp{T}{V})_p=\f{C_p}{T}(\pp{T}{V})_p$$
+由于$\f{C_p}{T}>0$, $(\pp{S}{V})_p$与$(\pp{T}{V})_p$正负相同.
+\qqed
+\se{2.6}
+$$T\d S = C_V\d T+(\pp{p}{T})_T\f{\d V}{T}$$
+$$(\pp{p}{T})_V=-\f{(\pp{V}{T})_p}{(\pp{V}{p})_T} = \f{\a}{\kappa_T}$$
+$$\ip \d T= -\f{T}{C_V}\f{\a}{\kappa_T}\d V$$
+当$T,C_V,\kappa_T>0$, $\a,\d V<0$, 可以得到$T<0$.
+\qqed
+\se{2.7}
+$$\d S  =\f{C_p}{T}\d T+(\pp{V}{T})_p\d p=0 \ip (\pp{T}{p})_S=\f{T(\pp{V}{T})_p}{C_p}$$
+$$\d H =C_p\d T+\left[V-T(\pp{V}{T})_p\right]\d p=0 \ip (\pp{T}{p})_H=\f{-V+T(\pp{V}{T})_p}{C_p}$$
+$$\ip (\pp{T}{p})_S-(\pp{T}{p})_H = \f{V}{C_p}>0$$
+\qqed
+\se{2.8}
+根据$H=U(T)+pV$, $H$仅为$T$的函数, 即 $\pp{H}{p}=V-T(\pp{V}{T})_p=0 $, 代入$(\pp{V}{T})_p=\f{f'(T)}{p}$, $V=\f{T}{p}f'(T) \ip f(T)=Tf'(T) \ip f(T)=CT$. 即$pv=CT$.
+\se{2.9}
+$$C_V=T(\pp{S}{T})_V \ip (\pp{C_V}{V})_T = T\f{\partial^2 S}{\partial T\partial V}=T(\pp[2]{ p}{T})_V$$
+$$C_p=T(\pp{S}{T})_p \ip (\pp{C_p}{p})_T=T\f{\partial^2 S}{\partial T\partial p} = -T(\pp[2]{V}{T})_p$$
+积分可得$C_V,C_p$.理想气体$\pp[2]{p}{T}=\pp[2]{V}{T}=0$,
+$$C_V=C_V^0+T\int_{V_0}^V(\pp[2]{p}{T})\d V=C_V^0 + C_1T$$
+$$C_p=C_p^0-T\int_{p_0}^p(\pp[2]{V}{T})\d p=C_p^0+C_2T$$
+式中$C_V^0,C_p^0,C_1,C_2$为常数,即$C_V,C_p$只与$T$相关.
+
+\qqed
+\se{2.13}
+$F=U-TS$, 当$T$不变, $F=\int dF=-\int \dbar W=-\int (-Ax)\d x=F(T,0)+\ff{2}Ax^2$.\\
+$S=-\pp{F}{T}=\dd{[-F(T,0)]}{T}-\f{x^2}{2}\dd{A}{T}=S(T,0)-\f{x^2}{2}\dd{A}{T}$.\\ 
+$U=F+TS=F(T,0)+TS(T,0)+\ff{2}(A-T\dd{A}{T})x^2=U(T,0)+\ff{2}(A-T\dd{A}{T})x^2$.
+
+\qqed
+\end{document}

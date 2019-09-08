@@ -1,0 +1,46 @@
+\documentclass[UTF8,9pt]{ctexart}
+\usepackage{../../template/homeworkTEMP/hw}
+\setcounter{secnumdepth}{0}
+\title{The 12th HW of Electrodynamics}
+\begin{document} 
+\maketitle
+\se{1}
+Solve the equation:
+$$ 
+\left(\nabla^{2}-\frac{1}{\lambda^{2}}\right) \varphi=-\frac{q}{\epsilon_{0}} \delta(\vec{x})
+ $$
+solutions:\\
+两边fourier变换后:
+$$-(k^2+\ff{\l^2})\wv{\vp} = -\f{q}{\ep_0}$$
+因此
+$$\wv{\vp} = \f{\f{q}{\ep_0}}{k^2+\ff{\l^2}}$$
+求逆变换:
+$$\vp = \f{q}{(2\pi)^3\ep_0}\iiint \f{e^{ikr \cos\t}}{k^2+\ff{\l^2}}\d\bm{k}$$
+化简: 
+$$\ar{
+  \vp \x \f{q}{(2\pi)^3\ep_0}\iiint \f{e^{ikr\cos\t}}{k^2+\ff{\l^2}}\d\bm{k}\\
+      \x \f{q}{(2\pi)^3\ep_0}\int_0^{\pi}\d\t\int_0^{2\pi} \d \p\intzi k^2\sin\t\f{e^{ikr\cos\t}}{k^2+\ff{\l^2}}\d k\\
+      \x \f{q}{(2\pi)^2\ep_0}\int_0^{\pi}\d\t\intzi k^2\sin\t\f{e^{ikr\cos\t}}{k^2+\ff{\l^2}}\d k\\
+      \x \f{q}{i(2\pi)^2r\ep_0} \intzi \f{2k\sin kr}{k^2+\ff{\l^2}} \d k\\
+      \x \f{q}{i(2\pi)^2r\ep_0} \intii \f{ke^{ikr}}{k^2+\ff{\l^2}} \d k\\
+      \x \f{q}{i(2\pi)^2r\ep_0} \intii \f{ke^{ikr}}{k^2+\ff{\l^2}} \d k\\
+      \x \f{q}{i(2\pi)^2r\ep_0} 2 \pi i \operatorname{Res}\left[\f{z e^{i z r}}{z^2+\ff{\l^2}},z_0\right]\\
+      &\text{在}z_0 = \f{i}{\l}\text{取一阶极点}\\
+      \x \f{q}{4\pi r\ep_0}e^{-\f{r}{\l}}
+}$$
+\se{2}
+$$ 
+\varphi(\vec{r}, t)=\frac{1}{4 \pi \epsilon_{0}} \iiint \d^{3} \vec{r'} \frac{1}{\left|\vec{r}-\vec{r'}\right|} \rho\left(\vec{r'}, t-\frac{1}{c}\left|\vec{r}-\vec{r'}\right|\right)
+ $$
+ $$ 
+=\frac{q}{4 \pi \varepsilon_{0}} \iiint \frac{\delta\left(\boldsymbol{r}^{\prime}-\boldsymbol{r}_{e}\left(t^{\prime}\right)\right)}{R} \d^3 r'
+ $$
+做变量替换: $\bm{r}'' = \bm{r}'-\bm{r}_e(t')$. $J=\operatorname{det}\left(\nabla^{\prime} \boldsymbol{r}^{\prime \prime}\right)=\operatorname{det}\left[\nabla^{\prime} \boldsymbol{r}^{\prime}-\nabla^{\prime} \boldsymbol{r}_{e}\left(t^{\prime}\right)\right] = 1-\f{\bm{v} \cdot \bm{R}}{c R}$
+$$ 
+\varphi(\boldsymbol{r}, t)=\frac{q}{4 \pi \varepsilon_{0}} \iiint \frac{\delta\left(\boldsymbol{r}^{\prime \prime}\right)}{R}|J|^{-1} \mathrm{d} V^{\prime \prime}=\frac{q}{4 \pi \varepsilon_{0}} \iiint \frac{\delta\left(\boldsymbol{r}^{\prime \prime}\right)}{R\left(1-\frac{\boldsymbol{R} \cdot \boldsymbol{v}}{c R}\right)} \mathrm{d} V^{\prime \prime}
+ $$
+ $$=\frac{q}{4 \pi \varepsilon_{0}\left[R\left(1-\frac{\bm{v} \cdot \bm{R}}{c R}\right)\right]_{r''=0}}=\frac{q}{4 \pi \varepsilon_{0}\left[\left|\vec{r}-\vec{r'}\right|\left(1-\frac{v\cos\t}{c}\right)\right]}$$
+ 同理
+ $$A(r, t)=\frac{\mu_{0}}{4 \pi} \iiint \frac{\bm{J}\left(r^{\prime}, t-\frac{R}{c}\right)}{R} \mathrm{d} V^{\prime}=\frac{\mu_{0} q}{4 \pi} \iiint \frac{v\left(t^{\prime}\right) \delta\left(\boldsymbol{r}^{\prime}-\boldsymbol{r}_{e}\left(t^{\prime}\right)\right)}{R} \mathrm{d} V^{\prime}$$
+ $$\ip \vec{A}(\vec{r}, t)=\frac{\vec{v}\left(t^{\prime}\right)}{c^{2}} \varphi(\vec{r}, t)$$
+\end{document}

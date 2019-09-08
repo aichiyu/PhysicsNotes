@@ -1,0 +1,276 @@
+\documentclass[UTF8,8pt]{ctexart}
+\usepackage{../template/Notes/notes}
+\usepackage{multicol}
+\usepackage{color}
+\usepackage{lscape}
+\setlength{\premulticols}{1pt}
+\setlength{\postmulticols}{1pt}
+\setlength{\multicolsep}{1pt}
+\setlength{\columnsep}{2pt}
+\newcommand{\q}[1]{{\color{red} #1}}
+\setcounter{secnumdepth}{0}
+% Redefine section commands to use less space
+\makeatletter
+\renewcommand{\section}{\@startsection{section}{1}{0mm}%
+    {-1ex plus -.5ex minus -.2ex}%
+    {0.5ex plus .2ex}%x
+{\normalfont\large\bfseries}}
+\renewcommand{\subsection}{\@startsection{subsection}{2}{0mm}%
+    {-1ex plus -.5ex minus -.2ex}%
+    {0.5ex plus .2ex}%
+{\normalfont\normalsize\bfseries}}
+\renewcommand{\subsubsection}{\@startsection{subsubsection}{3}{0mm}%
+    {-1ex plus -.5ex minus -.2ex}%
+    {1ex plus .2ex}%
+{\normalfont\small\bfseries}}
+\makeatother
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt plus 0.4ex}
+\geometry{left=0.2cm,right=0.2cm,top=0.3cm,bottom=0.3cm}
+\title{Stat Cheatsheet}
+\begin{document} 
+\leftmargini=5mm
+\raggedright
+\footnotesize
+\begin{multicols}{3}
+\se{均匀物质的热力学性质}
+$H=U+pV,F=U-Ts,G=U-TS+pV=\mu n,J=F-\mu n=-pV$\\
+麦克斯韦:
+$$\ar{
+		-(\pp{p}{S})_V &= (\pp{T}{V})_S\x 
+		(\pp{T}{p})_S &= (\pp{V}{S})_p\\
+		(\pp{S}{V})_T &= (\pp{p}{T})_V \x
+		-(\pp{S}{p})_T &= (\pp{V}{T})_p
+}$$
+\se{近独立粒子的最概然分布}
+\sub{粒子运动状态的描述}
+各个状态的分割: 三维体积元中量子态数为: $\d n_x\d n_y\d n_z = \f{V}{h^3}\sum \d p_i = \ff{h^3}\sum \d x_i\d p_i$\\
+球坐标下动量空间体积元内状态数为:$\f{Vp^2\sin\t\d p\d \t \d \vp}{h^3}$. \\
+动量$p$到$p+\d p$内的状态数为$\f{4\pi V}{h^3} p^2\d p$(二维$\f{2\pi L^2}{h^2}p\d p$).\\
+能量$\ep$到$\ep+\d\ep$内的状态数为:$D(\ep)\d\ep=\f{2\pi V}{h^3}(2m)^{3/2}\ep^{1/2}\d\ep$(二维$\f{2\pi L^2}{h^2}m\d\ep$).\\
+边长为$L$的立方体中, \q{能量本征值}为:
+$$\ep_{n_xn_yn_z} = \ff{2m}\of{\f{2\pi \hbar}{L}}^2(n_x^2+n_y^2+n_z^2)$$
+\q{近独立粒子系统}：粒子之间的相互作用很弱，相互作用的平均能量远小于单个粒子的平均能量，因而可以忽略粒子之间的相互作用。 \\
+\q{全同性粒子系统}：由具有完全相同属性（相同的质量、自旋、电荷等）的同类粒子所组成的系统。\\
+经典描述：自由粒子, 线性谐振子, 转子
+$$\begin{array}{l}
+		{\varepsilon=\frac{1}{2 m}\left(p_{x}^{2}+p_{y}^{2}+p_{z}^{2}\right)} \\
+		{\varepsilon=\frac{p^{2}}{2 m}+\frac{1}{2} m \omega^{2} x^{2}}        \\
+		{\varepsilon=\frac{1}{2 I}\left(P_{\theta}^{2}+\frac{1}{\sin ^{2} \theta} p_{\varphi}^{2}\right) \rightarrow \varepsilon=\frac{p_{\varphi}^{2}}{2 I}}
+	\end{array}$$
+量子描述：线性谐振子, 转子, 自旋角动量, 自由粒子
+$$
+	\begin{array}{l}
+		{\varepsilon_{n}=\hbar \omega\left(n+\frac{1}{2}\right)}, n=1,2,3...                              \\
+		{\varepsilon=\frac{L^{2}}{2 I} ; L^{2}=l(l+1) \hbar^{2}, L_{z}=m \hbar} \\
+		{\varepsilon=-\vec{\mu} \cdot \vec{B}=\frac{e \hbar m_{s}}{m} B_{z}, S^2=s(s+1)\hbar^2}           \\
+		{\varepsilon=\sum \frac{1}{2 m}p_i^2 ; p_{i}=\frac{h}{L} n_{i} ; d^3\bm{n}=\frac{V}{h^{3}} d^3 \bm{p}}
+	\end{array}
+$$
+\sub{宏观态与微观态}
+宏观态: 体积, 温度等.
+
+微观态: 经典力学下是每个粒子的速度, 位置. 量子力学下是每个粒子的量子数.
+
+\q{等概率原理 (统计物理基本假定)}: 系统处于一个平衡态时, 有确定的宏观态, 但其微观态有多种可能. 等概率原理表明, 其各个微观态出现的概率相等.
+
+分布: 能级$\ep$, 简并度$\o$, 粒子数$a$.
+
+各体系微观态的描述: \\
+当$e^\a>>1 \iff a_l<<\o_l$, 玻色和费米分布过渡到玻尔兹曼, $\O_{B.E.}=\O_{F.D.}=\f{\O_{B.E.}}{N!}$.
+
+\q{斯特林公式}: $\ln m~ =m(\ln m-1)$
+\sub{玻尔兹曼分布}
+玻尔兹曼分布是粒子数和总能量守恒下(微正则系综)的最大熵分布.\\
+处在能量为$\ep_s$的量子态$s$的平均粒子数为:
+$$f_s=e^{-\a-\b\ep_s}$$
+$$N=\sum e^{-\a-\b\ep_s}, \quad E=\sum \ep_s e^{-\a-\b\ep_s}, \quad \b=\ff{kT}$$
+
+相格大小为$\prod \D q_r\D p_r=h^r$.\\
+体积$V$内状态数:
+$D(p)\d p=\f{4\pi V}{h^3}p^2 \d p, \quad D(\ep)\d\ep = \f{2\pi V}{h^3}(2m)^{3/2}\ep^{1/2}\d\ep$
+\se{玻尔兹曼统计}
+定域系统和满足经典极限条件的玻色(费米)系统遵从玻尔兹曼分布. 
+\sub{热力学量的统计表达式}
+定义配分函数:
+$$Z_1=\sum \o_le^{-\b\ep_l}\text{  or  }Z_1=\sum e^{-\b\ep_l}\f{\D \o_l}{h_0^r}$$
+满足$$N=e^{-\a}Z_1$$
+各种热力学量为([]中为费米/玻色子在经典极限下较玻尔兹曼多出来的一项)
+$\begin{array}{rl}
+		U \x -N \pp{}{\b}\ln Z_1                      \\
+		S \x Nk(\ln Z_1-\b\pp{}{\b}\ln Z_1)[-k\ln N!] \\
+		\x k\ln\O[-k\ln N!]                           \\
+		F \x -NkT\ln Z_1[+kT\ln N!]           
+	\end{array}$
+	\sub{理想气体状态方程}
+	$$p=\f{N}{\b}\pp{}{V}\ln Z_1$$
+	经典极限条件为$e^\a = \f{V}{N}\of{\f{2\pi mkT}{h^2}}^{3/2}>>1$. 即气体稀薄, 温度高, 分子质量大, 德布罗意热波长<<分子间距, 体积$\l^3$内分子数<<1.
+\sub{Maxwell速度分布}
+$\int \f{v^2}{N}\d n=\int v^2f(v)d\vec{v}$代换将位形空间变换到相空间. \\
+即为Maxwell分布:
+$$\ar{f[ n(\vec{v})]{\d N}\x f(\vec{v})\d \vec v \\
+		\x(\f{m}{2\pi k_BT})^{3/2}\exp (-\f{mv^2/2+V(x)}{k_BT})\d \vec v}$$
+麦克斯韦玻尔兹曼分布的重要均值:$\langle v\rangle=\sqrt{\frac{8 k_{B} T}{\pi m}}$,$\left\langle v^{2}\right\rangle=\frac{3 k_{B} T}{m}$\\
+理想气体压强:$p=\int_{0}^{\infty} \d v \int_{0}^{\pi / 2} 2 m v \cos \theta \d \theta\left(v \cos \theta n f(v) \frac{1}{2} \sin \theta\right)$
+$=\frac{1}{3} n m\left\langle v^{2}\right\rangle$\\
+理想气体状态方程:$p=\frac{1}{3} n m\left\langle v^{2}\right\rangle=\frac{N k_{B} T}{V}$
+单位时间逃逸的分子数密度为: $\Gamma = \pi  n \of{\f{m}{2\pi kT}}^{3/2} \exp(-\f{mv^2}{2kT}) \d v$. \\
+\q{能量均分定理}: 对于处在温度为$T$的平衡状态的经典系统, 粒子能量中每一个平方项的平均值为$\ff{2}kT$. 不能用: 电子对热容贡献, 低温没有振动能量(这个温度是否能激发这个自由度, 冻结), 瑞利金斯公式发散. 
+\sub{理想气体的内能和热容}
+平动为
+$Z_1^t=V\of{\f{2\pi m}{h^2\b}}^{3/2},\quad U^t=-N\pp{}{\b}\ln Z_1^t=\f{3}{2}NkT,\quad C_V^t=\f{3}{2}Nk$\\
+振动为
+$Z_1^v=\f{e^{-\b\hbar\o}{2}}{1-e^{-\b\hbar\o}},\quad U^v=\f{N\hbar\o}{2}+\f{N\hbar\o}{e^{\b\hbar\o}-1},\quad C_V^t=Nk\of{\f{\hbar\o}{kT}}^2\f{e^{\hbar\o/kT}}{(e^{\hbar\o/kT}-1)^2}$\\
+定义$k\t_v=\hbar\o$, 常温下近似
+$$U^v=\f{Nk\t_v}{2}+Nk\t_ve^{-\t_v/T},\quad C_V^v=Nk\of{\f{\t_v}{T}}^2e^{-\f{\t_v}{T}}$$
+异核双原子转动为: 定义$k\t_r=\hbar^2/(2I)$,
+$$Z_1^r=\sumzi(2l+1)e^{-\f{\t_r}{T}l(l+1)},\quad U^r=NkT,\quad C_V^r=Nk$$
+\sub{顺磁性固体}
+$$M=\f{n}{\b}\pp{}{B}\ln Z=\f{n\mu^2}{kT}B=\chi H$$
+单位体积熵为$\to$高温弱场极限$s=nk[\ln 2+\ln \cosh\of{\f{\mu B}{kT}}-\of{\f{\mu B}{kT}}\tanh\of{\f{\mu B}{kT}}]\to\ff{2}\of{\f{\mu B}{kT}}^2$. 因此$s=k\ln 2^n$. 强场下$s\approx0$. 
+\sub{理想气体的熵X}
+单原子理想气体的熵为
+$$S=\f{3}{2}Nk\ln T+Nk\ln\f{V}{N}+\f{3}{2}Nk\of{\f{5}{3}+\ln\of{\f{2\pi mk}{h^2}}}$$
+蒸气压(萨库尔-铁特罗特公式)
+$$\ln p=-\f{L}{RT}+\f{5}{2}\ln T+\f{5}{2}+\ln\of{k^{5/2}\of{\f{2\pi m}{h^2}}^{3/2}}$$
+$$\mu=kT\ln\of{\f{N}{V}\of{\f{h^2}{2\pi mkT}}^{3/2}}<0$$
+\sub{固体热容的爱因斯坦理论}
+把固体中原子的热运动看成3N个振子的振动, 假设3N个振子频率相同. 解释了经典理论不能解释的低温范围热容. 解释了热容随温度下降的实验. 
+$$U=3N\f{\hbar\o}{2}+\f{3N\hbar\o}{e^{\b\hbar\o}-1}$$
+引入特征温度$k\t_E=\hbar\o$
+$$C_V=3Nk\of{\f{\t_E}{T}}^2\f{e^{\f{\t_E}{T}}}{\of{e^{\f{\t_E}{T}}-1}^2}$$
+高温下$C_v=3Nk$, 低温下$C_V=3Nk\of{\f{\t_E}{T}}^2e^{-\f{\t_E}{T}}$
+\se{玻色统计和费米统计}
+\sub{热力学量的统计表达式}
+非简并条件:
+$e^\a = \f{V}{N}\of{ \f{2\pi nkT}{h^2} }^{3/2}>>1,\ \text{or}\ n\l^3 = \f{N}{V}\of{\f{h^2}{2\pi nkT}}^{3/2}<<1$
+$$\ln\Xi=\sum\o_l\ln(1+e^{-\a-\b\ep_l})$$
+$$\bar{N} = \sum \f{\o_l}{e^{\a+\b\ep_l}-1}=-\pp{}{\a}\ln\Xi$$
+$$U=\sum\f{\ep_l\o_l}{e^{\a+\b\ep_l}-1} = -\pp{}{\b}\ln\Xi$$
+$$p=\ff{\b}\pp{}{V}\ln\Xi$$
+$$S = k(\ln\Xi+\a\bar{N}+\b U)=k\ln\O$$
+\sub{玻色爱因斯坦凝聚}
+当理想玻色气体的$n\l^3$等于或大于2.612的临界值时($T<T_c$时)将有宏观量级的粒子在能级$\ep=0$凝聚.凝聚体$E,p,S,P$均为0.\\
+根据玻色分布$a_l=\f{\o_l}{e^{\f{\ep_l-\mu}{kT}}-1}$, $\o_l=D(\ep)\d\ep$, $\ep_l=0>\mu$. 温度越低$|\mu|$越小. 存在临界温度$T_c=\f{2\pi}{2.612^{2/3}}\f{\hbar^2}{mk}n^{2/3}$. 当$T<T_c$时, \\
+$n_0(T)+\f{2\pi}{h^3}(2m)^{3/2}\intzi \f{\ep^{1/2}\d\ep}{e^{\f{\ep}{kT}}-1}=n\ip n_0=n\of{1-\of{\f{T}{T_c}}^{3/2}}$
+$$U=0.77NkT\of{\f{T}{T_c}}^{3/2}$$
+$$C_V=1.925Nk\of{\f{T}{T_c}}^{3/2}$$
+出现凝聚体的条件为
+$$n\l^3\geq2.612$$
+二维自由理想玻色气体无玻色凝聚:
+$$\f{2\pi L^2}{h^2}m\intzi\f{\d\ep}{e^{\f{\ep}{kT_c}}-1}=n$$
+磁光陷阱中3[2]维为
+$$\f{N_0}{N}=1-\of{\f{T}{T_c}}^{3[2]}$$
+$$\f{kT_c}{h\bar\o}=\of{\f{N}{1.202}}^{1/3}\left[\of{\f{N}{1.645}}^{1/2}\right]$$
+\sub{光子气体}
+光子量子态数
+$$\f{8\pi VV}{h^3}p^2\d p=\f{V}{\pi^2c^3}\o^2\d\o,\quad a_l=\f{\o_l}{e^{\b\ep_l}-1}$$
+辐射场内能(普朗克公式)
+$$U\d\o=\f{V}{\pi^2c^3}\f{\hbar\o^3}{e^{\hbar\o/kT}-1}\d\o$$
+低频$\hbar\o<<kT$极限为瑞利金斯
+$$U=\f{V}{\pi^2c^3}\o^2kT$$
+高频极限为维恩公式
+$$U=\f{V}{\pi^2c^3}\hbar\o^3e^{-\f{\hbar\o}{kT}}$$
+普朗克公式积分得
+$$U=\f{\pi^2k^4}{15c^3\hbar^3}VT^4$$
+内能密度极大值与温度成正比(维恩位移律):
+$$\f{\hbar\o_m}{kT}=2.822$$
+光子气体巨配分函数
+$$\ln\Xi=\f{\pi^2V}{45c^3(\b\hbar)^3}$$
+辐射通量密度
+$$J_u=\f{\pi^2k^4}{60c^2\hbar^3}T^4$$
+\sub{金属中的自由电子}
+自由电子热容非常小. 化学势由下式确定
+$$\f{4\pi V}{h^3}(2m)^{3/2}\intzi \f{\ep^{1/2}\d\ep}{e^{\f{\ep-\mu}{kT}}+1}=N$$
+并满足0K化学势$\mu(0)$(费米能级)为
+$$\mu(0)=\f{\hbar^2}{2m}\of{3\pi^2\f{N}{V}}^{2/3}$$
+令$P_F^2=2m\mu(0)$, 费米动量为
+$$P_F=(2\pi^2n)^{1/3}\hbar$$
+费米能级在eV级, 定义$kT_F=\mu(0)$, 费米温度在$1\e{4}$级别, 远高于常温.0K时电子气体内能为$U(0)=\f{3N}{5}\mu(0)$, 压强为$p(0)=\f{2}{5}n\mu(0)$. \\
+$T>0$时只有能量在$\mu$附近, 量级为$kT$范围的电子对热容有贡献. 这段范围的有效电子数为$N_{\text{eff}}=\f{kT}{\mu}N$. 每一有效电子贡献热容$\f{3}{2}kT$. 因此电子热容为$C_V=\f{3}{2}Nk\f{T}{T_F}$, 精确值为
+$$C_V=Nk\f{\pi^2}{2}\f{kT}{\mu(0)}$$
+\se{系综理论}
+系综的能级不是对应到微观系统的能级,而是整体的能量大小. 
+\sub{微正则系综(确定$N,V,S,U$)}
+归一化条件:$\int\rho(q,p,t)\d\O=1$. 称$\rho$为系综分布函数. \q{确定分布函数是系综理论的根本问题}. 若$B(t)$为依微观量, $\bar{B}(t)=\sum \rho_sB_s$为对应的宏观量. \\
+等概率原理:$\rho_s=1/\O$.\\
+\sub{正则系综(确定$N,V,T,F$)}
+以$\O_l$表示简并度, 量子和经典的表述分别为($r$为自由度)
+$$\rho_i=\ff{Z}e^{-\b E_s} = \ff{Z}\O_le^{-\b E_l} = \ff{N!h^{Nr}}e^{-\b E(q,p)}\d\O$$
+$Z=\sum e^{-\b E_s}=\sum\O_le^{-\b E_l}=\ff{N!h^{Nr}}\int e^{-\b E}\d\O$
+$$U = -\pp{}{\b}\ln Z$$
+$$p = \ff{\b}\pp{}{V}\ln Z, \b=\ff{kT}$$
+$$S = k\of{\ln Z-\b\pp{}{\b}\ln Z}$$
+$$F=U-TS=-kT\ln Z$$
+理想单原子分子
+$$Z=\f{V^N}{N!}\of{\f{2\pi m}{\b h^2}}^{\f{3N}{2}}$$
+$$U=\f{3N}{2}kT$$
+$$\mu=-kT\pp{}{N}\ln Z=kT\ln\f{N}{V}\of{\f{h^2}{2\pi mkT}}^{3/2}$$
+能量的涨落为(证明了$C_V$恒正)
+$$\bar{(E-\bar{E})^2}=-\pp{\bar{E}}{\b}=kT^2\pp{\bar{E}}{T}=kT^2C_V $$
+
+\sub{实际气体X}
+Onnes方程, 低温引力显著, $B<0$, 高温斥力显著, $B>0$. 
+$$pV=NkT(1+\f{nB}{V}),\ B=-\f{N_A}{2}\int f_{12}\d\bm{r}$$
+考虑分子斥力$(nb)$和引力$(\f{an^2}{V^2})$或通过平均场近似可得到\q{Van der Waals方程}: $(p+\f{an^2}{V^2})(V-nb)=nRT$. Van der Waals气体的定容热容与理想气体相同. \\
+\sub{固体的热容(德拜理论)}
+利用简正坐标, 将N个分子振动化为3N个近独立简谐振动, 德拜将固体看做连续弹性介质, 固体上的横波和纵波用3N个简正坐标描述. 忽略了原子的离散结构. 
+\\3N个简正振动能量
+$$E=\p_0+\sum_1^{3N}\hbar\o_i\of{n_i+\ff{2}},n_i=0,1...$$
+$$U=U_0+\sum_{i=1}^{3N}\f{\hbar\o_i}{e^{\b\hbar\o_i}-1}$$
+其中$U_0$是负数的结合能, 绝对值大于零点能量. 
+Debye将固体看做连续介质, $3N$个简正振动是介质波动. 其中有纵波$l$与横波$t$. 简正振动数为
+$$D(\ep)\d\ep=B\o^2\d\o,\ B=\f{V}{2\pi^2}\of{\ff{c_l^3}+\f{2}{c^3_t}}$$
+最大圆频率(德拜频率)$\o_D^3=\f{9N}{B}$, 该式称为德拜频谱. 引入德拜函数, 可以将内能表示为
+$U=U_0+3NkT\mathfrak{D}(x),\ \mathfrak{D}(x)=\f{3}{x^3}\int_0^x\f{y^3\d y}{e^y-1},\ x=\f{\hbar\o}{kT},y=\f{\hbar\o_D}{kT}$\\
+高温下$x<<1$. $\mathfrak{D}(x)=1$. $C_V=3Nk$. 符合经典统计. \\
+低温下$x>>1$. $\mathfrak{D}(x)=\f{\pi^4}{5x^3}$. $C_V=3Nk\f{4\pi^4}{5}\of{\f{T}{\t_D}}^3$. 为德拜$T^3$律. 对于非金属和3K以上金属符合. 对于$\l>>a$的低频波符合好. 对于铜的实验现象, 爱因斯坦理论高温下符合的好(偏小), 德拜理论一直符合得好. T3律低温符合得好. \\
+声子的准动量和能量为:$p\hbar k,\ep=\hbar\o$. 两个方向的能动量关系为$\ep=c_lp,\ep=c_tp$. 一个状态上的平均声子数为$1/(e^{\hbar\o/kT}-1)$.
+\sub{巨正则系综(确定$N,V,\mu$)}
+量子和经典表达式为($r$代表自由度):\\
+$\rho_{Ns}=\ff{\Xi}e^{-\a N-\b E_s},\rho_N\d q\d p=\ff{N!h^{Nr}}\f{e^{-\a N-\b E}}{\Xi}\d\O$\\
+$\Xi=\sum_{N=0}^\inf\sum_s e^{-\a N-\b E_s}=\sum_N\f{e^{-\a N}}{N!h^{Nr}}\int e^{-\b E}\d\O$\\
+$U,p$表达式与正则系综相同, 熵变为
+$S = k\of{\ln \Xi-\a\pp{\ln \Xi}{\a}-\b\pp{\ln \Xi}{\b}},\a=-\f{\mu}{kT},\b=\ff{kT}$\\
+平均分子数为
+$$\bar{N} = \sum \f{\o_l}{e^{\a+\b\ep_l}-1}=-\pp{}{\a}\ln\Xi$$
+涨落为
+$$\bar{(N-\bar{N})^2}=-\pp{\bar{N}}{\a}=kT\pp{\bar{N}}{\mu}=\bar{N}^2\f{kT}{V}\kappa_T$$
+当$\kappa$为有限值, 涨落很小. 但在一级相变的两相共存区和液气临界点, $\kappa\to\inf$, 涨落也很大. 两相共存是一种动态平衡, 液气临界点是形成分子集团. 对于粒子数涨落大的情形, 选取巨正则系综比正则系综方便, 但二者等价, 这是因为将整个系统或者将系统的一部分看做热力学系统得到的信息应该相同, 二者只是相当于选取了不同的自变量. 
+\se{涨落理论}
+\sub{涨落的准热力学理论}
+对正则系综
+$$\bar{\D T\cdot\D V}=0,\bar{(\D T)^2}=\f{kT^2}{C_V},\bar{(\D V)^2}=-kT\of{\pp{V}{p}}_T$$
+$$\bar{\D T\cdot\D m}=0,\bar{(\D T)^2}=\f{kT^2}{C_m},\bar{(\D m)^2}=\f{kT}{\mu_0}\of{\pp{m}{H}}_T$$
+对巨正则系综
+$$\bar{\D N\cdot\D T}=0,\bar{(\D T)^2}=\f{kT^2}{C_V},\bar{(\D N)^2}=kT\of{\pp{N}{\mu}}_T$$
+\sub{布朗运动}
+朗之万方程($a$为小球半径,$\eta$为黏度):
+$$m\dt[2]x=-\a\dt{x}+F(t)+\mathcal{F}(t)$$
+若无外力可得($\a=6\pi a\eta$为黏滞系数)\\
+$\dt[2]{}\bar{x^2}+\f{\a}{m}\dt{}\bar{x^2}-\f{2kT}{m}=0$, 
+$\bar{x^2}=\f{2kT}{\a}t$\\
+扩散方程:(D为扩散系数)
+$$\pp{n}{t}=D\nabla^2n$$
+爱因斯坦关系$D=\f{kT}{\a}$\\
+热噪声$L\dd{i}{t}=\mathcal{V}-Ri+V(t)$\\
+尼奎斯定理表明涨落电压不同频率分量统计独立. 且大小与$\o$无关, 称为白噪声:
+$$\bar{V(\o)V^*(\o')}=\f{kTR}{\pi}\de(\o-\o')$$
+光学黏胶与多普勒制冷\\
+多普勒激光中朗之万方程为$m\dd{v_i}{t}=-\a v_i+F_i$\\
+其平衡温度为$kT\f{D_p}{\a}$, 估算可得最低温度$kT_D=\f{\hbar\Gamma}{2}\sim100\mu K$. 
+磁光陷阱\\
+朗之万方程为
+$$m\dt{v_i}=-Kx_i-\a v_i+F_i(t)$$ 
+\begin{tabular}{|c|c|c|c|}
+    \hline
+                 & 微观状态数                                                                                                & 分布$\alpha_{l}$                                                                                                   \\ \hline
+    玻尔兹曼 & $\Omega_{M . B .}=\frac{N !}{\Pi_{l} a_{l} !} \Pi_{l} \omega_{l}^{a_{l}}$                                 & $\omega_{l} e^{-\alpha-\beta \varepsilon_{l}}$                    \\ \hline
+    玻色     & $\Omega_{B . E .}=\prod_{l} \frac{\left(\omega_{l}+a_{l}-1\right) !}{a_{l} !\left(\omega_{l}-1\right) !}$ & $\frac{\omega_{l}}{e^{\alpha+\beta \varepsilon_{l}}-1}$  \\ \hline
+    费米     & $\Omega_{F . D .}=\prod_{l} \frac{\omega_{l} !}{a_l!\left(\omega_{l}-a_{l}\right) !}$                     & $\frac{\omega_{l}}{e^{\alpha+\beta \varepsilon_{l}}+1}$ \\ \hline
+\end{tabular}
+\end{multicols}
+
+
+
+\end{document}

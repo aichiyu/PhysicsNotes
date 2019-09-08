@@ -1,0 +1,254 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%Do not alter this block of commands.  If you're proficient at LaTeX, you may include additional packages, create macros, etc. immediately below this block of commands, but make sure to NOT alter the header, margin, and comment settings here. 
+\documentclass[12pt]{article}
+ \usepackage[margin=1in]{geometry} 
+\usepackage{amsmath,amsthm,amssymb,amsfonts, enumitem, fancyhdr, color, comment, graphicx, environ}
+\pagestyle{fancy}
+\setlength{\headheight}{65pt}
+\newenvironment{problem}[2][Problem]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{sol}
+    {\emph{Solution:}
+    }
+    {
+    \qed
+    }
+\specialcomment{com}{ \color{blue} \textbf{Comment:} }{\color{black}} %for instructor comments while grading
+\NewEnviron{probscore}{\marginpar{ \color{blue} \tiny Problem Score: \BODY \color{black} }}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+
+
+
+
+\usepackage{CTEX}
+\usepackage{amsfonts}
+%\usepackage[T1]{fontenc}                                             %change font
+\usepackage{mathtools}                                                %align needed
+%\usepackage{balance}                                                  %blance when there two columns
+%\usepackage{txfonts}                                                  %面积分体积分
+\usepackage{bm}                                                       %bold font
+%\usepackage{mathrsfs}                                                 %change greek font style
+%\usepackage{enumerate}                                                %Sort by number
+%\usepackage{supertabular}                                             %allow long table in 2 pages
+%\usepackage{soul}                                                     %highlight using \hl
+%\usepackage{fontspec}                                                 %expand font type
+\usepackage{graphicx}                                                 %to input pictures
+%\usepackage[colorlinks,linkcolor=red,anchorcolor=blue,citecolor=green]{hyperref}                                                %cite
+%\usepackage{verbatim}                                                 %comment                            
+%\usepackage{multicol}
+%begin{newcommands}
+
+    \newcommand{\intzo}{\int_0^1}                                  %0 1
+    \newcommand{\intii}{\int_{-\infty}^\infty}                                  %-∞ ∞
+    \newcommand{\intzi}{\int_0^\infty}                                  %0 ∞
+    \newcommand{\sumoi}{\int_1^\infty}                                  %1 ∞
+    \newcommand{\sumti}{\int_2^\infty}                                  %2 ∞
+    \newcommand{\sumii}{\sum_{-\infty}^\infty}                          %-∞ ∞
+    \newcommand{\sumzi}{\sum_0^\infty}                                  %0 ∞
+    \newcommand{\sumon}{\sum_1^n}                                  %1 n
+    \newcommand{\sumzn}{\sum_0^n}                                  %0 n
+    \renewcommand{\inf}{\infty}                                  %∞
+    \newcommand\of[1]{\left( #1 \right)}                                  %(x)
+    \newcommand\qqed{\rightline{$\square$}\\ }                                 %\square,QED
+    \newcommand\norm[1]{\left\| #1 \right\|}                                 %|| ||
+    \newcommand\s{\sqrt}
+    \newcommand\cm{\mathscr}                                               %
+    \newcommand\dbar{\text{\dj}}                                           %dbar
+    \renewcommand\d{\mathop{}\!\mathrm{d}}                                            %d
+    \newcommand{\dr}{\mathop{}\!\mathrm{d}r}                                            %dr
+    \newcommand{\dx}{\mathop{}\!\mathrm{d}x}                                            %dx
+    %\newcommand\sch{Schrödinger}                                           %Schrödinger
+    \newcommand{\dd}[3][]{\frac{\mathrm{d}^{#1} #2}{\mathrm{d} {#3}^{#1}}}   %d/d^n
+    \newcommand{\dt}[2][]{\frac{\mathrm{d}^{#1} #2}{\mathrm{d} t^{#1}}}    %d/dt^n
+    \newcommand{\pp}[3][]{\frac{\partial^{#1} #2}{\partial {#3}^{#1}}}       %∂/∂^n
+    \newcommand{\pt}[2][]{\frac{\partial^{#1} #2}{\partial t^{#1}}}        %∂/∂t^n 
+    \newcommand{\f}[2]{\frac{#1}{#2}}                                      %A/B
+    \newcommand{\ff}[1]{\frac{1}{#1}}                                      %1/A
+    \newcommand\rank{\operatorname{rank}}                                        %rank
+    \newcommand\tr{\operatorname{tr}}                                            %tr
+    \newcommand\e[1]{\times 10^{#1}}                                       %×10^
+    \newcommand\m{^{-1}}                                       %^{-1}
+    \renewcommand\Re{\operatorname{Re}}                                          %Re
+    \renewcommand\Im{\operatorname{Im}}                                          %Im
+    \newcommand\Ln{\operatorname{Ln}}                                            %Ln
+    \newcommand\ip{\implies}                                               %→
+    \newcommand\tm{\times}                                                 %×
+    \renewcommand\a{\alpha}                                                %α
+    \renewcommand\b{\beta}                                                 %β
+    \newcommand\C{\text{Const}}                                            %Const
+    \newcommand\D{\Delta}                                                  %Δ
+    \newcommand\de{\delta}                                                 %δ
+    \newcommand\ep{\varepsilon}                                            %ε
+    \newcommand\g{\gamma}                                                  %γ
+    \renewcommand\r{\rho}                                                  %ρ
+    \renewcommand\k{\kappa}                                                %κ
+    \renewcommand\l{\lambda}                                               %λ
+    \newcommand\n{\nabla}                                                  %nabla
+    \newcommand\laplace{\nabla^2}                                          %laplace
+    \newcommand\grad{\nabla}                                               %grad
+    \renewcommand\div{\nabla\cdot}                                         %div
+    \newcommand\curl{\nabla\times}                                         %\nabla×
+    \renewcommand\O{\Omega}                                                %Ω
+    \renewcommand\o{\omega}                                                %ω
+    \newcommand\sg{\sigma}                                                 %σ
+    \newcommand\p{\phi}                                                    %φ
+    \newcommand\vp{\varphi}                                                %φ
+    \renewcommand\t{\theta}                                                %θ
+    \newcommand\abs[1]{\left| #1 \right|}                                  %|A|
+    \newcommand\se{\section}                                               %section
+    \newcommand\sub{\subsection}                                           %subsection
+    \newcommand\dis{\displaystyle}                                         %big equation
+    \newcommand{\x}{=&\!\!\!\!\!}                                                    %
+    \newcommand{\xx}{&\!\!\!\!\!}                                                    %
+    \AtBeginDocument{\renewcommand{\bar}{\overline}}                       %bar
+    \AtBeginDocument{\renewcommand{\hat}{\widehat}}                        %hat
+    \renewcommand{\arraystretch}{1.2}                                      %change array stretch
+    \newcommand\ca{\frac{1}{4\pi\varepsilon_0}}                                 %constA
+    \newcommand{\ar}[2][rl]{\begin{array}{#1}                              %begin an array
+            #2
+        \end{array}}                                                 
+    \newcommand{\hua}[2][rl]{\left\{\begin{array}{#1}                              %begin an {array
+        #2
+    \end{array}\right.}
+    \newcommand\bkt[1]{\left< #1 \right>}                                  %<x>
+    \newcommand\putfig[2][0.25]{                                                 %put a figure
+        \begin{center}    
+            \includegraphics[width=#1\textwidth]{#2}
+        \end{center}}
+    \newcommand{\rk}[1]{\begin{enumerate}                              %enumerate
+        #1
+    \end{enumerate}}                                             
+    \renewcommand{\com}[2]{
+        \left( \begin{matrix} 
+            #1 \\
+            #2 
+            \end{matrix} 
+        \right)
+    }
+%end{newcommands} 
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%Fill in the appropriate information below
+\lhead{Name: 肖涵薄\\ StudentID: 31360164}  %replace with your name
+\rhead{SI 140 \\ Probability and Statistics \\ Semester Spring 2019 \\ Assignment 7} %replace XYZ with the homework course number, semester (e.g. ``Spring 2019"), and assignment number.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%Do not alter this block.
+\begin{document}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%Solutions to problems go below.  Please follow the guidelines from https://www.overleaf.com/read/sfbcjxcgsnsk/
+
+
+%Copy the following block of text for each problem in the assignment.
+\begin{problem}{1}
+Let $U_1,U_2,...,U_{60}$ be i.i.d. Unif(0,1) and $X=U_1+U_2+\cdots+U_{60}$
+\begin{enumerate}
+    \item which important distribution is the distribution of $X$ very close to? Specify what the parameters are, and state which theorem justifies your choice.
+    \item Give a simple but accurate approximation for $P(X>17)$. Justify briefly.
+\end{enumerate}
+\end{problem}
+\begin{sol}
+    \begin{enumerate}
+        \item $M_i(t) = E(e^{tU})=\intzo e^{-tx}\d x = \ff{t}(1-e^{-t}) = (1-\f{t}{2}+\f{t^2}{6}+o(t^2))$\\
+        $M(t) = \prod M_i(t) = (1-\f{t}{2}+\f{t^2}{6}+o(t^2))^{60} $\\%\approx e^{60(-\f{t}{2}+\f{t^2}{6})} = e^{-30t+10t^2}$\\
+        这近似是一个正态分布$X \sim \mathcal{N}(30,5)$. 遵从中心极限定理. 
+        \item $\mu-5.8\sg \approx 17$, 因此$P(X>17) = 1 - P(X<\mu-5.8\sg) = 3.3\e{-9}$
+    \end{enumerate}
+\end{sol}
+
+
+\begin{problem}{2} 
+Let $X$ and $Y$ be Pois($\lambda$) r.v.s. and $T=X+Y$. Suppose that $X$ and $Y$ are not independent, and in fact $X=Y$. Prove or disprove the claim that $T\sim Pois(2\lambda)$ in this scenario.
+\end{problem}
+\begin{sol}
+根据矩的定义$$\mu_{Xn}=\int _{-\infty }^{\infty }(x-E(x))^{n}f(x)\d x,$$ 当$T=X+Y=2X$, $\mu_{Tn} = 2^n\mu_{Xn}$. 那么当$M_X(t)= e^{\l(e^{-t}-1)}$, 需要$M_T(t)= e^{2\l(e^{-t}-1)}$方能满足条件. 这个矩生成函数对应着$$T\sim Pois(2\lambda)$$
+\end{sol}
+
+
+
+%Copy the following block of text for each problem in the assignment.
+\begin{problem}{3}
+Let $X,Y,Z$ be r.v.s such that $X\sim \mathcal{N}(0,1)$ and conditional on $X=x$, $Y$ and $Z$ are i.i.d. $\mathcal{N}(x,1)$.
+\begin{enumerate}
+    \item Find the joint PDF of $X,Y,Z$.
+    \item By definition, $Y$ and $Z$ are conditionally independent given $X$. Discuss intuitively whether or not $Y$ and $Z$ are also unconditianally independent.
+    \item Find the joint $PDF$ of $Y$ and $Z$. You can leave your answer as an integral, though the integral can be done with some algebra (such as completing the square) and facts about the Normal distribution.
+\end{enumerate}
+\end{problem}
+\begin{sol}
+    \begin{enumerate}
+        \item $$\ar{f(x,y,z) \x f(x)f(y|x)f(z|x)\\ \x  \ff{\sqrt{2\pi}}\exp\of{-\f{x^2}{2}} \cdot \ff{\sqrt{2\pi}}\exp\of{-\f{(y-x)^2}{2}} \cdot \ff{\sqrt{2\pi}}\exp\of{-\f{(z-x)^2}{2}}\\
+        \x (2\pi)^{-3/2}\exp\of{-\ff{2}(3x^2+y^2+z^2-2xy-2xz)}
+        }$$
+        \item $Y$和$Z$是互相独立的. 
+        \item $$\ar{f(y,z) \x \intii f(x,y,z)\d x\\ 
+        \x (2\pi)^{-3/2}  \intii \exp\of{-\ff{2}(3x^2+y^2+z^2-2xy-2xz)}\d x\\
+        \x \sqrt{\f{2 \pi }{3}} \exp\of{\frac{1}{3} \left(-y^2+y z-z^2\right)}
+        }$$
+    \end{enumerate}
+\end{sol}
+
+
+
+
+%Copy the following block of text for each problem in the assignment.
+\begin{problem}{4}
+A large freight elevator can transport a maximum of 9800 pounds. Suppose a load of cargo containing 49 boxes must be
+transported via the elevator. Experience has shown that the weight of boxes of this type of cargo follows a distribution with
+mean $\mu$  = 205 pounds and standard deviation $\sigma$  = 15 pounds. Based on this information, what is the probability that all 49
+boxes can be safely loaded onto the freight elevator and transported?
+\end{problem}
+\begin{sol}
+每个箱子的重量为$X_i\sim \mathcal{N}(205,15^2)$, 则49个箱子的重量为$X = \sum X_i =\mathcal{N}(10045,105^2)$.\\
+$9800\approx\mu-2.333\sg$. 因此$P(X\leq 9800)=P(X\leq\mu-2.333\sg)=0.0098$
+\end{sol}
+
+
+\begin{problem}{5}
+In this experiment we will sample 500 samples from probability distribute function $f(x)$. Using the 500 outcomes we will compute the
+sample mean . We will repeat until we obtain 1000 values of $ \bar{X}$.\\
+\begin{figure}
+    \centering
+    \includegraphics[width=0.5\textwidth]{hw7.png}
+\end{figure}
+1).Plot the histogram of X.\\
+2).Plot the histogram of $\bar{X}$.
+\end{problem}
+\newpage
+\begin{sol}\\
+1)  using Mathematica:\\
+f = ProbabilityDistribution[Abs[x], \{x, -1, 1\}];\\
+Show[Histogram[RandomVariate[f, 500], 40,``ProbabilityDensity"], Plot[PDF[f, x], \{x, -1, 1\}, PlotStyle -> Thick]]\\
+2)\\
+Show[Histogram[Table[Total[RandomVariate[f, 500]], \{i, 1000\}], 40,``ProbabilityDensity"]]\\
+    \begin{figure}[htbp]
+        \centering
+        \begin{minipage}[t]{0.48\textwidth}
+        \centering
+        \includegraphics[scale=0.3]{1.png}
+        \caption{$X$}
+        \label{fig:figure1}
+        \end{minipage}
+        \begin{minipage}[t]{0.48\textwidth}
+        \centering
+        \includegraphics[scale=0.4]{2.png}
+        \caption{$\bar{X}$}
+        \label{fig:figure2}
+        \end{minipage}
+    \end{figure}
+\end{sol}\\
+
+
+
+%Copy the following block of text for each problem in the assignment.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%Do not alter anything below this line.
+\end{document}

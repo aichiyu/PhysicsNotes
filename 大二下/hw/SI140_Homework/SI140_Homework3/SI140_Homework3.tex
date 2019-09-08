@@ -1,0 +1,343 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%Do not alter this block of commands.  If you're proficient at LaTeX, you may include additional packages, create macros, etc. immediately below this block of commands, but make sure to NOT alter the header, margin, and comment settings here. 
+\documentclass[12pt]{article}
+ \usepackage[margin=1in]{geometry} 
+\usepackage{amsmath,amsthm,amssymb,amsfonts, enumitem, fancyhdr, color, comment, graphicx, environ}
+\pagestyle{fancy}
+\setlength{\headheight}{65pt}
+\newenvironment{problem}[2][Problem]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{sol}
+    {\emph{Solution:}
+    }
+    {
+    \qed
+    }
+\specialcomment{com}{ \color{blue} \textbf{Comment:} }{\color{black}} %for instructor comments while grading
+\NewEnviron{probscore}{\marginpar{ \color{blue} \tiny Problem Score: \BODY \color{black} }}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\usepackage{CTEX}
+\usepackage{amsfonts}
+\usepackage{geometry}
+\usepackage{mathtools}                                                %align needed
+\usepackage{balance}                                                  %blance when there two columns
+\usepackage{bm}                                                        %bold font
+\usepackage{mathrsfs}                                                 %change greek font style
+\usepackage{supertabular}                                             %allow long table in 2 pages
+\usepackage{soul}                                                     %highlight using \hl
+\usepackage{fontspec}                                                 %expand font type
+\usepackage{graphicx}                                                 %to input pictures
+\usepackage[colorlinks,linkcolor=red,anchorcolor=blue,citecolor=green]{hyperref}                                                %cite
+\usepackage{verbatim}                                                 %comment                            
+
+%begin{newcommands}
+\newcommand\ep{\varepsilon}
+    \newcommand\qqed{\rightline{$\square$}}                                 %\square
+    \newcommand\cm{\mathscr}                                               %dbar
+    \newcommand\dbar{\text{\dj}}                                           %dbar
+    \renewcommand\d{\mathrm{d}}                                            %d
+    \newcommand\sch{Schrödinger}                                           %Schrödinger
+    \newcommand{\dd}[3][]{\frac{\mathrm{d}^{#1} #2}{\mathrm{d} #3^{#1}}}   %d/d^n
+    \newcommand{\dt}[2][]{\frac{\mathrm{d}^{#1} #2}{\mathrm{d} t^{#1}}}    %d/dt^n
+    \newcommand{\pp}[3][]{\frac{\partial^{#1} #2}{\partial #3^{#1}}}       %∂/∂^n
+    \newcommand{\pt}[2][]{\frac{\partial^{#1} #2}{\partial t^{#1}}}        %∂/∂t^n 
+    \newcommand{\f}[2]{\frac{#1}{#2}}                                      %A/B
+    \newcommand{\ff}[1]{\frac{1}{#1}}                                      %1/A
+    \newcommand\rank{\mathrm{rank}}                                        %rank
+    \newcommand\tr{\mathrm{tr}}                                            %tr
+    \newcommand\e[1]{\times 10^{#1}}                                       %×10^
+    \renewcommand\Re{\mathrm{Re}\ }                                          %Re
+    \renewcommand\Im{\mathrm{Im}\ }                                          %Im
+    \renewcommand\ln{\mathrm{ln}\ }                                          %ln
+    \newcommand\Ln{\mathrm{Ln}\ }                                            %Ln
+    \renewcommand\arg{\mathrm{arg}}                                        %arg
+    \newcommand\ip{\implies}                                               %→
+    \newcommand\tm{\times}                                                 %×
+    \renewcommand\l{\lambda}                                               %λ
+    \renewcommand\a{\alpha}                                                %α
+    \renewcommand\k{\kappa}                                                %κ
+    \renewcommand\o{\omega}                                                %ω
+    \newcommand\D{\Delta}                                                  %Δ
+    \newcommand\de{\delta}                                                 %δ
+    \renewcommand\t{\theta}                                                %θ
+    \renewcommand\epsilon{\varepsilon}                                     %ε
+    \newcommand\abs[1]{\left| #1 \right|}                                  %|A|
+    \renewcommand\exp{\mathrm{exp}\ }                                        %exp
+    \newcommand\se{\section}                                               %section
+    \newcommand\sub{\subsection}                                           %subsection
+    \newcommand\sumi{\sum_{i=1}^n}                                         %∑ 
+    \AtBeginDocument{\renewcommand{\bar}{\overline}}                       %bar
+    \AtBeginDocument{\renewcommand{\hat}{\widehat}}                        %hat
+    \newcommand\inti{\int_{0}^{infty}}                                     %∮
+    \renewcommand{\arraystretch}{1.2}                                      %change array stretch
+    \newcommand{\dis}{\displaystyle}                                       %big equation
+    \newcommand{\ar}[2][rl]{\begin{array}{#1}                              %begin an array
+            #2
+        \end{array}}                                                 
+    \newcommand\bkt[1]{\left< #1 \right>}                                  %<x>
+    \newcommand\putfig[2]{                                                 %put a figure
+        \begin{center}    
+            \includegraphics[scale=#1]{#2}
+        \end{center}}
+%end{newcommands} 
+
+%resize the parentheses
+\def\lparen{(} 
+\def\rparen{)} 
+\catcode`(=\active 
+\catcode`)=\active
+\def({\ifmmode \left\lparen \else\lparen\fi} 
+\def){\ifmmode \right\rparen \else\rparen\fi}
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%Fill in the appropriate information below
+\lhead{Name: 肖涵薄\\ StudentID: 31360164}  %replace with your name
+\rhead{SI 140 \\ Probability and Statistics \\ Semester Spring 2019 \\ Assignment 3} %replace XYZ with the homework course number, semester (e.g. ``Spring 2019"), and assignment number.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%Do not alter this block.
+\begin{document}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%Solutions to problems go below.  Please follow the guidelines from https://www.overleaf.com/read/sfbcjxcgsnsk/
+
+
+%Copy the following block of text for each problem in the assignment.
+\begin{problem}{1} 
+Let $\Omega=\{\omega_1,\omega_2,\omega_3\}$, $P(\omega_1)=P(\omega_2)=P(\omega_3)=1/3$, and define $X,Y$ and $Z$ as follows:
+\[
+X(\omega_1)=1,X(\omega_2)=2, X(\omega_3)=3;\]
+\[Y(\omega_1)=2,Y(\omega_2)=3, Y(\omega_3)=1;\]
+\[Z(\omega_1)=3,Z(\omega_2)=1, Z(\omega_3)=2.
+\]
+Show that these three random variables have the same probability distribution. Find the probability distributions of $X+Y$, $Y+Z$, and $Z+X$.
+\end{problem}
+\def({\lparen}\def){\rparen}
+\begin{sol}
+
+    $$\left\{\ar{
+        F_X(1) =& P(X(\o_1))=1/3\\
+        F_X(2) =& P(X(\o_1))+P(X(\o_2))=2/3\\
+        F_X(3) =& P(X(\o_1))+P(X(\o_2))+P(X(\o_3))=1
+    }\right.$$
+    $$\left\{\ar{
+        F_Y(1) =& P(Y(\o_3))=1/3\\
+        F_Y(2) =& P(Y(\o_3))+P(Y(\o_1))=2/3\\
+        F_Y(3) =& P(Y(\o_3))+P(Y(\o_1))+P(Y(\o_2))=1
+    }\right.$$
+    $$\left\{\ar{
+        F_Z(1) =& P(Z(\o_2))=1/3\\
+        F_Z(2) =& P(Z(\o_2))+P(Z(\o_3))=2/3\\
+        F_Z(3) =& P(Z(\o_2))+P(Z(\o_3))+P(Z(\o_1))=1
+    }\right.$$
+So $X,Y,Z$ have the same probability distribution. 
+$$\left\{\ar{
+    F_{X+Y}(3) =& P((X+Y)(\o_1)) = 1/3\\
+    F_{X+Y}(4) =& P((X+Y)(\o_1))+P((X+Y)(\o_3))=2/3\\
+    F_{X+Y}(5) =& P((X+Y)(\o_1))+P((X+Y)(\o_3))+P((X+Y)(\o_2))=1
+}\right.$$
+$$\left\{\ar{
+    F_{Y+Z}(3) =& (Y+Z)(\o_3) = 1/3\\
+    F_{Y+Z}(4) =& (Y+Z)(\o_3)+(Y+Z)(\o_2)=2/3\\
+    F_{Y+Z}(5) =& (Y+Z)(\o_3)+(Y+Z)(\o_2)+(Y+Z)(\o_1)=1
+}\right.$$
+$$\left\{\ar{
+    F_{Z+X}(3) =& (Z+X)(\o_2) = 1/3\\
+    F_{Z+X}(4) =& (Z+X)(\o_2)+(Z+X)(\o_1)=2/3\\
+    F_{Z+X}(5) =& (Z+X)(\o_2)+(Z+X)(\o_1)+(Z+X)(\o_3)=1
+}\right.$$
+\end{sol}
+
+
+%Copy the following block of text for each problem in the assignment.
+\begin{problem}{2}
+In No.1 find the probability distribution of 
+\begin{equation*}
+    X+Y-Z, \sqrt{(X^2+Y^2)Z}, \frac{Z}{|X-Y|}
+\end{equation*}
+\end{problem}
+\begin{sol}
+    $$\left\{\ar{
+        (X+Y-Z)(\o_1) =& 0\\
+        (X+Y-Z)(\o_2) =& 4\\
+        (X+Y-Z)(\o_3) =& 2
+    }\right.$$
+    $$    \ip \left\{\ar{
+        F_{X+Y-Z}(0) =& P((X+Y-Z)(\o_1)) = 1/3\\
+        F_{X+Y-Z}(2) =& P((X+Y-Z)(\o_1))+P((X+Y-Z)(\o_3))=2/3\\
+        F_{X+Y-Z}(4) =& P((X+Y-Z)(\o_1))+P((X+Y-Z)(\o_3))+P((X+Y-Z)(\o_2))=1
+    }\right.$$
+    $$\left\{\ar{
+        (\sqrt{(X^2+Y^2)Z})(\o_1) =& \sqrt{15}\\
+        (\sqrt{(X^2+Y^2)Z})(\o_2) =& \sqrt{13}\\
+        (\sqrt{(X^2+Y^2)Z})(\o_3) =& \sqrt{20}
+    }\right.$$
+    $$\ip \left\{\ar{
+        F_{\sqrt{(X^2+Y^2)Z}}(\sqrt{13}) =& P((\sqrt{(X^2+Y^2)Z})(\o_2)) = 1/3\\
+        F_{\sqrt{(X^2+Y^2)Z}}(\sqrt{15}) =& P((\sqrt{(X^2+Y^2)Z})(\o_2))+P((\sqrt{(X^2+Y^2)Z})(\o_1))=2/3\\
+        F_{\sqrt{(X^2+Y^2)Z}}(\sqrt{20}) =& P((\sqrt{(X^2+Y^2)Z})(\o_2))+P((\sqrt{(X^2+Y^2)Z})(\o_1))\\
+                                  &+P((\sqrt{(X^2+Y^2)Z})(\o_3))=1
+    }\right.$$
+    $$\left\{\ar{
+        (\f{Z}{|X-Y|})(\o_1) =& 3\\
+        (\f{Z}{|X-Y|})(\o_2) =& 1\\
+        (\f{Z}{|X-Y|})(\o_3) =& 1
+    }\right.$$
+    $$    \ip \left\{\ar{
+        F_{\f{Z}{|X-Y|}}(1) =& P((\f{Z}{|X-Y|})(\o_2))+P((\f{Z}{|X-Y|})(\o_3))=2/3\\
+        F_{\f{Z}{|X-Y|}}(3) =& P((\f{Z}{|X-Y|})(\o_2))+P((\f{Z}{|X-Y|})(\o_3))+P((\f{Z}{|X-Y|})(\o_1))=1
+    }\right.$$
+\end{sol}
+
+\def({\ifmmode \left\lparen \else\lparen\fi} \def){\ifmmode \right\rparen \else\rparen\fi}
+\begin{problem}{3}
+Let $X$ be integer-valued and let $F$ be its distribution function. Show that for every $x$ and $a<b$
+\[P(X=x)=\lim_{\epsilon\downarrow 0}[F(x+\epsilon)-F(x-\epsilon)]\]
+\[P(a<X<b)=\lim_{\epsilon\downarrow 0}[F(b-\epsilon)-F(a+\epsilon)]\]
+[The results are true for any random variable but require more advanced proofs even when $\Omega$ is countable.]
+\end{problem}
+\begin{sol}
+    
+    1.
+$$F(x+\epsilon)-F(x-\epsilon)=\sum [P(X<x+\epsilon)-P(X<x-\epsilon)]=\sum P(x-\ep \leq X<x+\ep)$$
+And bacause $X$ is integer-valued, $P(X)$ is not equal to zero around $x$ only when $X=x$.
+$$\lim_{\ep\downarrow0}\sum P(x-\ep \leq X<x+\ep)=P(X=x)$$
+So we have\[P(X=x)=\lim_{\epsilon\downarrow 0}[F(x+\epsilon)-F(x-\epsilon)]\]
+
+    2.\\
+$$\lim_{\epsilon\downarrow 0}[F(b-\epsilon)-F(a+\epsilon)] = P(a+\ep \leq X<b-\ep)$$
+$$=P(a < X < b) - P(a < X<a+\epsilon)-P(b-\ep \leq X<b)$$
+When $a$ is an integer, let $\ep<1$, $P(a < X<a+\epsilon)=0$. \\
+When $a$ is not an integer, and $a_{int}$ is the integer next to $a$, let $\ep<a_{int}-a$, $P(a < X<a+\epsilon) \leq P(a < X<a_{int})=0$. \\
+The same to $b$, Thus $P(a < X<a+\epsilon)=P(b-\ep \leq X<b)=0$,
+\[P(a \leq X<b)=\lim_{\epsilon\downarrow 0}[F(b-\epsilon)-F(a+\epsilon)]\]
+\end{sol}
+
+
+
+%Copy the following block of text for each problem in the assignment.
+
+
+
+
+%Copy the following block of text for each problem in the assignment.
+\begin{problem}{4}
+(a) Is there a discrete distribution with support 1,2,3,..., such that the value of the PMF at $n$ is proportional to $1/n$?
+
+(b) Is there a discrete distribution with support 1,2,3,..., such a that the value of the PMF at $n$ is proportional to $1/n^2$?
+\end{problem}
+\begin{sol}
+
+(1) Suppose $\dis P(x)=\f{k}{n}$, Then $\dis \sum P(x) = k\sum_1^{+\infty}\ff{n}=+\infty$, so it's impossible. \\
+
+(2) Suppose $\dis P(x)=\f{k}{n^2}$, Then $\dis\sum P(x) = k\sum_1^{+\infty}\ff{n^2}=\f{k\pi^2}{6} \ip k=\f{6}{\pi^2}$, so $\dis P(x)=\f{6}{\pi^2n^2}$. \\
+\end{sol}
+
+
+
+%Copy the following block of text for each problem in the assignment.
+\begin{problem}{5}
+Let $X$ have PMF
+\[P(X=k)=cp^k/k \text{ for } k=1,2,...\]
+where $p$ is a parameter with $0<p<1$ and $c$ is a normalizing constant. We have $c=-1/\log(1-p)$, as seen from the Taylor series
+\[-\log(1-p)=p+\frac{p^2}{2}+\frac{p^3}{3}+\cdots.\]
+This distribution is called the \textit{Logarithmic} distribution (because of the log in the above Taylor series), and has often been used in ecology. Find the mean of $X$.
+\end{problem}
+\begin{sol}
+
+    $$E(X)=\sum_1^{+\infty} kP(k) = c\sum_1^{+\infty}p^k= \f{cp}{1-p} = -\f{p}{(1-p)\log(1-p)}$$
+\end{sol}
+
+\begin{problem}{6}
+Suppose $F$ is some cumulative distribution function. Then for any real number $y$, the
+function $F_{y}$ defined by $F_{y}(x)$ = $F(x\text{-}  y)$ is also a cumulative distribution function. In fact, $F_{y}$ is just a “shifted” version of $F$
+\end{problem}
+\begin{sol}
+
+    (1) $$\lim_{x\rightarrow +\infty}F_y(x)=\lim_{x-y\rightarrow +\infty} F(x-y)=1$$
+        $$\lim_{x\rightarrow -\infty}F_y(x)=\lim_{x-y\rightarrow -\infty} F(x-y)=0$$    
+    (2) If $x_1<x_2$, then $x_1-y<x_2-y$, so $F_y(x_1)<F_y(x_2)$. 
+    
+    (3) $$\lim_{x\rightarrow x_0^+}F_y(x)=\lim_{x-y\rightarrow x_0^+-y}F(x-y)=F(x_0-y)=F_y(x_0)$$
+\end{sol}
+
+
+
+%Copy the following block of text for each problem in the assignment.
+\begin{problem}{7}
+Let X be a random variable, with cumulative distribution function $F_{X}$ . Prove
+that $P(X = a) = 0$ if and only if the function $F_{X}$ is continuous at $a$.
+\end{problem}
+\begin{sol}
+    
+    $F(a^+)-F(a^-)=\sum_{a^-}^{a^+}P(x)$, if the function $F_{X}$ is continuous at $a$, iff $F(a^+)-F(a^-)=0$. Thus $F(a^+)-F(a^-)=\sum_{a^-}^{a^+}P(x)=0 \iff P(a)=0$.
+\end{sol}
+
+
+%Copy the following block of text for each problem in the assignment.
+\begin{problem}{8}
+Suppose that
+$$p_{n} = cq^{n-1}p, 0 \leq n\leq m$$
+where c is a constant and m is a positive integer; cf. (4.4.8). Determine
+c so that $\sum_{n=1}^m p_{n}=1$. (This scheme corresponds to the waiting time
+for a success when it is supposed to occur within m trials.)
+
+\end{problem}
+\begin{sol}
+
+$$\sum_{n=1}^m p_{n}=cp\sum_{n=1}^m q^{n-1}=cp\f{1-q^m}{1-q}=1$$
+So that $$c=\f{1-q}{p(1-q^m)}.$$
+\end{sol}
+
+
+
+%Copy the following block of text for each problem in the assignment.
+\begin{problem}{9}
+A perfect coin is tossed n times. Let $Y_{n}$ denote the number of heads
+obtained minus the number of tails. Find the probability distribution
+of $Y_{n}$ and its mean.[Hint: there is a simple relation between $Y_{n}$ and the $S_{n}$ in Example 9 of 4.4]
+
+\end{problem}
+\begin{sol}
+Let $H$ be times of heads, and $T$ be times of tails.
+$$Y_n=H-T=H-(n-H)=2H-n.$$
+$H=\f{n+Y_n}{2}$.
+$$P_Y(Y_n=x) = (\ar[c]{H\\n})\bigg/(2^n) = (\ar[c]{\f{n+x}{2}\\n})\bigg/(2^n)$$
+$$E_Y(x) =\sum_{x=-n}^{n} \f{(\ar[c]{\f{n+x}{2}\\n})x}{2^n} = 0$$
+\end{sol}
+
+
+
+%Copy the following block of text for each problem in the assignment.
+\begin{problem}{10}
+Let
+$$P(X = n) \  \text{-} \   p_{n} = \frac{1}{n(n+1)}, n \geq 1$$
+Show that it is a probability distribution for X? Find $P(X \geq m)$ for any $m$ and $E(X)$.
+\end{problem}
+\begin{sol}
+
+    
+    1. For any $n>0$, $p_n>0$.
+
+    2. $\dis \sum_1^{+\infty} \f{1}{n(n+1)}=\sum_1^{+\infty} \ff{n}-\ff{n+1} = 1$
+
+    For reason 1,2, $p_n$ is a  probability distribution for X.
+    $$P(X\geq m)=\sum_m^{+\infty}\ff{n}-\ff{n+1} = \ff{m}$$
+    $$E(x) = \sum_1^{+\infty} n(\frac{1}{n(n+1)}) = \sum_1^{+\infty} \ff{n+1} = +\infty$$
+\end{sol}
+
+
+
+%Copy the following block of text for each problem in the assignment.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%Do not alter anything below this line.
+\end{document}

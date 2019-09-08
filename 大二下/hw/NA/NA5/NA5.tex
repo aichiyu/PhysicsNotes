@@ -1,0 +1,91 @@
+
+\documentclass[UTF8,9pt]{ctexart}
+\usepackage{../../template/homeworkTEMP/hw}
+\usepackage{listings}
+\lstset{language=Matlab}
+\setcounter{secnumdepth}{0}
+\title{数值分析第五次作业} 
+\begin{document} 
+\maketitle
+\se{3}
+其差分为:
+\begin{center}
+\begin{tabular}{|c|cccc|}
+        \hline
+        阶数  & 0    & 1 & 2 & 3 \\
+        \hline
+        1   & -1   &   &   &   \\
+        1.5 & 0.5  & 3 &   &   \\
+        2   & 2.5  & 4 & 1 &   \\
+        2.5 & 5    & 5 & 1 & 0 \\
+        3   & 8    & 6 & 1 & 0 \\
+        3.5 & 11.5 & 7 & 1 & 0\\
+        \hline
+\end{tabular}\end{center}
+则Newton插值多项式为:
+$$N(x)=-1+3(x-1)+(x-1.5)$$
+\se{4}
+设存在一点$x_{n+1},f(x_{n+1})$. 对这$n+1$个点进行插值, 
+$$
+\begin{array}{|c|c|c|c|c|c|}
+        \hline
+        \text{阶数} & 0          & 1                           & 2                                              & \cdots & n                                      \\ \hline
+        x_1       & 0          &                             &                                                &        &                                        \\ \hline
+        x_2       & 0          & 0                           &                                                &        &                                        \\ \hline
+        \vdots    & \vdots     & \vdots                      & \ddots                                         &        &                                        \\ \hline
+        x_n       & 0          & 0                           & 0                                              & \cdots &                                        \\ \hline
+        x_{n+1}   & f(x_{n+1}) & \f{f(x_{n+1})}{x_{n+1}-x_n} & \f{f(x_{n+1})}{(x_{n+1}-x_n)(x_{n+1}-x_{n-1})} & \cdots & \f{f(x_{n+1})}{\Pi_1^n(x_{n+1}-x_{i})} \\ \hline
+\end{array}
+$$
+$n+1$个点插值$n$次多项式可得到精确解, 因此
+$$f(x)=N(x)= \f{f(x_{n+1})}{\prod_1^n(x_{n+1}-x_{i})}\prod_{i=1}^{n}(x-x_i)$$
+求导:
+$$f'(x_j)= \f{f(x_{n+1})}{\prod_1^n(x_{n+1}-x_{i})}\prod_{i=1,i\neq j}^{n}(x_j-x_i)$$
+因此
+$$\f{x_j^{n-1}}{f'(x_j)}=\f{\prod_1^n(x_{n+1}-x_{i})}{f(x_{n+1})}\cdot\ff{\prod_{i=1,i\neq j}^{n}(1-\f{x_i}{x_j})}$$
+通过$f(x)$表达式可以发现$\f{\prod_1^n(x_{n+1}-x_{i})}{f(x_{n+1})}$正是$x$最高次项系数的倒数, 即$a_n^{-1}$. 即
+$$\f{x_j^{n-1}}{f'(x_j)}=a_n^{-1}\cdot\ff{\prod_{i=1,i\neq j}^{n}(1-\f{x_i}{x_j})}$$
+又由于
+$$\left\{\ar{\dis\sum^n_{j=1} \ff{\prod_{i=1,i\neq j}^{n}(1-\f{x_i}{x_j})}=\f{\prod_{i,j=1}^{n}(1-\f{x_i}{x_j})}{\prod_{i,j=1}^{n}(1-\f{x_i}{x_j})}=1\\
+\dis\sum^n_{j=1} \ff{x_j\prod_{i=1,i\neq j}^{n}(1-\f{x_i}{x_j})}=0
+}\right.
+$$
+即$$\left\{\ar[l]{\dis\sum^n_{j=1} \f{x_j^{n-1}}{f'(x_j)}=a_n^{-1}\\
+\dis\sum^n_{j=1} \f{x_j^{k}}{f'(x_j)}=0,\quad(k<n-1)}\right.$$
+\se{5}
+(1) $$P(x)=\a_0(x)y_0+\a_1(x)y_1+\a_2(x)y_2+\b_2(x)y'_0 = \a_0(x)-\a_2(x)$$
+根据$\a(x_0)=1,\a(x_{1,2})=0$, 设$\a_0=(Ax+B)l_0$, 满足
+$$\ar{
+        Ax_0+B=1\\
+        ((Ax+B)l_0 \left.(x) \, )' \big|_{x_0}=0
+}$$
+$$A=\f{3}{2},B=\f{5}{2}$$
+$$\ip\a_0=\f{1}{4}x(3x+5)(x-1)$$
+同理, 设$\a_2=\f{(x-x_0)^2(x-x_1)}{(x_2-x_0)^2(x_2-x_1)} = \ff{4}x(x+1)^2$.
+则$$P(x)=\a_0(x)-\a_2(x)=\f{1}{4}x(3x+5)(x-1)-\ff{4}x(x+1)^2=-\f{3}{2}x+\f{x^3}{2}$$
+(2) $$P(0.5)=-\f{11}{16},f(0)-P(0)=f(1)-P(1)=0$$
+$$R_4(0.5)=\abs{\f{f^{(4)}(x)}{4!}(x-0)(x-1)(x+1)^2}_{x=0.5}<\ff{4!}\ff{2}\ff{2}(\f{3}{2})^2=\f{3}{128}$$
+\se{6}
+(1) 设$$ 
+\begin{aligned} p(x)=& f(x_{0})+f\left[x_{0}, x_{1}\right](x-x_{0}) \\ &+f\left[x_{0}, x_{1}, x_{2}\right](x-x_{0})(x-x_{1}) \\ &+A(x-x_{0})(x-x_{1})(x-x_{2}) \end{aligned}
+ $$
+则$P(x)=-\f{3}{4}+(x-x_0)(x-x_1)+A(x-x_0)(x-x_1)(x-x_2)$.\\
+代入$P'(x_1)=f'(x_1)$:
+$$A=\f{f'(x_1)-(x_1-x_0)-(x_1-x_1)}{(x_1-x_0)(x_1-x_2)} = 0$$
+即$$P(x)=-\f{3}{4}+(x+\ff{2})(x-\ff{2}) = x^2-1$$
+(2) $$R(1) = \abs{f(1)-P(1)}=\abs{\f{f^{(4)}(x)}{4!}(x-2)(x-1/2)^2(x+1/2)}_{x=1}<\ff{64}$$
+又由于$P(1)=0$
+即$\abs{f(1)}<\ff{64}$.
+\se{7}
+(1) 给定节点$a\leq x_0<x_1<\cdots<x_n\leq b$, 若函数$S(x)\in C^3[a,b]$, 且每个小区间$[x_j,x_{j+1}]$上是4次多项式, 则称$S(x)$是节点$a\leq x_0<x_1<\cdots<x_n\leq b$上的4次样条函数. 若在节点上给定函数数值$f(x_j)=y_j$, 且满足$$S(x_j)=y_j,\quad j=0,1,\cdots,n.$$则称$S(x)$为4次样条插值函数. 
+
+(2)
+$$ 
+S(x)=\left\{\begin{array}{ll}{x^{4}+2 x+1} & {0 \leq x \leq 1} \\ {(x-1)^{4}+a(x-1)^{3}+b(x-1)^{2}+c(x-1)+d} & {1 \leq x \leq 3}\end{array}\right.
+ $$
+$$S(1_-)=S(1_+)\ip 3=d    $$
+$$S'(1_-)=S'(1_+)\ip 6=c    $$
+$$S''(1_-)=S''(1_+)\ip 12=2b \ip b=6    $$
+$$S'''(1_-)=S'''(1_+)\ip 24=6a\ip a=4    $$
+
+\end{document}

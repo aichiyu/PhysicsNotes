@@ -1,0 +1,173 @@
+\documentclass[UTF8,9pt]{ctexart}
+\usepackage{../../template/homeworkTEMP/hw}
+\setlength{\arraycolsep}{1pt}
+\setcounter{secnumdepth}{0}
+\title{The 4th HW of Electrodynamics} 
+\begin{document} 
+\maketitle
+\se{Q1}
+A hollow cube has conducting walls defined by six planes $x=0,\ y=0,\ z=0$, and $x=a$, $y=a$, $z=a$. The walls $z=0$ and $z=a$ are held at a constant potential $V$. The other four sides are all at zero potential.
+
+a) Let $\varphi(x, y, z)=X(x) Y(y) Z(z)$, Plugging into the Laplace’s equation, we get $\frac{1}{X(x)} \frac{d^{2} X}{d x^{2}}+\frac{1}{Y(y)} \frac{d^{2} Y}{d y^{2}}+\frac{1}{Z(z)} \frac{d^{2} Z}{d z^{2}}=0$.\\
+The solutions of $X(x),Y(y),Z(z)$ are 
+$$\varphi = \sum_{l, m, n}(C_{x l} \cos \alpha_{l} x+D_{x l} \sin \alpha_{l} x)(C_{y m} \cos \beta_{m} y+D_{y m} \sin \beta_{m} y)(C_{z n} \cosh \gamma_{n} z+D_{z n} \sinh \gamma_{n} z)$$
+Since $\varphi=0$ for $x,y=0,a$, 
+$$C_{x l}=C_{y m}=0,C_{zn}=C_{zn}\cosh \gamma_na+D_{zn}\sinh\gamma_na,\ \a_l=\frac{l \pi}{a}, \beta_{m}=\frac{m \pi}{a}, \gamma_{l m}=\f{\pi}{a} \sqrt{l^2+m^2}$$
+The solution is: 
+$$\varphi=\sum_{l, m=1}^{\infty} A_{l m} \sin (\alpha_{l} x) \sin (\beta_{m} y) \left[\cosh (\gamma_{lm} z)+\f{1-\cosh(\sqrt{l^2+m^2}\pi)}{\sinh(\sqrt{l^2+m^2}\pi)}\sinh(\gamma_{lm} z)\right]$$
+$$V=\sum_{l, m=1}^{\infty} A_{l m} \sin (\alpha_{l} x) \sin (\beta_{m} y) \left[\cosh (\sqrt{l^2+m^2}\pi)+\f{1-\cosh(\sqrt{l^2+m^2}\pi)}{\sinh(\sqrt{l^2+m^2}\pi)}\sinh(\sqrt{l^2+m^2}\pi)\right]$$
+$\displaystyle \quad=\sum_{l, m=1}^{\infty} A_{l m} \sin (\alpha_{l} x) \sin (\beta_{m} y)$
+$$A_{l m}=\frac{4 V}{a^2} \int_{0}^{a} d x \int_{0}^{a} d y \sin (\f{l\pi}{a} x) \sin(\f{m\pi}{a} y) = \f{16V}{ml\pi^2}, \ for\ m,n\ odd.$$
+b)
+$$\ar{
+    \displaystyle \varphi(\f{a}{2},\f{a}{2},\f{a}{2}) =&\displaystyle  \sum_{m,n\ odd}^{\infty} \f{16V}{ml\pi^2} \sin (\f{l\pi}{2}) \sin (\f{m\pi}{2})\cdot\\
+    &\displaystyle  \left[\cosh (\sqrt{l^2+m^2}\f{\pi}{2})+\f{1-\cosh(\sqrt{l^2+m^2}\pi)}{\sinh(\sqrt{l^2+m^2}\pi)}\sinh(\sqrt{l^2+m^2}\f{\pi}{2})\right]
+}$$
+With $\sin(\f{(2n+1)\pi}{2})=(-1)^n$, Let $2i+1=m,\ 2j+1=l.$
+$$\ar{
+    \displaystyle \varphi(\f{a}{2},\f{a}{2},\f{a}{2}) =&\displaystyle  \sum_{i,j=0}^{\infty} \f{16V}{(2i+1)(2j+1)\pi^2} (-1)^{i+j}\cdot\\
+    &\displaystyle  \left[\cosh (\sqrt{l^2+m^2}\f{\pi}{2})+\f{1-\cosh(\sqrt{l^2+m^2}\pi)}{\sinh(\sqrt{l^2+m^2}\pi)}\sinh(\sqrt{l^2+m^2}\f{\pi}{2})\right]
+}$$
+Let$V=1$. For $i=j=0$, $\varphi = 0.347546$.\\
+For $i=j=1$, $\varphi = 0.332958$.\\
+For $i=1,j=2$, $m=5,n=3$, $\D\varphi = -0.000023$. \\
+Thus 4 term is needed to achieve 3 significant figures.
+
+c) 
+$$\sigma = \epsilon_0 \pp{\varphi}{z} = \frac{16 \epsilon_{0} V}{\pi a} \sum_{l, m \text { odd }} \frac{\sqrt{l^{2}+m^{2}}}{l m} \tanh (\sqrt{l^{2}+m^{2}} \pi / 2) \sin (\frac{l \pi x}{a}) \sin (\frac{m \pi y}{a})$$
+\se{Q2}
+A spherical surface of radius $R$ has charge uniformly distributed over its surface with a density $Q/4\pi R^2$, except for a spherical cap at the north pole, defined by the cone $\t=\a$.
+
+a) 
+$\phi_{in}=\sum a_nr^n,\ \phi_{out}=\sum\f{b_n}{r^{n+1}}$. As $E_{r \text { out }}|_{r=R}=.E_{r \text { in }}|_{r=R}+\frac{1}{\epsilon_{0}} \sigma$, 
+$$\begin{aligned} 
+    \Phi_{\mathrm{in}} &=\sum_{l=0}^{\infty} \alpha_{l}(\frac{r}{R})^{l} P_{l}(\cos \theta) \\ 
+\Phi_{\mathrm{out}} &=\sum_{l=0}^{\infty} \alpha_{l}(\frac{R}{r})^{l+1} P_{l}(\cos \theta) 
+\end{aligned}$$
+Thus
+$$\begin{array}{l}{E_{r \text { in }}=-\sum_{l=1}^{\infty} \frac{l \alpha_{l}}{R}(\frac{r}{R})^{l-1} P_{l}(\cos \theta)} \\ {E_{\text {rout}}=\sum_{l=0}^{\infty} \frac{(l+1) \alpha_{l}}{R}(\frac{R}{r})^{l+2} P_{l}(\cos \theta)}\end{array}$$
+    Substituting this,
+$$\sigma(\cos \theta)=\epsilon_{0}[E_{r \text { out }}-E_{r \text { in }}]_{r=R}=\sum_{l=0}^{\infty} \frac{(2 l+1) \epsilon_{0} \alpha_{l}}{R} P_{l}(\cos \theta)$$
+by the relation
+$$\frac{(2 l+1) \epsilon_{0} \alpha_{l}}{R}=\frac{2 l+1}{2} \int_{-1}^{1} \sigma(\cos \theta) P_{l}(\cos \theta) d(\cos \theta)$$
+gives
+$$ 
+\alpha_{l}=\frac{Q}{8 \pi \epsilon_{0} R} \int_{-1}^{\cos \alpha} P_{l}(\cos \theta) d(\cos \theta)=\frac{Q}{8 \pi \epsilon_{0} R} \frac{1}{2 l+1}[P_{l+1}(\cos \alpha)-P_{l-1}(\cos \alpha)]
+ $$
+Hence
+$$ 
+\Phi=\frac{Q}{8 \pi \epsilon_{0}} \sum_{l=0}^{\infty} \frac{1}{2 l+1}[P_{l+1}(\cos \alpha)-P_{l-1}(\cos \alpha)] \frac{r^{l}}{R^{l+1}} P_{l}(\cos \theta)
+ $$
+
+b) Noting that $E_{in} \approx r^{l-1}$, we see that only the $l = 1$ component survives at the origin. Thus
+$$ 
+\begin{aligned} E_{r}(r=0, \theta=0) &=-\frac{\alpha_{1}}{R} P_{1}(1) \\ &=-\frac{Q}{8 \pi \epsilon_{0} R^{2}} \frac{1}{3}\left[P_{2}(\cos \alpha)-P_{0}(\cos \alpha)\right] \\ &=-\frac{Q}{16 \pi \epsilon_{0} R^{2}}(\cos ^{2} \alpha-1)=\frac{Q \sin ^{2} \alpha}{16 \pi \epsilon_{0} R^{2}} \end{aligned}
+ $$
+Also
+ $$ 
+\vec{E}=\frac{Q \sin ^{2} \alpha}{16 \pi \epsilon_{0} R^{2}} \hat{z}
+ $$
+
+c) 
+Series expanion:
+$$ 
+P_{l}(\cos \alpha) \approx P_{l}(1-\frac{1}{2} \alpha^{2}) \approx P_{l}(1)-\frac{1}{2} \alpha^{2} P_{l}^{\prime}(1)=1-2 \delta_{l,-1}-\frac{1}{2} \alpha^{2} P_{l}^{\prime}(1)
+$$
+$$ 
+\ip P_{l+1}(\cos \alpha)-P_{l-1}(\cos \alpha) \approx 2 \delta_{l, 0}-\frac{1}{2} \alpha^{2}[P_{l+1}^{\prime}(1)-P_{l-1}^{\prime}(1)]
+ $$
+Using solution in b), 
+$$ 
+\Phi \approx \frac{Q}{4 \pi \epsilon_{0}} \frac{1}{r_{>}}-\frac{Q \alpha^{2}}{16 \pi \epsilon_{0}} \sum_{l=0}^{\infty} \frac{r_{<}^{l}}{r_{>}^{l+1}} P_{l}(\cos \theta)
+ $$
+Where $r_{<}=\min (r, R), \quad r_{>}=\max (r, R)$. Recalling the Green's function expansion,
+$$ 
+\Phi \approx \frac{Q}{4 \pi \epsilon_{0}} \frac{1}{r_{>}}-\frac{Q \alpha^{2} / 4}{4 \pi \epsilon_{0}} \frac{1}{|\vec{r}-R \hat{z}|}
+ $$
+ By linear superposition, the very small cap can be thought of electively as an oppositely charged particle located at $R^z$ with charge given by
+ $$ 
+ q=-\sigma d A=-\frac{Q}{4 \pi R^{2}}(R^{2} d \Omega)=-\frac{Q}{4 \pi}(\pi \alpha^{2})=-\frac{Q \alpha^{2}}{4}
+  $$
+Hence $\vec{E}(0) \approx \frac{Q \alpha^{2} / 4}{4 \pi \epsilon_{0}} \frac{\hat{z}}{R^{2}}$ for $\a \approx 0$. \\
+
+And then we consider the case $a \rightarrow \pi$. 
+$$ 
+P_{l}(\cos \alpha)=P_{l}(\cos (\pi-\beta))=P_{l}(-\cos \beta) \approx P_{l}(-1+\frac{1}{2} \beta^{2}) \approx(-1)^{l}+\frac{1}{2} \beta^{2} P_{l}^{\prime}(-1)
+ $$
+ $$ 
+\begin{aligned} P_{l+1}(\cos \alpha)-P_{l-1}(\cos \alpha) & \approx \frac{1}{2} \beta^{2}[P_{l+1}^{\prime}(-1)-P_{l-1}^{\prime}(-1)] \\ &=\frac{2 l+1}{2} \beta^{2} P_{l}(-1)=\frac{2 l+1}{2} \beta^{2}(-1)^{l} \end{aligned}
+ $$
+ Using solution in b), 
+ $$ 
+\begin{aligned} \Phi & \approx \frac{Q \beta^{2}}{16 \pi \epsilon_{0}} \sum_{l=0}^{\infty}(-1)^{l} \frac{r_{<}^{l}}{r_{>}^{l+1}} P_{l}(\cos \theta)=\frac{Q \beta^{2}}{16 \pi \epsilon_{0}} \sum_{l=0}^{\infty} \frac{r_{<}^{l}}{r_{>}^{l+1}} P_{l}(-\cos \theta) \\ &=\frac{Q \beta^{2} / 4}{4 \pi \epsilon_{0}} \frac{1}{|\vec{r}+R \hat{z}|} \end{aligned}
+ $$
+Finally, subsitute $\alpha=\pi-\beta$ in it, 
+$$ 
+\vec{E}(0) \approx \frac{Q \beta^{2} / 4}{4 \pi \epsilon_{0}} \hat{z} R^{2}
+ $$
+\se{Q3}
+A point charge $q$ is located in free space a distance $d$ from the center of a dielectric sphere of radius $a$ and dielectric constant $\epsilon_r$.
+
+a) Let $q$ located at $(d,0,0)$. let $\varphi_{1} $ be the potential made by point charge, let $\varphi_{2} $ be the potential made by dielectric %for $r>a$, and $\varphi_{3}$ for $r<a$. 
+There is no free charge anywhere in the space, $\nabla^2\varphi=0$.
+And we know
+$$ 
+\Phi_{\mathrm{out}}=\frac{1}{4 \pi \epsilon_{0}}(\frac{q}{|\mathbf{r}-d \hat{\mathbf{z}}|}+\frac{q^{\prime}}{|\mathbf{r}-(a^{2} / d) \hat{\mathbf{z}}|})
+ $$
+ $$ 
+\ip \begin{array}{l}{\Phi_{\mathrm{out}}=\frac{1}{4 \pi \epsilon_{0}} \sum_{l=0}^{\infty} P_{l}(\cos \theta) \frac{1}{r^{l+1}}(q d^{l}+q^{\prime} \frac{a^{2 l}}{d^{l}}) \quad \text { if } r>d} \\ {\Phi_{\mathrm{out}}=\frac{1}{4 \pi \epsilon_{0}} \sum_{l=0}^{\infty} P_{l}(\cos \theta)(q \frac{r^{l}}{d^{l+1}}+q^{\prime} \frac{a^{2 l}}{d^{l} r^{l+1}}) \text { if } r<d}\end{array}
+ $$
+ There is no charge inside the sphere, so all we need is an image charge $q''$ outside the sphere at $z = d$ to simulate the effects of the dielectric material. 
+ $$ 
+\Phi_{\mathrm{in}}=\frac{1}{4 \pi \epsilon}(\sum_{l=0}^{\infty} q^{\prime \prime} \frac{r^{l}}{d^{l+1}} P_{l}(\cos \theta))
+ $$
+ Apply the boundary condition. When $r=a,\ \epsilon_0E_{r-}=\epsilon_rE_{r+},\ \epsilon_{0} \frac{\partial \varphi_{r-}}{\partial r}=\epsilon_r \frac{\partial \varphi_{r+}}{\partial r} $.
+ $$ 
+q l+q^{\prime}(-l-1) \frac{d}{a}=q^{\prime \prime} l,\quad q^{\prime \prime}=\frac{\epsilon}{\epsilon_{0}} q+\frac{\epsilon}{\epsilon_{0}} q^{\prime} \frac{d}{a}
+ $$
+The final solution is:
+$$ 
+\Phi_{\mathrm{in}}=\frac{q}{4 \pi \epsilon_{0} d}(1+\sum_{l=1}^{\infty} \frac{2 l+1}{(l+1)+l \epsilon / \epsilon_{0}}(\frac{r}{d})^{l} P_{l}(\cos \theta))
+ $$
+ $$ 
+\Phi_{\mathrm{out}}=\frac{q}{4 \pi \epsilon_{0} d} \sum_{l=0}^{\infty} P_{l}(\cos \theta) \frac{d^{l+1}}{r^{l+1}}(1+\frac{(\frac{\epsilon_{0}}{\epsilon}-1) l}{(\frac{\epsilon_{0}}{\epsilon}(l+1)+l)}(\frac{a}{d})^{2 l+1}),\ \text{if}\ r>d.
+ $$
+ $$ 
+\Phi_{\mathrm{out}}=\frac{q}{4 \pi \epsilon_{0} d} \sum_{l=0}^{\infty} P_{l}(\cos \theta)((\frac{r}{d})^{l}+\frac{(\frac{\epsilon_{0}}{\epsilon}-1) l}{(\frac{\epsilon_{0}}{\epsilon}(l+1)+l)}(\frac{a}{d})^{l}(\frac{a}{r})^{l+1})\,\ \text{if}\ r<d.
+ $$
+
+b) near thecenter of the sphere $r<<d$.  the higher order terms become negligible.
+$$ 
+\begin{array}{l}
+{\Phi_{\text { in }}=\frac{q}{4 \pi \epsilon_{0} d}[1+\frac{3}{1+2 \epsilon_{0} / \epsilon} \frac{r}{d} \cos \theta]} \\ {\Phi_{\text { in }}=\frac{q}{4 \pi \epsilon_{0} d}[1+\frac{3}{2+\epsilon / \epsilon_{0}} \frac{z}{d}]} \\ 
+{E=-\nabla \Phi} \\ 
+{E=-\frac{q}{4 \pi \epsilon_{0} d^{2}}[\frac{3}{2+\epsilon / \epsilon_{0}}] \hat{\mathbf{z}}}\end{array}
+ $$
+c) 
+$$ 
+\Phi_{\mathrm{in}}=\frac{q}{4 \pi \epsilon_{0} d}(1+\sum_{l=1}^{\infty} \frac{2 l+1}{(l+1)+l \epsilon / \epsilon_{0}}(\frac{r}{d})^{l} P_{l}(\cos \theta)) \approx \frac{q}{4 \pi \epsilon_{0} d}
+ $$
+ $$ 
+\Phi_{\mathrm{out}}=\frac{q}{4 \pi \epsilon_{0} d} \sum_{l=0}^{\infty} P_{l}(\cos \theta) \frac{d^{l+1}}{r^{l+1}}(1+\frac{(\frac{\epsilon_{0}}{\epsilon}-1) l}{(\frac{\epsilon_{0}}{\epsilon}(l+1)+l)}(\frac{a}{d})^{2 l+1}),\ \text{if}\ r>d.
+ $$
+ $$ 
+ \approx \frac{q}{4 \pi \epsilon_{0} d} \sum_{l=0}^{\infty} P_{l}(\cos \theta) \frac{d^{l+1}}{r^{l+1}}(1-(\frac{a}{d})^{2 l+1}),\ \text{if}\ r>d.
+$$
+$$ 
+\Phi_{\mathrm{out}}=\frac{q}{4 \pi \epsilon_{0} d} \sum_{l=0}^{\infty} P_{l}(\cos \theta)((\frac{r}{d})^{l}+\frac{(\frac{\epsilon_{0}}{\epsilon}-1) l}{(\frac{\epsilon_{0}}{\epsilon}(l+1)+l)}(\frac{a}{d})^{l}(\frac{a}{r})^{l+1}),\ \text{if}\ r<d.
+ $$
+ $$ 
+\approx \frac{q}{4 \pi \epsilon_{0} d} \sum_{l=0}^{\infty} P_{l}(\cos \theta)((\frac{r}{d})^{l} - (\frac{a}{d})^{l}(\frac{a}{r})^{l+1}),\ \text{if}\ r<d.
+ $$
+\se{Q4}
+Two concentric conducting spheres of inner and outer radii $a$ and $b$, respectively, carry charges $\pm Q$. The empty space between the spheres is half-filled by a hemispherical shell of dielectric (of dielectric constant $\epsilon_r$), as shown in the figure.
+
+a)
+%In the vacuum: $E=E_1$, and in the dielectric: $E=E_2$.
+$$2\pi r^2 (\epsilon_0+\epsilon_r)E=Q \ip E = \f{Q}{2\pi r^2 (\epsilon_0+\epsilon_r)}\hat{\bm{e}}_r$$
+b) In the vacuum: $\sigma_{free1}$, and in the dielectric: $\sigma_{free2}$.
+$$\sigma_{free1} = \epsilon_0 E=\f{\epsilon_0 Q}{2\pi a^2 (\epsilon_0+\epsilon_r)}, \quad \sigma_{free2} = \epsilon_r E=\f{\epsilon_r Q}{2\pi a^2 (\epsilon_0+\epsilon_r)}$$
+
+c)
+$$\sigma_{polar}=-D+\epsilon_0E_2=\epsilon_r E=\f{(\epsilon_0-\epsilon_r) Q}{2\pi a^2 (\epsilon_0+\epsilon_r)}$$
+\end{document}
