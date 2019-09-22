@@ -1,18 +1,54 @@
 \documentclass[UTF8]{ctexart}
+\setlength{\headheight}{13pt}
 \usepackage{../template/Notes/notes}
 \title{Quantum Mechanics}
+\numberwithin{equation}{subsection}
 \begin{document}
 \maketitle
+\tableofcontents
+\newpage
 \se{早期量子现象}
 \sub{光电效应} 
+Einstein's concept of photons: A beam of light consists of small packages of energy, photons or quanta.\\
+Einstein's explanation of the photoelectric effect.\\
+Energy and momentum of a photon: $E = h\nu; p = h/\l$.
 \sub{Compton效应}
+$$
+\Delta \lambda=\lambda^{\prime}-\lambda=\frac{h}{m_{e} c}(1-\cos \phi)=\frac{2 h}{m_{e} c} \sin ^{2}(\phi / 2)
+$$
 \sub{氢原子光谱}
+Rydberg formula:
+$$
+\frac{1}{\lambda}=R_{H}\left(\frac{1}{m^{2}}-\frac{1}{n^{2}}\right), n>m=1,2,3, \cdots, \infty
+$$
+First six spectral series of the hydrogen atom: The Lyman, Balmer, Paschen, Brackett, Pfund, Humphreys series.\\
+Ritz combination principle: For a given atom, if there exist spectral lines at two wave numbers, then there often exists another spectral line precisely at the sum of the two wave numbers.\\
+Energy levels of the hydrogen atom inferred from its spectrum: $E_{n}=-\frac{R_{H} h c}{n^{2}}, n=1,2,3, \cdots, \infty$.\\
+Bohr's hypotheses:Stationary states, Quantization condition, Quantum transition.\\
+Energy levels of the hydrogen atom in Bohr's theory:
+$$
+E_{n}=-\frac{1}{n^{2}} \frac{m_{e} e^{4}}{2\left(4 \pi \epsilon_{0}\right)^{2} \hbar^{2}}=-\frac{1}{n^{2}} \frac{e^{2}}{2\left(4 \pi \epsilon_{0}\right) a_{0}}, n=1,2,3, \cdots, \infty
+$$
+Bohr-Sommerfeld quantization condition:
+$$
+\oint_{E} d q_{j} p_{j}=n_{j} h, n_{j}=1,2, \cdots, j=1,2, \cdots, d
+$$
 \sub{Franck-Hertz实验}
+Franck-Hertz experiment: he existence of discrete energy levels (quantization of energy) in the mercury atom.
 \sub{Stem-Gerlach实验}
+Stern-Gerlach experiment: The quantization of the spatial orientation of angular momentum.
 \sub{Wien辐射定律}
+$$
+E_{\lambda}(T)=\frac{2 \pi h c^{2}}{\lambda^{5}} e^{-h c / \lambda k_{B} T}
+$$
 \sub{Rayleigh-Jeans辐射定律}
+$$
+E_{\lambda}(T)=\frac{2 \pi c k_{B} T}{\lambda^{4}}
+$$
 \sub{Planck辐射定律}
-
+Planck's quantum hypothesis: The energy of a harmonic oscillator of frequency $\nu$ can take on one of the values: $0,h\nu,2h\nu,\cdots$.
+Planck's of blackbody radiation:$E_{\lambda}(T)=\frac{2 \pi h c^{2}}{\lambda^{5}} \frac{1}{e^{h c / \lambda k_{B} T}-1}$.\\
+Date of birth of quantum theory: December 14, 1900.
 \se{波粒二象性}
 \sub{De Broglie波}
 De Broglie假说: 和光子一样, 物质微粒也具有波动性. 
@@ -21,7 +57,10 @@ $$\begin{aligned}
 E &= h\nu = \hbar \omega \\
 {p} &= \hbar {k}
 \end{aligned}$$
+de Broglie色散关系
+$$\boxed{\omega ={\frac{\hbar k^{2}}{2m}}}$$
 \sub{Young双缝实验}
+
 \sub{物质波的衍射}
 \sub{波函数}
 波函数$\psi(\bm{r},t)$满足的条件:
@@ -31,13 +70,16 @@ E &= h\nu = \hbar \omega \\
 }
 \sub{波函数的统计解释}
 \sub{Schrödinger方程}
-$$i\hbar\pt{}\psi(\bm{r},t)=-\f{\hbar^2}{2m}\laplace\psi(\bm{r},t)+V(\bm{r},t)\psi(\bm{r},t)$$
+$$\i\hbar\pt{}\psi(\bm{r},t)=-\f{\hbar^2}{2m}\laplace\psi(\bm{r},t)+V(\bm{r},t)\psi(\bm{r},t)$$
 \sub{连续性方程}
 \sub{叠加原理}
 由于Schrödinger方程对$\psi$是线性的, 叠加原理成立, 再加上概率幅的解释, 就能给出波动型的结果. 
 \sub{自由粒子}
-若粒子在空间各点$V=C$, 则粒子未受力的作用, 我们说它是自由的.
+若粒子在空间各点$V=C$, 则粒子未受力的作用, 我们说它是自由的. 自由粒子的波函数为
+$$\e^{\i[\bm{k}\cdot \bm{x}-\o(k) t]},\quad \o=\f{\hbar k^2}{2m}$$
+的线性叠加.
 \sub{波包}
+
 \sub{自由波包的时间演化}
 
 \se{力学量的表述}
@@ -49,7 +91,7 @@ $$\hua{
 }$$
 \sub{厄密算符}
 厄密算符$A\T$定义: 
-$$\kt{\psi'}=A\kt{\psi}\iff \br{\psi}=\br{\psi}A\T$$
+$$\kt{\psi'}=A\kt{\psi}\iff \br{\psi}'=\br{\psi}A\T$$
 推论:
 \rk{
     \item 厄米算符$A$的本征值都是实数. 
@@ -154,11 +196,11 @@ $$A_{kl}=\sum_{i,j}S\T_{ki}A_{ij}S_{jl}$$
 ECOC\\
 若$A, B, \dots$的共同本征矢构成一个正交归一基, 则$A, B, \dots$构成一个ECOC. 此时, 1. $A, B, \dots$是两两对易的. 2. 给出了全体$A, B, \dots$的本征值的一个数组, 便足以决定唯一的共同本征矢. \\
 两个典型的ECOC: $\{X,Y,Z\},\ \{P_x,P_y,P_z\},\ \{X,P_y,P_z\}$. 
-\sub{坐标$\{\kt{\bm{r}}\}$表象与动量$\{\kt{\bm{p}}\}$表象}
+\sub{坐标\texorpdfstring{$\{\kt{\bm{r}}\}$}{}表象与动量\texorpdfstring{$\{\kt{\bm{p}}\}$表象}{}}
 引入两个特殊的基:
 $$\ar{
     \xi_{\bm{r_0}}(\bm{r})\x\delta(\bm{r}-\bm{r}_0)\\
-    v_{\bm{p_0}}(\bm{r})\x (2\pi\hbar)^{-3/2}e^{\f{i}{h}\bm{p}_0\cdot \bm{r}}
+    v_{\bm{p_0}}(\bm{r})\x (2\pi\hbar)^{-3/2}\e^{\f{i}{h}\bm{p}_0\cdot \bm{r}}
 }$$
 利用封闭性关系式, 可以计算得到
 $$\ar{
@@ -166,15 +208,15 @@ $$\ar{
     \bkt{\bm{p}_0|\psi} \x \bar{\psi}(\bm{p}_0)\\
 }$$
 变换表象$\{\kt{\bm{r}}\} \to \{\kt{\bm{p}}\}$需要用到下面的数:
-$$\bkt{\bm{r}|\bm{p}}=\bkt{\bm{p}|\bm{r}}^*=(2\pi\hbar)^{-3/2}e^{\f{i}{h}\bm{p}_0\cdot \bm{r}}$$
+$$\bkt{\bm{r}|\bm{p}}=\bkt{\bm{p}|\bm{r}}^*=(2\pi\hbar)^{-3/2}\e^{\f{i}{h}\bm{p}_0\cdot \bm{r}}$$
 在$\{\kt{\bm{r}}\}$表象中, 
-$$\boxed{\bm{P}=\f{\hbar}{i}\nabla}$$
+$$\boxed{\bm{P}=\f{\hbar}{\i}\nabla}$$
 对两个表象的各个分量:
-$$\ar{
-    [X,P_x] \x i\hbar\\
+\begin{equation}\boxed{\ar{
+    [X,P_x] \x \i\hbar\\
     [X,Y] \x 0\\
     [P_x,P_y] \x 0
-}$$
+}\label{E30}}\end{equation}
 右矢$\{\kt{\bm{r}}\}$是算符$X, Y, Z$的本征右矢, 对于动量同理. 
 \sub{Schwarz不等式}
 对于态空间$\mathscr{E}$中的任意右矢, 
@@ -198,9 +240,9 @@ $$\bkt{\wv{v}_i|\wv{A}|\wv{v}_j} = \bkt{v_i|A|v_j}$$
 则
 $$\wv{A}=UAU\T$$
 $$\ar{
-    \of{\wv{A}}\T \x \wv{A\T}\\
-    \of{\wv{A}}^n \x \wv{A^n}\\
-    \wv{F}(A) \x F\of{\wv{A}}
+    (\wv{A})\T \x \wv{A\T}\\
+    (\wv{A})^n \x \wv{A^n}\\
+    \wv{F}(A) \x F(\wv{A})
 }$$
 \sub{宇称算符}
 宇称算符的定义:
@@ -255,10 +297,11 @@ $$\wv{B}=\Pi B \Pi$$
         互为比例的两个态矢量表示同一个物理状态, 总的相位因子对于物理预言没有影响, 但展开式中各项系数的相对相位则是有影响的
     \end{center}
 }}
+
 第五个假定: 如果对于处在$\kt{\psi}$态的体系测量物理量$\mathscr{A}$得到的结果是$a_n$, 则刚测量之后体系的态是$\kt{\psi}$在属于$a_n$的本征子空间上的归一化投影$\displaystyle \f{P_n\kt{\psi}}{\sqrt{\bkt{\psi|P_n|\psi}}}$.
 \sub{体系随时间的演化}
 第六个假定: 态矢量$\kt{\psi(t)}$随时间的演变遵从\sch 方程.
-$$i\hbar\dt{}\kt{\psi(t)}=H(t)\kt{\psi(t)}$$
+$$\i\hbar\dt{}\kt{\psi(t)}=H(t)\kt{\psi(t)}$$
 \sub{量子化规则}
 规则的陈述: \\
 首先考虑处在标量势场中的一个无自旋粒子构成的体系, 这时, 我们有下述规则\\
@@ -287,6 +330,15 @@ $$\D X\cdot \D P_x \geq \f{\hbar}{2}$$
     \item 态矢量的模方保持为常数. 
     \item 局域守恒: 概率密度和概率流
 }
+\subsubsection*{保守体系的情况}
+在保守体系中, $H$不依赖与时间, 这种情况的重要后果就是能量守恒, 或者说体系的总能量是一个运动常量. 此时我们可以把任意态$\kt{\psi(t)}$按全体本征矢$\kt{\vp_{n,\tau}}$展开:
+$$\kt{\psi(t)}=\sum_{n,\tau}c_{n,\tau}(t)\kt{\vp_{n,\tau}}$$
+再由\sch 方程可以得到
+$$c_{n,\tau}(t)=c_{n,\tau}(t_0)\e^{-\i E_n(t-t_0)/\hbar}$$
+即
+\begin{equation}\boxed{
+    \kt{\psi(t)}=\sum_n\sum_\tau c_{n,\tau}(t_0)\e^{-\i E_n(t-t_0)/\hbar}\kt{\vp_{n,\tau}}  \label{D54}
+}\end{equation}
 \sub{概率幅与干涉效应}
 概率幅的概念
 \rk{
@@ -302,7 +354,7 @@ $$\D X\cdot \D P_x \geq \f{\hbar}{2}$$
     \end{center}
 }}
 \sub{密度算符}
-\subsubsection{纯态}
+\subsubsection*{纯态}
 当体系的态是完全确定的, 这是我们说体系处于纯态, 此时用态矢量$\kt\psi$或在态空间起作用的密度算符描述体系是完全等价的. \\
 引入密度算符, 其定义是:
 $$\r(t)=\kt\psi\br\psi$$
@@ -313,7 +365,7 @@ $$\Tr\r(t)=1$$
 可观察量的平均值变为
 $$\bkt{A}(t)=\Tr\{A\rho(t)\}=\Tr\{\rho(t)A\}$$
 \sch 方程变为
-$$i\hbar\dt{}\r(t)=[H(t),\r(t)]$$
+$$\i\hbar\dt{}\r(t)=[H(t),\r(t)]$$
 在纯态下, 描述同一物理状态的两个态矢量$\kt{\psi(t)},e^{i\t}\kt{\psi(t)}$对应着同一个密度算符, 可以避免相位因子带来的麻烦, 且上面各式对密度算符是线性的. 最后, 列出密度算符的一些其他性质:
 $$\ar{
     \r\T(t)\x\r(t)\\
@@ -321,14 +373,27 @@ $$\ar{
     \Tr\r^2(t)\x1
 }$$
 后面两式来源于$\r(t)$是投影算符这一事实, 这两式只在纯态成立.
-\subsubsection{统计混合态}
+\subsubsection*{统计混合态}
 密度算符的定义
 考虑这样一个体系, 与它有关的概率可以在满足概率和为一的条件下任意取值, 假设态矢量为$\kt{\psi}$, 则概率为
 $$\cm{P}_k(a_n)=\bkt{\psi_k|P_n|\psi}$$ 
 要得到所求的概率$\cm{P}(a_n)$, 则要以$p_k$为权重去乘$\cm{P}_k(a_n)$, 再对$k$相加
-$$\cm{P}(a_n)=\sum_kp_k\cm{P}_k(a_n)$$
+$$\cm{P}(a_n)=\sum_kp_k\cm{P}_k(a_n)=\Tr\{p_k\r_k\}$$
 
 \sub{时间演化算符}
+体系的演变算符定义为
+$$\kt{\psi(t)}=U(t,t_0)\kt{\psi(t_0)}$$
+首先有
+$$U(t_0,t_0)=\mathbbm{1}$$
+且
+$$i\hbar\pt{}U(t,t_0)=H(t)U(t,t_0)$$
+有了上述两式即可完全确定$U(t,t_0)$, 此外, 函数还具有性质
+$$U(t_n,t_1)=U(t_n,t_{n-1})U(t_{n-1},t_{n-2})\cdots U(t_2,t_1)$$
+$$U(t',t)=U(t,t')$$
+无穷小演变算符为
+$$U(t+\d t,t)=\mathbbm{1}-\f{\i}{\hbar}H(t)\d t$$
+若体系为保守系, $H$与时间无关
+$$U(t,t_0)=\e^{\i H(t-t_0)/\hbar}$$
 \sub{Schrödinger、Heisenberg、相互作用图像}
 \sub{规范不变性}
 \sub{Schrödinger方程的传播子}
@@ -339,12 +404,59 @@ $$\cm{P}(a_n)=\sum_kp_k\cm{P}_k(a_n)$$
 \sub{一维周期性结构中粒子的量子性质}
 
 \se{自旋1/2与双能级体系}
-\sub{可观测量Sz与自旋态空间}
+\sub{可观测量\texorpdfstring{$S_z$}{}与自旋态空间}
+根据施特恩-格拉赫实验结果观察到的两个斑点, 我们要为银原子的$\cm{S}_z$联系上一个观察算符$S_z$, 且具有两个相反的本征值$\pm\ff{2}$. 这两个本征值应该是非简并的, 用$\kt{+}, \kt{-}$表示对应的正交归一矢, 即
+$$\hua{
+    S_z\kt{+} \x +\f{\hbar}{2}\kt{+}\\
+    S_z\kt{-} \x -\f{\hbar}{2}\kt{-}
+}$$
+因此, $S_z$本身可以构成一个ECOC. 空间中的任意$\kt\psi$可以表示为
+$$\kt\psi=\a\kt{+}+\b\kt{-},\quad \abs{\a}^2+\abs{\b}^2=1$$
+表示$S_z$的矩阵显然是对角的 (因为在自身的表象中), 可以写作
+$$(S_z)=\bmat{1}{0}{0}{-1}$$
 \sub{其它自旋可观测量}
+在以$\kt{+},\kt{-}$构成的基中,
+$$(S_x)=\bmat{0}{1}{1}{0}$$
+$$(S_y)=\bmat{0}{-\i}{\i}{0}$$
+在极角为$\t,\vp$的单位矢$\bm{u}$的方向上
+$$(S_u)=\bmat{\cos\t}{\sin\t \e^{-{\i\vp}}}{\sin\t \e^{\i\vp}}{-\cos\t}$$
+$S_x,S_y,S_u$的本征矢$\kt{\pm}_x,\kt{\pm}_y,\kt{\pm}_u$可以展开为
+$$\ar{
+    \kt{\pm}_x \x \ff{\s2}[\kt{+}\pm\kt{-}]\\
+    \kt{\pm}_y \x \ff{\s2}[\kt{+}\pm\kt{-}]
+}$$
+$$\hua{
+    \kt{+}_u \x \cos\f{\t}{2}\e^{-\i\vp/2}\kt{+}+\sin\f{\t}{2}\e^{\i\vp/2}\kt{-}\\
+    \kt{-}_u \x -\sin\f{\t}{2}\e^{-\i\vp/2}\kt{+}+\cos\f{\t}{2}\e^{\i\vp/2}\kt{-}
+}$$
 \sub{各种自旋状态的实际制备}
 \sub{自旋测量}
 \sub{均匀磁场中自旋1/2的演化}
+现在考虑一个在均匀磁场$\bm{B}_0$中的银原子,取$\bm{B}_0$的方向为$z$轴, 假设在$t=0$时, 粒子的态是
+$$\kt{\psi(0)}=\cos\f{\t}{2}\e^{-\i\vp/2}\kt{+}+\sin\f{\t}{2}\e^{\i\vp/2}\kt{-}$$
+该态在极角为$\t,\vp$的单位矢$\bm{u}$的方向上, 利用\ref{D54}式可以得到
+$$\kt{\psi(0)}=\cos\f{\t}{2}\e^{-\i\vp/2}\e^{-\i E_+t/\hbar}\kt{+}+\sin\f{\t}{2}\e^{\i\vp/2}\e^{-\i E_-t/\hbar}\kt{-}$$
+再利用
+$$\hua{
+    E_+=+\f{\hbar\o_0}{2}\kt{+}\\
+    E_-=-\f{\hbar\o_0}{2}\kt{-}
+}$$
+可以写作
+$$\kt{\psi(0)}=\cos\f{\t}{2}\e^{-\i(\vp+\o_0t)/2}\kt{+}+\sin\f{\t}{2}\e^{\i(\vp+\o_0t)/2}\kt{-}$$
+由此可见, 磁场$B_0$的存在就是使$\bm{u}$以正比于磁场大小的角速度$\o_0$绕Oz轴旋转, 这个现象叫做拉莫尔进动.
 \sub{耦合对双能级体系定态的影响}
+考虑一个二维的态空间 (像自旋这样), 我们选择$H_0$的分别属于$E_1,E_2$的两个态$\kt{\vp_1},\kt{\vp_2}$做基. 
+$$\ar{
+    H_0\kt{\vp_1} \x E_1\kt{\vp_1}\\
+    H_0\kt{\vp_2} \x E_2\kt{\vp_2}
+}$$
+假设考虑一个外界微扰或体系内部的相互作用, 则哈密顿算符变为
+$$H=H_0+W$$
+$H_0$通常叫做未微扰的哈密顿算符, $W$叫做微扰或耦合, 假定$W$不依赖与时间, 由一个厄米矩阵表示
+$$(W)=\bmat{W_{11}}{W_{12}}{W_{21}}{W_{22}},\quad W_{12}=W_{21}^*$$
+耦合后, $\vp_1, \vp_2$不再$H$的本征态, 因而不再是定态. 此时我们可以将$H$写作
+$$(H)=\bmat{E_1+W_{11}}{W_{12}}{W_{21}}{E_2+w_{22}}$$
+
 \sub{双能级体系在两个非扰动状态之间的振荡}
 \sub{Pauli矩阵}
 \sub{矩阵的对角化}
@@ -362,7 +474,7 @@ $$\cm{P}(a_n)=\sum_kp_k\cm{P}_k(a_n)$$
 \sub{哈密顿量的本征态}
 \sub{与定态相联系的波函数}
 \sub{基态的性质}
-\sub{平均值的时间演化}
+\sub{平均值的时间演化}\ 
 \sub{位置表象中的定态研究}
 \sub{Hermite多项式}
 \sub{用多项式方法求解谐振子的本征值方程}
@@ -376,10 +488,72 @@ $$\cm{P}(a_n)=\sum_kp_k\cm{P}_k(a_n)$$
 \sub{处于有限温度下热力学平衡态的谐振子}
 
 \se{量子力学中角动量的一般性质}
+如果被研究的体系是有心力场中的一个质点, 那么角动量$L$的各个分量都将是运动常量, 因此它们可以和描述有心势场$V(r)$中的粒子的$H$对易, 这个重要性质使其在量子力学中非常重要. 
+定义有经典类比的一切角动量为轨道角动量$\bm{L}$. 属于基本粒子的一切内禀角动量称为自旋角动量$\bm{S}$, 而二者之和为总角动量$\bm{J}$.
+根据正则对易关系式\ref{E30}, 可以写出
+$$\bm{L}=\bm{R}\tm\bm{P}$$
+并得到关系式
+\begin{equation}
+    \boxed{\ar{
+    [J_x,J_y] \x \i\hbar J_z\\
+    [J_y,J_z] \x \i\hbar J_x\\
+    [J_z,J_x] \x \i\hbar J_y
+}\label{B9}}\end{equation}
+\begin{equation}\boxed{
+    [\bm{J}^2,\bm{J}]=0 \label{B11}
+}
+\end{equation}
+量子力学中的角动量理论完全建立在对易关系式\ref{B9}, \ref{B11}的基础上, 这些关系式意味着角动量的三个分量不能同时测量, 但是分量和角动量的大小可以同时测量, 同时可以和$H$同时测量. 因此, $H,J^2,J_z$构成一个ECOC. 我们通常去寻找$H$的本征矢中属于$J^2$和$J_z$的共同本征矢的集合.
 \sub{定义与符号}
-\sub{和本征值}
-\sub{标准表象}
-\sub{的本征值}
+为方便, 引入以下非厄米伴随算符:
+$$\boxed{\ar{
+    J_+ \x J_x+\i J_y\\
+    J_- \x J_x-\i J_y
+}}$$
+满足对易关系
+$$\ar{
+    [J_z,J_+] \x \hbar J_+\\
+    [J_z,J_-] \x -\hbar J_-\\
+    [J_+,J_-] \x 2\hbar J_z\\
+    [J^2,J_+] \x [J^2,J_-] = [J^2,J_z] = 0
+}$$
+且有
+$$J^2=\ff{2}(J_+J_-+J_-J_+)+J_z^2$$
+将$J^2, J_z$写作:
+$$\ar{
+    J^2 \x j(j+1)\hbar^2\\
+    J_z \x m\hbar
+}$$
+为了构成一个ECOC, 我们还需要除了$j,m$的另一个指标, 记做$k$.
+\sub{\texorpdfstring{$J^2$}{}与\texorpdfstring{$J_z$}{}的本征值}
+如果$j(j+1)\hbar$与$m\hbar$是$J^2$与$J_z$对应同一本征矢$\kt{k,j,m}$的本征值, 则满足
+$$\boxed{-j \leq m \leq j}$$
+同时, \\
+若$m=-j$, 则$J_-\kt{k,j,-j}=0$.\\
+若$m>-j$, 则$J_-\kt{k,j,m}$是一个$J^2$与$J_z$的非零本征矢, 属于本征值$j(j+1)\hbar^2$与$(m-1)\hbar$.\\
+若$m=j$, 则$J_+\kt{k,j,j}=0$.\\
+若$m<j$, 则$J_+\kt{k,j,m}$是一个$J^2$与$J_z$的非零本征矢, 属于本征值$j(j+1)\hbar^2$与$(m+1)\hbar$.\\
+我们可将已知结果归纳如下\\ \\
+\fbox{\parbox{\textwidth}{
+    假设$\bm{J}$是满足对易关系\ref{B9}的任意角动量, 如果$j(j+1)\hbar^2$与$m\hbar$表示$\bm{J}^2$与$J_z$的值, 那么:
+    \rk{
+        \item $j$只能取正整数, 半整数或零, 即$0,1/2,1,1/3,\cdots$, 这些只是可能值, 并不是对于一切角动量而言所有值都会出现.
+        \item 对于$j$的一个固定值, $m$的可能值只有$(2j+1)$个,:$-j,-j+1,\cdots,j-1,j$, 因此, 若$j$是半整数, $m$也是半整数. 在$m$的这些值中, 只要有一个出现, 其他的值也会出现.
+    }
+}}
+\sub{标准表象\texorpdfstring{$\{\kt{k,j,m}\}$}{}}
+\subsubsection*{基右矢}
+取$k=1,2,\cdots,g(j)$作为表征状态的除了$j,m$的第三个量. 可以看到$g(j)$即$k$的维度与$m$无关. $k$不相同的两个状态正交. 可以证明
+$$\ar{
+    \kt{k,j,m+1} \x \ff{\hbar\s{j(j+1)-m(m+1)}}J_+\kt{k,j,m}\\
+    \kt{k,j,m-1} \x \ff{\hbar\s{j(j+1)-m(m-1)}}J_-\kt{k,j,m}
+}$$
+下表粗略地表示了$k$的构建过程
+\putfig[0.8]{1_9.png}
+\subsubsection*{子空间$\cm{E}(k,j)$}
+
+\sub{\texorpdfstring{$\bm{L}^2$}{}与\texorpdfstring{$L_z$}{}的本征值}
+
 \sub{球谐函数}
 \sub{角动量与转动}
 \sub{双原子分子的转动}
@@ -495,4 +669,5 @@ $$\cm{P}(a_n)=\sum_kp_k\cm{P}_k(a_n)$$
 \sub{氦原子的能级}
 \sub{电子气的物理性质}
 \sub{在固体上的应用}
+
 \end{document}

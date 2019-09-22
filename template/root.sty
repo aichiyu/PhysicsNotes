@@ -4,6 +4,7 @@
 \RequirePackage{anyfontsize}
 \RequirePackage{mathrsfs}                                                     %希腊字体
 \RequirePackage{geometry}                                                %调整间距
+\usepackage{fancyhdr}                                                     %调整页眉页脚
 %\RequirePackage[T1]{fontenc}                                             %change font
 \RequirePackage{mathtools}                                                %align needed
 %\RequirePackage{balance}                                                  %blance when there two columns
@@ -15,11 +16,23 @@
 %\RequirePackage{soul}                                                     %highlight using \hl
 %\RequirePackage{fontspec}                                                 %expand font type
 \RequirePackage{graphicx}                                                 %to input pictures
-\usepackage{bbm}                                                           %空心数字
-%\RequirePackage[colorlinks,linkcolor=red,anchorcolor=blue,citecolor=green]{hyperref}                                                %cite
+\RequirePackage{bbm}                                                           %空心数字
+\RequirePackage[colorlinks,linkcolor=red,anchorcolor=blue,citecolor=green]{hyperref}                                                %cite, 高亮链接
 %\RequirePackage{verbatim}                                                 %comment                            
 %\RequirePackage{multicol}
 %begin{newcommands}
+
+    \renewcommand{\i}{\mathrm{i}}                                  %i
+    \newcommand{\e}{\mathrm{e}}                                  %i
+    \newcommand{\as}[1]{\boxed{#1}}
+    \renewcommand{\ast}[1]{
+        \fbox{
+            \parbox{\textwidth}{
+                \begin{center}
+                    #1
+                \end{center}
+            }}
+    }
 
     \newcommand{\intzo}{\int_0^1}                                  %0 1
     \newcommand{\intii}{\int_{-\infty}^\infty}                                  %-∞ ∞
@@ -52,7 +65,7 @@
     \newcommand{\ff}[1]{\frac{1}{#1}}                                      %1/A
     \newcommand\rank{\operatorname{rank}}                                        %rank
     \newcommand\tr{\operatorname{tr}}                                            %tr
-    \newcommand\e[1]{\times 10^{#1}}                                       %×10^
+    \newcommand\ten[1]{\times 10^{#1}}                                       %×10^
     \newcommand{\m}{^{-1}}                                       %^{-1}
     \renewcommand\Re{\operatorname{Re}}                                          %Re
     \renewcommand\Im{\operatorname{Im}}                                          %Im
@@ -61,7 +74,7 @@
     \newcommand\tm{\times}                                                 %×
     \renewcommand\a{\alpha}                                                %α
     \renewcommand\b{\beta}                                                 %β
-    \newcommand\C{\text{Const}}                                            %Const
+    \newcommand\Const{\text{Const}}                                            %Const
     \newcommand\D{\Delta}                                                  %Δ
     \newcommand\de{\delta}                                                 %δ
     \newcommand\ep{\varepsilon}                                            %ε
@@ -86,7 +99,7 @@
     \newcommand\dis{\displaystyle}                                         %big equation
     \newcommand{\x}{&=}                                           %
     \AtBeginDocument{\renewcommand{\bar}{\overline}}                       %bar
-    \AtBeginDocument{\renewcommand{\hat}{\widehat}}                        %hat
+    %\AtBeginDocument{\renewcommand{\hat}{\widehat}}                        %hat
     \renewcommand{\arraystretch}{1.2}                                      %change array stretch
     \newcommand\ca{\frac{1}{4\pi\varepsilon_0}}                                 %constA
     \newcommand{\ar}[1]{
@@ -109,6 +122,11 @@
     \newcommand{\rk}[1]{\begin{enumerate}                              %enumerate
             #1
     \end{enumerate}}
+    \newcommand{\bmat}[4]{\begin{pmatrix}
+        {#1} & {#2}\\
+        {#3} & {#4}
+    \end{pmatrix}
+    }                                            %dr
     %\newcommand{\com}[2]{\left( \begin{matrix} #1 \\ #2 \end{matrix}\right)}
 
 %end{newcommands} 

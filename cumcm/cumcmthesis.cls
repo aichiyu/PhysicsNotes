@@ -45,12 +45,11 @@ Just choose `xelatex', no `pdflatex' or `latex' and so on.}
 \RequirePackage{amsfonts}
 \RequirePackage{amssymb}
 \RequirePackage{bm}
-%\RequirePackage{titletoc}
+\RequirePackage{titletoc}
 % 设置颜色
 \RequirePackage{xcolor}
 % 插入图片
 \RequirePackage{graphicx}
-\RequirePackage{float}
 % 表格
 \RequirePackage{array}
 %% 长表格
@@ -68,21 +67,12 @@ Just choose `xelatex', no `pdflatex' or `latex' and so on.}
 % 设置代码环境
 \RequirePackage{listings}
 \RequirePackage{xcolor}
-% 插入链接
-\RequirePackage{url}
-% 绘图的包
-\RequirePackage{tikz}
-\usetikzlibrary{snakes}
 
-% 字图与子标题
-\RequirePackage{subcaption}
 \RequirePackage[titles]{tocloft}
-%\renewcommand{\cftdot}{$\cdot$}
-%\renewcommand{\cftsecdotsep}{1.5}
-\renewcommand{\cftsecdotsep}{4.5}
+\renewcommand{\cftdot}{$\cdot$}
+\renewcommand{\cftsecdotsep}{1.5} 
 \setlength{\cftbeforesecskip}{7pt}
 \setlength{\cftbeforesubsecskip}{3pt}
-%\setlength{\cftbeforesubsecskip}{5pt}
 \renewcommand{\cftsecfont}{\bfseries\zihao{-4}\heiti}
 \renewcommand{\cftsecleader}{\cftdotfill{\cftsecdotsep}}
 \renewcommand{\cftsecaftersnumb}{\hskip.4em}
@@ -134,8 +124,6 @@ Just choose `xelatex', no `pdflatex' or `latex' and so on.}
     }
 % 超链接 hyperref 的设置
 \RequirePackage{hyperref}
-% 智能自动化交叉引用
-\RequirePackage{cleveref}
 %% Document Layout
 % 页面布局
 \geometry{top=25mm,bottom=25mm,left=25mm,right=25mm}
@@ -227,7 +215,7 @@ Just choose `xelatex', no `pdflatex' or `latex' and so on.}
 
 % 超链接
 	 \hypersetup{%
-%         xetex,
+         xetex,
 		% unicode=false, % hyperref 和 xetex 同时使用时不能开启 Unicode 选项.
          pdfstartview=FitH,
          CJKbookmarks=true,
@@ -240,9 +228,6 @@ Just choose `xelatex', no `pdflatex' or `latex' and so on.}
 % \if@mcm@bwprint
 % \AtBeginDocument{\hypersetup{hidelinks}}
 % \else\relax\fi
-\pdfstringdefDisableCommands{%
-	\def\cftdotfill{ }%
-}
 \lstnewenvironment{tcode}
   {
     \lstset{basicstyle = \small\ttfamily,
@@ -256,66 +241,7 @@ Just choose `xelatex', no `pdflatex' or `latex' and so on.}
     }
   }
   {}
-%%% crefformat settings
-\crefformat{figure}{#2图~#1#3}
-\crefrangeformat{figure}{图~(#3#1#4)\;\~{}\;(#5#2#6)}
-\crefmultiformat{figure}{图~(#2#1#3)}{和~(#2#1#3)}{，(#2#1#3)}{和~(#2#1#3)}
 
-\crefformat{table}{#2表#1#3}
-\crefrangeformat{table}{表(#3#1#4)\;\~{}\;(#5#2#6)}
-\crefmultiformat{table}{表~(#2#1#3)}{和~(#2#1#3)}{，(#2#1#3)}{和~(#2#1#3)}
-
-\crefformat{equation}{#2~(#1#3)}
-\crefrangeformat{equation}{~(#3#1#4)\;\~{}\;(#5#2#6)}
-\crefmultiformat{equation}{~(#2#1#3)}{ 和~(#2#1#3)}{，(#2#1#3)}{ 和~(#2#1#3)}
-
-\crefformat{definition}{#2\mcm@cap@definition~#1#3}
-\crefrangeformat{definition}{\mcm@cap@definition~(#3#1#4)\;\~{}\;(#5#2#6)}
-\crefmultiformat{definition}{\mcm@cap@definition~(#2#1#3)}{ 和~(#2#1#3)}{，(#2#1#3)}{ 和~(#2#1#3)}
-
-\crefformat{theorem}{#2\mcm@cap@theorem~#1#3}
-\crefrangeformat{theorem}{\mcm@cap@theorem~(#3#1#4)\;\~{}\;(#5#2#6)}
-\crefmultiformat{theorem}{\mcm@cap@theorem~(#2#1#3)}{ 和~(#2#1#3)}{，(#2#1#3)}{ 和~(#2#1#3)}
-
-\crefformat{lemma}{#2\mcm@cap@lemma~#1#3}
-\crefrangeformat{lemma}{\mcm@cap@lemma~(#3#1#4)\;\~{}\;(#5#2#6)}
-\crefmultiformat{lemma}{\mcm@cap@lemma~(#2#1#3)}{ 和~(#2#1#3)}{，(#2#1#3)}{ 和~(#2#1#3)}
-
-\crefformat{corollary}{#2\mcm@cap@corollary~#1#3}
-\crefrangeformat{corollary}{\mcm@cap@corollary~(#3#1#4)\;\~{}\;(#5#2#6)}
-\crefmultiformat{corollary}{\mcm@cap@corollary~(#2#1#3)}{ 和~(#2#1#3)}{，(#2#1#3)}{ 和~(#2#1#3)}
-
-\crefformat{assumption}{#2\mcm@cap@assumption~#1#3}
-\crefrangeformat{assumption}{\mcm@cap@assumption~(#3#1#4)\;\~{}\;(#5#2#6)}
-\crefmultiformat{assumption}{\mcm@cap@assumption~(#2#1#3)}{ 和~(#2#1#3)}{，(#2#1#3)}{ 和~(#2#1#3)}
-
-\crefformat{conjecture}{#2\mcm@cap@conjecture~#1#3}
-\crefrangeformat{conjecture}{\mcm@cap@conjecture~(#3#1#4)\;\~{}\;(#5#2#6)}
-\crefmultiformat{conjecture}{\mcm@cap@conjecture~(#2#1#3)}{ 和~(#2#1#3)}{，(#2#1#3)}{ 和~(#2#1#3)}
-
-\crefformat{axiom}{#2\mcm@cap@axiom~#1#3}
-\crefrangeformat{axiom}{\mcm@cap@axiom~(#3#1#4)\;\~{}\;(#5#2#6)}
-\crefmultiformat{axiom}{\mcm@cap@axiom~(#2#1#3)}{ 和~(#2#1#3)}{，(#2#1#3)}{ 和~(#2#1#3)}
-
-\crefformat{principle}{#2\mcm@cap@principle~#1#3}
-\crefrangeformat{principle}{\mcm@cap@principle~(#3#1#4)\;\~{}\;(#5#2#6)}
-\crefmultiformat{principle}{\mcm@cap@principle~(#2#1#3)}{ 和~(#2#1#3)}{，(#2#1#3)}{ 和~(#2#1#3)}
-
-\crefformat{problem}{#2\mcm@cap@problem~#1#3}
-\crefrangeformat{problem}{\mcm@cap@problem~(#3#1#4)\;\~{}\;(#5#2#6)}
-\crefmultiformat{problem}{\mcm@cap@problem~(#2#1#3)}{ 和~(#2#1#3)}{，(#2#1#3)}{ 和~(#2#1#3)}
-
-\crefformat{example}{#2\mcm@cap@example~#1#3}
-\crefrangeformat{example}{\mcm@cap@example~(#3#1#4)\;\~{}\;(#5#2#6)}
-\crefmultiformat{example}{\mcm@cap@example~(#2#1#3)}{ 和~(#2#1#3)}{，(#2#1#3)}{ 和~(#2#1#3)}
-
-\crefformat{proof}{#2\mcm@cap@proof~#1#3}
-\crefrangeformat{proof}{\mcm@cap@proof~(#3#1#4)\;\~{}\;(#5#2#6)}
-\crefmultiformat{proof}{\mcm@cap@proof~(#2#1#3)}{ 和~(#2#1#3)}{，(#2#1#3)}{ 和~(#2#1#3)}
-
-\crefformat{solution}{#2\mcm@cap@solution~#1#3}
-\crefrangeformat{solution}{\mcm@cap@solution~(#3#1#4)\;\~{}\;(#5#2#6)}
-\crefmultiformat{solution}{\mcm@cap@solution~(#2#1#3)}{ 和~(#2#1#3)}{，(#2#1#3)}{ 和~(#2#1#3)}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %% Document Markup
@@ -510,13 +436,13 @@ Just choose `xelatex', no `pdflatex' or `latex' and so on.}
 	\vskip1ex
 	{\noindent\zihao{-4}\heiti\mcm@cap@keywordsname：}~{\mcm@tokens@keywords}
 	}
-% 定义附录
+% 定义附录	
 
 % \renewcommand{\setthesection}{\appendixname\Alph{section}}
 % \renewcommand\appendix{\par
 	% \setcounter{section}{0}%
 	 % \setcounter{subsection}{0}%
-	% \gdef\thesection{\appendixname\@Alph\c@section}}
+	% \gdef\thesection{\appendixname\@Alph\c@section}}		
 % 重定义参考文献环境
 \renewenvironment{thebibliography}[1]
      {\section*{\refname}%
@@ -536,7 +462,7 @@ Just choose `xelatex', no `pdflatex' or `latex' and so on.}
       \sfcode`\.\@m}
      {\def\@noitemerr
        {\@latex@warning{Empty `thebibliography' environment}}%
-      \endlist}
+      \endlist}	
 
 \newcommand*\tihao[1]{%
 	\renewcommand{\mcm@tokens@tihao}{#1}}
@@ -610,7 +536,7 @@ Just choose `xelatex', no `pdflatex' or `latex' and so on.}
 （包括进行网上公示，在书籍、期刊和其他媒体进行正式或非正式发表等）。
 \endquotation
 }
-\newcommand*\mcm@commit@string@problemnum{我们参赛选择的题号（从A/B/C/D中选择一项填写）：}
+\newcommand*\mcm@commit@string@problemnum{我们参赛选择的题号（从A/B/C/D/E中选择一项填写）：}
 \newcommand*\mcm@commit@string@signupnum{我们的报名参赛队号（12位数字全国统一编号）：}
 \newcommand*\mcm@commit@string@schoolname{参赛学校（完整的学校全称，不含院系名）：}
 \newcommand*\mcm@commit@string@membername{参赛队员 (打印并签名) ：}
@@ -650,7 +576,4 @@ Just choose `xelatex', no `pdflatex' or `latex' and so on.}
 % \titlecontents{subsubsection}[55pt]{\songti}
 % {\thecontentslabel\hskip.5em}{}{\titlerule*[0.5pc]{.}\contentspage}
 
-% 上标文献
-\newcommand{\upcite}[1]{$^{\mbox{\scriptsize \cite{#1}}}$}
-\newcommand{\supercite}[1]{\textsuperscript{\textsuperscript{\cite{#1}}}}
 \endinput
