@@ -3,15 +3,67 @@
 \usepackage{../template/Notes/notes}
 \title{Quantum Mechanics}
 \numberwithin{equation}{subsection}
+%%%%%%%%%%%%%%  定理环境  %%%%%%%%%%%%%
+\usepackage{enumitem}
+\usepackage{tcolorbox}
+\tcbuselibrary{skins, breakable, theorems}
+
+\newtcbtheorem[number within=section]{thm}{定理}%
+  {enhanced, breakable,
+    colback = white, colframe = cyan, colbacktitle = cyan,
+    attach boxed title to top left = {yshift = -2mm, xshift = 5mm},
+    %boxed title style = {sharp corners},
+    fonttitle = \sffamily\bfseries, separator sign = {:~}}{qst}
+
+\definecolor{SALMON}{RGB}{250, 128, 114}
+\newtcbtheorem[number within=section]{xz}{性质}%
+  {enhanced, breakable,
+    colback = white, colframe = SALMON, colbacktitle = SALMON,
+    attach boxed title to top left = {yshift = -2mm, xshift = 5mm},
+    %boxed title style = {sharp corners},
+    fonttitle = \sffamily\bfseries, separator sign = {:~}}{qst}
+    
+\definecolor{TealBlue}{RGB}{0, 173, 179}
+\newtcbtheorem{notices}{}%
+  {
+    colback = white, colframe = TealBlue,
+    width = 0.4\linewidth,
+    attach boxed title to top left = {xshift = 5mm}}{qst}
+\newcommand{\nts}[1]{
+    \begin{center}
+        \begin{notices}{}{}
+            #1
+        \end{notices}
+    \end{center}
+}
+\newtcbtheorem{noticeswd}{}%
+  {
+    colback = white, colframe = TealBlue,
+    attach boxed title to top left = {xshift = 5mm}}{qst}
+\newcommand{\ntswd}[1]{
+    \begin{center}
+        \begin{noticeswd}{}{}
+            #1
+        \end{noticeswd}
+    \end{center}
+}
+
+\definecolor{Violet}{RGB}{238, 130, 238}
+\newtcbtheorem[number within=section]{defi}{定义}%
+  {enhanced, breakable,
+    colback = white, colframe = Violet, colbacktitle = Violet,
+    attach boxed title to top left = {yshift = -2mm, xshift = 5mm},
+    %boxed title style = {sharp corners},
+    fonttitle = \sffamily\bfseries, separator sign = {:~}}{qst}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{document}
 \maketitle
 \tableofcontents
 \newpage
 \se{早期量子现象}
 \sub{光电效应} 
-Einstein's concept of photons: A beam of light consists of small packages of energy, photons or quanta.\\
-Einstein's explanation of the photoelectric effect.\\
-Energy and momentum of a photon: $E = h\nu; p = h/\l$.
+爱因斯坦的光子概念: 一束光由小的能量波包或称为光子组成。\\
+光子的能量和动量: $E = h\nu; p = h/\l$.
 \sub{Compton效应}
 $$
 \Delta \lambda=\lambda^{\prime}-\lambda=\frac{h}{m_{e} c}(1-\cos \phi)=\frac{2 h}{m_{e} c} \sin ^{2}(\phi / 2)
@@ -21,34 +73,38 @@ Rydberg formula:
 $$
 \frac{1}{\lambda}=R_{H}\left(\frac{1}{m^{2}}-\frac{1}{n^{2}}\right), n>m=1,2,3, \cdots, \infty
 $$
-First six spectral series of the hydrogen atom: The Lyman, Balmer, Paschen, Brackett, Pfund, Humphreys series.\\
-Ritz combination principle: For a given atom, if there exist spectral lines at two wave numbers, then there often exists another spectral line precisely at the sum of the two wave numbers.\\
-Energy levels of the hydrogen atom inferred from its spectrum: $E_{n}=-\frac{R_{H} h c}{n^{2}}, n=1,2,3, \cdots, \infty$.\\
-Bohr's hypotheses:Stationary states, Quantization condition, Quantum transition.\\
-Energy levels of the hydrogen atom in Bohr's theory:
+氢原子的前六个光谱系:Lyman、Balmer、Paschen、Brackett、Pfund、Humphreys系。\\
+Ritz组合原理:对于一个给定的原子，如果在两个波数处存在谱线，那么通常在两个波数之和处存在另一条谱线。\\
+从氢原子的光谱推断出它的能级: $E_{n}=-\frac{R_{H} h c}{n^{2}}, n=1,2,3, \cdots, \infty$.\\
+波尔的假设:定态，量子化条件，量子跃迁。\\
+玻尔理论中氢原子的能级::
 $$
 E_{n}=-\frac{1}{n^{2}} \frac{m_{e} e^{4}}{2\left(4 \pi \epsilon_{0}\right)^{2} \hbar^{2}}=-\frac{1}{n^{2}} \frac{e^{2}}{2\left(4 \pi \epsilon_{0}\right) a_{0}}, n=1,2,3, \cdots, \infty
 $$
-Bohr-Sommerfeld quantization condition:
+Bohr-Sommerfeld量子化条件:
 $$
 \oint_{E} d q_{j} p_{j}=n_{j} h, n_{j}=1,2, \cdots, j=1,2, \cdots, d
 $$
 \sub{Franck-Hertz实验}
-Franck-Hertz experiment: he existence of discrete energy levels (quantization of energy) in the mercury atom.
+弗兰克-赫兹实验:汞原子中离散能级(能量量子化)的存在。
 \sub{Stem-Gerlach实验}
-Stern-Gerlach experiment: The quantization of the spatial orientation of angular momentum.
+斯特恩-格拉赫实验:角动量空间方向的量子化。
 \sub{Wien辐射定律}
+谐振子模型+Maxwell分布 = Wien辐射定律
 $$
 E_{\lambda}(T)=\frac{2 \pi h c^{2}}{\lambda^{5}} e^{-h c / \lambda k_{B} T}
 $$
 \sub{Rayleigh-Jeans辐射定律}
+考虑空腔中的驻波, 能量均分定理, 将每个驻波看做谐振子可得. 
 $$
 E_{\lambda}(T)=\frac{2 \pi c k_{B} T}{\lambda^{4}}
 $$
 \sub{Planck辐射定律}
-Planck's quantum hypothesis: The energy of a harmonic oscillator of frequency $\nu$ can take on one of the values: $0,h\nu,2h\nu,\cdots$.
-Planck's of blackbody radiation:$E_{\lambda}(T)=\frac{2 \pi h c^{2}}{\lambda^{5}} \frac{1}{e^{h c / \lambda k_{B} T}-1}$.\\
-Date of birth of quantum theory: December 14, 1900.
+使用内插法得到.\\
+物理解释为频率为$nh\nu$的谐振子不断辐射电磁波.\\
+普朗克量子假设:频率为$\nu$的谐振子的能量可以取其n倍值:$0,h\nu,2h\nu，\cdots$。\\
+普朗克黑体辐射定律: $E_{\lambda}(T)=\frac{2 \pi h c^{2}}{\lambda^{5}} \frac{1}{e^{h c / \lambda k_{B} T}-1}$.\\
+量子力学生日: December 14, 1900.
 \se{波粒二象性}
 \sub{De Broglie波}
 De Broglie假说: 和光子一样, 物质微粒也具有波动性. 
@@ -58,20 +114,33 @@ E &= h\nu = \hbar \omega \\
 {p} &= \hbar {k}
 \end{aligned}$$
 de Broglie色散关系
-$$\boxed{\omega ={\frac{\hbar k^{2}}{2m}}}$$
+\nts{
+$$\omega ={\frac{\hbar k^{2}}{2m}}$$
+}
 \sub{Young双缝实验}
-
+杨氏实验表明测量会对体系产生根本的扰动. 
 \sub{物质波的衍射}
+宏观中不考虑粒子的波动性是因为其波长太小, 本质是普朗克常量$h$太小. 
 \sub{波函数}
 波函数$\psi(\bm{r},t)$满足的条件:
 \rk{
     \item 平方可积, 归一性条件$$\int\abs{\psi(\bm{r},t)}^2\d^3r=1$$
     \item 任意次可微
 }
+对于不收敛的波函数, 例如$\psi(r,t)=e^{i(kr-\o t)}$, 可以将其归一化到$\de$函数.
 \sub{波函数的统计解释}
 \sub{Schrödinger方程}
 $$\i\hbar\pt{}\psi(\bm{r},t)=-\f{\hbar^2}{2m}\laplace\psi(\bm{r},t)+V(\bm{r},t)\psi(\bm{r},t)$$
+或写作
+$$i\hbar\pt{}=\hat H$$
 \sub{连续性方程}
+\begin{defi}{概率流}{}
+$${\mathbf  {J}}\ {\stackrel  {def}{=}}\ {\frac  {\hbar }{2mi}}\left(\Psi ^{*}{\boldsymbol  {\nabla }}\Psi -\Psi {\boldsymbol  {\nabla }}\Psi ^{*}\right)={\frac  \hbar m}{\mbox{Im}}(\Psi ^{*}{\boldsymbol  {\nabla }}\Psi )$$
+\end{defi}
+在其上可写出量子力学中的连续性方程
+\begin{thm}{连续性方程}{}
+$${\frac  {\partial \rho }{\partial t}}+{\boldsymbol  {\nabla }}\cdot {\mathbf  {J}}=0$$
+\end{thm}
 \sub{叠加原理}
 由于Schrödinger方程对$\psi$是线性的, 叠加原理成立, 再加上概率幅的解释, 就能给出波动型的结果. 
 \sub{自由粒子}
@@ -79,47 +148,168 @@ $$\i\hbar\pt{}\psi(\bm{r},t)=-\f{\hbar^2}{2m}\laplace\psi(\bm{r},t)+V(\bm{r},t)\
 $$\e^{\i[\bm{k}\cdot \bm{x}-\o(k) t]},\quad \o=\f{\hbar k^2}{2m}$$
 的线性叠加.
 \sub{波包}
-
+一维波包:
+$$\psi(r,t)=\ff{(2\pi)^{3/2}}\int\d^3k g(k)e^{i[k\cdot r-\o(k)t]}$$
+三维波包:
+$$\psi(x,t)=\ff{\sqrt{2\pi}}\intii\d k g(k)e^{i[kx-\o(k)t]}$$
 \sub{自由波包的时间演化}
-
+相速度 (波包扩散的速度)
+$$v_p(k)=\f{\o}{k}=\f{\hbar k}{2m}$$
+群速度
+$$v_g(k_0)=\f{\D \o}{\D k}=\f{\hbar k_0}{m}$$
+若$\o$与$k$是线性关系, 则$v_p=v_g$.
+对于一个自由粒子, 其动量守恒, 即动量空间各分量只有相位变化
+$$g(k,t)=g(k,0)e^{i\o(k)t}$$
 \se{力学量的表述}
 \sub{线性算符}
-线性算符$A$定义
+\begin{defi}{线性算符$\hat A$}{}
 $$\hua{
     \kt{\psi'} &= A\kt{\psi}\\
     A[\l_1\kt{\psi_1}+\l_2\kt{\psi_2}] &= \l_1A\kt{\psi_1}+\l_2A\kt{\psi_2}
 }$$
-\sub{厄密算符}
-厄密算符$A\T$定义: 
+\end{defi}
+\sub{厄米算符}
+\begin{defi}{厄米算符$A\T$}{}
+$$\int (\hat A\psi)^*\phi \d^3r=\int \psi^*\hat A\T\phi\d^3r$$
 $$\kt{\psi'}=A\kt{\psi}\iff \br{\psi}'=\br{\psi}A\T$$
+\end{defi}
+通常算符都是厄米的, 但当非相对论量子力学描述粒子产生湮灭时, 会出现非厄米算符 (例如HW1中的虚部势能).\\
+厄米算符的平均值是实数. \\
 推论:
-\rk{
-    \item 厄米算符$A$的本征值都是实数. 
-    \item $A$向左作用: 当$\br{\vp}$是$A$的本征矢, 对于任意$\kt{\psi}$均有
-    $$\bkt{\psi|A|\vp} = \l_{\psi}\bkt{\psi|\vp}$$
-    \item 厄米算符两个互异本征值的本征矢互相正交. 
-}
-$$\boxed{
-    \ar{
-        \br{\psi}A\T\kt{\vp}\x\br{\vp}A\kt{\psi}^*\\
-        \br{A\psi}\x\br{\psi}A\T\\
-        \bkt{A\T\vp|\psi}\x\bkt{\vp|A\psi}\\
-        \of{\kt{u}\br{v}}\T\x\kt{v}\br{u}
-}}$$
+\begin{xz}{厄米算符}{}
+    \rk{
+        \item $\hat{A}\T=\hat{A}$
+        \item 厄米算符$A$的本征值都是实数. 
+        \item $A$向左作用: 当$\br{\vp}$是$A$的本征矢, 对于任意$\kt{\psi}$均有
+        $$\bkt{\psi|A|\vp} = \l_{\psi}\bkt{\psi|\vp}$$
+        \item 厄米算符两个互异本征值的本征矢互相正交. 
+        \item 一些计算性质
+        $$\ar{
+            \br{\psi}A\T\kt{\vp}\x\br{\vp}A\kt{\psi}^*\\
+            \br{A\psi}\x\br{\psi}A\T\\
+            \bkt{A\T\vp|\psi}\x\bkt{\vp|A\psi}\\
+            \of{\kt{u}\br{v}}\T\x\kt{v}\br{u}
+}$$}
+\end{xz}
+可观测量的定义: 线性厄米算符. 
 \sub{位置算符}
-
+在实空间 (坐标表象) 中, $\hat r=r$. 对应本征值$r'$的本征函数是$\psi_{r'}(r)=\de(r-r')$. 
 \sub{动量算符}
+实空间中动量算符的表示为$\hat p =-i\hh\nabla$. 动量的各个分量可对易, 因此是一个C-vector. 对应$p$的本征函数为$\psi_p(r)=Ce^{ip\cdot r/\hh}$. 这个函数无法用通常的方法归一化, 通常使用下面两种方法归一化:\\
+\rk{
+    \item $\de$函数归一化\\
+    也即使得$$\int|\psi_p(r)|^2\d^3r=\de^3(r-r_0)$$
+    此时结果为$$\psi_{\vec p}(\vec r)=\ff{(2\pi\hh)^{3/2}}e^{i\vec p\cdot \vec r/\hh}$$
+    \item 箱归一化\\
+    此时利用周期性边界条件, 采用类似MD中cell的处理方法, 结果为
+    $$\psi_{\vec p}(\vec r)=\ff{L^{3/2}}e^{i\vec p\cdot \vec r/\hh}$$
+    箱归一化后, 利用周期性边界条件, 动量变为离散的分立值$p_i=\f{2\pi\hh}{L}n_i;\ i=x,y,z;\ n_i=0,\pm1,\pm2,\cdots$. 能量变为$E=\f{2\pi^2\hh^2}{mL^2}(n_x^2+n_y^2+n_z^2)$. \\
+    现计算能量小于$E_0$的态的数量: 
+    $$N(E_0)=\sum_{E<E_0}1$$
+    用积分表达式近似, 定义$n=\sqrt{n_x^2+n_y^2+n_z^2}$. 即可得:
+    $$N(E_0)=\int_0^{\s{mL^2E_0/2\pi^2\hh}}\d n n^2 \int_0^\pi\d\t\int_0^{2\pi}\d\phi=\f{4\pi V}{3}\of{\f{mE}{2\pi^2\hh^2}}^{3/2}$$
+    再定义态密度$g(E)$
+    $$g(E)=\ff{V}\dd{N(E)}{E}=2\pi\of{\f{m}{2\pi^2\hh^2}}^{3/2}\s{E}$$
+    注意到, 对于自由粒子, 此时
+    \nts{$$g(E)\propto\s{E}$$}
+}
 \sub{动能算符}
 \sub{角动量算符}
+\nts{$$[\hat L_x,\hat L_y]=i\hbar L_z$$}
+由于$L$各分量不对易导致自身的叉乘不为零:
+$$\hat{L}\tm\hat{L}=-\hbar\hat{L}$$
+但其平方与任意分量可对易:
+\nts{$$[\hat{L^2},\hat{L}_\a]=0$$}
+\begin{defi}{阶梯算符}{}
+$$L_+=L_x+iL_y,\ \text{升算符}$$
+$$L_-=L_x-iL_y,\ \text{降算符}$$
+\end{defi}
+并有对易关系
+$$\ar{
+    [L_+,L_-] \x 2\hbar L_z\\
+    [L_+,L_z]\x-\hbar L_+\\
+    [L_-,L_z]\x \hbar L_+\\
+    [L^2,L_\pm]\x0
+}$$
 \sub{哈密顿算符}
 \sub{量子力学中的基本对易关系}
-定义对易子:
+\begin{defi}{对易子(对易关系)}{}
 $$[A,B]=AB-BA$$
+\end{defi}
+这本质上是一个Lie product. 
+\begin{defi}{反对易子}{}
+$$\{A,B\}=AB+BA,\ {\rm or\ write\ as\ } [A,B]_+$$
+\end{defi}
+对于产生湮灭算符, 若某粒子满足$[a_+,a_-]=0$, 称其为玻色子, 若某粒子满足$\{a_+,a_-\}=0$, 称其为费米子. \\
+\begin{defi}{基本对易关系}{}
+    $$[x,\hat{p}_x]=i\hbar$$ 
+\end{defi}
+    证明:\rk{
+    \item $x\hat{p}_x\psi(r)=-i\hbar x\pp{\psi(r)}{x}$
+    \item $\hat p_xx\psi(r) = -i\hbar\psi(r)-i\hbar x\pp{\psi(r)}{x}$
+    \item $ 1-2$可得$[x,\hat{p}_x]\psi(r)=i\hbar\psi(r) \ip [x,\hat{p}_x] = i\hbar$.
+}
+对易子计算规则:
+\ntswd{$$\ar{
+    [A,A] \x 0\\
+    [A\pm B,C]\x[A,C]\pm[B,C]\\
+    [A,B\pm C]\x[A,B]\pm[A,C]\\
+    [A,BC]\x [A,B]C+B[A,C]\\
+    [AB,C]\x[A,C]B+A[B,C]\\
+    {\rm Jacobi\ identity}:\ [A,[B,C]]+&\\
+    [B,[C,A]]+[C,[A,B]]\x0
+}$$}
+定义$C$为$[A,B]=iC$. 则$C$为厄米算符. 
 \sub{正则量子化}
-\sub{Heisenberg不确定性原理}
-\sub{能量-时间不确定性原理}
-\sub{位置算符、动量算符、角动量算符的本征值和本征函数}
+正则量子化可以把经典体系量子化, 其操作为\rk{
+    \item 将需要量子化的量用正则变量$x_i,p_i$表示. 
+    \item 将经典的$x_i,p_i$对称化后用算符替代.
+}
+由于其操作方法的原因, 没有经典对应的量, 例如自旋, 无法使用该手段量子化. \\
 
+\sub{Heisenberg不确定性原理}
+令
+$I(\l)=((\l\D A-i\D B)\psi),(\l\D A-i\D B)\psi))\geq0$, 可以写出
+$$\ar{
+    I(\l) \x ((\l\D A-i\D B)\psi),(\l\D A-i\D B)\psi))\\
+    \x (\psi,(\l\D A-i\D B)\T(\l\D A-i\D B)\psi)\\
+    \x (\psi,(\l\D A+i\D B)(\l\D A-i\D B)\psi)\\
+    \x (\psi, \{\l^2(\D A)^2-i\l[\D A,\D,B]+(\D B)^2\}\psi)\\
+    \x (\psi, \{\l^2(\D A)^2+\l C+(\D B)^2\}\psi)\\
+    \x \l^2\bkt{(\D A)^2}+\l\bkt{C}+\bkt{(\D B)^2}\geq0
+}$$
+配方:
+$$I(\l)=(\D A)^2\left[ \l+\f{\bkt{C}}{2(\D A)^2} \right]^2+(\D B)^2-\f{\bkt{C}}{4(\D A)^2}$$
+其最小值为
+$${\rm min\ } I(\l) = (\D B)^2-\f{\bkt{C}}{4(\D A)^2} \geq 0$$
+因此有
+\nts{
+    $$\D A\D B\geq \ff{2}|\bkt{C}|$$
+}
+\sub{能量-时间不确定性原理}
+\sub{厄米算符的本征值和本征函数}
+
+\begin{xz}{厄米算符的本征值三大基本性质}{}
+    \rk{
+        \item 厄米算符的本征值是实的:$\l_n^*=\l_n$.\\
+            Proof:\rk{
+                \item $(\hat A\psi_n,\psi_n) = (\l_n\psi_n,\psi_n) =\l_n^*(\psi_n,\psi_n)$
+                \item $(\hat A\psi_n,\psi_n) =(\psi_n,\hat A\psi_n) = (\psi_n,\l_n\psi_n) =\l_n(\psi_n,\psi_n)$
+                \item $\l_n^*(\psi_n,\psi_n)=\l_n(\psi_n,\psi_n)$
+            }
+        \item 厄米算符不同本征值的本征函数是正交的$(\psi_n,\psi_{n'})=0{\rm\ for\ }\l_n\neq \l_{n'}$.\\
+        Proof: \rk{
+            \item $\hat A\psi_{n'}=\l_{n'}\psi$
+            \item $(\hat A\psi_n,\psi_{n'}) = \l_{n}(\psi_n,\psi_{n'})$
+            \item $(\psi_n,\hat A\psi_{n'}) = \l_{n'}(\psi_n,\psi_{n'})$
+            \item $\ip\l_{n}(\psi_n,\psi_{n'}) = \l_{n'}(\psi_n,\psi_{n'})$
+            \item here we have $(\psi_n,\psi_{n'})\neq0 \iff \l_n=\l_{n'}$
+        }
+        \item 厄米算符的本征函数构成希尔伯特空间的一个完全集, 因此任意态可以写作$\psi_n$的线性叠加. 
+    }
+\end{xz}
+厄米算符的本征函数完备性的表示: (对本征值求和)
+\nts{$$\psi(x)=\sum_{x=1}^\infty(\psi_n,\psi)\psi_n(x)$$}
 \se{不含时标量势场中粒子的运动}
 \sub{空间变量与时间变量的分离}
 \sub{定态}
@@ -154,12 +344,10 @@ $$\psi(r)=\sum c_iu_i(r),\quad c_i=(u_i,\psi)$$
 \sub{表象的定义}
 \sub{正交归一关系}
 \sub{封闭性关系}
-$$\boxed{
-    \hua{
+\nts{$$\hua{
         P_{u_i}\x \sum_i\kt{u_i}\br{u_i}\x \mathbbm{1}\\
         P_{w_a}\x \int\kt{w_a}\br{w_a}\d a \x \mathbbm{1}\\
-    }
-}$$
+    }$$}
 其含义为将任意$\kt{\psi}$向空间的基投影, 得到其自身. 
 \sub{左矢的表示}
 \sub{右矢的表示}
@@ -184,15 +372,15 @@ $$A_{kl}=\sum_{i,j}S\T_{ki}A_{ij}S_{jl}$$
 可观察量用观察算符描述. 一个厄米算符$A$的互异本征值是正交的, 通过选择, 总可以让每一个相同本征值的子空间的各个本征矢也是正交的. \\
 按定义, 如果本征矢的厄米算符$A$的正交归一系构成一个基, 则厄米算符$A$构成一个观察算符. 构成基可用封闭性关系式描述. 
 \sub{可观测量完全集}
-定理I\\
+\begin{thm}{定理I}{}
 如果两个算符$A$和$B$是对易的, 且$\kt{\psi}$是$A$的一个本征矢, 则$B\kt{\psi}$也是$A$的本征矢, 即$A$的本征子空间在$B$的作用下不变. 
-
-定理II\\
+\end{thm}
+\begin{thm}{定理II}{}
 如果两个观察算符$A,B$是对易的, 且$\kt{\psi_1},\kt{\psi_2}$是$A$的不同本征值的两个本征矢, 那么$\bkt{\psi_1|B|\psi_2}=0$.
-
-定理III(基本定理)\\
+\end{thm}
+\begin{thm}{定理III(基本定理)}{}
 如果两个观察算符$A, B$是对易的, 则$A,B$的共同本征矢构成态空间的一个正交归一基. 
-
+\end{thm}
 ECOC\\
 若$A, B, \dots$的共同本征矢构成一个正交归一基, 则$A, B, \dots$构成一个ECOC. 此时, 1. $A, B, \dots$是两两对易的. 2. 给出了全体$A, B, \dots$的本征值的一个数组, 便足以决定唯一的共同本征矢. \\
 两个典型的ECOC: $\{X,Y,Z\},\ \{P_x,P_y,P_z\},\ \{X,P_y,P_z\}$. 
@@ -210,13 +398,13 @@ $$\ar{
 变换表象$\{\kt{\bm{r}}\} \to \{\kt{\bm{p}}\}$需要用到下面的数:
 $$\bkt{\bm{r}|\bm{p}}=\bkt{\bm{p}|\bm{r}}^*=(2\pi\hbar)^{-3/2}\e^{\f{i}{h}\bm{p}_0\cdot \bm{r}}$$
 在$\{\kt{\bm{r}}\}$表象中, 
-$$\boxed{\bm{P}=\f{\hbar}{\i}\nabla}$$
+\nts{$$\bm{P}=\f{\hbar}{\i}\nabla$$}
 对两个表象的各个分量:
-\begin{equation}\boxed{\ar{
+\ntswd{\begin{equation}\ar{
     [X,P_x] \x \i\hbar\\
     [X,Y] \x 0\\
     [P_x,P_y] \x 0
-}\label{E30}}\end{equation}
+}\label{E30}\end{equation}}
 右矢$\{\kt{\bm{r}}\}$是算符$X, Y, Z$的本征右矢, 对于动量同理. 
 \sub{Schwarz不等式}
 对于态空间$\mathscr{E}$中的任意右矢, 
@@ -224,8 +412,9 @@ $$\bkt{\psi|\psi}=\text{实数}\geq 0$$
 这可以导出施瓦兹不等式:
 $$\abs{\bkt{\psi_1|\psi_2}}^2\leq\bkt{\psi_1|\psi_1}\bkt{\psi_2|\psi_2}$$
 \sub{幺正算符}
-幺正算符的定义:
+\begin{defi}{幺正算符}{}
 $$U\T U=UU\T=\mathbbm{1}$$
+\end{defi}
 和$U$相联系的幺正变换可以保持$\mathscr{E}$空间中的内积不变. 即
 $$\bkt{\wv{\psi}_1|\wv{\psi}_2}=\bkt{\psi_1|U\T U|\psi_2}=\bkt{\psi_1|\psi_2}$$ 
 若$A$是厄米算符, 则$e^{iA}$是幺正算符. \\
@@ -245,12 +434,14 @@ $$\ar{
     \wv{F}(A) \x F(\wv{A})
 }$$
 \sub{宇称算符}
-宇称算符的定义:
+\begin{defi}{宇称算符}{}
 $$\Pi\kt{\bm{r}}=\kt{-\bm{r}}$$
 $$\bkt{\bm{r}|\Pi|\psi}=\psi(-\bm{r})$$
+\end{defi}
 宇称算符下描述的体系是关于原点与原体系对应的体系. 宇称算符是一个幺正算符\\
-性质:\\
+\begin{xz}{宇称算符}{}
 $$\Pi=\Pi\m=\Pi\T$$
+\end{xz}
 $\Pi$的本征值只能为$\pm1$, 这两个本征值是简并的. 属于$1$的本征矢是偶性本征矢, 属于$-1$的本征矢是奇性本征矢.\\
 利用算符
 $$\ar{
@@ -261,11 +452,11 @@ $$\ar{
 将任意算符做变换
 $$\wv{B}=\Pi B \Pi$$
 若$\wv{B}=B$, 则$B$为偶算符, $B_+$与$\Pi$对易, 若$\wv{B}=-B$, 则$B$为奇算符, $B_-$与$\Pi$反对易.\\
-奇偶算符的性质:\\
+\begin{xz}{奇性算符}{}
 一个偶算符在宇称相反的矢量之间的矩阵元为零:$\bkt{\vp|B_+|\psi}=0$. \\
 一个奇算符在宇称相同的矢量之间的矩阵元为零:$\bkt{\vp'|B_-|\psi'}=0$. \\
 特别地, 当$\kt{\psi}$具有确定的宇称, $\bkt{\psi|B_-|\psi}=0$.
-
+\end{xz}
 例子:\rk{
     \item $\bm{R}$是奇算符. 
     \item $\bm{P}$是奇算符.
@@ -290,14 +481,8 @@ $$\wv{B}=\Pi B \Pi$$
     \item 非简并连续谱的情况: 测量已处于已归一化的态$\kt{\psi}$的物理量$\mathscr{A}$时, 得到介于$\a$和$\a+\d\a$之间的结果的概率$\d\mathscr{P}(\a)$是
     $$\d\mathscr{P}(\a) = \abs{\bkt{v_\a|\psi}}^2\d\a$$
 }
-重要后果:\\ \\
-\fbox{
-\parbox{\textwidth}{
-    \begin{center}
-        互为比例的两个态矢量表示同一个物理状态, 总的相位因子对于物理预言没有影响, 但展开式中各项系数的相对相位则是有影响的
-    \end{center}
-}}
-
+重要后果:
+\ntswd{互为比例的两个态矢量表示同一个物理状态, 总的相位因子对于物理预言没有影响, 但展开式中各项系数的相对相位则是有影响的}
 第五个假定: 如果对于处在$\kt{\psi}$态的体系测量物理量$\mathscr{A}$得到的结果是$a_n$, 则刚测量之后体系的态是$\kt{\psi}$在属于$a_n$的本征子空间上的归一化投影$\displaystyle \f{P_n\kt{\psi}}{\sqrt{\bkt{\psi|P_n|\psi}}}$.
 \sub{体系随时间的演化}
 第六个假定: 态矢量$\kt{\psi(t)}$随时间的演变遵从\sch 方程.
@@ -311,8 +496,9 @@ $$\i\hbar\dt{}\kt{\psi(t)}=H(t)\kt{\psi(t)}$$
 $$A(t)=\mathscr{A}(\bm{r},\bm{p},t)$$
 \sub{测量过程}
 \sub{给定态中可观测量的平均值}
-平均值的定义
+\begin{defi}{平均值}{}
 $$\bkt{A}_\psi=\bkt{\psi|A|\psi}$$
+\end{defi}
 在实际计算中通常要在一个确定的表象中计算, 例如:
 $$\bkt{x}_\psi=\bkt{\psi|X|\psi}=\int\d^3r \psi^*(r)x\psi(r)$$
 \sub{方均根偏差}
@@ -336,9 +522,9 @@ $$\kt{\psi(t)}=\sum_{n,\tau}c_{n,\tau}(t)\kt{\vp_{n,\tau}}$$
 再由\sch 方程可以得到
 $$c_{n,\tau}(t)=c_{n,\tau}(t_0)\e^{-\i E_n(t-t_0)/\hbar}$$
 即
-\begin{equation}\boxed{
+\ntswd{\begin{equation}
     \kt{\psi(t)}=\sum_n\sum_\tau c_{n,\tau}(t_0)\e^{-\i E_n(t-t_0)/\hbar}\kt{\vp_{n,\tau}}  \label{D54}
-}\end{equation}
+\end{equation}}
 \sub{概率幅与干涉效应}
 概率幅的概念
 \rk{
@@ -346,18 +532,17 @@ $$c_{n,\tau}(t)=c_{n,\tau}(t_0)\e^{-\i E_n(t-t_0)/\hbar}$$
     \item 在一个确定的实验中, 如果没有进行中间状态的测量, 那么我们绝不能根据中间测量可能得到的各种结果的概率, 而应根据它们的概率幅来分析问题.
     \item 一个物理体系的态可以线性叠加, 这意味着一个概率幅往往表现为若干部分幅之和. 因而对应的概率等于若干项之和的模的平方, 而且那些部分幅是彼此相干的. 
 }
-要计算一个末态的概率, 必须:\\ \\
-\fbox{
-\parbox{\textwidth}{
-    \begin{center}
-        将对应同一末态的诸概率幅相加, 然后将对应于正交末态的诸概率相加. 
-    \end{center}
-}}
+要计算一个末态的概率, 必须:
+\ntswd{将对应同一末态的诸概率幅相加, 然后将对应于正交末态的诸概率相加. }
 \sub{密度算符}
-\subsubsection*{纯态}
-当体系的态是完全确定的, 这是我们说体系处于纯态, 此时用态矢量$\kt\psi$或在态空间起作用的密度算符描述体系是完全等价的. \\
+\begin{defi}{纯态}{}
+当体系的态是完全确定的, 这是我们说体系处于纯态, 此时用态矢量$\kt\psi$或在态空间起作用的密度算符描述体系是完全等价的. 
+\end{defi}
+
 引入密度算符, 其定义是:
-$$\r(t)=\kt\psi\br\psi$$
+\begin{defi}{密度算符}{}
+    $$\r(t)=\kt\psi\br\psi$$
+\end{defi}
 在基$\kt{u}$中, 密度算符是用一个矩阵描述的, 称为密度矩阵, 它的矩阵元是
 $$\r_{pn}(t)=c_n^*(t)c_p(t)$$
 使用概率算符, 概率守恒变为
@@ -367,11 +552,13 @@ $$\bkt{A}(t)=\Tr\{A\rho(t)\}=\Tr\{\rho(t)A\}$$
 \sch 方程变为
 $$\i\hbar\dt{}\r(t)=[H(t),\r(t)]$$
 在纯态下, 描述同一物理状态的两个态矢量$\kt{\psi(t)},e^{i\t}\kt{\psi(t)}$对应着同一个密度算符, 可以避免相位因子带来的麻烦, 且上面各式对密度算符是线性的. 最后, 列出密度算符的一些其他性质:
+\begin{xz}{密度算符}{}
 $$\ar{
     \r\T(t)\x\r(t)\\
     \r^2(t)\x\r(t)\\
     \Tr\r^2(t)\x1
 }$$
+\end{xz}
 后面两式来源于$\r(t)$是投影算符这一事实, 这两式只在纯态成立.
 \subsubsection*{统计混合态}
 密度算符的定义
@@ -381,15 +568,18 @@ $$\cm{P}_k(a_n)=\bkt{\psi_k|P_n|\psi}$$
 $$\cm{P}(a_n)=\sum_kp_k\cm{P}_k(a_n)=\Tr\{p_k\r_k\}$$
 
 \sub{时间演化算符}
-体系的演变算符定义为
+\begin{defi}{体系的演变算符}{}
 $$\kt{\psi(t)}=U(t,t_0)\kt{\psi(t_0)}$$
+\end{defi}
 首先有
 $$U(t_0,t_0)=\mathbbm{1}$$
 且
 $$i\hbar\pt{}U(t,t_0)=H(t)U(t,t_0)$$
 有了上述两式即可完全确定$U(t,t_0)$, 此外, 函数还具有性质
+\begin{xz}{演变算符}{}
 $$U(t_n,t_1)=U(t_n,t_{n-1})U(t_{n-1},t_{n-2})\cdots U(t_2,t_1)$$
 $$U(t',t)=U(t,t')$$
+\end{xz}
 无穷小演变算符为
 $$U(t+\d t,t)=\mathbbm{1}-\f{\i}{\hbar}H(t)\d t$$
 若体系为保守系, $H$与时间无关
@@ -493,23 +683,22 @@ $$(H)=\bmat{E_1+W_{11}}{W_{12}}{W_{21}}{E_2+w_{22}}$$
 根据正则对易关系式\ref{E30}, 可以写出
 $$\bm{L}=\bm{R}\tm\bm{P}$$
 并得到关系式
-\begin{equation}
-    \boxed{\ar{
+\ntswd{\begin{equation}
+    \ar{
     [J_x,J_y] \x \i\hbar J_z\\
     [J_y,J_z] \x \i\hbar J_x\\
     [J_z,J_x] \x \i\hbar J_y
-}\label{B9}}\end{equation}
-\begin{equation}\boxed{
+}\label{B9}\end{equation}}
+\ntswd{\begin{equation}
     [\bm{J}^2,\bm{J}]=0 \label{B11}
-}
-\end{equation}
+\end{equation}}
 量子力学中的角动量理论完全建立在对易关系式\ref{B9}, \ref{B11}的基础上, 这些关系式意味着角动量的三个分量不能同时测量, 但是分量和角动量的大小可以同时测量, 同时可以和$H$同时测量. 因此, $H,J^2,J_z$构成一个ECOC. 我们通常去寻找$H$的本征矢中属于$J^2$和$J_z$的共同本征矢的集合.
 \sub{定义与符号}
 为方便, 引入以下非厄米伴随算符:
-$$\boxed{\ar{
+\nts{$$\ar{
     J_+ \x J_x+\i J_y\\
     J_- \x J_x-\i J_y
-}}$$
+}$$}
 满足对易关系
 $$\ar{
     [J_z,J_+] \x \hbar J_+\\
@@ -527,19 +716,18 @@ $$\ar{
 为了构成一个ECOC, 我们还需要除了$j,m$的另一个指标, 记做$k$.
 \sub{\texorpdfstring{$J^2$}{}与\texorpdfstring{$J_z$}{}的本征值}
 如果$j(j+1)\hbar$与$m\hbar$是$J^2$与$J_z$对应同一本征矢$\kt{k,j,m}$的本征值, 则满足
-$$\boxed{-j \leq m \leq j}$$
+\nts{$$-j \leq m \leq j$$}
 同时, \\
 若$m=-j$, 则$J_-\kt{k,j,-j}=0$.\\
 若$m>-j$, 则$J_-\kt{k,j,m}$是一个$J^2$与$J_z$的非零本征矢, 属于本征值$j(j+1)\hbar^2$与$(m-1)\hbar$.\\
 若$m=j$, 则$J_+\kt{k,j,j}=0$.\\
 若$m<j$, 则$J_+\kt{k,j,m}$是一个$J^2$与$J_z$的非零本征矢, 属于本征值$j(j+1)\hbar^2$与$(m+1)\hbar$.\\
-我们可将已知结果归纳如下\\ \\
-\fbox{\parbox{\textwidth}{
+我们可将已知结果归纳如下
+\ntswd{    
     假设$\bm{J}$是满足对易关系\ref{B9}的任意角动量, 如果$j(j+1)\hbar^2$与$m\hbar$表示$\bm{J}^2$与$J_z$的值, 那么:
     \rk{
         \item $j$只能取正整数, 半整数或零, 即$0,1/2,1,1/3,\cdots$, 这些只是可能值, 并不是对于一切角动量而言所有值都会出现.
         \item 对于$j$的一个固定值, $m$的可能值只有$(2j+1)$个,:$-j,-j+1,\cdots,j-1,j$, 因此, 若$j$是半整数, $m$也是半整数. 在$m$的这些值中, 只要有一个出现, 其他的值也会出现.
-    }
 }}
 \sub{标准表象\texorpdfstring{$\{\kt{k,j,m}\}$}{}}
 \subsubsection*{基右矢}
